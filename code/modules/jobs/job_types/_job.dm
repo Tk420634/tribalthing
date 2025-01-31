@@ -350,8 +350,8 @@
 	if(gunsmith_four == TRUE)
 		ADD_TRAIT(H, TRAIT_GUNSMITH_FOUR, "gunsmith_four")
 
-	if(technophreak == TRUE)
-		SSquirks.AddQuirkToMob(H, /datum/quirk/technophreak, TRUE, TRUE)
+	// if(technophreak == TRUE)
+	// 	SSquirks.AddQuirkToMob(H, /datum/quirk/technophreak, TRUE, TRUE)
 
 /datum/outfit/job/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
 	if(visualsOnly)

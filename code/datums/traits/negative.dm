@@ -176,66 +176,66 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 	category = "Functional Quirks"
 	mechanics = "If you use the sleep verb you sleep for longer, but don't heal any more than you would normally. If you use sleep-toggle it takes you longer to wake up."
 	conflicts = list(
-		/datum/quirk/nosleep,
+		//datum/quirk/nosleep,
 	)
 	mob_trait = TRAIT_HEAVY_SLEEPER
 	gain_text = span_danger("You feel sleepy.")
 	lose_text = span_notice("You feel awake again.")
 	medical_record_text = "Patient has abnormal sleep study results and is difficult to wake up."
 
-/datum/quirk/brainproblems
-	name = "Brain Tumor"
-	desc = "You have a little friend in your brain that keeps growing back! Mannitol will keep it at bay, but it can't be cured!"
-	value = -30 // Constant brain DoT until 75 brain damage. Brains have 200 health
-	category = "Health Quirks"
-	mechanics = "Your brain has a tumor that will grow quickly while it's small, but will slow down over time. \
-				While not lethal in the scope of a single round, you will want to frequently take mannitol or \
-				you will suffer frequent, debilitating debuffs."
-	conflicts = list(
+// /datum/quirk/brainproblems
+// 	name = "Brain Tumor"
+// 	desc = "You have a little friend in your brain that keeps growing back! Mannitol will keep it at bay, but it can't be cured!"
+// 	value = -30 // Constant brain DoT until 75 brain damage. Brains have 200 health
+// 	category = "Health Quirks"
+// 	mechanics = "Your brain has a tumor that will grow quickly while it's small, but will slow down over time. 
+// 				While not lethal in the scope of a single round, you will want to frequently take mannitol or 
+// 				you will suffer frequent, debilitating debuffs.
+// 	conflicts = list(
 
-	)
-	gain_text = span_danger("You feel smooth.")
-	lose_text = span_notice("You feel wrinkled again.")
-	medical_record_text = "Patient has a tumor in their brain that is slowly driving them to brain death."
-	COOLDOWN_DECLARE(annoying_message)
+// 	)
+// 	gain_text = span_danger("You feel smooth.")
+// 	lose_text = span_notice("You feel wrinkled again.")
+// 	medical_record_text = "Patient has a tumor in their brain that is slowly driving them to brain death."
+// 	COOLDOWN_DECLARE(annoying_message)
 
-/datum/quirk/brainproblems/on_process()
-	//Deal fast brain damage at the start and ramp it down over time so it takes a long time to reach the cap.
-	var/bdam = quirk_holder.getOrganLoss(ORGAN_SLOT_BRAIN)
-	switch(bdam)
-		if(0 to 25)
-			quirk_holder.adjustOrganLoss(ORGAN_SLOT_BRAIN, 0.3)
-		if(25 to 50)
-			quirk_holder.adjustOrganLoss(ORGAN_SLOT_BRAIN, 0.25)
-		if(50 to 75)
-			quirk_holder.adjustOrganLoss(ORGAN_SLOT_BRAIN, 0.2)
-	if((bdam > 25) && COOLDOWN_FINISHED(src, annoying_message))
-		COOLDOWN_START(src, annoying_message, 3 MINUTES)
-		to_chat(quirk_holder, span_danger("I really need some mannitol!"))
+// /datum/quirk/brainproblems/on_process()
+// 	//Deal fast brain damage at the start and ramp it down over time so it takes a long time to reach the cap.
+// 	var/bdam = quirk_holder.getOrganLoss(ORGAN_SLOT_BRAIN)
+// 	switch(bdam)
+// 		if(0 to 25)
+// 			quirk_holder.adjustOrganLoss(ORGAN_SLOT_BRAIN, 0.3)
+// 		if(25 to 50)
+// 			quirk_holder.adjustOrganLoss(ORGAN_SLOT_BRAIN, 0.25)
+// 		if(50 to 75)
+// 			quirk_holder.adjustOrganLoss(ORGAN_SLOT_BRAIN, 0.2)
+// 	if((bdam > 25) && COOLDOWN_FINISHED(src, annoying_message))
+// 		COOLDOWN_START(src, annoying_message, 3 MINUTES)
+// 		to_chat(quirk_holder, span_danger("I really need some mannitol!"))
 
-/datum/quirk/nearsighted //t. errorage
-	name = "Nearsighted - Corrected"
-	desc = "You are nearsighted without prescription glasses, but spawn with a pair."
-	value = -11
-	category = "Vision Quirks"
-	mechanics = "Your vision is blurry at a distance, but you have glasses you spawn with that can fix that."
-	conflicts = list(
-		/datum/quirk/noglasses,
-		/datum/quirk/badeyes,
-		/datum/quirk/blindness,
-	)
-	gain_text = span_danger("Things far away from you start looking blurry.")
-	lose_text = span_notice("You start seeing faraway things normally again.")
-	medical_record_text = "Patient requires prescription glasses in order to counteract nearsightedness."
+// /datum/quirk/nearsighted //t. errorage
+// 	name = "Nearsighted - Corrected"
+// 	desc = "You are nearsighted without prescription glasses, but spawn with a pair."
+// 	value = -11
+// 	category = "Vision Quirks"
+// 	mechanics = "Your vision is blurry at a distance, but you have glasses you spawn with that can fix that."
+// 	conflicts = list(
+// 		/datum/quirk/noglasses,
+// 		/datum/quirk/badeyes,
+// 		/datum/quirk/blindness,
+// 	)
+// 	gain_text = span_danger("Things far away from you start looking blurry.")
+// 	lose_text = span_notice("You start seeing faraway things normally again.")
+// 	medical_record_text = "Patient requires prescription glasses in order to counteract nearsightedness."
 
-/datum/quirk/nearsighted/add()
-	quirk_holder.become_nearsighted(ROUNDSTART_TRAIT)
+// /datum/quirk/nearsighted/add()
+// 	quirk_holder.become_nearsighted(ROUNDSTART_TRAIT)
 
-/datum/quirk/nearsighted/on_spawn()
-	var/mob/living/carbon/human/H = quirk_holder
-	var/obj/item/clothing/glasses/regular/glasses = new(get_turf(H))
-	if(!H.equip_to_slot_if_possible(glasses, SLOT_GLASSES))
-		H.put_in_hands(glasses)
+// /datum/quirk/nearsighted/on_spawn()
+// 	var/mob/living/carbon/human/H = quirk_holder
+// 	var/obj/item/clothing/glasses/regular/glasses = new(get_turf(H))
+// 	if(!H.equip_to_slot_if_possible(glasses, SLOT_GLASSES))
+// 		H.put_in_hands(glasses)
 
 /datum/quirk/noglasses
 	name = "Nearsighted - No Glasses"
@@ -244,7 +244,7 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 	category = "Vision Quirks"
 	mechanics = "Your vision is blurred, but you either never had or lost your glasses.  Good luck!"
 	conflicts = list(
-		/datum/quirk/nearsighted,
+		//datum/quirk/nearsighted,
 		/datum/quirk/badeyes,
 		/datum/quirk/blindness,
 	)
@@ -262,7 +262,7 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 	category = "Vision Quirks"
 	mechanics = "Bro your eyes are straight up having a bad time, your vision is absolutely recked and you have no immediate way of helping it."
 	conflicts = list(
-		/datum/quirk/nearsighted,
+		//datum/quirk/nearsighted,
 		/datum/quirk/noglasses,
 		/datum/quirk/blindness,
 	)
@@ -422,7 +422,7 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 	mechanics = "Your accuracy degrades like crazy when moving, firing, or doing much of anything."
 	conflicts = list(
 		// /datum/quirk/deadeye,
-		/datum/quirk/straightshooter
+		//datum/quirk/straightshooter
 	)
 	mob_trait = TRAIT_POOR_AIM
 	medical_record_text = "Patient possesses a strong tremor in both hands."
@@ -562,12 +562,12 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 		/datum/quirk/ratphobia,
 		/datum/quirk/spiderphobia,
 		/datum/quirk/lizardphobia,
-		/datum/quirk/robotphobia,
+		//datum/quirk/robotphobia,
 		/datum/quirk/birdphobia,
 		/datum/quirk/dogphobia,
 		/datum/quirk/skelephobia,
 		/datum/quirk/maskphobia,
-		/datum/quirk/alienphobia,
+		//datum/quirk/alienphobia,
 		/datum/quirk/eyephobia
 	)
 	mob_trait = TRAIT_CATPHOBIA
@@ -596,12 +596,12 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 		/datum/quirk/catphobia,
 		/datum/quirk/spiderphobia,
 		/datum/quirk/lizardphobia,
-		/datum/quirk/robotphobia,
+		//datum/quirk/robotphobia,
 		/datum/quirk/birdphobia,
 		/datum/quirk/dogphobia,
 		/datum/quirk/skelephobia,
 		/datum/quirk/maskphobia,
-		/datum/quirk/alienphobia,
+		//datum/quirk/alienphobia,
 		/datum/quirk/eyephobia
 	)
 	mob_trait = TRAIT_RATPHOBIA
@@ -630,12 +630,12 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 		/datum/quirk/catphobia,
 		/datum/quirk/ratphobia,
 		/datum/quirk/lizardphobia,
-		/datum/quirk/robotphobia,
+		//datum/quirk/robotphobia,
 		/datum/quirk/birdphobia,
 		/datum/quirk/dogphobia,
 		/datum/quirk/skelephobia,
 		/datum/quirk/maskphobia,
-		/datum/quirk/alienphobia,
+		//datum/quirk/alienphobia,
 		/datum/quirk/eyephobia
 	)
 	mob_trait = TRAIT_SPIDERPHOBIA
@@ -664,12 +664,12 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 		/datum/quirk/catphobia,
 		/datum/quirk/ratphobia,
 		/datum/quirk/spiderphobia,
-		/datum/quirk/robotphobia,
+		//datum/quirk/robotphobia,
 		/datum/quirk/birdphobia,
 		/datum/quirk/dogphobia,
 		/datum/quirk/skelephobia,
 		/datum/quirk/maskphobia,
-		/datum/quirk/alienphobia,
+		//datum/quirk/alienphobia,
 		/datum/quirk/eyephobia
 	)
 	mob_trait = TRAIT_LIZARDPHOBIA
@@ -688,39 +688,39 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	var/mob/living/carbon/human/H = quirk_holder
 	H?.cure_trauma_type(/datum/brain_trauma/mild/phobia/lizards, TRAUMA_RESILIENCE_ABSOLUTE)
 
-/datum/quirk/robotphobia
-	name = "Phobia - Robots/Synths"
-	desc = "You've had a traumatic past, one that has scarred you for life, and it had something to do with robot or synthetics."
-	value = -22 // Mostly experimental, with tweaks to how phobia works and accounting for how common the target phobia seems to be.
-	category = "Phobia Quirks"
-	mechanics = "You're scared of robots, time traveller."
-	conflicts = list(
-		/datum/quirk/catphobia,
-		/datum/quirk/ratphobia,
-		/datum/quirk/spiderphobia,
-		/datum/quirk/lizardphobia,
-		/datum/quirk/birdphobia,
-		/datum/quirk/dogphobia,
-		/datum/quirk/skelephobia,
-		/datum/quirk/maskphobia,
-		/datum/quirk/alienphobia,
-		/datum/quirk/eyephobia
-	)
-	mob_trait = TRAIT_ROBOTPHOBIA
-	gain_text = span_danger("You begin to tremble as an immeasurable fear of not understanding what x=x<<1 even means...Those robots are too scary to understand that, the fear grips your mind.")
-	lose_text = span_notice("Your confidence wipes away the fear that had been plaguing you. You've learnt bitshifting!")
-	medical_record_text = "Patient has an extreme or irrational fear and aversion to bitwise operations."
-	locked = FALSE
+// /datum/quirk/robotphobia
+// 	name = "Phobia - Robots/Synths"
+// 	desc = "You've had a traumatic past, one that has scarred you for life, and it had something to do with robot or synthetics."
+// 	value = -22 // Mostly experimental, with tweaks to how phobia works and accounting for how common the target phobia seems to be.
+// 	category = "Phobia Quirks"
+// 	mechanics = "You're scared of robots, time traveller."
+// 	conflicts = list(
+// 		/datum/quirk/catphobia,
+// 		/datum/quirk/ratphobia,
+// 		/datum/quirk/spiderphobia,
+// 		/datum/quirk/lizardphobia,
+// 		/datum/quirk/birdphobia,
+// 		/datum/quirk/dogphobia,
+// 		/datum/quirk/skelephobia,
+// 		/datum/quirk/maskphobia,
+// 		/datum/quirk/alienphobia,
+// 		/datum/quirk/eyephobia
+// 	)
+// 	mob_trait = TRAIT_ROBOTPHOBIA
+// 	gain_text = span_danger("You begin to tremble as an immeasurable fear of not understanding what x=x<<1 even means...Those robots are too scary to understand that, the fear grips your mind.")
+// 	lose_text = span_notice("Your confidence wipes away the fear that had been plaguing you. You've learnt bitshifting!")
+// 	medical_record_text = "Patient has an extreme or irrational fear and aversion to bitwise operations."
+// 	locked = FALSE
 
-/datum/quirk/robotphobia/post_add()
-	. = ..()
-	var/mob/living/carbon/human/H = quirk_holder
-	H.gain_trauma(/datum/brain_trauma/mild/phobia/robots, TRAUMA_RESILIENCE_ABSOLUTE)
+// /datum/quirk/robotphobia/post_add()
+// 	. = ..()
+// 	var/mob/living/carbon/human/H = quirk_holder
+// 	H.gain_trauma(/datum/brain_trauma/mild/phobia/robots, TRAUMA_RESILIENCE_ABSOLUTE)
 
-/datum/quirk/robotphobia/remove()
-	. = ..()
-	var/mob/living/carbon/human/H = quirk_holder
-	H?.cure_trauma_type(/datum/brain_trauma/mild/phobia/robots, TRAUMA_RESILIENCE_ABSOLUTE)
+// /datum/quirk/robotphobia/remove()
+// 	. = ..()
+// 	var/mob/living/carbon/human/H = quirk_holder
+// 	H?.cure_trauma_type(/datum/brain_trauma/mild/phobia/robots, TRAUMA_RESILIENCE_ABSOLUTE)
 
 /datum/quirk/birdphobia
 	name = "Phobia - Birds"
@@ -733,11 +733,11 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 		/datum/quirk/ratphobia,
 		/datum/quirk/spiderphobia,
 		/datum/quirk/lizardphobia,
-		/datum/quirk/robotphobia,
+		//datum/quirk/robotphobia,
 		/datum/quirk/dogphobia,
 		/datum/quirk/skelephobia,
 		/datum/quirk/maskphobia,
-		/datum/quirk/alienphobia,
+		//datum/quirk/alienphobia,
 		/datum/quirk/eyephobia
 	)
 	mob_trait = TRAIT_BIRDPHOBIA
@@ -767,11 +767,11 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 		/datum/quirk/ratphobia,
 		/datum/quirk/spiderphobia,
 		/datum/quirk/lizardphobia,
-		/datum/quirk/robotphobia,
+		//datum/quirk/robotphobia,
 		/datum/quirk/birdphobia,
 		/datum/quirk/skelephobia,
 		/datum/quirk/maskphobia,
-		/datum/quirk/alienphobia,
+		//datum/quirk/alienphobia,
 		/datum/quirk/eyephobia
 	)
 	mob_trait = TRAIT_DOGPHOBIA
@@ -790,39 +790,39 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	var/mob/living/carbon/human/H = quirk_holder
 	H?.cure_trauma_type(/datum/brain_trauma/mild/phobia/dogs, TRAUMA_RESILIENCE_ABSOLUTE)
 
-/datum/quirk/alienphobia
-	name = "Phobia - Aliens"
-	desc = "You've had a traumatic past, one that has scarred you for life, and it had something to do with aliens."
-	value = -22 // Refer to traumas.dm if balancing point values for phobias. If its too weak, it might be missing some triggers.
-	category = "Phobia Quirks"
-	mechanics = "You're scared of aliens."
-	conflicts = list(
-		/datum/quirk/catphobia,
-		/datum/quirk/ratphobia,
-		/datum/quirk/spiderphobia,
-		/datum/quirk/lizardphobia,
-		/datum/quirk/robotphobia,
-		/datum/quirk/birdphobia,
-		/datum/quirk/skelephobia,
-		/datum/quirk/maskphobia,
-		/datum/quirk/eyephobia,
-		/datum/quirk/dogphobia
-	)
-	mob_trait = TRAIT_ALIENPHOBIA
-	gain_text = span_danger("You begin to tremble as an immeasurable fear of creatures from beyond your terrestrial comprehension.")
-	lose_text = span_notice("Your confidence wipes away the fear that had been plaguing you!")
-	medical_record_text = "Patient has an extreme or irrational fear and aversion to undefined stimuli."
-	locked = FALSE
+// /datum/quirk/alienphob/ia
+// 	name = "Phobia - Aliens"
+// 	desc = "You've had a traumatic past, one that has scarred you for life, and it had something to do with aliens."
+// 	value = -22 // Refer to traumas.dm if balancing point values for phobias. If its too weak, it might be missing some triggers.
+// 	category = "Phobia Quirks"
+// 	mechanics = "You're scared of aliens."
+// 	conflicts = list(
+// 		/datum/quirk/catphobia,
+// 		/datum/quirk/ratphobia,
+// 		/datum/quirk/spiderphobia,
+// 		/datum/quirk/lizardphobia,
+// 		/datum/quirk/robotphobia,
+// 		/datum/quirk/birdphobia,
+// 		/datum/quirk/skelephobia,
+// 		/datum/quirk/maskphobia,
+// 		/datum/quirk/eyephobia,
+// 		/datum/quirk/dogphobia
+// 	)
+// 	mob_trait = TRAIT_ALIENPHOBIA
+// 	gain_text = span_danger("You begin to tremble as an immeasurable fear of creatures from beyond your terrestrial comprehension.")
+// 	lose_text = span_notice("Your confidence wipes away the fear that had been plaguing you!")
+// 	medical_record_text = "Patient has an extreme or irrational fear and aversion to undefined stimuli."
+// 	locked = FALSE
 
-/datum/quirk/alienphobia/post_add()
-	. = ..()
-	var/mob/living/carbon/human/H = quirk_holder
-	H.gain_trauma(/datum/brain_trauma/mild/phobia/aliens, TRAUMA_RESILIENCE_ABSOLUTE)
+// /datum/quirk/alienphobia/post_add()
+// 	. = ..()
+// 	var/mob/living/carbon/human/H = quirk_holder
+// 	H.gain_trauma(/datum/brain_trauma/mild/phobia/aliens, TRAUMA_RESILIENCE_ABSOLUTE)
 
-/datum/quirk/alienphobia/remove()
-	. = ..()
-	var/mob/living/carbon/human/H = quirk_holder
-	H?.cure_trauma_type(/datum/brain_trauma/mild/phobia/aliens, TRAUMA_RESILIENCE_ABSOLUTE)
+// /datum/quirk/alienphobia/remove()
+// 	. = ..()
+// 	var/mob/living/carbon/human/H = quirk_holder
+// 	H?.cure_trauma_type(/datum/brain_trauma/mild/phobia/aliens, TRAUMA_RESILIENCE_ABSOLUTE)
 
 /datum/quirk/skelephobia
 	name = "Phobia - Skeletons"
@@ -835,11 +835,11 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 		/datum/quirk/ratphobia,
 		/datum/quirk/spiderphobia,
 		/datum/quirk/lizardphobia,
-		/datum/quirk/robotphobia,
+		//datum/quirk/robotphobia,
 		/datum/quirk/birdphobia,
 		/datum/quirk/dogphobia,
 		/datum/quirk/maskphobia,
-		/datum/quirk/alienphobia,
+		//datum/quirk/alienphobia,
 		/datum/quirk/eyephobia
 	)
 	mob_trait = TRAIT_BONERPHOBIA
@@ -869,11 +869,11 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 		/datum/quirk/ratphobia,
 		/datum/quirk/spiderphobia,
 		/datum/quirk/lizardphobia,
-		/datum/quirk/robotphobia,
+		//datum/quirk/robotphobia,
 		/datum/quirk/birdphobia,
 		/datum/quirk/dogphobia,
 		/datum/quirk/skelephobia,
-		/datum/quirk/alienphobia,
+		//datum/quirk/alienphobia,
 		/datum/quirk/eyephobia
 	)
 	mob_trait = TRAIT_MASKPHOBIA
@@ -938,11 +938,11 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 		/datum/quirk/ratphobia,
 		/datum/quirk/spiderphobia,
 		/datum/quirk/lizardphobia,
-		/datum/quirk/robotphobia,
+		//datum/quirk/robotphobia,
 		/datum/quirk/birdphobia,
 		/datum/quirk/dogphobia,
 		/datum/quirk/skelephobia,
-		/datum/quirk/alienphobia
+		//datum/quirk/alienphobia
 	)
 	mob_trait = TRAIT_EYEPHOBIA
 	gain_text = span_danger("You begin to tremble as an immeasurable fear of your eyes being stabbed grips your mind.")
@@ -960,7 +960,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	var/mob/living/carbon/human/H = quirk_holder
 	H?.cure_trauma_type(/datum/brain_trauma/mild/phobia/eye, TRAUMA_RESILIENCE_ABSOLUTE)
 
-/*
+
 /datum/quirk/mute
 	name = "Mute"
 	desc = "Due to some accident, medical condition, or simply by choice, you are completely unable to speak."
@@ -998,7 +998,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	gain_text = span_danger("There's a lot on your mind right now.")
 	lose_text = span_notice("Your mind finally feels calm.")
 	medical_record_text = "Patient's mind is in a vulnerable state, and cannot recover from traumatic events."
-*/
+
 
 /datum/quirk/blindness
 	name = "Blind"
@@ -1007,7 +1007,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	category = "Vision Quirks"
 	mechanics = "You can't see."
 	conflicts = list(
-		/datum/quirk/nearsighted,
+		//datum/quirk/nearsighted,
 		/datum/quirk/noglasses,
 		/datum/quirk/badeyes,
 	)
@@ -1096,18 +1096,18 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	human_only = FALSE
 
 
-/datum/quirk/illiterate
-	name = "Illiterate"
-	desc = "You can't read nor write, plain and simple."
-	value = 0
-	category = "Lifepath Quirks"
-	mechanics = "This is basicaly just a roleplaying quirk. It actually does basically nothing. If you find a skill book though, you can't read it. So congrats."
-	conflicts = list(
+// /datum/quirk/illiterate
+// 	name = "Illiterate"
+// 	desc = "You can't read nor write, plain and simple."
+// 	value = 0
+// 	category = "Lifepath Quirks"
+// 	mechanics = "This is basicaly just a roleplaying quirk. It actually does basically nothing. If you find a skill book though, you can't read it. So congrats."
+// 	conflicts = list(
 
-	)
-	mob_trait = TRAIT_ILLITERATE
-	gain_text = span_notice("The knowledge of how to read seems to escape from you.")
-	lose_text = "<span class='notice'>Written words suddenly make sense again."
+// 	)
+// 	mob_trait = TRAIT_ILLITERATE
+// 	gain_text = span_notice("The knowledge of how to read seems to escape from you.")
+// 	lose_text = "<span class='notice'>Written words suddenly make sense again."
 
 
 /datum/quirk/flimsy
@@ -1298,9 +1298,9 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	mechanics = "Your punches do literally nothing."
 	conflicts = list(
 		/datum/quirk/nonviolent,
-		/datum/quirk/iron_fist,
-		/datum/quirk/steel_fist,
-		/datum/quirk/mastermartialartist,
+		//datum/quirk/iron_fist,
+		//datum/quirk/steel_fist,
+		//datum/quirk/mastermartialartist,
 	)
 	mob_trait = TRAIT_NOODLEFIST
 	gain_text = span_notice("Your fists feel weak and worthless!")
@@ -1349,8 +1349,8 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	human_only = FALSE
 
 /datum/quirk/slow
-	name = "Mobility - Wasteland Slug"
-	desc = "You've spent some time in the wastes, you don't get around great."
+	name = "Mobility - Slug"
+	desc = "You've spent some time in the wilderness, you don't get around great."
 	value = -22 // Increasing htese because the slowdown is for everything but grass, road, and manmade tiles.
 	category = "Movement Quirks"
 	mechanics = "Slows you down a fair deal if you're going off roads and normal paths."
@@ -1366,8 +1366,8 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	locked = FALSE
 
 /datum/quirk/slower
-	name = "Mobility - Wasteland Molasses"
-	desc = "You don't get around well off road. Like. At all."
+	name = "Mobility - Molasses"
+	desc = "You don't get around well. Like. At all."
 	value = -33 // Increasing htese because the slowdown is for everything but grass, road, and manmade tiles.
 	category = "Movement Quirks"
 	mechanics = "Slows you down a lot if you go off roads and normal paths."
@@ -1412,34 +1412,34 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	locked = FALSE
 	human_only = FALSE
 
-/datum/quirk/primitive
-	name = "Primitive"
-	desc = "You were raised in a barn, by monkeys. Or so it may seem to others. Lacking the ability to use guns, or any sort of advanced tools you've still managed to survive, and you're probably hot to boot."
-	value = -22
-	category = "Lifepath Quirks"
-	mechanics = "This is the monkey quirk for those in the know, it makes you unable to use guns, PDAs, and many machines."
-	conflicts = list(
+// /datum/quirk/primitive
+// 	name = "Primitive"
+// 	desc = "You were raised in a barn, by monkeys. Or so it may seem to others. Lacking the ability to use guns, or any sort of advanced tools you've still managed to survive, and you're probably hot to boot."
+// 	value = -22
+// 	category = "Lifepath Quirks"
+// 	mechanics = "This is the monkey quirk for those in the know, it makes you unable to use guns, PDAs, and many machines."
+// 	conflicts = list(
 
-	)
-	mob_trait = TRAIT_MONKEYLIKE
-	gain_text = span_notice("yOu reTurN tO MonKE")
-	lose_text = span_danger("I think, there for... I am?")
-	locked = FALSE
-	human_only = FALSE
+// 	)
+// 	mob_trait = TRAIT_MONKEYLIKE
+// 	gain_text = span_notice("yOu reTurN tO MonKE")
+// 	lose_text = span_danger("I think, there for... I am?")
+// 	locked = FALSE
+// 	human_only = FALSE
 
-/datum/quirk/nosleep
-	name = "Can Not Sleep"
-	desc = "For whatever reason you literally lack the ability to sleep."
-	value = -33 // Increased by ten after observing people with it dying far more often than normal. Might be a skill issue, we'll see how it feels.
-	category = "Lifepath Quirks"
-	mechanics = "You can't sleep. Why is this serious?  We have sleep healing."
-	conflicts = list(
-		/datum/quirk/heavy_sleeper,
-	)
-	mob_trait = TRAIT_SLEEPIMMUNE
-	gain_text = span_notice("You feel like you'll never need to sleep again, for real!")
-	lose_text = span_danger("You could kind of go for a nap.")
-	locked = FALSE
+// /datum/quirk/nosleep
+// 	name = "Can Not Sleep"
+// 	desc = "For whatever reason you literally lack the ability to sleep."
+// 	value = -33 // Increased by ten after observing people with it dying far more often than normal. Might be a skill issue, we'll see how it feels.
+// 	category = "Lifepath Quirks"
+// 	mechanics = "You can't sleep. Why is this serious?  We have sleep healing."
+// 	conflicts = list(
+// 		/datum/quirk/heavy_sleeper,
+// 	)
+// 	mob_trait = TRAIT_SLEEPIMMUNE
+// 	gain_text = span_notice("You feel like you'll never need to sleep again, for real!")
+// 	lose_text = span_danger("You could kind of go for a nap.")
+// 	locked = FALSE
 
 /* Removed because not fucking fun ~TK
 /datum/quirk/garbledspeach
@@ -1476,27 +1476,27 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	var/mob/living/L = quirk_holder
 	L.toggle_move_intent()
 
-/datum/quirk/luddite
-	name = "Luddite"
-	desc = "You forgo some technology, like autolathes and some other machinery."
-	value = -22
-	category = "Lifepath Quirks"
-	mechanics = "You can't use some machines like ammo benches. You can still use autolathes though."
-	conflicts = list(
+// /datum/quirk/luddite
+// 	name = "Luddite"
+// 	desc = "You forgo some technology, like autolathes and some other machinery."
+// 	value = -22
+// 	category = "Lifepath Quirks"
+// 	mechanics = "You can't use some machines like ammo benches. You can still use autolathes though."
+// 	conflicts = list(
 
-	)
-	mob_trait = TRAIT_TECHNOPHOBE
-	gain_text = span_notice("All my homies hate machines.")
-	lose_text = span_danger("Maybe industrial society isn't so bad...")
-	locked =  FALSE
-	human_only = FALSE
+// 	)
+// 	mob_trait = TRAIT_TECHNOPHOBE
+// 	gain_text = span_notice("All my homies hate machines.")
+// 	lose_text = span_danger("Maybe industrial society isn't so bad...")
+// 	locked =  FALSE
+// 	human_only = FALSE
 
 /datum/quirk/nodrugs
 	name = "Clean Veins"
-	desc = "Your body reacts violently to street drugs. Medicines work... for the most part."
+	desc = "Your body reacts violently to drugs. Medicines work... for the most part."
 	value = -22
 	category = "Health Quirks"
-	mechanics = "Drugs of many sorts, including tabacco products, make you violently ill."
+	mechanics = "Drugs of many sorts make you violently ill."
 	conflicts = list(
 
 	)
@@ -1528,7 +1528,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	category = "Functional Quirks"
 	mechanics = "You can't wear any armor that has more than 2 DT or 35 DR against melee, bullets, or lasers."
 	conflicts = list(
-		/datum/quirk/pa_wear
+		//datum/quirk/pa_wear
 	)
 	mob_trait = TRAIT_NO_MED_HVY_ARMOR
 	gain_text = span_boldannounce("You really don't like to feel encumbered.")
@@ -1694,33 +1694,33 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	species.burnmod = 1
 
 
-/datum/quirk/radweakmajor
-	name = "Radiation Weakness, Major"
-	desc = "Gieger Counter? Better pack one. Seriously"
-	value = -55
-	category = "Radiation Quirks"
-	mechanics = "You absorb 100% more radiation."
-	conflicts = list(
-		// /datum/quirk/radimmunesorta,
-		// /datum/quirk/radimmuneish,
-		/datum/quirk/radweak
-	)
-	mob_trait = TRAIT_100_RAD_WEAK
-	locked =  FALSE
+// /datum/quirk/radweakmajor
+// 	name = "Radiation Weakness, Major"
+// 	desc = "Gieger Counter? Better pack one. Seriously"
+// 	value = -55
+// 	category = "Radiation Quirks"
+// 	mechanics = "You absorb 100% more radiation."
+// 	conflicts = list(
+// 		// /datum/quirk/radimmunesorta,
+// 		// /datum/quirk/radimmuneish,
+// 		/datum/quirk/radweak
+// 	)
+// 	mob_trait = TRAIT_100_RAD_WEAK
+// 	locked =  FALSE
 
-/datum/quirk/radweak
-	name = "Radiation Weakness, Minor"
-	desc = "You more likely to die than get superpowers from radiation."
-	value = -22
-	category = "Radiation Quirks"
-	mechanics = "You absorb 50% more radiation"
-	conflicts = list(
-		// /datum/quirk/radimmunesorta,
-		// /datum/quirk/radimmuneish,
-		/datum/quirk/radweakmajor
-	)
-	mob_trait = TRAIT_50_RAD_WEAK
-	locked =  FALSE
+// /datum/quirk/radweak
+// 	name = "Radiation Weakness, Minor"
+// 	desc = "You more likely to die than get superpowers from radiation."
+// 	value = -22
+// 	category = "Radiation Quirks"
+// 	mechanics = "You absorb 50% more radiation"
+// 	conflicts = list(
+// 		// /datum/quirk/radimmunesorta,
+// 		// /datum/quirk/radimmuneish,
+// 		/datum/quirk/radweakmajor
+// 	)
+// 	mob_trait = TRAIT_50_RAD_WEAK
+// 	locked =  FALSE
 
 /datum/quirk/toxinlover
 	name = "Toxin Inversion"

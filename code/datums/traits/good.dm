@@ -138,71 +138,72 @@ GLOBAL_LIST_INIT(security_expert, list(
 //predominantly positive traits
 //this file is named weirdly so that positive traits are listed above negative ones
 
-/datum/quirk/alcohol_tolerance
-	name = "Alcohol Tolerance"
-	desc = "You become drunk more slowly and suffer fewer drawbacks from alcohol."
-	value = 14
-	category = "Food Quirks"
-	mechanics = "Booze only delivers 70% of its alcohol power."
-	conflicts = list(/datum/quirk/alcohol_intolerance)
-	mob_trait = TRAIT_ALCOHOL_TOLERANCE
-	gain_text = span_notice("You feel like you could drink a whole keg!")
-	lose_text = span_danger("You don't feel as resistant to alcohol anymore. Somehow.")
-	medical_record_text = "Patient demonstrates a high tolerance for alcohol."
+// /datum/quirk/alcohol_tolerance
+// 	locked = TRUE
+// 	name = "Alcohol Tolerance"
+// 	desc = "You become drunk more slowly and suffer fewer drawbacks from alcohol."
+// 	value = 14
+// 	category = "Food Quirks"
+// 	mechanics = "Booze only delivers 70% of its alcohol power."
+// 	conflicts = list(/datum/quirk/alcohol_intolerance)
+// 	mob_trait = TRAIT_ALCOHOL_TOLERANCE
+// 	gain_text = span_notice("You feel like you could drink a whole keg!")
+// 	lose_text = span_danger("You don't feel as resistant to alcohol anymore. Somehow.")
+// 	medical_record_text = "Patient demonstrates a high tolerance for alcohol."
 
-/datum/quirk/horrifying_tastes
-	name = "Cannibal"
-	desc = "You eat people. Consuming human flesh doesn't bother you, and dishes such as longpork stew will heal you. Probably don't tell your neighbor. ((This is an OOC trait and should only be found out in character and not through technology.))"
-	mob_trait = TRAIT_LONGPORKLOVER
-	value = 0
-	category = "Food Quirks"
-	mechanics = "Allows you to eat human flesh without being disgusted."
-	conflicts = list(/datum/quirk/vegetarian)
-	gain_text = span_notice("You have an insatiable hunger for the flesh of your fellow man.")
-	lose_text = span_notice("The terrible hunger fades - you feel peace at last.")
+// /datum/quirk/horrifying_tastes
+// 	name = "Cannibal"
+// 	desc = "You eat people. Consuming human flesh doesn't bother you, and dishes such as longpork stew will heal you. Probably don't tell your neighbor. ((This is an OOC trait and should only be found out in character and not through technology.))"
+// 	mob_trait = TRAIT_LONGPORKLOVER
+// 	value = 0
+// 	category = "Food Quirks"
+// 	mechanics = "Allows you to eat human flesh without being disgusted."
+// 	conflicts = list(/datum/quirk/vegetarian)
+// 	gain_text = span_notice("You have an insatiable hunger for the flesh of your fellow man.")
+// 	lose_text = span_notice("The terrible hunger fades - you feel peace at last.")
 
-/datum/quirk/horrifying_tastes/add()
-	var/mob/living/carbon/human/H = quirk_holder
-	var/datum/species/species = H.dna.species
-	species.liked_food |= LONGPORK
-	species.disliked_food &= ~LONGPORK
+// /datum/quirk/horrifying_tastes/add()
+// 	var/mob/living/carbon/human/H = quirk_holder
+// 	var/datum/species/species = H.dna.species
+// 	species.liked_food |= LONGPORK
+// 	species.disliked_food &= ~LONGPORK
 
-/datum/quirk/horrifying_tastes/remove()
-	var/mob/living/carbon/human/H = quirk_holder
-	if(H)
-		var/datum/species/species = H.dna.species
-		species.liked_food &= ~LONGPORK
-		species.disliked_food |= LONGPORK
+// /datum/quirk/horrifying_tastes/remove()
+// 	var/mob/living/carbon/human/H = quirk_holder
+// 	if(H)
+// 		var/datum/species/species = H.dna.species
+// 		species.liked_food &= ~LONGPORK
+// 		species.disliked_food |= LONGPORK
 
-/datum/quirk/tribal
-	name = "Former Tribal"
-	desc = "You used to be part of one of the tribes scattered throughout the wasteland. You may have some additional skills as a result. Allowing you to make some tribal medical supplies. Advanced tech still confuses you though."
-	value = 22
-	category = "Lifepath Quirks"
-	mechanics = "Grants access to a wide variety of recipes and allows you to use primitive chemmasters with which you can make complex potions/poisons."
-	conflicts = list(
-		/datum/quirk/technophreak,
-		/datum/quirk/tribal_tech,
-		)
-	gain_text = span_notice("You remember the old ways of your tribe.")
-	lose_text = span_notice("You've forgotten the ways of your ancestors...")
-	human_only = FALSE
+// /datum/quirk/tribal
+// 	name = "Former Tribal"
+// 	desc = "You used to be part of one of the tribes scattered throughout the wasteland. You may have some additional skills as a result. Allowing you to make some tribal medical supplies. Advanced tech still confuses you though."
+// 	value = 22
+// 	category = "Lifepath Quirks"
+// 	mechanics = "Grants access to a wide variety of recipes and allows you to use primitive chemmasters with which you can make complex potions/poisons."
+// 	conflicts = list(
+// 		/datum/quirk/technophreak,
+// 		/datum/quirk/tribal_tech,
+// 		)
+// 	gain_text = span_notice("You remember the old ways of your tribe.")
+// 	lose_text = span_notice("You've forgotten the ways of your ancestors...")
+// 	human_only = FALSE
 
-/datum/quirk/tribal/add()
-	var/mob/living/carbon/human/H = quirk_holder
-	ADD_TRAIT(H, TRAIT_MACHINE_SPIRITS, "Former Tribal")
-	ADD_TRAIT(H, TRAIT_TRIBAL, "Former Tribal")
-	ADD_TRAIT(H, TRAIT_FORMER_TRIBAL, "ex_tribal_traditions")
-	if(!H.mind.learned_recipes)
-		H.mind.learned_recipes = list()
-	H.mind.learned_recipes |= GLOB.former_tribal_recipes
+// /datum/quirk/tribal/add()
+// 	var/mob/living/carbon/human/H = quirk_holder
+// 	ADD_TRAIT(H, TRAIT_MACHINE_SPIRITS, "Former Tribal")
+// 	ADD_TRAIT(H, TRAIT_TRIBAL, "Former Tribal")
+// 	ADD_TRAIT(H, TRAIT_FORMER_TRIBAL, "ex_tribal_traditions")
+// 	if(!H.mind.learned_recipes)
+// 		H.mind.learned_recipes = list()
+// 	H.mind.learned_recipes |= GLOB.former_tribal_recipes
 
-/datum/quirk/tribal/remove()
-	var/mob/living/carbon/human/H = quirk_holder
-	if(!QDELETED(H))
-		REMOVE_TRAIT(H, TRAIT_MACHINE_SPIRITS, "Former Tribal")
-		REMOVE_TRAIT(H, TRAIT_TRIBAL, "Former Tribal")
-		H.mind.learned_recipes -= GLOB.former_tribal_recipes
+// /datum/quirk/tribal/remove()
+// 	var/mob/living/carbon/human/H = quirk_holder
+// 	if(!QDELETED(H))
+// 		REMOVE_TRAIT(H, TRAIT_MACHINE_SPIRITS, "Former Tribal")
+// 		REMOVE_TRAIT(H, TRAIT_TRIBAL, "Former Tribal")
+// 		H.mind.learned_recipes -= GLOB.former_tribal_recipes
 
 /datum/quirk/apathetic
 	name = "Apathetic"
@@ -234,17 +235,17 @@ GLOBAL_LIST_INIT(security_expert, list(
 		if(mood)
 			mood.mood_modifier = 1 //Change this once/if species get their own mood modifiers.
 
-/datum/quirk/drunkhealing
-	name = "Drunken Resilience"
-	desc = "Nothing like a good drink to make you feel on top of the world. Whenever you're drunk, you slowly recover from damage. Not wounds or bloodloss though."
-	value = 14
-	category = "Food Quirks"
-	mechanics = "When drunk you slowly heal damage from all groups except wounds & bloodloss."
-	conflicts = list(/datum/quirk/alcohol_intolerance)
-	mob_trait = TRAIT_DRUNK_HEALING
-	gain_text = span_notice("You feel like a drink would do you good.")
-	lose_text = span_danger("You no longer feel like drinking would ease your pain.")
-	medical_record_text = "Patient has unusually efficient liver metabolism and can slowly regenerate wounds by drinking alcoholic beverages."
+// /datum/quirk/drunkhealing
+// 	name = "Drunken Resilience"
+// 	desc = "Nothing like a good drink to make you feel on top of the world. Whenever you're drunk, you slowly recover from damage. Not wounds or bloodloss though."
+// 	value = 14
+// 	category = "Food Quirks"
+// 	mechanics = "When drunk you slowly heal damage from all groups except wounds & bloodloss."
+// 	conflicts = list(/datum/quirk/alcohol_intolerance)
+// 	mob_trait = TRAIT_DRUNK_HEALING
+// 	gain_text = span_notice("You feel like a drink would do you good.")
+// 	lose_text = span_danger("You no longer feel like drinking would ease your pain.")
+// 	medical_record_text = "Patient has unusually efficient liver metabolism and can slowly regenerate wounds by drinking alcoholic beverages."
 
 /*/datum/quirk/empath
 	name = "Empath"
@@ -439,54 +440,54 @@ GLOBAL_LIST_INIT(security_expert, list(
 	human_only = FALSE*/// The crafting menu __NEEDS__ to be fixed so you cant queue up recipes multiple times first
 
 
-/datum/quirk/musician
-	name = "Musician"
-	desc = "You can tune instruments to play melodies that clear certain negative effects and can soothe the soul, you even get one of your instruments for free!"
-	value = 14
-	category = "Lifepath Quirks"
-	mechanics = "You spawn with an instrument & tuner. If you use a tuned instrument then you apply a healing chem to those that hear it. Over time this healing chem can build up in thei system to create an even bigger healing effect. It even stacks with other musicians!"
-	conflicts = list(
+// /datum/quirk/musician
+// 	name = "Musician"
+// 	desc = "You can tune instruments to play melodies that clear certain negative effects and can soothe the soul, you even get one of your instruments for free!"
+// 	value = 14
+// 	category = "Lifepath Quirks"
+// 	mechanics = "You spawn with an instrument & tuner. If you use a tuned instrument then you apply a healing chem to those that hear it. Over time this healing chem can build up in thei system to create an even bigger healing effect. It even stacks with other musicians!"
+// 	conflicts = list(
 
-	)
-	mob_trait = TRAIT_MUSICIAN
-	gain_text = span_notice("You know everything about musical instruments.")
-	lose_text = span_danger("You forget how musical instruments work.")
-	medical_record_text = "Patient brain scans show a highly-developed auditory pathway."
-	human_only = FALSE
+// 	)
+// 	mob_trait = TRAIT_MUSICIAN
+// 	gain_text = span_notice("You know everything about musical instruments.")
+// 	lose_text = span_danger("You forget how musical instruments work.")
+// 	medical_record_text = "Patient brain scans show a highly-developed auditory pathway."
+// 	human_only = FALSE
 
-/datum/quirk/musician/on_spawn()
-	var/mob/living/H = quirk_holder
-	var/obj/item/choice_beacon/music/B = new(get_turf(H))
-	H.put_in_hands(B)
-	H.equip_to_slot_if_possible(B, SLOT_IN_BACKPACK)
-	var/obj/item/musicaltuner/musicaltuner = new(get_turf(H))
-	H.put_in_hands(musicaltuner)
-	H.equip_to_slot_if_possible(musicaltuner, SLOT_IN_BACKPACK)
-	if(ishuman(quirk_holder))
-		H.regenerate_icons()
-	else
-		H.update_icons()
+// /datum/quirk/musician/on_spawn()
+// 	var/mob/living/H = quirk_holder
+// 	var/obj/item/choice_beacon/music/B = new(get_turf(H))
+// 	H.put_in_hands(B)
+// 	H.equip_to_slot_if_possible(B, SLOT_IN_BACKPACK)
+// 	var/obj/item/musicaltuner/musicaltuner = new(get_turf(H))
+// 	H.put_in_hands(musicaltuner)
+// 	H.equip_to_slot_if_possible(musicaltuner, SLOT_IN_BACKPACK)
+// 	if(ishuman(quirk_holder))
+// 		H.regenerate_icons()
+// 	else
+// 		H.update_icons()
 
-/datum/quirk/magehand
-	name = "Mage hand"
-	desc = "You gain the ability to use the magehand, a spell to manipulate things around you, and create sparkles!"
-	value = 32
-	category = "Magic Quirks"
-	mechanics = "You spawn with a DNA injector that grants you the magehand ability, be sure to inject it. Remember you cant grab anything bigger than small items!"
-	conflicts = list(
+// /datum/quirk/magehand
+// 	name = "Mage hand"
+// 	desc = "You gain the ability to use the magehand, a spell to manipulate things around you, and create sparkles!"
+// 	value = 32
+// 	category = "Magic Quirks"
+// 	mechanics = "You spawn with a DNA injector that grants you the magehand ability, be sure to inject it. Remember you cant grab anything bigger than small items!"
+// 	conflicts = list(
 
-	)
-	human_only = FALSE
+// 	)
+// 	human_only = FALSE
 
-/datum/quirk/magehand/on_spawn()
-	var/mob/living/H = quirk_holder
-	var/obj/item/dnainjector/telemut/B = new(get_turf(H))
-	H.put_in_hands(B)
-	H.equip_to_slot_if_possible(B, SLOT_IN_BACKPACK)
-	if(ishuman(quirk_holder))
-		H.regenerate_icons()
-	else
-		H.update_icons()
+// /datum/quirk/magehand/on_spawn()
+// 	var/mob/living/H = quirk_holder
+// 	var/obj/item/dnainjector/telemut/B = new(get_turf(H))
+// 	H.put_in_hands(B)
+// 	H.equip_to_slot_if_possible(B, SLOT_IN_BACKPACK)
+// 	if(ishuman(quirk_holder))
+// 		H.regenerate_icons()
+// 	else
+// 		H.update_icons()
 
 /* //placeholder test concluded
 /datum/quirk/wizard
@@ -509,19 +510,19 @@ GLOBAL_LIST_INIT(security_expert, list(
 	H.regenerate_icons()
 */
 
-/datum/quirk/selfaware
-	name = "Self-Aware"
-	desc = "You know your body well, and can accurately assess the extent of your wounds. Sort of like being a medical scanner for yourself."
-	value = 14
-	category = "Emotional Quirks"
-	mechanics = "You know, to the number, how much damage you've taken."
-	conflicts = list(
+// /datum/quirk/selfaware
+// 	name = "Self-Aware"
+// 	desc = "You know your body well, and can accurately assess the extent of your wounds. Sort of like being a medical scanner for yourself."
+// 	value = 14
+// 	category = "Emotional Quirks"
+// 	mechanics = "You know, to the number, how much damage you've taken."
+// 	conflicts = list(
 
-	)
-	mob_trait = TRAIT_SELF_AWARE
-	gain_text = span_notice("You feel deeply aware of your body.")
-	lose_text = span_danger("You lose touch with yourself.")
-	medical_record_text = "Patient demonstrates an uncanny knack for self-diagnosis."
+// 	)
+// 	mob_trait = TRAIT_SELF_AWARE
+// 	gain_text = span_notice("You feel deeply aware of your body.")
+// 	lose_text = span_danger("You lose touch with yourself.")
+// 	medical_record_text = "Patient demonstrates an uncanny knack for self-diagnosis."
 
 /datum/quirk/skittish
 	name = "Skittish"
@@ -552,120 +553,120 @@ GLOBAL_LIST_INIT(security_expert, list(
 	medical_record_text = "Patient reports a belief in a higher power."
 	human_only = FALSE
 
-/datum/quirk/tagger
-	name = "Tagger"
-	desc = "You're an experienced artist. Or, at least you know how to make every drop of paint count."
-	value = 0
-	category = "Lifepath Quirks"
-	mechanics = "You get twice as many uses out of drawing supplies, like spray paint cans! Remember, we have a persistent painting system."
-	conflicts = list(
+// /datum/quirk/tagger
+// 	name = "Tagger"
+// 	desc = "You're an experienced artist. Or, at least you know how to make every drop of paint count."
+// 	value = 0
+// 	category = "Lifepath Quirks"
+// 	mechanics = "You get twice as many uses out of drawing supplies, like spray paint cans! Remember, we have a persistent painting system."
+// 	conflicts = list(
 
-	)
-	mob_trait = TRAIT_TAGGER
-	gain_text = span_notice("You know how to tag walls efficiently.")
-	lose_text = span_danger("You forget how to tag walls properly.")
-	medical_record_text = "Patient was recently seen for possible paint huffing incident."
+// 	)
+// 	mob_trait = TRAIT_TAGGER
+// 	gain_text = span_notice("You know how to tag walls efficiently.")
+// 	lose_text = span_danger("You forget how to tag walls properly.")
+// 	medical_record_text = "Patient was recently seen for possible paint huffing incident."
 
-/datum/quirk/tagger/on_spawn()
-	var/mob/living/carbon/human/H = quirk_holder
-	var/obj/item/toy/crayon/spraycan/spraycan = new(get_turf(H))
-	H.put_in_hands(spraycan)
-	H.equip_to_slot(spraycan, SLOT_IN_BACKPACK)
-	H.regenerate_icons()
+// /datum/quirk/tagger/on_spawn()
+// 	var/mob/living/carbon/human/H = quirk_holder
+// 	var/obj/item/toy/crayon/spraycan/spraycan = new(get_turf(H))
+// 	H.put_in_hands(spraycan)
+// 	H.equip_to_slot(spraycan, SLOT_IN_BACKPACK)
+// 	H.regenerate_icons()
 
-/datum/quirk/technophreak
-	name = "Technophreak"
-	desc = "You're skilled at breaking down old-war rubble more precisely and therefor you gain more salvage from cars and piles than before. Your time with understanding complex technology also \
-	allows you to craft more complex machine parts."
-	value = 32
-	category = "Tech Quirks"
-	mechanics = "You gain 1 to 3 extra scrap from cars and other scrapping resources, with a +1 on top of all scrap as well. As well as gaining access to a decent list of fancy recipes for crafting, like energy weapon cells."
-	conflicts = list(
-		/datum/quirk/tribal,
-		/datum/quirk/dumb,
-		/datum/quirk/luddite,
-		/datum/quirk/primitive,
+// /datum/quirk/technophreak
+// 	name = "Technophreak
+// 	desc = "You're skilled at breaking down old-war rubble more precisely and therefor you gain more salvage from cars and piles than before. Your time with understanding complex technology also 
+// 	allows you to craft more complex machine parts."
+// 	value = 32
+// 	category = "Tech Quirks"
+// 	mechanics = "You gain 1 to 3 extra scrap from cars and other scrapping resources, with a +1 on top of all scrap as well. As well as gaining access to a decent list of fancy recipes for crafting, like energy weapon cells."
+// 	conflicts = list(
+// 		/datum/quirk/tribal,
+// 		/datum/quirk/dumb,
+// 		/datum/quirk/luddite,
+// 		/datum/quirk/primitive,
 
-		)
-	mob_trait = TRAIT_TECHNOPHREAK
-	gain_text = span_notice("Old-War rubble seems considerably more generous to you.")
-	lose_text = span_danger("Old-War rubble suddenly seems less generous to you.")
-	medical_record_text = "Patient appears to really enjoy dismantling old junk."
-	human_only = FALSE
+// 		)
+// 	mob_trait = TRAIT_TECHNOPHREAK
+// 	gain_text = span_notice("Old-War rubble seems considerably more generous to you.")
+// 	lose_text = span_danger("Old-War rubble suddenly seems less generous to you.")
+// 	medical_record_text = "Patient appears to really enjoy dismantling old junk."
+// 	human_only = FALSE
 
-/datum/quirk/technophreak/add()
-	var/mob/living/carbon/human/H = quirk_holder
-	// I made the quirks add the same recipes as the trait books. Feel free to nerf this
-	if(!H.mind.learned_recipes)
-		H.mind.learned_recipes = list()
-	H.mind.learned_recipes |= GLOB.tier_three_parts
-	H.mind.learned_recipes |= GLOB.energyweapon_cell_crafting
-	H.mind.learned_recipes |= GLOB.energyweapon_crafting
-	H.mind.learned_recipes |= GLOB.pa_repair
-	H.mind.learned_recipes |= GLOB.armored_hazard_suit
+// /datum/quirk/technophreak/add()
+// 	var/mob/living/carbon/human/H = quirk_holder
+// 	// I made the quirks add the same recipes as the trait books. Feel free to nerf this
+// 	if(!H.mind.learned_recipes)
+// 		H.mind.learned_recipes = list()
+// 	H.mind.learned_recipes |= GLOB.tier_three_parts
+// 	H.mind.learned_recipes |= GLOB.energyweapon_cell_crafting
+// 	H.mind.learned_recipes |= GLOB.energyweapon_crafting
+// 	H.mind.learned_recipes |= GLOB.pa_repair
+// 	H.mind.learned_recipes |= GLOB.armored_hazard_suit
 
-/datum/quirk/technophreak/remove()
-	var/mob/living/carbon/human/H = quirk_holder
-	if(H)
-		H.mind.learned_recipes -= GLOB.tier_three_parts
-		H.mind.learned_recipes -= GLOB.energyweapon_cell_crafting
-		H.mind.learned_recipes -= GLOB.energyweapon_crafting
-		H.mind.learned_recipes -= GLOB.pa_repair
-		H.mind.learned_recipes -= GLOB.armored_hazard_suit
+// /datum/quirk/technophreak/remove()
+// 	var/mob/living/carbon/human/H = quirk_holder
+// 	if(H)
+// 		H.mind.learned_recipes -= GLOB.tier_three_parts
+// 		H.mind.learned_recipes -= GLOB.energyweapon_cell_crafting
+// 		H.mind.learned_recipes -= GLOB.energyweapon_crafting
+// 		H.mind.learned_recipes -= GLOB.pa_repair
+// 		H.mind.learned_recipes -= GLOB.armored_hazard_suit
 
-/datum/quirk/crafty
-	name = "Crafty"
-	desc = "You are able to craft without the necessities provided by a traditional workbench."
-	value = 25
-	category = "Lifepath Quirks"
-	mechanics = "You do not need a workbench or alchemy table when crafting."
-	human_only = FALSE
-/datum/quirk/crafty/on_spawn()
-	var/mob/living/H = quirk_holder
-	new /obj/machinery/workbench(H)
-	new /obj/machinery/chem_master/primitive(H)
+// /datum/quirk/crafty
+// 	name = "Crafty"
+// 	desc = "You are able to craft without the necessities provided by a traditional workbench."
+// 	value = 25
+// 	category = "Lifepath Quirks"
+// 	mechanics = "You do not need a workbench or alchemy table when crafting."
+// 	human_only = FALSE
+// /datum/quirk/crafty/on_spawn()
+// 	var/mob/living/H = quirk_holder
+// 	new /obj/machinery/workbench(H)
+// 	new /obj/machinery/chem_master/primitive(H)
 
-/datum/quirk/gunsmith
-	name = "Weaponsmith - Basic"
-	desc = "You know how to make various weapons, protective vests, gun mods, and can now forge weapons at an anvil. The list is too large to try and put here."
-	value = 14
-	category = "Crafting Quirks"
-	mechanics = "You gain access to our weapon smithing system. A decent amount of recipes for things you can use, or sell!"
-	conflicts = list(
+// /datum/quirk/gunsmith
+// 	name = "Weaponsmith - Basic"
+// 	desc = "You know how to make various weapons, protective vests, gun mods, and can now forge weapons at an anvil. The list is too large to try and put here."
+// 	value = 14
+// 	category = "Crafting Quirks"
+// 	mechanics = "You gain access to our weapon smithing system. A decent amount of recipes for things you can use, or sell!"
+// 	conflicts = list(
 
-	)
+// 	)
 
-	mob_trait = TRAIT_WEAPONSMITH
-	gain_text = span_notice("You are adept at crafting makeshift weapons.")
-	lose_text = span_danger("You seem to have forgotten how to craft makeshift weapons...")
-	medical_record_text = "Patient appears to enjoy tinkering with custom guns."
+// 	mob_trait = TRAIT_WEAPONSMITH
+// 	gain_text = span_notice("You are adept at crafting makeshift weapons.")
+// 	lose_text = span_danger("You seem to have forgotten how to craft makeshift weapons...")
+// 	medical_record_text = "Patient appears to enjoy tinkering with custom guns."
 
-/datum/quirk/gunsmith/add()
-	var/mob/living/carbon/human/H = quirk_holder
-	// I made the quirks add the same recipes as the trait books. Feel free to nerf this
-	if(!H.mind.learned_recipes)
-		H.mind.learned_recipes = list()
-	H.mind.learned_recipes |= GLOB.weaponcrafting_gun_recipes
-	H.mind.learned_recipes |= GLOB.weapons_of_texarkana
+// /datum/quirk/gunsmith/add()
+// 	var/mob/living/carbon/human/H = quirk_holder
+// 	// I made the quirks add the same recipes as the trait books. Feel free to nerf this
+// 	if(!H.mind.learned_recipes)
+// 		H.mind.learned_recipes = list()
+// 	H.mind.learned_recipes |= GLOB.weaponcrafting_gun_recipes
+// 	H.mind.learned_recipes |= GLOB.weapons_of_texarkana
 
-/datum/quirk/gunsmith/remove()
-	var/mob/living/carbon/human/H = quirk_holder
-	if(H)
-		H.mind.learned_recipes -= GLOB.weaponcrafting_gun_recipes
+// /datum/quirk/gunsmith/remove()
+// 	var/mob/living/carbon/human/H = quirk_holder
+// 	if(H)
+// 		H.mind.learned_recipes -= GLOB.weaponcrafting_gun_recipes
 
-/datum/quirk/masterworksmith
-	name = "Weaponsmith - Masterwork"
-	desc = "Your smithed weapons now do extra damage. Requires Weaponsmith - Basic in order to benefit from!"
-	value = 28
-	category = "Crafting Quirks"
-	mechanics = "You are a MASTER weapon smith, gaining access to the ability to craft masterwork weapons with our crafting system."
-	conflicts = list(
+// /datum/quirk/masterworksmith
+// 	name = "Weaponsmith - Masterwork"
+// 	desc = "Your smithed weapons now do extra damage. Requires Weaponsmith - Basic in order to benefit from!"
+// 	value = 28
+// 	category = "Crafting Quirks"
+// 	mechanics = "You are a MASTER weapon smith, gaining access to the ability to craft masterwork weapons with our crafting system."
+// 	conflicts = list(
 
-	)
-	mob_trait = TRAIT_MASTERWORKSMITH
-	gain_text = span_notice("Your smithed weapons will now be of masterwork quality.")
-	lose_text = span_danger("You seem less adept at crafting masterworks.")
-	medical_record_text = "Patient appears to be a well renowned gunsmith."
+// 	)
+// 	mob_trait = TRAIT_MASTERWORKSMITH
+// 	gain_text = span_notice("Your smithed weapons will now be of masterwork quality.")
+// 	lose_text = span_danger("You seem less adept at crafting masterworks.")
+// 	medical_record_text = "Patient appears to be a well renowned gunsmith."
 
 /datum/quirk/voracious
 	name = "Bottomless Stomach"
@@ -702,8 +703,8 @@ GLOBAL_LIST_INIT(security_expert, list(
 		quirk_holder.blood_ratio = 1
 
 /datum/quirk/tribal_tech
-	name = "Primitive Tech"
-	desc = "You're able to use primitive technology."
+	name = "Alchemically Trained"
+	desc = "You're able to use the potion brewing tables."
 	value = 14
 	category = "Tech Quirks"
 	mechanics = "You gain access to tribal chemmasters to make potions and poisons."
@@ -717,21 +718,21 @@ GLOBAL_LIST_INIT(security_expert, list(
 	locked = TRUE
 	human_only = FALSE
 
-/datum/quirk/dna_whiz
-	name = "Dna Whiz"
-	desc = "You can sequence plant genomes with a snap of your fingers!"
-	value = 32
-	category = "Tech Quirks"
-	mechanics = "You can use plant dna machines, for one reason or another."
-	conflicts = list(
-		/datum/quirk/tribal,
-		/datum/quirk/dumb,
-		/datum/quirk/luddite,
-		/datum/quirk/primitive,
-	)
-	mob_trait = TRAIT_DNAWHIZ
-	gain_text = span_notice("You know how plants work!")
-	lose_text = span_danger("You forgot how plants work... somehow.")
+// /datum/quirk/dna_whiz
+// 	name = "Dna Whiz"
+// 	desc = "You can sequence plant genomes with a snap of your fingers!"
+// 	value = 32
+// 	category = "Tech Quirks"
+// 	mechanics = "You can use plant dna machines, for one reason or another."
+// 	conflicts = list(
+// 		/datum/quirk/tribal,
+// 		/datum/quirk/dumb,
+// 		/datum/quirk/luddite,
+// 		/datum/quirk/primitive,
+// 	)
+// 	mob_trait = TRAIT_DNAWHIZ
+// 	gain_text = span_notice("You know how plants work!")
+// 	lose_text = span_danger("You forgot how plants work... somehow.")
 
 
 /datum/quirk/night_vision
@@ -779,42 +780,42 @@ GLOBAL_LIST_INIT(security_expert, list(
 	quirk_holder.update_sight()
 
 
-/datum/quirk/nukalover
-	name = "Cola Fiend"
-	desc = "You just can't get enough of that hyper-sweetened, tooth-rotting, waistline-widening, pancreas-pummeling sodapop! \
-		So much so that your body has adapted to the sugars and artificial flavorings, processing those calories into healing energy. \
-		Won't do much for that waistline, though."
-	value = 22
-	category = "Food Quirks"
-	mechanics = "Various sodapop-derived drinks will provide (usually minor) healing, typically based on their complexity."
-	conflicts = list(
-		/datum/quirk/vegetarian,
-		/datum/quirk/no_taste,
-	)
-	mob_trait = TRAIT_NUKA_LOVER
-	gain_text = span_notice("You want to buy the whole world a cosmic-cola!")
-	lose_text = span_danger("What's the big deal about cosmic-cola?")
-	medical_record_text = "Patient has an addiction to the soft drink Cosmic-Cola. Somehow, their metabolism has adapted to the sugars and artifical flavorings."
+// /datum/quirk/nukalover
+// 	name = "Cola Fiend"
+// 	desc = "You just can't get enough of that hyper-sweetened, tooth-rotting, waistline-widening, pancreas-pummeling sodapop! 
+// 		So much so that your body has adapted to the sugars and artificial flavorings, processing those calories into healing energy. 
+// 		Won't do much for that waistline, though."
+// 	value = 22
+// 	category = "Food Quirks"
+// 	mechanics = "Various sodapop-derived drinks will provide (usually minor) healing, typically based on their complexity."
+// 	conflicts = list(
+// 		/datum/quirk/vegetarian,
+// 		/datum/quirk/no_taste,
+// 	)
+// 	mob_trait = TRAIT_NUKA_LOVER
+// 	gain_text = span_notice("You want to buy the whole world a cosmic-cola!")
+// 	lose_text = span_danger("What's the big deal about cosmic-cola?")
+// 	medical_record_text = "Patient has an addiction to the soft drink Cosmic-Cola. Somehow, their metabolism has adapted to the sugars and artifical flavorings."
 
-/datum/quirk/nukalover/add()
-	if(!ishuman(quirk_holder))
-		to_chat(quirk_holder, span_warning("You suddenly remember an article in Cat Fancy about how sodie pop can cause liver damage and cancer of the rectum. Might be best to lay off the stuff (especially since you kinda cant actually drink it, not being a human and all)."))
-		return
-	var/mob/living/carbon/human/H = quirk_holder
-	var/datum/species/species = H.dna.species
-	species.liked_food |= NUKA
-	var/obj/item/organ/sodie_organ/gibb = new(H)
-	gibb.Insert(H)
+// /datum/quirk/nukalover/add()
+// 	if(!ishuman(quirk_holder))
+// 		to_chat(quirk_holder, span_warning("You suddenly remember an article in Cat Fancy about how sodie pop can cause liver damage and cancer of the rectum. Might be best to lay off the stuff (especially since you kinda cant actually drink it, not being a human and all)."))
+// 		return
+// 	var/mob/living/carbon/human/H = quirk_holder
+// 	var/datum/species/species = H.dna.species
+// 	species.liked_food |= NUKA
+// 	var/obj/item/organ/sodie_organ/gibb = new(H)
+// 	gibb.Insert(H)
 
-/datum/quirk/nukalover/remove()
-	var/mob/living/carbon/human/H = quirk_holder
-	if(H)
-		var/datum/species/species = H.dna.species
-		species.liked_food = initial(species.liked_food)
-		species.disliked_food = initial(species.disliked_food)
-		var/obj/item/organ/sodie_organ/gibb = H.getorganslot(ORGAN_SLOT_SODIE_ORGAN)
-		if(gibb)
-			qdel(gibb)
+// /datum/quirk/nukalover/remove()
+// 	var/mob/living/carbon/human/H = quirk_holder
+// 	if(H)
+// 		var/datum/species/species = H.dna.species
+// 		species.liked_food = initial(species.liked_food)
+// 		species.disliked_food = initial(species.disliked_food)
+// 		var/obj/item/organ/sodie_organ/gibb = H.getorganslot(ORGAN_SLOT_SODIE_ORGAN)
+// 		if(gibb)
+// 			qdel(gibb)
 
 /datum/quirk/prisonpocket
 	name = "Sleight of Hand"
@@ -897,54 +898,54 @@ GLOBAL_LIST_INIT(security_expert, list(
 	human_only = FALSE
 	
 
-/datum/quirk/chemwhiz
-	name = "Chem Whiz"
-	desc = "You've been playing around with chemicals all your life. You know how to use chemistry machinery."
-	value = 32
-	category = "Crafting Quirks"
-	mechanics = "You gain access to normal chemistry machines."
-	conflicts = list(
-		/datum/quirk/tribal,
-		/datum/quirk/dumb,
-		/datum/quirk/luddite,
-		/datum/quirk/primitive,
-	)
-	mob_trait = TRAIT_CHEMWHIZ
-	gain_text = span_notice("The mysteries of chemistry are revealed to you!")
-	lose_text = span_danger("You forget how water boils.")
-	medical_record_text = "Patient appears to use pharmaceutical labels for OTC drugs."
-	locked =  FALSE
-	human_only = FALSE
+// /datum/quirk/chemwhiz
+// 	name = "Chem Whiz"
+// 	desc = "You've been playing around with chemicals all your life. You know how to use chemistry machinery."
+// 	value = 32
+// 	category = "Crafting Quirks"
+// 	mechanics = "You gain access to normal chemistry machines."
+// 	conflicts = list(
+// 		/datum/quirk/tribal,
+// 		/datum/quirk/dumb,
+// 		/datum/quirk/luddite,
+// 		/datum/quirk/primitive,
+// 	)
+// 	mob_trait = TRAIT_CHEMWHIZ
+// 	gain_text = span_notice("The mysteries of chemistry are revealed to you!")
+// 	lose_text = span_danger("You forget how water boils.")
+// 	medical_record_text = "Patient appears to use pharmaceutical labels for OTC drugs."
+// 	locked =  FALSE
+// 	human_only = FALSE
 
-/datum/quirk/chemwhiz/add()
-	var/mob/living/carbon/human/H = quirk_holder
-	// I made the quirks add the same recipes as the trait books. Feel free to nerf this
-	if(!H.mind.learned_recipes)
-		H.mind.learned_recipes = list()
-	H.mind.learned_recipes |= GLOB.chemwhiz_recipes
+// /datum/quirk/chemwhiz/add()
+// 	var/mob/living/carbon/human/H = quirk_holder
+// 	// I made the quirks add the same recipes as the trait books. Feel free to nerf this
+// 	if(!H.mind.learned_recipes)
+// 		H.mind.learned_recipes = list()
+// 	H.mind.learned_recipes |= GLOB.chemwhiz_recipes
 
-/datum/quirk/chemwhiz/remove()
-	var/mob/living/carbon/human/H = quirk_holder
-	if(H)
-		H.mind.learned_recipes -= GLOB.chemwhiz_recipes
+// /datum/quirk/chemwhiz/remove()
+// 	var/mob/living/carbon/human/H = quirk_holder
+// 	if(H)
+// 		H.mind.learned_recipes -= GLOB.chemwhiz_recipes
 
 
-/datum/quirk/pa_wear
-	name = "Power Armor Crafting"
-	desc = "You've been around the wastes and have learned the wonders of crafting high tech armor from somewhere or something."
-	value = 32
-	category = "Lifepath Quirks"
-	mechanics = "You can craft powerarmor, anyone can wear it though."
-	conflicts = list(
-		/datum/quirk/dumb,
-		/datum/quirk/luddite,
-		/datum/quirk/primitive,
-	)
-	mob_trait = TRAIT_PA_WEAR
-	gain_text = span_notice("You realize how to use Power Armor.")
-	lose_text = span_danger("You forget how Power Armor works...")
-	medical_record_text = "Patient claims to wear a powerful suit of metal."
-	locked = FALSE
+// /datum/quirk/pa_wear
+// 	name = "Power Armor Crafting"
+// 	desc = "You've been around the wastes and have learned the wonders of crafting high tech armor from somewhere or something."
+// 	value = 32
+// 	category = "Lifepath Quirks"
+// 	mechanics = "You can craft powerarmor, anyone can wear it though."
+// 	conflicts = list(
+// 		/datum/quirk/dumb,
+// 		/datum/quirk/luddite,
+// 		/datum/quirk/primitive,
+// 	)
+// 	mob_trait = TRAIT_PA_WEAR
+// 	gain_text = span_notice("You realize how to use Power Armor.")
+// 	lose_text = span_danger("You forget how Power Armor works...")
+// 	medical_record_text = "Patient claims to wear a powerful suit of metal."
+// 	locked = FALSE
 
 
 /datum/quirk/hard_yards
@@ -1031,49 +1032,49 @@ GLOBAL_LIST_INIT(security_expert, list(
 	H.maxHealth += 40
 	H.health += 40
 
-/datum/quirk/iron_fist
-	name = "Fists of Iron"
-	desc = "You have fists of kung-fury! Increases unarmed damage."
-	value = 18
-	category = "Hand to Hand Quirks"
-	mechanics = "Your punches do 6 to 12 damage."
-	conflicts = list(
-		/datum/quirk/nonviolent,
-		/datum/quirk/steel_fist,
-		/datum/quirk/noodle_fist,
-	)
-	mob_trait = TRAIT_IRONFIST
-	gain_text = span_notice("Your fists feel furious!")
-	lose_text = span_danger("Your fists feel calm again.")
-	medical_record_text = "Patient has claimed to have accidentally break pencils when holding them."
-	locked = FALSE
+// /datum/quirk/iron_fist
+// 	name = "Fists of Stone"
+// 	desc = "You have fists of rage! Increases unarmed damage."
+// 	value = 18
+// 	category = "Hand to Hand Quirks"
+// 	mechanics = "Your punches do 6 to 12 damage."
+// 	conflicts = list(
+// 		/datum/quirk/nonviolent,
+// 		/datum/quirk/steel_fist,
+// 		/datum/quirk/noodle_fist,
+// 	)
+// 	mob_trait = TRAIT_IRONFIST
+// 	gain_text = span_notice("Your fists feel furious!")
+// 	lose_text = span_danger("Your fists feel calm again.")
+// 	medical_record_text = "Patient has claimed to have accidentally break pencils when holding them."
+// 	locked = FALSE
 
-/datum/quirk/iron_fist/on_spawn()
-	var/mob/living/carbon/human/H = quirk_holder
-	H.dna.species.punchdamagelow = IRON_FIST_PUNCH_DAMAGE_LOW
-	H.dna.species.punchdamagehigh = IRON_FIST_PUNCH_DAMAGE_MAX
+// /datum/quirk/iron_fist/on_spawn()
+// 	var/mob/living/carbon/human/H = quirk_holder
+// 	H.dna.species.punchdamagelow = IRON_FIST_PUNCH_DAMAGE_LOW
+// 	H.dna.species.punchdamagehigh = IRON_FIST_PUNCH_DAMAGE_MAX
 
-/datum/quirk/steel_fist
-	name = "Fists of Steel"
-	desc = "You have MASSIVE fists of kung-fury! Even MORE increases unarmed damage."
-	value = 36
-	category = "Hand to Hand Quirks"
-	mechanics = "Your punches do 10 to 16 damage, yeowch!"
-	conflicts = list(
-		/datum/quirk/nonviolent,
-		/datum/quirk/iron_fist,
-		/datum/quirk/noodle_fist,
-	)
-	mob_trait = TRAIT_STEELFIST
-	gain_text = span_notice("Your fists feel MASSIVELY furious!")
-	lose_text = span_danger("Your fists feel calm again, what a relief.")
-	medical_record_text = "Patient has accidentally destroyed the door handle to my office. A replacement is needed."
-	locked = FALSE
+// /datum/quirk/steel_fist
+// 	name = "Fists of Steel"
+// 	desc = "You have MASSIVE fists of kung-fury! Even MORE increases unarmed damage."
+// 	value = 36
+// 	category = "Hand to Hand Quirks"
+// 	mechanics = "Your punches do 10 to 16 damage, yeowch!"
+// 	conflicts = list(
+// 		/datum/quirk/nonviolent,
+// 		/datum/quirk/iron_fist,
+// 		/datum/quirk/noodle_fist,
+// 	)
+// 	mob_trait = TRAIT_STEELFIST
+// 	gain_text = span_notice("Your fists feel MASSIVELY furious!")
+// 	lose_text = span_danger("Your fists feel calm again, what a relief.")
+// 	medical_record_text = "Patient has accidentally destroyed the door handle to my office. A replacement is needed."
+// 	locked = FALSE
 
-/datum/quirk/steel_fist/on_spawn()
-	var/mob/living/carbon/human/H = quirk_holder
-	H.dna.species.punchdamagelow = STEEL_FIST_PUNCH_DAMAGE_LOW
-	H.dna.species.punchdamagehigh = STEEL_FIST_PUNCH_DAMAGE_MAX
+// /datum/quirk/steel_fist/on_spawn()
+// 	var/mob/living/carbon/human/H = quirk_holder
+// 	H.dna.species.punchdamagelow = STEEL_FIST_PUNCH_DAMAGE_LOW
+// 	H.dna.species.punchdamagehigh = STEEL_FIST_PUNCH_DAMAGE_MAX
 
 /datum/quirk/surgerylow
 	name = "Minor Surgery"
@@ -1126,52 +1127,52 @@ GLOBAL_LIST_INIT(security_expert, list(
 	locked = FALSE
 	human_only = FALSE
 
-/datum/quirk/explosive_crafting
-	name = "Explosives Crafting"
-	desc = "You have strong feelings about the future of industrial society."
-	value = 14
-	category = "Crafting Quirks"
-	mechanics = "You gain access to the recipes to make all sorts of explosives, including mines!"
-	conflicts = list( //dumb
+// /datum/quirk/explosive_crafting
+// 	name = "Explosives Crafting"
+// 	desc = "You have strong feelings about the future of industrial society."
+// 	value = 14
+// 	category = "Crafting Quirks"
+// 	mechanics = "You gain access to the recipes to make all sorts of explosives, including mines!"
+// 	conflicts = list( //dumb
 
-	)
-	mob_trait = TRAIT_EXPLOSIVE_CRAFTING
-	gain_text = span_notice("You feel like you can make a bomb out of anything.")
-	lose_text = span_danger("You feel okay with the advancement of technology.")
-	medical_record_text = "Patient claims to enjoy making pipe bombs."
-	locked = FALSE
-	human_only = FALSE
+// 	)
+// 	mob_trait = TRAIT_EXPLOSIVE_CRAFTING
+// 	gain_text = span_notice("You feel like you can make a bomb out of anything.")
+// 	lose_text = span_danger("You feel okay with the advancement of technology.")
+// 	medical_record_text = "Patient claims to enjoy making pipe bombs."
+// 	locked = FALSE
+// 	human_only = FALSE
 
-/datum/quirk/explosive_crafting/add()
-	var/mob/living/carbon/human/H = quirk_holder
-	if(!H.mind.learned_recipes)
-		H.mind.learned_recipes = list()
-	// I made the quirks add the same recipes as the trait books. Feel free to nerf this
-	H.mind.learned_recipes |= GLOB.basic_explosive_recipes
-	H.mind.learned_recipes |= GLOB.adv_explosive_recipes
-	H.mind.learned_recipes |= GLOB.minelaying_recipe
+// /datum/quirk/explosive_crafting/add()
+// 	var/mob/living/carbon/human/H = quirk_holder
+// 	if(!H.mind.learned_recipes)
+// 		H.mind.learned_recipes = list()
+// 	// I made the quirks add the same recipes as the trait books. Feel free to nerf this
+// 	H.mind.learned_recipes |= GLOB.basic_explosive_recipes
+// 	H.mind.learned_recipes |= GLOB.adv_explosive_recipes
+// 	H.mind.learned_recipes |= GLOB.minelaying_recipe
 
-/datum/quirk/explosive_crafting/remove()
-	var/mob/living/carbon/human/H = quirk_holder
-	if(H)
-		H.mind.learned_recipes -= GLOB.basic_explosive_recipes
-		H.mind.learned_recipes -= GLOB.adv_explosive_recipes
+// /datum/quirk/explosive_crafting/remove()
+// 	var/mob/living/carbon/human/H = quirk_holder
+// 	if(H)
+// 		H.mind.learned_recipes -= GLOB.basic_explosive_recipes
+// 		H.mind.learned_recipes -= GLOB.adv_explosive_recipes
 
-/datum/quirk/improved_heal
-	name = "Improved Innate Healing"
-	desc = "You have a deeper reservoir for innate healing, whether it's through magic, medical tending, or licking. Check the neutral traits for these abilities."
-	value = 32
-	category = "Healer Quirks"
-	mechanics = "Your innate healing functions now have 25 uses instead of only 5. They will still regenerate at the same speed though."
-	conflicts = list(
+// /datum/quirk/improved_heal
+// 	name = "Improved Innate Healing"
+// 	desc = "You have a deeper reservoir for innate healing, whether it's through magic, medical tending, or licking. Check the neutral traits for these abilities."
+// 	value = 32
+// 	category = "Healer Quirks"
+// 	mechanics = "Your innate healing functions now have 25 uses instead of only 5. They will still regenerate at the same speed though."
+// 	conflicts = list(
 
-	)
-	mob_trait = TRAIT_IMPROVED_HEALING
-	gain_text = span_notice("You feel well hydrated.")
-	lose_text = span_danger("You feel rather dry.")
-	medical_record_text = "Patient exudes a rather invigorating aura. Further study is required."
-	locked = FALSE
-	human_only = FALSE
+// 	)
+// 	mob_trait = TRAIT_IMPROVED_HEALING
+// 	gain_text = span_notice("You feel well hydrated.")
+// 	lose_text = span_danger("You feel rather dry.")
+// 	medical_record_text = "Patient exudes a rather invigorating aura. Further study is required."
+// 	locked = FALSE
+// 	human_only = FALSE
 
 /*
 /datum/quirk/lick_bandage
@@ -1407,7 +1408,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	H.mind.learned_recipes -= GLOB.bonedancer_traditions_recipes
 
 /datum/quirk/brickwall
-	name = "Brick wall"
+	name = "Stone wall"
 	desc = "You just don't move when people try to push you out of the way, for whatever reason."
 	value = 14
 	category = "Movement Quirks"
@@ -1452,71 +1453,71 @@ GLOBAL_LIST_INIT(security_expert, list(
 	locked =  FALSE
 */
 
-/datum/quirk/radimmune
-	name = "Radiation - Immune"
-	desc = "Gieger Counters are for suckers."
-	value = 40
-	category = ""
-	mechanics = ""
-	conflicts = list(
+// /datum/quirk/radimmune
+// 	name = "Radiation - Immune"
+// 	desc = "Gieger Counters are for suckers."
+// 	value = 40
+// 	category = ""
+// 	mechanics = ""
+// 	conflicts = list(
 
-	)
-	mob_trait = TRAIT_RADIMMUNE
-	gain_text = span_notice("You've decided radiation just doesn't matter.")
-	lose_text = span_danger("You no longer feel like you could probably live in a microwave while its on.")
-	locked =  FALSE 
-
-
-/datum/quirk/radimmuneish
-	name = "Radiation - Mostly Immune"
-	desc = "Gieger Counters are for suckers, mostly."
-	value = 15
-	category = "Radiation Quirks"
-	mechanics = "Who needs a geiger counter? Gives 75% innate rad resist."
-	conflicts = list(
-		/datum/quirk/radimmunesorta,
-		/datum/quirk/radweakmajor,
-		/datum/quirk/radweak
-	)
-	mob_trait = TRAIT_75_RAD_RESIST
-	gain_text = span_notice("You've decided that radiation is an afterthought.")
-	lose_text = span_danger("You feel like radiation is very important to you again.")
-	medical_record_text = "Patient appears to be incredibly resilient to a large amount of radiation. X-Ray scans near impossible."
-	locked =  FALSE
-
-/datum/quirk/radimmunesorta
-	name = "Radiation - Sorta Immune"
-	desc = "Gieger Counters are for suckers, sorta. Gives 50% innate rad resist."
-	value = 33
-	category = "Radiation Quirks"
-	mechanics = "You only absorb half of all radiation."
-	conflicts = list(
-		/datum/quirk/radimmuneish,
-		/datum/quirk/radweakmajor,
-		/datum/quirk/radweak
-	)
-	mob_trait = TRAIT_50_RAD_RESIST
-	gain_text = span_notice("You've decided radiation has a weaker effect on you.")
-	lose_text = span_danger("You no longer think you should hang out next to rad puddles.")
-	medical_record_text = "Patient appears to be resilient to some radiation. X-Ray scans are fuzzy. "
-	locked =  FALSE
+// 	)
+// 	mob_trait = TRAIT_RADIMMUNE
+// 	gain_text = span_notice("You've decided radiation just doesn't matter.")
+// 	lose_text = span_danger("You no longer feel like you could probably live in a microwave while its on.")
+// 	locked =  FALSE 
 
 
-/datum/quirk/nohunger
-	name = "Does not Eat"
-	desc = "You don't need to eat to live, lucky you."
-	value = 14
-	category = "Food Quirks"
-	mechanics = "Your hunger never goes down, simple as that."
-	conflicts = list( //any of the eating quirks
-		/datum/quirk/voracious,
-		/datum/quirk/horrifying_tastes,
-	)
-	mob_trait = TRAIT_NOHUNGER
-	gain_text = span_notice("Your need for food has left you.")
-	lose_text = span_danger("GOD YOU WANT A BURGER SO BAD.")
-	medical_record_text = "Patient NEVER eats their food."
-	locked =  FALSE
+// /datum/quirk/radimmuneish
+// 	name = "Radiation - Mostly Immune"
+// 	desc = "Gieger Counters are for suckers, mostly."
+// 	value = 15
+// 	category = "Radiation Quirks"
+// 	mechanics = "Who needs a geiger counter? Gives 75% innate rad resist."
+// 	conflicts = list(
+// 		/datum/quirk/radimmunesorta,
+// 		/datum/quirk/radweakmajor,
+// 		/datum/quirk/radweak
+// 	)
+// 	mob_trait = TRAIT_75_RAD_RESIST
+// 	gain_text = span_notice("You've decided that radiation is an afterthought.")
+// 	lose_text = span_danger("You feel like radiation is very important to you again.")
+// 	medical_record_text = "Patient appears to be incredibly resilient to a large amount of radiation. X-Ray scans near impossible."
+// 	locked =  FALSE
+
+// /datum/quirk/radimmunesorta
+// 	name = "Radiation - Sorta Immune"
+// 	desc = "Gieger Counters are for suckers, sorta. Gives 50% innate rad resist."
+// 	value = 33
+// 	category = "Radiation Quirks"
+// 	mechanics = "You only absorb half of all radiation."
+// 	conflicts = list(
+// 		/datum/quirk/radimmuneish,
+// 		/datum/quirk/radweakmajor,
+// 		/datum/quirk/radweak
+// 	)
+// 	mob_trait = TRAIT_50_RAD_RESIST
+// 	gain_text = span_notice("You've decided radiation has a weaker effect on you.")
+// 	lose_text = span_danger("You no longer think you should hang out next to rad puddles.")
+// 	medical_record_text = "Patient appears to be resilient to some radiation. X-Ray scans are fuzzy. "
+// 	locked =  FALSE
+
+
+// /datum/quirk/nohunger
+// 	name = "Does not Eat"
+// 	desc = "You don't need to eat to live, lucky you."
+// 	value = 14
+// 	category = "Food Quirks"
+// 	mechanics = "Your hunger never goes down, simple as that."
+// 	conflicts = list( //any of the eating quirks
+// 		/datum/quirk/voracious,
+// 		/datum/quirk/horrifying_tastes,
+// 	)
+// 	mob_trait = TRAIT_NOHUNGER
+// 	gain_text = span_notice("Your need for food has left you.")
+// 	lose_text = span_danger("GOD YOU WANT A BURGER SO BAD.")
+// 	medical_record_text = "Patient NEVER eats their food."
+// 	locked =  FALSE
 
 /*
 /datum/quirk/thickskin
@@ -1580,50 +1581,50 @@ GLOBAL_LIST_INIT(security_expert, list(
 	locked =  FALSE
 	human_only = FALSE
 
-/datum/quirk/grappler
-	name = "Trained Grappler"
-	desc = "You've got real skills when it comes to grabbing people by the bits!"
-	value = 32
-	category = "Hand to Hand Quirks"
-	mechanics = "Any grab that you do, even just shift clicking on people, is automatically an aggressive grab. Annoying for making trains of people to move in, but great for forcing a weapon out of someones hand."
-	conflicts = list()
-	mob_trait = TRAIT_STRONG_GRABBER
-	gain_text = span_notice("You feel like you could wrestle a aethergiest!!!")
-	lose_text = span_danger("You no longer feel like you should wrestle aethergiests...")
-	medical_record_text = "Patient is apparently very good at gripping things."
-	locked =  FALSE
-	human_only = FALSE
+// /datum/quirk/grappler
+// 	name = "Trained Grappler"
+// 	desc = "You've got real skills when it comes to grabbing people by the bits!"
+// 	value = 32
+// 	category = "Hand to Hand Quirks"
+// 	mechanics = "Any grab that you do, even just shift clicking on people, is automatically an aggressive grab. Annoying for making trains of people to move in, but great for forcing a weapon out of someones hand."
+// 	conflicts = list()
+// 	mob_trait = TRAIT_STRONG_GRABBER
+// 	gain_text = span_notice("You feel like you could wrestle a aethergiest!!!")
+// 	lose_text = span_danger("You no longer feel like you should wrestle aethergiests...")
+// 	medical_record_text = "Patient is apparently very good at gripping things."
+// 	locked =  FALSE
+// 	human_only = FALSE
 
-/datum/quirk/mastermartialartist
-	name = "Master Martial Artist"
-	desc = "You occasionally hit so hard that they don't even seem like themselves anymore!"
-	value = 32
-	category = "Hand to Hand Quirks"
-	mechanics = "Your punches, when you roll max damage, inflict clone damage instead of normal brute damage on people. Which is harder to heal and generally somewhat devastating."
-	conflicts = list(
-		/datum/quirk/nonviolent,
-		/datum/quirk/noodle_fist,
-	)
-	mob_trait = TRAIT_KI_VAMPIRE
-	gain_text = span_notice("They are already dead.")
-	lose_text = span_danger("Your fists no longer feel so powerful.")
-	medical_record_text = "Patient appears to have dense muscles in their fists."
-	locked =  FALSE
+// /datum/quirk/mastermartialartist
+// 	name = "Master Martial Artist"
+// 	desc = "You occasionally hit so hard that they don't even seem like themselves anymore!"
+// 	value = 32
+// 	category = "Hand to Hand Quirks"
+// 	mechanics = "Your punches, when you roll max damage, inflict clone damage instead of normal brute damage on people. Which is harder to heal and generally somewhat devastating."
+// 	conflicts = list(
+// 		/datum/quirk/nonviolent,
+// 		/datum/quirk/noodle_fist,
+// 	)
+// 	mob_trait = TRAIT_KI_VAMPIRE
+// 	gain_text = span_notice("They are already dead.")
+// 	lose_text = span_danger("Your fists no longer feel so powerful.")
+// 	medical_record_text = "Patient appears to have dense muscles in their fists."
+// 	locked =  FALSE
 
-/datum/quirk/surestrike
-	name = "Sure Strike"
-	desc = "You've either trained for years, got a lucky mutation, or are naturally strong! Your punches always do MAX damage!"
-	value = 32
-	category = "Hand to Hand Quirks"
-	mechanics = "You ALWAYS punch for MAX damage."
-	conflicts = list(
-		/datum/quirk/nonviolent,
-		/datum/quirk/mastermartialartist,
-	)
-	mob_trait = TRAIT_PERFECT_ATTACKER
-	gain_text = span_notice("You feel like you can punch anything!")
-	lose_text = span_danger("Your fists seem to lose their punching finesse.")
-	medical_record_text = "Patient appears to have incredibly dense muscles in their fist."
+// /datum/quirk/surestrike
+// 	name = "Sure Strike"
+// 	desc = "You've either trained for years, got a lucky mutation, or are naturally strong! Your punches always do MAX damage!"
+// 	value = 32
+// 	category = "Hand to Hand Quirks"
+// 	mechanics = "You ALWAYS punch for MAX damage."
+// 	conflicts = list(
+// 		/datum/quirk/nonviolent,
+// 		/datum/quirk/mastermartialartist,
+// 	)
+// 	mob_trait = TRAIT_PERFECT_ATTACKER
+// 	gain_text = span_notice("You feel like you can punch anything!")
+// 	lose_text = span_danger("Your fists seem to lose their punching finesse.")
+// 	medical_record_text = "Patient appears to have incredibly dense muscles in their fist."
 
 /datum/quirk/silentstep
 	name = "Silent Step"
@@ -1663,75 +1664,75 @@ GLOBAL_LIST_INIT(security_expert, list(
 	human_only = FALSE
 	*/
 
-/datum/quirk/straightshooter
-	name = "Straight Shooter"
-	desc = "You're a better than average shot."
-	value = 44
-	category = "Ranged Quirks"
-	mechanics = "Adjusts various accuracy equations to be more in your favor. In general, you're about twice as accurate with guns, and suffer less penalties from one-handing two-hand guns."
-	conflicts = list(
-		/datum/quirk/clumsy,
-		// /datum/quirk/deadeye,
-		/datum/quirk/poor_aim,
-	)
-	mob_trait = TRAIT_NICE_SHOT
-	gain_text = span_notice("Your aim is amazing, and you know it.")
-	lose_text = span_danger("Your aim could use a little more work...")
-	medical_record_text = "Patient repeatedly scores baskets in the trashcan."
-	locked =  FALSE
-	human_only = FALSE
+// /datum/quirk/straightshooter
+// 	name = "Straight Shooter"
+// 	desc = "You're a better than average shot."
+// 	value = 44
+// 	category = "Ranged Quirks"
+// 	mechanics = "Adjusts various accuracy equations to be more in your favor. In general, you're about twice as accurate with guns, and suffer less penalties from one-handing two-hand guns."
+// 	conflicts = list(
+// 		/datum/quirk/clumsy,
+// 		// /datum/quirk/deadeye,
+// 		/datum/quirk/poor_aim,
+// 	)
+// 	mob_trait = TRAIT_NICE_SHOT
+// 	gain_text = span_notice("Your aim is amazing, and you know it.")
+// 	lose_text = span_danger("Your aim could use a little more work...")
+// 	medical_record_text = "Patient repeatedly scores baskets in the trashcan."
+// 	locked =  FALSE
+// 	human_only = FALSE
 
-/datum/quirk/bowtrained
-	name = "Bow Trained"
-	desc = "You've trained quite a bit with bows of many types."
-	value = 14
-	category = "Ranged Quirks"
-	mechanics = "You don't need to press z to pull the string back on a bow, instead you can just spam click to fire rapidly."
-	conflicts = list(
-		/datum/quirk/clumsy,
-		/datum/quirk/masterrifleman,
-	)
-	mob_trait = TRAIT_AUTO_DRAW
-	gain_text = span_notice("You feel like all that training with bows has paid off.")
-	lose_text = span_danger("Guns were always better...")
-	medical_record_text = "Patient shows aptitude for utilizing strings on sticks."
-	locked =  FALSE
-	human_only = FALSE
+// /datum/quirk/bowtrained
+// 	name = "Bow Trained"
+// 	desc = "You've trained quite a bit with bows of many types."
+// 	value = 14
+// 	category = "Ranged Quirks"
+// 	mechanics = "You don't need to press z to pull the string back on a bow, instead you can just spam click to fire rapidly."
+// 	conflicts = list(
+// 		/datum/quirk/clumsy,
+// 		/datum/quirk/masterrifleman,
+// 	)
+// 	mob_trait = TRAIT_AUTO_DRAW
+// 	gain_text = span_notice("You feel like all that training with bows has paid off.")
+// 	lose_text = span_danger("Guns were always better...")
+// 	medical_record_text = "Patient shows aptitude for utilizing strings on sticks."
+// 	locked =  FALSE
+// 	human_only = FALSE
 
-/datum/quirk/masterrifleman
-	name = "Bolt Worker"
-	desc = "You've spent a lot of time working the bolt of a rifle, or the pump action of a shotgun. Your skill allows you to click to work the action instead of doing it manually."
-	value = 14
-	category = "Ranged Quirks"
-	mechanics = "You don't need to press z to rack the bolt of your rifle, instead you can just spam click to fire rapidly."
-	conflicts = list(
-		/datum/quirk/clumsy,
-		/datum/quirk/bowtrained,
-	)
-	mob_trait = TRAIT_FAST_PUMP
-	gain_text = span_notice("In a sudden haze you realize that the Mosin Nagant was Gods gift to mankind.")
-	lose_text = span_danger("After picking some 250 year old cosmoline out from under one of your nails you realize that... Uh, no, the Mosin Nagant is a piece of shit.")
-	medical_record_text = "Patient appears to really enjoy cranking bolts."
-	locked =  FALSE
-	human_only = FALSE
+// /datum/quirk/masterrifleman
+// 	name = "Bolt Worker"
+// 	desc = "You've spent a lot of time working the bolt of a rifle, or the pump action of a shotgun. Your skill allows you to click to work the action instead of doing it manually."
+// 	value = 14
+// 	category = "Ranged Quirks"
+// 	mechanics = "You don't need to press z to rack the bolt of your rifle, instead you can just spam click to fire rapidly."
+// 	conflicts = list(
+// 		/datum/quirk/clumsy,
+// 		/datum/quirk/bowtrained,
+// 	)
+// 	mob_trait = TRAIT_FAST_PUMP
+// 	gain_text = span_notice("In a sudden haze you realize that the Mosin Nagant was Gods gift to mankind.")
+// 	lose_text = span_danger("After picking some 250 year old cosmoline out from under one of your nails you realize that... Uh, no, the Mosin Nagant is a piece of shit.")
+// 	medical_record_text = "Patient appears to really enjoy cranking bolts."
+// 	locked =  FALSE
+// 	human_only = FALSE
 
-/datum/quirk/wandproficient
-	name = "Magically Attuned"
-	desc = "You were either born with a natural inclination for magic or were taught its secrets."
-	value = 0
-	category = "Ranged Quirks"
-	mechanics = "You can use magical wands, staves, and other advanced magical items. However, magic has a cost -- your potential elsewhere is limited, and learning a martial art will sever your connection to magic."
-	conflicts = list(
-	// /datum/quirk/deadeye,
-	/datum/quirk/mastermartialartist,
-	)
+// /datum/quirk/wandproficient
+// 	name = "Magically Attuned"
+// 	desc = "You were either born with a natural inclination for magic or were taught its secrets."
+// 	value = 0
+// 	category = "Ranged Quirks"
+// 	mechanics = "You can use magical wands, staves, and other advanced magical items. However, magic has a cost -- your potential elsewhere is limited, and learning a martial art will sever your connection to magic."
+// 	conflicts = list(
+// 	// /datum/quirk/deadeye,
+// 	/datum/quirk/mastermartialartist,
+// 	)
 
-	mob_trait = TRAIT_WAND_PROFICIENT
-	gain_text = span_notice("You feel magic flowing through your veins!")
-	lose_text = span_danger("The magic within you fades away.")
-	medical_record_text = "Patient exudes an unknown pattern on the monitor. Further analysis required."
-	locked = FALSE
-	human_only = FALSE
+// 	mob_trait = TRAIT_WAND_PROFICIENT
+// 	gain_text = span_notice("You feel magic flowing through your veins!")
+// 	lose_text = span_danger("The magic within you fades away.")
+// 	medical_record_text = "Patient exudes an unknown pattern on the monitor. Further analysis required."
+// 	locked = FALSE
+// 	human_only = FALSE
 
 /datum/quirk/playdead
 	name = "Play Dead"
@@ -1925,33 +1926,33 @@ GLOBAL_LIST_INIT(security_expert, list(
 		H.faction -= list("bees-friend")
 */
 
-/datum/quirk/wildshape
-	name = "Wild Shape"
-	desc = "You've developed through some means the ability to adopt a lesser form. What you become was decided by yourself or mere circumstance, but you can transform back and forth at will."
-	value = 15
-	category = "Mutant Quirks"
-	mechanics = "You gain the shapeshift spell and can cast it nearly at will! This allows you to transform into an animal and back again. Once you select a shape, it cannot be changed."
-	conflicts = list(
+// /datum/quirk/wildshape
+// 	name = "Wild Shape"
+// 	desc = "You've developed through some means the ability to adopt a lesser form. What you become was decided by yourself or mere circumstance, but you can transform back and forth at will."
+// 	value = 15
+// 	category = "Mutant Quirks"
+// 	mechanics = "You gain the shapeshift spell and can cast it nearly at will! This allows you to transform into an animal and back again. Once you select a shape, it cannot be changed."
+// 	conflicts = list(
 
-	)
-	mob_trait = TRAIT_WILDSHAPE
-	gain_text = span_notice("You feel as if your spirit animal is ready to come out and play!")
-	lose_text = span_danger("You no longer have any desires of changing at will.")
-	medical_record_text = "Patient appears to be wild, in some form or another."
-	locked = FALSE
-	var/obj/effect/proc_holder/spell/targeted/shapeshift/wildshape
+// 	)
+// 	mob_trait = TRAIT_WILDSHAPE
+// 	gain_text = span_notice("You feel as if your spirit animal is ready to come out and play!")
+// 	lose_text = span_danger("You no longer have any desires of changing at will.")
+// 	medical_record_text = "Patient appears to be wild, in some form or another."
+// 	locked = FALSE
+// 	var/obj/effect/proc_holder/spell/targeted/shapeshift/wildshape
 
 
-/datum/quirk/wildshape/add()
-	var/mob/living/carbon/human/H = quirk_holder
-	wildshape = new
-	H.AddSpell(wildshape)
+// /datum/quirk/wildshape/add()
+// 	var/mob/living/carbon/human/H = quirk_holder
+// 	wildshape = new
+// 	H.AddSpell(wildshape)
 
-/datum/quirk/wildshape/remove()
-	var/mob/living/carbon/human/H = quirk_holder
-	if(H)
-		H.RemoveSpell(wildshape)
-		QDEL_NULL(wildshape)
+// /datum/quirk/wildshape/remove()
+// 	var/mob/living/carbon/human/H = quirk_holder
+// 	if(H)
+// 		H.RemoveSpell(wildshape)
+// 		QDEL_NULL(wildshape)
 
 /datum/quirk/zoomies
 	name = "Zoomies"
@@ -1997,55 +1998,55 @@ GLOBAL_LIST_INIT(security_expert, list(
 	locked =  FALSE
 	human_only = FALSE*/ // Artifacts are identified in 5 seconds, potential change in the future to let you spawn with an artifact
 
-/datum/quirk/armblader
-	name = "Arm Blader"
-	desc = "Through some genetic quirk you have access to horrifying arm blades made out of bone with the *armblade verb."
+// /datum/quirk/armblader
+// 	name = "Arm Blader"
+// 	desc = "Through some genetic quirk you have access to horrifying arm blades made out of bone with the *armblade verb."
 
-	value = 32
-	category = "Mutant Quirks"
-	mechanics = "Your arm can turn into a horrible flesh blade."
-	conflicts = list()
-	mob_trait = TRAIT_ARMBLADE
-	gain_text = span_notice("You feel as your arm is heavier...")
-	lose_text = span_danger("Your arm feels lighter...")
-	medical_record_text = "Patient appears to possess a knife, somehow."
-	human_only = FALSE
+// 	value = 32
+// 	category = "Mutant Quirks"
+// 	mechanics = "Your arm can turn into a horrible flesh blade."
+// 	conflicts = list()
+// 	mob_trait = TRAIT_ARMBLADE
+// 	gain_text = span_notice("You feel as your arm is heavier...")
+// 	lose_text = span_danger("Your arm feels lighter...")
+// 	medical_record_text = "Patient appears to possess a knife, somehow."
+// 	human_only = FALSE
 
 
-/datum/quirk/mantisblade
-	name = "Cybernetic Arm Blader"
-	desc = "Through some cybernetic modifications, you have access to horrifying arm cyberblade with the *cyber verb."
+// /datum/quirk/mantisblade
+// 	name = "Cybernetic Arm Blader"
+// 	desc = "Through some cybernetic modifications, you have access to horrifying arm cyberblade with the *cyber verb."
 
-	value = 32
-	category = "Mutant Quirks"
-	mechanics = "Your arm can turn into a horrifying cyberblade"
-	conflicts = list()
-	mob_trait = TRAIT_CYBERKNIFE
-	gain_text = span_notice("You feel as your arm is heavier...")
-	lose_text = span_danger("Your arm feels lighter...")
-	medical_record_text = "Patient appears to possess a cybernetic armblade."
-	human_only = FALSE
+// 	value = 32
+// 	category = "Mutant Quirks"
+// 	mechanics = "Your arm can turn into a horrifying cyberblade"
+// 	conflicts = list()
+// 	mob_trait = TRAIT_CYBERKNIFE
+// 	gain_text = span_notice("You feel as your arm is heavier...")
+// 	lose_text = span_danger("Your arm feels lighter...")
+// 	medical_record_text = "Patient appears to possess a cybernetic armblade."
+// 	human_only = FALSE
 
-/datum/quirk/tentaclearm
-	name = "Arm Tentacle"
-	desc = "Through some genetic quirk you have access to horrifying arm tentacle to grab people and mobs with. Use *tentarm verb to summon it."
-	value = 28 // You grab an item from a distance, auto-activates grenades in your hand, its not great, but not terrible.
-	category = "Mutant Quirks"
-	mechanics = "Your arm can turn into a horrible meat bludgeon."
-	conflicts = list()
-	mob_trait = TRAIT_ARMTENT
-	gain_text = span_notice("You feel as your arm is wriggling...")
-	lose_text = span_danger("Your arm feels lighter...")
-	medical_record_text = "Patient appears to possess a club, somehow."
+// /datum/quirk/tentaclearm
+// 	name = "Arm Tentacle"
+// 	desc = "Through some genetic quirk you have access to horrifying arm tentacle to grab people and mobs with. Use *tentarm verb to summon it."
+// 	value = 28 // You grab an item from a distance, auto-activates grenades in your hand, its not great, but not terrible.
+// 	category = "Mutant Quirks"
+// 	mechanics = "Your arm can turn into a horrible meat bludgeon."
+// 	conflicts = list()
+// 	mob_trait = TRAIT_ARMTENT
+// 	gain_text = span_notice("You feel as your arm is wriggling...")
+// 	lose_text = span_danger("Your arm feels lighter...")
+// 	medical_record_text = "Patient appears to possess a club, somehow."
 
-/datum/quirk/magegrab
-	name = "Mage Grab" // Better name pending
-	desc = "Through some powerful spell, you can now grab items from a distance. Effectively identical to tentacle arms, but not tentacles."
-	value = 28
-	category = "Magic Quirks"
-	mechanics = "You can fire a beam that teleports items into your hand, or drags mobs to you."
-	conflicts = list()
-	mob_trait = TRAIT_MAGEGRAB
+// /datum/quirk/magegrab
+// 	name = "Mage Grab" // Better name pending
+// 	desc = "Through some powerful spell, you can now grab items from a distance. Effectively identical to tentacle arms, but not tentacles."
+// 	value = 28
+// 	category = "Magic Quirks"
+// 	mechanics = "You can fire a beam that teleports items into your hand, or drags mobs to you."
+// 	conflicts = list()
+// 	mob_trait = TRAIT_MAGEGRAB
 
 /datum/quirk/bigbiter
 	name = "Biter - Big"
@@ -2300,27 +2301,27 @@ GLOBAL_LIST_INIT(security_expert, list(
 	lose_text = span_danger("You no longer know how to cast shocking grasp!.")
 	human_only = FALSE
 
-/datum/quirk/telepathy
-	name = "Innate Telepathy"
-	desc = "You innately have the ability to project your thoughts directly into the minds of others."
-	value = 0 
-	category = "Magic Quirks"
-	mechanics = "You can use a telepathy spell to speak to others' minds directly. However, you and your target will glow so it's quite obvious you casted it."
-	// conflicts = list(/datum/quirk/mute) // Negligibly useful quirk shouldnt cost points or slots, but also shouldnt make a big negative into free points. Also you can get telepathy through genetics, which is easier now.
-	mob_trait = TRAIT_TELEPATHY
-	gain_text = span_notice("You suddenly don't feel the need to talk out loud anymore.")
-	lose_text = span_danger("Talking out loud suddenly feels like a much better idea.")
-	medical_record_text = "Patient appears to posess the ability to speak directly to the minds of others."
-	human_only = FALSE
+// /datum/quirk/telepathy
+// 	name = "Innate Telepathy"
+// 	desc = "You innately have the ability to project your thoughts directly into the minds of others."
+// 	value = 0 
+// 	category = "Magic Quirks"
+// 	mechanics = "You can use a telepathy spell to speak to others' minds directly. However, you and your target will glow so it's quite obvious you casted it."
+// 	// conflicts = list(/datum/quirk/mute) // Negligibly useful quirk shouldnt cost points or slots, but also shouldnt make a big negative into free points. Also you can get telepathy through genetics, which is easier now.
+// 	mob_trait = TRAIT_TELEPATHY
+// 	gain_text = span_notice("You suddenly don't feel the need to talk out loud anymore.")
+// 	lose_text = span_danger("Talking out loud suddenly feels like a much better idea.")
+// 	medical_record_text = "Patient appears to posess the ability to speak directly to the minds of others."
+// 	human_only = FALSE
 
-/datum/quirk/telepathy/add()
-	quirk_holder.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/telepathy/quirk)
+// /datum/quirk/telepathy/add()
+// 	quirk_holder.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/telepathy/quirk)
 
-/datum/quirk/telepathy/remove()
-	if(LAZYLEN(quirk_holder?.mind?.spell_list))
-		for(var/s in quirk_holder?.mind?.spell_list)
-			if(istype(s, /obj/effect/proc_holder/spell/targeted/telepathy/quirk))
-				quirk_holder.mind.RemoveSpell(s)
+// /datum/quirk/telepathy/remove()
+// 	if(LAZYLEN(quirk_holder?.mind?.spell_list))
+// 		for(var/s in quirk_holder?.mind?.spell_list)
+// 			if(istype(s, /obj/effect/proc_holder/spell/targeted/telepathy/quirk))
+// 				quirk_holder.mind.RemoveSpell(s)
 
 //datum/quirk/booming
 	//name = "Booming Blade"
