@@ -101,6 +101,8 @@
 	name = "crafting menu"
 	icon = 'icons/fallout/UI/screen_fallout2.dmi'
 	icon_state = "craft"
+	alpha = 0
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	screen_loc = ui_crafting
 
 /atom/movable/screen/area_creator
