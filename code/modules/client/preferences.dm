@@ -573,14 +573,14 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				llogin_msg += " ([span_alert("[SSeconomy.format_currency(cash_change, TRUE)]")] inactivity tax)"
 			llogin_msg += "</center>"
 			dat += llogin_msg.Join()
-			if(CONFIG_GET(flag/roundstart_traits))
-				dat += "<center>"
-				if(SSquirks.initialized && !(PMC_QUIRK_OVERHAUL_2K23 in current_version))
-					dat += "<a href='?_src_=prefs;preference=quirk_migrate'>CLICK HERE to migrate your old quirks to the new system!</a>"
-				dat += "<a href='?_src_=prefs;preference=quirkmenu'>"
-				dat += "<h2>Configure Quirks</a></h2><br></center>"
-				dat += "</a>"
-				dat += "<center><b>Current Quirks:</b> [get_my_quirks()]</center>"
+			// if(CONFIG_GET(flag/roundstart_traits))
+			// 	dat += "<center>"
+			// 	if(SSquirks.initialized && !(PMC_QUIRK_OVERHAUL_2K23 in current_version))
+			// 		dat += "<a href='?_src_=prefs;preference=quirk_migrate'>CLICK HERE to migrate your old quirks to the new system!</a>"
+			// 	dat += "<a href='?_src_=prefs;preference=quirkmenu'>"
+			// 	dat += "<h2>Configure Quirks</a></h2><br></center>"
+			// 	dat += "</a>"
+			// 	dat += "<center><b>Current Quirks:</b> [get_my_quirks()]</center>"
 			dat += "<center><h2>Character Atributes</h2>"
 			dat += "<a href='?_src_=prefs;preference=special;task=menu'>Allocate Points</a><br></center>"
 			//Left Column

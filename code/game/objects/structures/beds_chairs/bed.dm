@@ -224,9 +224,9 @@
 //Dog bed
 
 /obj/structure/bed/dogbed
-	name = "dog bed"
+	name = "pet bed"
 	icon_state = "dogbed"
-	desc = "A comfy-looking dog bed. You can even strap your pet in, in case the gravity turns off."
+	desc = "A comfy-looking pet bed. You can strap your pet in, or your bottom."
 	anchored = FALSE
 	buildstacktype = /obj/item/stack/sheet/mineral/wood
 	buildstackamount = 10

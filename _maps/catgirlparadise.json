@@ -1,0 +1,32 @@
+{
+	"map_name": "catgirlparadise",
+	"map_path": "map_files/coyote_bayou",
+	"map_file": [
+		"catgirlparadise.dmm"
+	],
+	"station_ruin_budget":0,
+	"space_ruin_levels":0,
+	"space_empty_levels":0,
+	"shuttles": {
+		"cargo":"cargo_pahrump",
+		"emergency": "emergency_pahrump",
+		"ferry": "ferry_fancy"
+	},
+	"traits":[
+		
+		{
+			"Gravity": true,
+			"Baseturf": "/turf/open/indestructible/ground/inside/mountain",
+			"Dungeons": true,
+			"Up": 1,
+			"Down": 1,
+			"No Parallax": true,
+			"Linkage" : "Cross",
+			"Name": "Catgirl Jungle",
+			"Force X": 2,
+			"Force Y": 2,
+			"Force Z": 0
+		}
+	],
+	"minetype": "none"
+}

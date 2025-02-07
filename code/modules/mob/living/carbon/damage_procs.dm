@@ -6,6 +6,8 @@
 	var/hit_percent = (100-blocked)/100
 	if(!forced && hit_percent <= 0)
 		return 0
+	if(damage >= 0 && SSmobs.all_damage_is_stamina)
+		damagetype = STAMINA
 
 	var/obj/item/bodypart/BP = null
 	if(!spread_damage)
@@ -106,10 +108,10 @@
 	if(HAS_TRAIT(src, TRAIT_TOXINLOVER)) //damage becomes healing and healing becomes damage
 		if(!forced && !force_be_heal)
 			amount = -amount
-		if(amount > 0)
-			blood_volume -= 3 * amount		//5x was too much, this is punishing enough.
-		else
-			blood_volume += abs(amount)
+		// if(amount > 0)
+		// 	blood_volume -= 3 * amount		//5x was too much, this is punishing enough.
+		// else
+		// 	blood_volume += abs(amount)
 	return ..()
 
 /mob/living/carbon/getStaminaLoss()

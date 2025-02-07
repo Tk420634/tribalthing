@@ -52,12 +52,12 @@
 	if(client?.prefs)
 		output += "<center><p>Welcome, <b>[client.prefs.be_random_name ? "random name player" : client.prefs.real_name]</b></p>"
 		output += "<center><p><a href='byond://?src=[REF(src)];show_preferences=1'>Setup Character</a></p>"
-		if(SSquirks.initialized)
-			if(!(PMC_QUIRK_OVERHAUL_2K23 in client.prefs.current_version))
-				output += "<center><p>[span_alert("You have quirks from the old system that haven't been converted!")]</p>"
-				output += "<center><p><a href='byond://?src=[REF(src)];quirkconversion=1'>Click here to do something about that!</a></p>"
-			else
-				output += "<center><p><a href='byond://?src=[REF(src)];quirks=1'>Configure Quirks!</a></p>"
+		// if(SSquirks.initialized)
+		// 	if(!(PMC_QUIRK_OVERHAUL_2K23 in client.prefs.current_version))
+		// 		output += "<center><p>[span_alert("You have quirks from the old system that haven't been converted!")]</p>"
+		// 		output += "<center><p><a href='byond://?src=[REF(src)];quirkconversion=1'>Click here to do something about that!</a></p>"
+		// 	else
+		// 		output += "<center><p><a href='byond://?src=[REF(src)];quirks=1'>Configure Quirks!</a></p>"
 		output += "<center><p><a href='byond://?src=[REF(src)];show_hornychat=1'>Open VisualChat / Profile Pic Settings!</a></p>"
 		// output += "<center><p><a href='byond://?src=[REF(src)];show_hornychat=1'>Configure Profile Pics!</a></p>"
 
@@ -754,12 +754,13 @@
 					dat += "<div class='notice red'>The area is currently undergoing evacuation procedures.</div><br>"
 
 	dat += "<table><tr><td valign='top'>"
-	var/column_counter = 0
+	// var/column_counter = 0
 	// render each category's available jobs
 	for(var/category in GLOB.position_categories)
 		// position_categories contains category names mapped to available jobs and an appropriate color
 		var/cat_color = GLOB.position_categories[category]["color"]
-		dat += "<fieldset style='width: 185px; border: 2px solid [cat_color]; display: inline'>"
+		// dat += "<fieldset style='width: 185px; border: 2px solid [cat_color]; display: inline'>"
+		dat += "<fieldset style='border: 2px solid [cat_color]; display: inline'>"
 		dat += "<legend align='center' style='color: [cat_color]'>[category]</legend>"
 		var/list/dept_dat = list()
 		for(var/job in GLOB.position_categories[category]["jobs"])
@@ -773,9 +774,9 @@
 			dept_dat += "<span class='nopositions'>No positions open.</span>"
 		dat += jointext(dept_dat, "")
 		dat += "</fieldset><br>"
-		column_counter++
-		if(column_counter > 0 && (column_counter % 3 == 0))
-			dat += "</td><td valign='top'>"
+		// column_counter++
+		// if(column_counter > 0 && (column_counter % 3 == 0))
+		// 	dat += "</td><td valign='top'>"
 	dat += "</td></tr></table></center>"
 	dat += "</div></div>"
 	var/datum/browser/popup = new(src, "latechoices", "Choose Profession", 680, 680)

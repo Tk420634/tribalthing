@@ -104,6 +104,8 @@
 	screen_loc = ui_crafting
 
 /atom/movable/screen/area_creator
+	alpha = 0
+	mouse_opacity = 0
 	name = "create new area"
 	icon = 'icons/fallout/UI/screen_fallout2.dmi'
 	icon_state = "area_edit"

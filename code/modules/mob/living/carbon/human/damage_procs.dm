@@ -3,6 +3,8 @@
 /mob/living/carbon/human/apply_damage(damage = 0,damagetype = BRUTE, def_zone = null, blocked = FALSE, forced = FALSE, spread_damage = FALSE, wound_bonus = 0, bare_wound_bonus = 0, sharpness = SHARP_NONE, damage_threshold = 0, sendsignal = TRUE, damage_coverings = TRUE)
 	if(!forced && damage <= 0)
 		return 0
+	if(damage >= 0 && SSmobs.all_damage_is_stamina)
+		damagetype = STAMINA
 	INVOKE_ASYNC(dna.species, PROC_REF(apply_damage), damage, damagetype, def_zone, blocked, src, forced, spread_damage, wound_bonus, bare_wound_bonus, sharpness, damage_threshold, sendsignal, damage_coverings)
 	return TRUE
 

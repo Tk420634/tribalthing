@@ -178,12 +178,11 @@ GLOBAL_LIST_INIT(grass_plant_list, list(
 	))
 
 GLOBAL_LIST_INIT(tree_plant_list, list(
-	/obj/structure/flora/newtree = 40,
-	// /obj/structure/flora/tree/jungle = 15,
-	// /obj/structure/flora/tree/jungle/small = 15,
-	// /obj/structure/flora/tree/med_pine = 7,
-	// /obj/structure/flora/tree/med_pine_dead = 7,
-	// /obj/structure/flora/tree_stump = 5,
+	/obj/structure/flora/tree/jungle = 15,
+	/obj/structure/flora/tree/jungle/small = 15,
+	/obj/structure/flora/tree/med_pine = 7,
+	/obj/structure/flora/tree/med_pine_dead = 7,
+	/obj/structure/flora/tree_stump = 5,
 	// /obj/structure/flora/tree/african_acacia_dead = 5,
 	/obj/structure/flora/tree/cypress_tree = 5,
 	/obj/structure/flora/tree/rainforest_tree = 5,

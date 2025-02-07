@@ -18,6 +18,10 @@ SUBSYSTEM_DEF(mobs)
 	var/debug_no_icon_2_html = FALSE
 	var/debug_everyone_has_robuster_searching = FALSE
 
+	var/use_pvp_check = FALSE
+	var/all_damage_is_stamina = TRUE
+	var/autoheal_to_stamina = TRUE
+
 	var/distance_where_a_player_needs_to_be_in_for_npcs_to_fight_other_npcs = 12
 
 	var/debug_disable_mob_ceasefire = TRUE // this feature sucks

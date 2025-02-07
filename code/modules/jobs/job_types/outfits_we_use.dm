@@ -92,15 +92,35 @@
 	pda = /obj/item/pda
 
 /datum/outfit/job/cb/guild/deputy
-	name = "Deputy"
+	name = "Trooper"
 	jobtype = /datum/job/townfolk/f13deputy
-	uniform	= /obj/item/clothing/under/f13/ncr
+	head = /obj/item/clothing/head/helmet/swat
+	belt = /obj/item/storage/belt/army
+	uniform = /obj/item/clothing/under/f13/enclave/peacekeeper
+	gloves = /obj/item/clothing/gloves/f13/leather/fingerless
+	shoes = /obj/item/clothing/shoes/jackboots
+	backpack_contents = list(
+		/obj/item/grenade/flashbang = 3,
+		/obj/item/melee/classic_baton/telescopic = 1,
+		/obj/item/gun/energy/taser = 1,
+		/obj/item/flashlight/seclite = 1
+	)
+
 
 /datum/outfit/job/cb/guild/deputy/sheriff
-	name = "Sheriff"
+	name = "Squad Leader"
 	jobtype = /datum/job/townfolk/f13sheriff
-	card = /obj/item/card/id/silver
-	uniform	= /obj/item/clothing/under/f13/ncr/ncr_officer
+	head = /obj/item/clothing/head/beret
+	belt = /obj/item/storage/belt/army
+	uniform = /obj/item/clothing/under/f13/enclave/peacekeeper
+	gloves = /obj/item/clothing/gloves/f13/leather/fingerless
+	shoes = /obj/item/clothing/shoes/jackboots
+	backpack_contents = list(
+		/obj/item/grenade/flashbang = 3,
+		/obj/item/melee/classic_baton/telescopic = 1,
+		/obj/item/gun/energy/taser = 1,
+		/obj/item/flashlight/seclite = 1
+	)
 
 /datum/outfit/job/cb/guild/radio
 	name = "Radio Operator"

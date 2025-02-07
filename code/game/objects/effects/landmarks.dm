@@ -753,11 +753,11 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	icon_state = "Lawyer"
 
 /obj/effect/landmark/start/f13/sheriff
-	name = "Sheriff"
+	name = "Squad Leader"
 	icon_state = "Chief of Police"
 
 /obj/effect/landmark/start/f13/deputy
-	name = "Deputy"
+	name = "Trooper"
 	icon_state = "Officer"
 
 /obj/effect/landmark/start/f13/farmer
@@ -1107,12 +1107,14 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	icon_state = "Tribal"
 
 /obj/effect/landmark/start/f13/hunter
-	name = "Forager"
+	name = "Warrior"
 	icon_state = "Tribal"
+	color = "#FF0000"
 
 /obj/effect/landmark/start/f13/Hhunter
-	name = "Head Forager"
+	name = "Head Warrior"
 	icon_state = "Tribal"
+	color = "#00FF00"
 
 /obj/effect/landmark/start/f13/druid
 	name = "Harvest Leader"

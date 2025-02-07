@@ -222,6 +222,8 @@
 	hurted.safe_throw_at(throw_target, howfar, 1, attacker)
 
 /proc/PVPcheck(mob/living/attacker, mob/living/hurted)
+	if(!SSmobs.use_pvp_check)
+		return TRUE
 	if(!attacker || !hurted)
 		return TRUE // sure do whatever
 	if(isanimal(hurted))

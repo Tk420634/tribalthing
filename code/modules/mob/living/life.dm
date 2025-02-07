@@ -82,6 +82,8 @@
 
 	handle_wounds()
 
+	handle_passive_heal()
+
 	// Everything after this shouldn't process while dead (as of the time of writing)
 	if(stat == DEAD)
 		return FALSE
@@ -275,3 +277,19 @@
 			heal_reservoir = min(heal_reservoir,heal_max)
 	if(heal_reservoir > 0)
 		heal_reservoir += -0.1
+
+/mob/living/proc/handle_passive_heal()
+	if(!SSmobs.autoheal_to_stamina)
+		return
+	var/brut = getBruteLoss()
+	var/fire = getFireLoss()
+	var/oxy = getOxyLoss()
+	var/tox = getToxLoss()
+	if(brut > 0 || fire > 0 || oxy > 0 || tox > 0)
+		var/adjustby = brut + fire + oxy + tox
+		var/actuallyadjustby = clamp((adjustby/10) + 5, 0, adjustby)
+		adjustBruteLoss(-actuallyadjustby)
+		adjustFireLoss(-actuallyadjustby)
+		adjustOxyLoss(-actuallyadjustby)
+		adjustToxLoss(-actuallyadjustby, force_be_heal = TRUE)
+		adjustStaminaLoss(actuallyadjustby)
