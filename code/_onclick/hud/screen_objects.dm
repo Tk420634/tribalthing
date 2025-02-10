@@ -439,6 +439,8 @@
 		L.resist()
 
 /atom/movable/screen/questbook
+	alpha = 0 
+	mouse_opacity = 0
 	name = "Open Questbook"
 	icon = 'icons/fallout/UI/buttons_fallout2.dmi'
 	icon_state = "act_resist"
@@ -450,6 +452,8 @@
 		SSeconomy.open_quest_console(usr)
 
 /atom/movable/screen/scannerpls
+	alpha = 0 
+	mouse_opacity = 0
 	name = "Get a Quest Scanner"
 	icon = 'icons/fallout/UI/buttons_fallout2.dmi'
 	icon_state = "act_scannerpls"

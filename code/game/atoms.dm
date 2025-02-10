@@ -121,6 +121,8 @@
 	var/list/quest_tag
 	/// Override the deletion of this atom for quests
 	var/important
+	var/very_important
+	var/disappear_after
 
 /atom/New(loc, ...)
 	//atom creation method that preloads variables at creation
@@ -180,6 +182,10 @@
 	SSatoms.everything[type]++
 
 	InitTastes()
+	if(very_important)
+		importantize()
+	if(disappear_after)
+		SSautodisappear.register_thing(src, disappear_after)
 
 	return INITIALIZE_HINT_NORMAL
 
@@ -1394,3 +1400,7 @@
 
 /atom/proc/wingetproc(id, params)
 	return winget(src, id, params)
+
+/atom/proc/importantize()
+	SSticker.important_things += src
+	SSticker.onmap_z = z

@@ -625,6 +625,7 @@
 	hitsound = 'sound/weapons/smash.ogg'
 	attack_speed = CLICK_CD_MELEE * 0.7
 	block_chance = 30 // Skill based gameplay
+	berryable = TRUE
 
 /obj/item/melee/coyote/olddervish
 	name = "Old Dervish Blade"

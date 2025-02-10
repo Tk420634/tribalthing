@@ -1598,6 +1598,11 @@
 	icon_dead = "cow_dead"
 	icon_gib = "brahmin_gib"
 
+/mob/living/simple_animal/cow/brahmin/cow/lulubelle //return to bovine
+	name = "Lulu Belle"
+	desc = "A black and white cow that came with the Marines. The Tribals call her Moo, or Moo Moo and value her beyond reason."
+	very_important = TRUE
+
 /mob/living/simple_animal/cow/brahmin/cow/Initialize()
 	.=..()
 	resize = 0.7

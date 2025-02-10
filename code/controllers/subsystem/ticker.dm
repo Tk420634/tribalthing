@@ -77,6 +77,9 @@ SUBSYSTEM_DEF(ticker)
 
 	var/station_integrity = 100				// stored at roundend for use in some antag goals
 
+	var/list/important_things = list()
+	var/onmap_z = 0
+
 /datum/controller/subsystem/ticker/Initialize(timeofday)
 	load_mode()
 

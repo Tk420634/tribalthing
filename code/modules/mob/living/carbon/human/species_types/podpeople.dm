@@ -74,4 +74,4 @@
 	light_toxheal = -0.7
 	tail_type = "mam_tail"
 	wagging_type = "mam_waggingtail"
-	roundstart = TRUE
+	// roundstart = TRUE

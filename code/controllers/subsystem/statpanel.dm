@@ -28,13 +28,13 @@ SUBSYSTEM_DEF(statpanels)
 			//"Map: [SSmapping.config?.map_name || "Loading..."]",
 			cached ? "Next Map: [cached.map_name]" : null,
 			"Round Number: [GLOB.round_id ? GLOB.round_id : "NULL"]",
-			//"Server Time: [time2text(world.timeofday, "YYYY-MM-DD hh:mm:ss")]",
+			"Server Time: [time2text(world.timeofday, "YYYY-MM-DD hh:mm:ss")]",
 			"Round Time: [ROUND_TIME]",
-			//"Station Time: [STATION_TIME_TIMESTAMP(FALSE, world.time)]",
+			"Station Time: [STATION_TIME_TIMESTAMP(FALSE, world.time)]",
 			"Server Anger Level: [SStime_track.get_anger()]",
-			"----------------------------",
-			"[the_majority]",
-			"[nashs_most_wanted]",
+			// "----------------------------",
+			// "[the_majority]",
+			// "[nashs_most_wanted]",
 		)
 
 		if(SSshuttle.emergency)

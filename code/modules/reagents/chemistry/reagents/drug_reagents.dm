@@ -834,3 +834,19 @@
 		to_chat(M, span_userlove("You feel like you'll never feel aroused again..."))
 		ADD_TRAIT(M,TRAIT_NEVERBONER,APHRO_TRAIT)
 	..()
+
+
+/datum/reagent/drug/slower
+	name = "slower"
+	reagent_state = LIQUID
+	value = REAGENT_VALUE_EXCEPTIONAL
+
+/datum/reagent/drug/slower/on_mob_metabolize(mob/living/L)
+	. = ..()
+	L.add_movespeed_modifier(/datum/movespeed_modifier/reagent/slower)
+
+/datum/reagent/drug/slower/on_mob_end_metabolize(mob/living/L)
+	. = ..()
+	L.remove_movespeed_modifier(/datum/movespeed_modifier/reagent/slower)
+
+

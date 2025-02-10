@@ -666,7 +666,8 @@ SUBSYSTEM_DEF(shuttle)
 /datum/controller/subsystem/shuttle/proc/autoEnd() //CIT CHANGE - allows shift to end without being a proper shuttle call?
 	if(EMERGENCY_IDLE_OR_RECALLED)
 		SSshuttle.emergency.request(silent = TRUE)
-		priority_announce("The [train_name] from [where_from] will arrive at [local_train_station] in [emergency.timeLeft(600)] minutes. Have your tickets ready.", null, "sound/f13/mysterious_stranger.ogg", "[train_company]")
+		priority_announce("The SPACE TRAIN will arrive at the SPACE DOCK in [emergency.timeLeft(600)] minutes. Have your tickets ready.", null, "sound/f13/mysterious_stranger.ogg", "[train_company]")
+		// priority_announce("The [train_name] from [where_from] will arrive at [local_train_station] in [emergency.timeLeft(600)] minutes. Have your tickets ready.", null, "sound/f13/mysterious_stranger.ogg", "[train_company]")
 		log_game("Round end vote passed. Train has been auto-called.")
 		message_admins("Round end vote passed. Train has been auto-called.")
 	emergencyNoRecall = TRUE

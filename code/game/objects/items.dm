@@ -199,6 +199,9 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	var/hud_type = null
 	var/list/hudwhere
 
+	var/berryable
+	var/berry
+
 /obj/item/Initialize()
 
 	if(attack_verb)
@@ -424,6 +427,11 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 /obj/item/ui_act(action, params)
 	add_fingerprint(usr)
 	return ..()
+
+/obj/item/attackby(obj/item/W, mob/user, params)
+	. = ..()
+	if(berryable)
+		tryberry(W, user)
 
 /obj/item/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
 	if(!user)
@@ -1187,104 +1195,56 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 		return TRUE
 
 /**
-
-
-
  * tryEmbed() is for when you want to try embedding something without dealing with the damage + hit messages of calling hitby() on the item while targetting the target.
-
-
-
  *
-
-
-
  * Really, this is used mostly with projectiles with shrapnel payloads, from [/datum/element/embed/proc/checkEmbedProjectile], and called on said shrapnel. Mostly acts as an intermediate between different embed elements.
-
-
-
  *
-
-
-
  * Arguments:
-
-
-
  * * target- Either a body part, a carbon, or a closed turf. What are we hitting?
-
-
-
  * * forced- Do we want this to go through 100%?
-
-
-
  */
-
-
-
 /obj/item/proc/tryEmbed(atom/target, forced=FALSE, silent=FALSE)
-
-
-
 	if(!isbodypart(target) && !iscarbon(target) && !isclosedturf(target))
-
-
-
 		return
-
-
-
 	if(!forced && !LAZYLEN(embedding))
-
-
-
 		return
-
-
-
-
-
-
-
 	if(SEND_SIGNAL(src, COMSIG_EMBED_TRY_FORCE, target, forced, silent))
-
-
-
 		return TRUE
-
-
-
 	failedEmbed()
 
-
-
-
-
-
-
 ///For when you want to disable an item's embedding capabilities (like transforming weapons and such), this proc will detach any active embed elements from it.
-
-
-
 /obj/item/proc/disableEmbedding()
-
-
-
 	SEND_SIGNAL(src, COMSIG_ITEM_DISABLE_EMBED)
-
-
-
 	return
-
-
-
 
 /obj/item/proc/get_head_speechspans(mob/living/carbon/user) //we need this all the way back here for reasons
 	return
 
-
 ///For when you want to add/update the embedding on an item. Uses the vars in [/obj/item/embedding], and defaults to config values for values that aren't set. Will automatically detach previous embed elements on this item.
 
+/obj/item/proc/tryberry(obj/item/bewwy, mob/living/user)
+	if(!istype(bewwy, /obj/item/reagent_containers/food/snacks/grown/berries))
+		return
+	if(istype(bewwy, /obj/item/reagent_containers/food/snacks/grown/berries/azul/tipsy))
+		berry = "tipsy"
+		to_chat(user, "You apply [bewwy] to [src].")
+		qdel(bewwy)
+		add_atom_colour("#FF0000", ADMIN_COLOUR_PRIORITY)
+	if(istype(bewwy, /obj/item/reagent_containers/food/snacks/grown/berries/amar/slow))
+		berry = "slow"
+		to_chat(user, "You apply [bewwy] to [src].")
+		qdel(bewwy)
+		add_atom_colour("#00FF00", ADMIN_COLOUR_PRIORITY)
+	if(istype(bewwy, /obj/item/reagent_containers/food/snacks/grown/berries/majo/blind))
+		berry = "blind"
+		to_chat(user, "You apply [bewwy] to [src].")
+		qdel(bewwy)
+		add_atom_colour("#0000FF", ADMIN_COLOUR_PRIORITY)
+
+
+/obj/item/importantize()
+	. = ..()
+	resistance_flags |= INDESTRUCTIBLE
 
 
 /obj/item/proc/updateEmbedding()

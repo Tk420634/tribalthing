@@ -968,6 +968,15 @@
 	icon_living = "hellhound"
 	icon_dead = "hellhound_dead"
 
+/mob/living/simple_animal/advanced/hellhound/devildog
+	name = "Devil Dog"
+	desc = "It's a fire doggo from hell, this one was a marine.  Or something."
+	icon = 'modular_coyote/icons/mob/paramob.dmi'
+	icon_state = "hellhound"
+	icon_living = "hellhound"
+	icon_dead = "hellhound_dead"
+	very_important = TRUE
+
 /mob/living/simple_animal/advanced/hellhound_greater
 	name = "greater hellound"
 	desc = "It's a fire doggo from hell."

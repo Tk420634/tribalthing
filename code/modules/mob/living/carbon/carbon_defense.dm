@@ -429,7 +429,7 @@
 
 	return embeds
 
-/mob/living/carbon/flash_act(intensity = 1, override_blindness_check = 0, affect_silicon = 0, visual = 0)
+/mob/living/carbon/flash_act(intensity = 1, override_blindness_check = 0, affect_silicon = 0, visual = 0, noblur)
 	. = ..()
 
 	var/damage = intensity - get_eye_protection()
@@ -455,18 +455,19 @@
 
 		if(eyes.damage > 10)
 			blind_eyes(damage)
-			blur_eyes(damage * rand(3, 6))
+			if(!noblur)
+				blur_eyes(damage * rand(3, 6))
 
-			if(eyes.damage > 20)
-				if(prob(eyes.damage - 20))
-					if(!HAS_TRAIT(src, TRAIT_NEARSIGHT))
-						to_chat(src, span_warning("Your eyes start to burn badly!"))
-					become_nearsighted(EYE_DAMAGE)
+				if(eyes.damage > 20)
+					if(prob(eyes.damage - 20))
+						if(!HAS_TRAIT(src, TRAIT_NEARSIGHT))
+							to_chat(src, span_warning("Your eyes start to burn badly!"))
+						become_nearsighted(EYE_DAMAGE)
 
-				else if(prob(eyes.damage - 25))
-					if(!HAS_TRAIT(src, TRAIT_BLIND))
-						to_chat(src, span_warning("You can't see anything!"))
-					eyes.applyOrganDamage(eyes.maxHealth)
+					else if(prob(eyes.damage - 25))
+						if(!HAS_TRAIT(src, TRAIT_BLIND))
+							to_chat(src, span_warning("You can't see anything!"))
+						eyes.applyOrganDamage(eyes.maxHealth)
 
 			else
 				to_chat(src, span_warning("Your eyes are really starting to hurt. This can't be good for you!"))
