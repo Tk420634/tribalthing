@@ -98,12 +98,16 @@
 	return 1
 
 /atom/movable/screen/craft
+	alpha = 0
+	mouse_opacity = 0
 	name = "crafting menu"
 	icon = 'icons/fallout/UI/screen_fallout2.dmi'
 	icon_state = "craft"
 	screen_loc = ui_crafting
 
 /atom/movable/screen/area_creator
+	alpha = 0
+	mouse_opacity = 0
 	name = "create new area"
 	icon = 'icons/fallout/UI/screen_fallout2.dmi'
 	icon_state = "area_edit"
@@ -437,6 +441,8 @@
 		L.resist()
 
 /atom/movable/screen/questbook
+	alpha = 0 
+	mouse_opacity = 0
 	name = "Open Questbook"
 	icon = 'icons/fallout/UI/buttons_fallout2.dmi'
 	icon_state = "act_resist"
@@ -448,6 +454,8 @@
 		SSeconomy.open_quest_console(usr)
 
 /atom/movable/screen/scannerpls
+	alpha = 0 
+	mouse_opacity = 0
 	name = "Get a Quest Scanner"
 	icon = 'icons/fallout/UI/buttons_fallout2.dmi'
 	icon_state = "act_scannerpls"

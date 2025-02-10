@@ -180,6 +180,8 @@
 
 /// The screen button.
 /atom/movable/screen/combattoggle
+	alpha = 0
+	mouse_opacity = 0
 	name = "toggle combat mode"
 	icon = 'modular_citadel/icons/ui/screen_midnight.dmi'
 	icon_state = "combat_off"

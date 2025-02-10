@@ -9,6 +9,13 @@
 	emote_type = EMOTE_AUDIBLE
 	sound = 'modular_coyote/sound/mobsounds/birdcall.ogg'
 	cooldown = 10 SECONDS
+	var/bean
+
+/datum/emote/living/carbon/birdcall/bean
+	key = "birdbean"
+	key_third_person = "birdbeans"
+	message = "whistles a tribal beancall."
+	bean = TRUE
 
 /datum/emote/living/carbon/birdcall/can_run_emote(mob/user, status_check = TRUE, intentional = FALSE)
 	. = TRUE
@@ -18,9 +25,9 @@
 	if(!istype(C))
 		return FALSE
 
-	if(!(HAS_TRAIT(C, TRAIT_TRIBAL) || HAS_TRAIT(C, TRAIT_FORMER_TRIBAL)))
-		to_chat(user, span_warning("You need a deeper connection with the tribes to understand how to call for a bird."))
-		return FALSE
+	// if(!(HAS_TRAIT(C, TRAIT_TRIBAL) || HAS_TRAIT(C, TRAIT_FORMER_TRIBAL)))
+	// 	to_chat(user, span_warning("You need a deeper connection with the tribes to understand how to call for a bird."))
+	// 	return FALSE
 
 	return TRUE
 
@@ -56,7 +63,7 @@
 		return FALSE
 
 	. = ..()
-	new /obj/effect/mailbird(get_turf(C), C)
+	new /obj/effect/mailbird(get_turf(C), C, bean)
 
 //////////////////////////////////
 ///          Mailbird          ///
@@ -73,9 +80,11 @@
 	var/datum/component/mailbird_movement/component
 	var/TargetName
 	var/obj/item/mail
+	var/bean
 
-/obj/effect/mailbird/Initialize(mapload, mob/living/carbon/C)
+/obj/effect/mailbird/Initialize(mapload, mob/living/carbon/C, bean_smack)
 	. = ..()
+	bean = bean_smack
 	caller = C
 	following = C
 	component = src.AddComponent(/datum/component/mailbird_movement, C)
@@ -135,14 +144,15 @@
 	C.dropItemToGround(mail)
 	mail.forceMove(src)
 
-	TargetName = stripped_input(C, "Who would you like \the [mail] delivered to?", "Messenger Crow")
+	var/violently = bean ? " violently" : ""
+	TargetName = stripped_input(C, "Who would you like \the [mail][violently] delivered to?", "Messenger Crow")
 	if(!TargetName)
 		to_chat(span_warning("The crow tilts its head in confusion, placing \the [mail] on the ground before flying off."))
 		mail.forceMove(get_turf(src))
 		mail = null
 		flyOff()
 		return
-	to_chat(C, span_info("You use your tribal bond to ask the crow to deliver \the [mail] to someone named \"[TargetName].\""))
+	to_chat(C, span_info("You use your tribal bond to ask the crow to[violently] deliver \the [mail] to someone named \"[TargetName].\""))
 	flyOff()
 
 /obj/effect/mailbird/proc/flyOff()
@@ -182,9 +192,15 @@
 	animate(src, alpha = 255, time = 0.1 SECONDS, flags = ANIMATION_PARALLEL)
 
 /obj/effect/mailbird/proc/dropAndLeave(successful)
-	mail.forceMove(src.loc)
+	var/turf/putit = get_turf(src)
+	mail.forceMove(putit)
+	if(bean)
+		mail.throw_at(following, 1000, 5)
 	if(successful)
-		to_chat(following, span_info("A crow swoops in and gently deposits \a [mail] at your feet."))
+		if(bean)
+			to_chat(following, span_info("A crow swoops in and beans you with \a [mail]! Darn birds!"))
+		else
+			to_chat(following, span_info("A crow swoops in and gently deposits \a [mail] at your feet."))
 	else
 		to_chat(following, span_warning("The crow returns \the [mail], unable to find someone to deliver to."))
 	addtimer(CALLBACK(src,PROC_REF(fadeAway)), 0.4 SECONDS)

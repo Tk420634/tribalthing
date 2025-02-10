@@ -205,6 +205,8 @@
 		var/dammod = min(damage_override / max(1, force), 1)
 		damage_override += (force_modifier * dammod)
 	M.attacked_by(src, user, attackchain_flags, damage_multiplier, damage_addition = force_modifier, damage_override = damage_override)
+	if(berry && ishuman(M))
+		do_berry(M, user)
 
 	log_combat(user, M, "attacked", src.name, "(INTENT: [uppertext(user.a_intent)]) (DAMTYPE: [uppertext(damtype)])")
 	add_fingerprint(user)
@@ -222,6 +224,8 @@
 	hurted.safe_throw_at(throw_target, howfar, 1, attacker)
 
 /proc/PVPcheck(mob/living/attacker, mob/living/hurted)
+	if(!SSmobs.use_pvp_check)
+		return TRUE
 	if(!attacker || !hurted)
 		return TRUE // sure do whatever
 	if(isanimal(hurted))
@@ -232,6 +236,23 @@
 	if(attacker.enabled_combat_indicator && hurted.enabled_combat_indicator)
 		return TRUE
 	return FALSE
+
+/obj/item/proc/do_berry(mob/living/carbon/human/target, mob/living/carbon/human/hitter)
+	if(!target || !hitter)
+		return
+	var/datum/reagents/R = target.reagents
+	switch(berry)
+		if("tipsy")
+			R.add_reagent(/datum/reagent/consumable/ethanol/bacchus_blessing, 4)
+			to_chat(target, span_userdanger("Oh no! That [src] had some tipsy berry on it! You feel tipsy!"))
+		if("slow")
+			R.add_reagent(/datum/reagent/drug/slower, 5)
+			to_chat(target, span_userdanger("Oh no! That [src] had some slow berry on it! You feel slow!"))
+		if("blind")
+			target.flash_act(8, noblur = TRUE)
+			to_chat(target, span_userdanger("Oh no! That [src] had some flash berry on it! Your eyes hurt!"))
+	berry = null
+	remove_atom_colour(ADMIN_COLOUR_PRIORITY)
 
 //the equivalent of the standard version of attack() but for object targets.
 /obj/item/proc/attack_obj(obj/O, mob/living/user, damage_override)

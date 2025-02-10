@@ -237,8 +237,8 @@
 	icon_state = "bulb"
 	base_state = "bulb"
 	fitting = "bulb"
-	brightness = 5
-	nightshift_brightness = 4
+	brightness = 8
+	nightshift_brightness = 8
 	bulb_colour = "#FFDDBB"
 	desc = "A small lighting fixture."
 	light_type = /obj/item/light/bulb

@@ -183,8 +183,11 @@
 	return oxyloss
 
 /mob/living/proc/adjustOxyLoss(amount, updating_health = TRUE, forced = FALSE)
-	if(!forced && (status_flags & GODMODE))
-		return FALSE
+	if(!forced)
+		if(status_flags & GODMODE)
+			return FALSE
+		if(amount >= 0 && SSmobs.all_damage_is_stamina)
+			return FALSE
 	if(HAS_TRAIT(src, TRAIT_NOBREATH))
 		if(amount > 0)
 			amount = -amount // no damage, only heal
@@ -207,8 +210,11 @@
 	return toxloss
 
 /mob/living/proc/adjustToxLoss(amount, updating_health = TRUE, forced = FALSE, force_be_heal)
-	if(!forced && (status_flags & GODMODE))
-		return FALSE
+	if(!forced)
+		if(status_flags & GODMODE)
+			return FALSE
+		if(amount >= 0 && SSmobs.all_damage_is_stamina)
+			return FALSE
 	if(HAS_TRAIT(src, TRAIT_TOXINIMMUNE))
 		if(amount > 0)
 			amount = -amount // no damage, only heal

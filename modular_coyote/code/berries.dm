@@ -7,25 +7,25 @@
 	produce = /obj/item/reagent_containers/food/snacks/grown/berries/tinto
 
 /obj/structure/flora/wasteplant/berrybush/amar
-	name = "amar berry bush"
+	name = "slow-berry bush"
 	icon = 'modular_coyote/icons/objects/berries.dmi'
 	icon_state = "amarbush"
 	desc = "A berry bush"
-	produce = /obj/item/reagent_containers/food/snacks/grown/berries/amar
+	produce = /obj/item/reagent_containers/food/snacks/grown/berries/amar/slow
 
 /obj/structure/flora/wasteplant/berrybush/azul
-	name = "azul berry bush"
+	name = "tipsy-berry bush"
 	icon = 'modular_coyote/icons/objects/berries.dmi'
 	icon_state = "azulbush"
 	desc = "A berry bush"
-	produce = /obj/item/reagent_containers/food/snacks/grown/berries/azul
+	produce = /obj/item/reagent_containers/food/snacks/grown/berries/azul/tipsy
 
 /obj/structure/flora/wasteplant/berrybush/majo
-	name = "majo berry bush"
+	name = "flash-berry bush"
 	icon = 'modular_coyote/icons/objects/berries.dmi'
 	icon_state = "majobush"
 	desc = "A berry bush"
-	produce = /obj/item/reagent_containers/food/snacks/grown/berries/majo
+	produce = /obj/item/reagent_containers/food/snacks/grown/berries/majo/blind
 
 /obj/structure/flora/wasteplant/berrybush/narco
 	name = "narco berry bush"
@@ -95,4 +95,19 @@
 /obj/item/reagent_containers/food/snacks/grown/berries/corcairghorm
 	name = "corcairghorm berries"
 	icon_state = "corcairghormberry"
+	icon = 'modular_coyote/icons/objects/berries.dmi'
+
+/obj/item/reagent_containers/food/snacks/grown/berries/azul/tipsy
+	name = "tipsy berries"
+	icon_state = "azulberry"
+	icon = 'modular_coyote/icons/objects/berries.dmi'
+
+/obj/item/reagent_containers/food/snacks/grown/berries/amar/slow
+	name = "slow berries"
+	icon_state = "amarberry"
+	icon = 'modular_coyote/icons/objects/berries.dmi'
+
+/obj/item/reagent_containers/food/snacks/grown/berries/majo/blind
+	name = "blind berries"
+	icon_state = "majoberry"
 	icon = 'modular_coyote/icons/objects/berries.dmi'

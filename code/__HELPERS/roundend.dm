@@ -280,6 +280,9 @@
 	CHECK_TICK
 
 	//Antagonists
+	parts += catgirl_report()
+
+	//Antagonists
 	parts += antag_report()
 
 	//quests!
@@ -299,6 +302,99 @@
 	listclearnulls(parts)
 
 	return parts.Join()
+
+/datum/controller/subsystem/ticker/proc/catgirl_report(popcount)
+	var/list/parts = list()
+	var/kitten_score = 0
+	var/murine_score = 0
+	var/nobody_score = 0
+	// check through the important things
+	parts += "<div class='panel greenborder'>"
+	for(var/atom/thingy in important_things)
+		var/turf/where = get_turf(thingy)
+		var/murine_got_it = where.z != onmap_z // went off the map
+		var/kitten_got_it = istype(get_area(where), /area/f13/ambientlighting/building/catgirls_score_here)
+		switch(thingy.type)
+			if(/mob/living/simple_animal/cow/brahmin/cow/lulubelle)
+				if(kitten_got_it)
+					kitten_score++
+					parts += "[FOURSPACES]Lulubelle remained the dairy queen of Catgirl Paradise! [span_greentext("CATGIRLS SCORE!!!")]"
+				if(murine_got_it)
+					murine_score++
+					parts += "[FOURSPACES]Lulubelle escaped to the stars above! [span_greentext("MURRINES SCORE!!!")]"
+				else
+					nobody_score++
+					parts += "[FOURSPACES]Wow nobody wanted Lulubelle! [span_redtext("NOBODY SCORES!!!")]"
+			if(/obj/item/documents/catgirlparadise)
+				if(kitten_got_it)
+					kitten_score++
+					parts += "[FOURSPACES]The secret documents were left in the clutches of the catgirls! [span_greentext("CATGIRLS SCORE!!!")]"
+				else if(murine_got_it)
+					murine_score++
+					parts += "[FOURSPACES]The secret documents were stolen into science and outter space! [span_greentext("MURRINES SCORE!!!")]"
+				else
+					nobody_score++
+					parts += "[FOURSPACES]Wow nobody cared about the secret documents! [span_redtext("NOBODY SCORES!!!")]"
+			if(/obj/item/toy/plush/hairball/ambergris)
+				if(kitten_got_it)
+					kitten_score++
+					parts += "[FOURSPACES]The feline ambergris has been ignored! [span_greentext("CATGIRLS SCORE!!!")]"
+				else if(murine_got_it)
+					murine_score++
+					parts += "[FOURSPACES]The murrines took the feline ambergris for some reason! [span_greentext("MURRINES SCORE!!!")]"
+				else
+					nobody_score++
+					parts += "[FOURSPACES]Yay everyone stayed away from the gross feline ambergris! [span_redtext("NOBODY SCORES!!!")]"
+			if(/mob/living/simple_animal/advanced/hellhound/devildog)
+				if(kitten_got_it)
+					kitten_score++
+					parts += "[FOURSPACES]Devil Dog remained on the sofa surrounded by catgirls! [span_greentext("CATGIRLS SCORE!!!")]"
+				else if(murine_got_it)
+					murine_score++
+					parts += "[FOURSPACES]Devil Dog escaped to the sofa surrounded by murrines! [span_greentext("MURRINES SCORE!!!")]"
+				else
+					nobody_score++
+					parts += "[FOURSPACES]Devil Dog was left alone and found his own sofa! [span_redtext("NOBODY SCORES!!!")]"
+	if(nobody_score >= murine_score && nobody_score >= kitten_score)
+		switch(nobody_score)
+			if(1)
+				parts += span_redtext("[FOURSPACES]Everyone lost!")
+			if(2)
+				parts += span_redtext("[FOURSPACES]Everyone lost and was bad!")
+			if(3)
+				parts += span_redtext("[FOURSPACES]Everyone lost and was bad and didn't do it!!")
+			if(4)
+				parts += span_redtext("[FOURSPACES]Here lies everyone, they never scored!!")
+			else
+				parts += span_redtext("[FOURSPACES]EVERYONE IS A LOSER!!!!")
+	else if(murine_score > kitten_score)
+		switch(murine_score)
+			if(1)
+				parts += span_greentext("[FOURSPACES]Colonial Murrines win, just barely!")
+			if(2)
+				parts += span_greentext("[FOURSPACES]Colonial Murrines sorta win!")
+			if(3)
+				parts += span_greentext("[FOURSPACES]Colonial Murrines really win!")
+			if(4)
+				parts += span_greentext("[FOURSPACES]Colonial Murrines REALLY REALLY WIN!")
+			else
+				parts += span_greentext("[FOURSPACES]Colonial Murrines WON SO HARD!!!!")
+	else
+		switch(kitten_score)
+			if(1)
+				parts += span_greentext("[FOURSPACES]Catgirls win, just barely!")
+			if(2)
+				parts += span_greentext("[FOURSPACES]Catgirls sorta win!")
+			if(3)
+				parts += span_greentext("[FOURSPACES]Catgirls really win!")
+			if(4)
+				parts += span_greentext("[FOURSPACES]Catgirls REALLY REALLY WIN!")
+			else
+				parts += span_greentext("[FOURSPACES]Catgirls WON SO HARD!!!!")
+	if(prob(1))
+		parts += span_greentext("[FOURSPACES]oh yeah also JUSTIN WINS!")
+	parts += "</div>"
+	return parts.Join("<br>")
 
 /datum/controller/subsystem/ticker/proc/survivor_report(popcount)
 	var/list/parts = list()

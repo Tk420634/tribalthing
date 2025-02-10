@@ -1393,6 +1393,10 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 		UNSETEMPTY(client.movingmob.client_mobs_in_contents)
 		client.movingmob = null
 
+/mob/importantize()
+	. = ..()
+	status_flags |= GODMODE
+
 //Fenny goes insane thanks to kruger, thanks you deepfried twinkie <3
 
 #define FLIRT_HEADER_TEXT "\

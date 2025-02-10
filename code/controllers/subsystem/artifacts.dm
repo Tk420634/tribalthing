@@ -26,7 +26,7 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 	var/uncommon_hard_cap = 50
 	var/common_soft_cap = 50
 	var/common_hard_cap = 75
-	var/spawn_chance = 1 // chance for an artifact to spawn per tick
+	var/spawn_chance = 0 // chance for an artifact to spawn per tick
 	var/use_valid_ball_spawner_chance = 0 // chance for an artifact to use a valid ball spawner
 
 	var/list/buffs_by_rarity = list(

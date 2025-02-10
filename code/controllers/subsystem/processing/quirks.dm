@@ -743,14 +743,14 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 	ckey = player.ckey
 	quirk_keys = quirks.Copy()
 
-/mob/verb/configure_quirks()
-	set name = "Configure Quirks"
-	set category = "Preferences"
+// /mob/verb/configure_quirks()
+// 	set name = "Configure Quirks"
+// 	set category = "Preferences"
 	
-	if(!SSquirks.init_order)
-		to_chat(src, span_warning("Quirks are not initialized yet! Please wait a moment and try again."))
-		return
-	SSquirks.OpenWindow(src)
+// 	if(!SSquirks.init_order)
+// 		to_chat(src, span_warning("Quirks are not initialized yet! Please wait a moment and try again."))
+// 		return
+// 	SSquirks.OpenWindow(src)
 
 
 

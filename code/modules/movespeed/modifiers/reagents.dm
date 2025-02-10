@@ -18,3 +18,6 @@
 
 /datum/movespeed_modifier/reagent/nitryl
 	multiplicative_slowdown = -1
+
+/datum/movespeed_modifier/reagent/slower
+	multiplicative_slowdown = 1.5

@@ -117,9 +117,9 @@ GLOBAL_LIST_INIT(faction_whitelist_positions, list(
 
 // "Chief",
 // "Spiritual Leader",
-// "Head Forager",
+	// "Head Warrior",
 // "Harvest Leader",
-// "Forager",
+ 	// "Warrior",
 
 // "Noyan",
 // "Steward",
@@ -154,24 +154,25 @@ GLOBAL_LIST_INIT(brotherhood_positions, list(
 ))
 //Nash/Oasis
 GLOBAL_LIST_INIT(oasis_positions, list(
-	"Citizen",
-	"Radio Operator",
-	"Farmer",
-	"Shopkeeper",
-	"Banker",
-	"Sheriff",
-	"Deputy",
-	"Prospector",
-	"Town Doctor",
-	"Town Scientist",
-	"Guild Worker",
-	"Barkeep",
-	"Club Manager",
-	"Club Worker",
-	"Preacher",
-	"Librarian",
+	// "Citizen",
+	// "Radio Operator",
+	// "Farmer",
+	// "Shopkeeper",
+	// "Banker",
+	"Squad Leader",
+	"Trooper",
+	"Captured Native",
+	// "Prospector",
+	// "Town Doctor",
+	// "Town Scientist",
+	// "Guild Worker",
+	// "Barkeep",
+	// "Club Manager",
+	// "Club Worker",
+	// "Preacher",
+	// "Librarian",
 	//"Texarkana Ranger",
-	"Adventurer"
+	// "Adventurer"
 ))
 /*
 //Den Citizenship
@@ -332,16 +333,9 @@ GLOBAL_LIST_INIT(silicon_positions, list(
 ))
 //Tribls
 GLOBAL_LIST_INIT(tribal_positions, list(
-	"Chief",
-	"Shaman",
-	"Head Forager",
-	"Druid",
-	"Forager",
-	"Harvest Leader",
-	"Spiritual Leader",
-	"Spirit-Pledged",
-	"Guardian",
-	"Dual Citizen"
+	"Head Warrior",
+	"Warrior",
+	"Captured Murrine",
 ))
 //bikrs
 //GLOBAL_LIST_INIT(biker_positions, list(
@@ -396,16 +390,16 @@ GLOBAL_LIST_INIT(position_categories, list(
 	// EXP_TYPE_FOLLOWERS = list("jobs" = followers_positions, "color" = "#ffeeaa"),
 	// EXP_TYPE_BROTHERHOOD = list("jobs" = brotherhood_positions, "color" = "#95a5a6"),
 	// EXP_TYPE_LEGION = list("jobs" = legion_positions, "color" = "#f81717"),
-	EXP_TYPE_WASTELAND = list("jobs" = wasteland_positions, "color" = "#5a5a5a"),
+	// EXP_TYPE_WASTELAND = list("jobs" = wasteland_positions, "color" = "#5a5a5a"),
 	// EXP_TYPE_ENCLAVE = list("jobs" = enclave_positions, "color" = "#323232"),
 	// EXP_TYPE_KHAN = list("jobs" = khan_positions, "color" = "#006666"),
-	"Town" = list("jobs" = oasis_positions, "color" = "#d7b088"),
+	"Catlonial Murrines" = list("jobs" = oasis_positions, "color" = "#d7b088"),
 	//"Den" = list("jobs" = den_positions, "color" = "#d7b088"),
-	"Reclaimers" = list("jobs" = reclaimer_positions, "color" = "#a43dd4"),
+	// "Reclaimers" = list("jobs" = reclaimer_positions, "color" = "#a43dd4"),
 	//"Guild" = list("jobs" = guild_positions, "color" = "#d45b3d"),
 	//"Garland" = list("jobs" = gar_positions, "color" = "#d7b088"),
 	//EXP_TYPE_SILICON = list("jobs" = silicon_positions, "color" = "#4a4a4a"),
-	EXP_TYPE_TRIBAL = list("jobs" = tribal_positions, "color" = "#006666"),
+	"Kittentide" = list("jobs" = tribal_positions, "color" = "#006666"),
 	//EXP_TYPE_BIKER = list("jobs" = biker_positions, "color" = "#eb872f"),
 	//EXP_TYPE_CLUB = list("jobs" = heavensnight_positions, "color" = "#c94b8a"),
 	//"debug" = list("jobs" = debug_positions, "color" = "#ff00ee"),
@@ -449,7 +443,7 @@ GLOBAL_LIST_INIT(exp_jobsmap, list(
 	EXP_TYPE_SCRIBE = list("titles" = list("Scribe")),
 	EXP_TYPE_DECANUS = list("titles" = list("Legion Decanus")),
 
-	EXP_TYPE_TRIBALCOMMAND = list("titles" = list("Chief","Shaman","Head Forager")),
+	EXP_TYPE_TRIBALCOMMAND = list("titles" = list("Chief","Shaman","Head Warrior")),
 	EXP_TYPE_FOLLOWERSCOMMAND = list("titles" = list("Senior Doctor")),
 	EXP_TYPE_NCRCOMMAND = list("titles" = list("NCR Lieutenant","NCR Sergeant First Class","NCR Captain", "NCR Veteran Ranger"))
 ))

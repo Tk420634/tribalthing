@@ -153,7 +153,9 @@
 	\n\
 	- @ moves your name to that position in emotes and subtles. \n\
 	\n\
-	- ! at the start of a radio comm to emote over the radio "
+	- ! at the start of a radio comm to emote over the radio. \n\
+	\n\
+	 Tribals can speak Tribalese by using ,t at the start of the message!"
 	// \n
 	// We have added the following emoticons to say, add them to the end of your 'say' messages for say verb variation \n
 	// :), :(, :D, ;D, :P, :O, :|, :/, :S, :*, :3, :>, :<, :C, :L, <3, :X, :#, :$,  \n

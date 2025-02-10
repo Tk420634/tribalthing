@@ -400,7 +400,8 @@
 				mode = SHUTTLE_DOCKED
 				setTimer(SSshuttle.emergencyDockTime)
 				send2irc("Server", "The train has arrived at the station.")
-				priority_announce("The [SSshuttle.train_name] from [SSshuttle.where_from] has arrived at [SSshuttle.local_train_station]. It will depart for [SSshuttle.where_to] in [timeLeft(600)] minutes. Have your tickets ready.", null, 'sound/f13/mysterious_stranger.ogg', "[SSshuttle.train_company]")
+				priority_announce("The SPACE TRAIN has arrived at the SPACE DOCK. It will depart for SPACE in [timeLeft(600)] minutes. Have your tickets ready.", null, 'sound/f13/mysterious_stranger.ogg', "[SSshuttle.train_company]")
+				// priority_announce("The [SSshuttle.train_name] from [SSshuttle.where_from] has arrived at [SSshuttle.local_train_station]. It will depart for [SSshuttle.where_to] in [timeLeft(600)] minutes. Have your tickets ready.", null, 'sound/f13/mysterious_stranger.ogg', "[SSshuttle.train_company]")
 				ShuttleDBStuff()
 
 
@@ -451,7 +452,7 @@
 				mode = SHUTTLE_ESCAPE
 				launch_status = ENDGAME_LAUNCHED
 				setTimer(SSshuttle.emergencyEscapeTime * engine_coeff)
-				priority_announce("The [SSshuttle.train_name] has departed [SSshuttle.local_train_station] for [SSshuttle.where_to]. Estimated [timeLeft(600)] minutes until it arrives. Thank you for choosing [SSshuttle.train_company], [SSshuttle.train_company_slogan]", null, null, "[SSshuttle.train_company]")
+				priority_announce("The SPACE TRAIN has departed. Estimated [timeLeft(600)] minutes until it arrives.", null, null, "[SSshuttle.train_company]")
 
 		if(SHUTTLE_STRANDED)
 			SSshuttle.checkHostileEnvironment()

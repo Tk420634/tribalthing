@@ -14,7 +14,7 @@
 // Base Wasteland Outfit
 // This is the base default outfit for just about everyone
 // please please please base everything off this
-/datum/outfit/job/cb
+/datum/outfit/job/cb	
 	name = "Wastelander"
 	jobtype = /datum/job/wasteland/f13wastelander
 
@@ -33,7 +33,7 @@
 		/obj/item/clothing/under/f13/cowboyg,
 		/obj/item/clothing/under/f13/cowboyt,
 	)
-	id = /obj/item/pda
+	id = null // /obj/item/pda
 	ears     = /obj/item/radio/headset/headset_town
 	belt     = /obj/item/supplykit
 	backpack = /obj/item/storage/backpack
@@ -42,20 +42,60 @@
 		/obj/item/clothing/shoes/workboots,
 		/obj/item/clothing/shoes/jackboots,
 	)
-	l_pocket = /obj/item/storage/survivalkit
-	r_pocket = /obj/item/storage/survivalkit/medical
-	pda = /obj/item/pda
-	backpack_contents = list(
-		/obj/item/storage/wallet/stash/low
-	)
-	stuff_we_all_get = list(
-		/obj/item/card/id/selfassign
-		)
+	l_pocket = null // /obj/item/storage/survivalkit
+	r_pocket = null // /obj/item/storage/survivalkit/medical
+	pda = null //  /obj/item/pda
+	//backpack_contents null //  = list(
+	// 	/obj/item/storage/wallet/stash/low
+	// )
+	stuff_we_all_get = null //  list(
+	// /obj/item/card/id/selfassign
+	// )
 
 /datum/outfit/job/cb/pre_equip(mob/living/carbon/human/H)
 	. = ..()
-	if(isrobotic(H))
-		box = /obj/item/storage/survivalkit/medical/synth
+	// if(isrobotic(H))
+		// box = /obj/item/storage/survivalkit/medical/synth
+
+/datum/outfit/job/cb/catgirl
+	name = "catgirl base"
+	
+/datum/outfit/job/cb/catgirl/warrior
+	name = "warrior"
+	head = /obj/item/clothing/head/helmet/f13/wayfarer/antler 
+	backpack = /obj/item/storage/backpack
+	uniform = /obj/item/clothing/under/civ/mayan_loincloth
+	suit = /obj/item/clothing/suit/armor/light/tribal/bone
+	shoes = /obj/item/clothing/shoes/sandal
+	belt = /obj/item/storage/belt/utility/mining/primitive
+	gloves = /obj/item/clothing/gloves/thief
+	tribal = TRUE
+	cat = TRUE
+	backpack_contents   = list(
+	/obj/item/storage/backpack/satchel/explorer,
+	/obj/item/warpaint_bowl,
+	/obj/item/restraints/legcuffs/bola = 2,
+	/obj/item/gun/energy/kinetic_accelerator/crossbow/sling,
+	)
+
+/datum/outfit/job/cb/catgirl/warrior/head
+	name = "head warrior"
+	head = /obj/item/clothing/head/poppycrown
+	tribal = TRUE
+	cat = TRUE
+
+/datum/outfit/job/cb/catgirl/warrior/captured
+	name = "captured murrine"
+	uniform = /obj/item/clothing/under/f13/exile/tribal/shimsusa_loincloth
+	tribal = FALSE
+	head = null
+	backpack = null
+	suit = null
+	shoes = null
+	belt = null
+	gloves = null
+	backpack_contents = list()
+
 
 /datum/outfit/job/cb/guild
 	name = "Guild Base"
@@ -91,16 +131,48 @@
 	card = /obj/item/card/id/silver
 	pda = /obj/item/pda
 
+/datum/outfit/job/cb/capturedcatgirl
+	uniform = /obj/item/clothing/under/skyrat/maid
+	head = null
+	backpack = null
+	suit = null
+	shoes = null
+	belt = null
+	gloves = null
+	backpack_contents = list()
+	tribal = TRUE
+	cat = TRUE
+
 /datum/outfit/job/cb/guild/deputy
-	name = "Deputy"
+	name = "Trooper"
 	jobtype = /datum/job/townfolk/f13deputy
-	uniform	= /obj/item/clothing/under/f13/ncr
+	head = /obj/item/clothing/head/helmet/swat
+	belt = /obj/item/storage/belt/army
+	uniform = /obj/item/clothing/under/f13/enclave/peacekeeper
+	gloves = /obj/item/clothing/gloves/f13/leather/fingerless
+	shoes = /obj/item/clothing/shoes/jackboots
+	backpack_contents = list(
+		/obj/item/grenade/flashbang = 3,
+		/obj/item/melee/classic_baton/telescopic = 1,
+		/obj/item/gun/energy/taser = 1,
+		/obj/item/flashlight/seclite = 1
+	)
+
 
 /datum/outfit/job/cb/guild/deputy/sheriff
-	name = "Sheriff"
+	name = "Squad Leader"
 	jobtype = /datum/job/townfolk/f13sheriff
-	card = /obj/item/card/id/silver
-	uniform	= /obj/item/clothing/under/f13/ncr/ncr_officer
+	head = /obj/item/clothing/head/beret
+	belt = /obj/item/storage/belt/army
+	uniform = /obj/item/clothing/under/f13/enclave/peacekeeper
+	gloves = /obj/item/clothing/gloves/f13/leather/fingerless
+	shoes = /obj/item/clothing/shoes/jackboots
+	backpack_contents = list(
+		/obj/item/grenade/flashbang = 3,
+		/obj/item/melee/classic_baton/telescopic = 1,
+		/obj/item/gun/energy/taser = 1,
+		/obj/item/flashlight/seclite = 1
+	)
 
 /datum/outfit/job/cb/guild/radio
 	name = "Radio Operator"
@@ -262,7 +334,7 @@
 	name = "Tunnel Rats Base"
 	jobtype = /datum/job/tunnelrats
 
-	box_two = /obj/item/storage/survivalkit/medical/follower
+	// box_two = /obj/item/storage/survivalkit/medical/follower
 	head = /obj/item/clothing/head/welding/up
 	suit_store = /obj/item/melee/onehanded/machete
 	technophreak = TRUE
@@ -275,7 +347,7 @@
 	name = "Tunnel Rats Giant Rat"
 	jobtype = /datum/job/tunnelrats/bigratthatmakestherules
 
-	box_two = /obj/item/storage/survivalkit/medical/follower
+	// box_two = /obj/item/storage/survivalkit/medical/follower
 	head = null
 	mask = /obj/item/clothing/mask/gas/welding/up
 	suit_store = /obj/item/melee/onehanded/machete/forgedmachete
@@ -293,7 +365,7 @@
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 	box = /obj/item/storage/survivalkit/tribal
-	box_two = /obj/item/storage/survivalkit/medical/tribal
+	// box_two = /obj/item/storage/survivalkit/medical/tribal
 	backpack_contents = list(
 		/obj/item/pda = 1,
 		/obj/item/card/id/selfassign,

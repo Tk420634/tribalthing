@@ -83,8 +83,8 @@ SUBSYSTEM_DEF(atoms)
 					all_atoms = LAZYLEN(world.contents)
 					var/batch_end = REALTIMEOFDAY
 					var/batch_time = ((batch_end - batch_start) * 0.1)
-					var/batch_rate = (this_batch / batch_time)
-					var/batch_percent = (atoms_did / all_atoms) * 100
+					var/batch_rate = (this_batch / max(batch_time, 0.01))
+					var/batch_percent = (atoms_did / max(all_atoms, 0.01)) * 100
 					portion++
 					next_milestone = round(all_atoms * (portion * portion_amount))
 					rates += batch_rate

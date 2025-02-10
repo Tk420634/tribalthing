@@ -829,6 +829,12 @@ GLOBAL_LIST_INIT(valid_plushie_paths, valid_plushie_paths())
 	squeak_override = list('sound/misc/splort.ogg'=1)
 	attack_verb = list("sploshed", "splorted", "slushed")
 
+/obj/item/toy/plush/hairball/ambergris
+	name = "Royal Nyanpire Ambergris"
+	desc = "A rare material from the Nyampire, formed in the belly of a royal felinid.  Kept for... reasons?  Worth a lot on the black market though."
+	icon_state = "Hairball"
+	very_important = TRUE
+
 /obj/item/toy/plush/plushling
 	name = "peculiar plushie"
 	desc = "An adorable stuffed toy- wait, did it just move?"

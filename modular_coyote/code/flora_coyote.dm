@@ -1144,7 +1144,7 @@
 	icon = 'modular_coyote/icons/objects/cypress.dmi'
 	icon_state = "rainforest_tree"
 	anchored = TRUE
-
+	pixel_x = -48
 
 
 //flowers

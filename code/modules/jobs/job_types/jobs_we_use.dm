@@ -150,11 +150,29 @@
 	outfit = /datum/outfit/job/cb/guild/barkeep
 	access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
 	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //////////////////////////////
 /// sheriff
 /// A sheriff, here to serve drinks and listen to people's problems
 /datum/job/townfolk/f13sheriff
-	title = "Sheriff"
+	title = "Squad Leader"
 	flag = F13BARKEEP	
 	description = "You are a Sheriff, responsible for the operation of the local sheriffery. You are the backbone of the settlement, providing safety and security for the community. Your work is essential to the survival of the town."
 	supervisors = "the Adventurers Guild"
@@ -165,13 +183,44 @@
 /// Deputy
 /// A Deputy, here to serve drinks and listen to people's problems
 /datum/job/townfolk/f13deputy
-	title = "Deputy"
+	title = "Trooper"
 	flag = F13BARKEEP	
 	description = "You are a Deput, responsible for the operation of the local sheriffery. You are the backbone of the settlement, providing safety and security for the community. Your work is essential to the survival of the town."
 	supervisors = "the Adventurers Guild"
 	outfit = /datum/outfit/job/cb/guild/deputy
 	access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
 	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
+//////////////////////////////
+/// Deputy
+/// A Deputy, here to serve drinks and listen to people's problems
+/datum/job/townfolk/f13deputy/capturedcatgirl
+	title = "Captured Native"
+	description = "You were captured by the invading Murrines, they dressed you in a maid outfit and have been trying to teach you to clean."
+	supervisors = "None, sorta.  The marines if you want to be technical."
+	enforces = "Not much in particular, but like.  If you wanna try to escape go ahead."
+	forbids = "Not a whole lot of much. Live your life, crechor."
+	outfit = /datum/outfit/job/cb/capturedcatgirl
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //////////////////////////////
 /// Radio Operator
@@ -409,136 +458,148 @@
 	selection_color = "#ffeeaa"
 	faction = FACTION_TRIBE
 	exp_type = EXP_TYPE_TRIBAL
-	total_positions = -1
-	spawn_positions = -1
-	exp_requirements = PLAYTIME_HARD_JOB
+	// total_positions = -1
+	// spawn_positions = -1
+	// exp_requirements = PLAYTIME_HARD_JOB
 	exp_type = EXP_TYPE_LIVING
 	selection_color = "#006666"
-	forbids = "Against abuse of pre-collapse technology, especially pre-collapse weapons of war. Your pipboy is pre-blessed."
-	enforces = "The tribe operate as if they are a part of a singular clan. Any harm dealt upon another member is likened to harm placed upon your brother or sister. Above all things, the tribe comes first."
-	objectivesList = list(
-		"The Clan has decided to look for fresh blood from the out-peoples.  See if you can find someone to willingly join the tribe and learn our ways.",
-		"This week we hunt, gecko's are to be reduced in numbers to a more sustainable level on this land for having murdered too many of our brahmin.",
-		"This week we hunt, the Cazador menace is too strong in this land.  Their stingers are dangerous and the elders demand their extinction.",
-		"The harvest leaders far off have asked us to find a cursed Pre-Fall weapon that throws burning light at whatever you seek to destroy.  All of them must be found and destroyed, or our crops might fail.",
-		"The Village rests, defend it and prosper this week.  Peace is rare, and we should enjoy it with song, dance, and good company.  Feel free to include outsiders if they will follow our ways when on our lands.",
-		"The Village rests, defend it and prosper this week.  Peace is rare, but at least we can build defenses and take solitude in our isolation.",
-		"The swamp calls the hunters forth, seek out the thing that shines and return it to the spiritual leaders to appease the spirits.  If no spiritual leader can be found then hide the item from the out-peoples.",
-		"Something awful happened a bit back and it calls for blood, harass the outlaws of Redwater for their predations of wandering tribesman.  Remember to fortify the southern tunnel to their lands.  We should try to take at least one of them prisoner, and see how they like the collar on their own necks.",
-		"The people of tribe of Nash insulted us in recent weeks, harass the people of Nash for their highbrow attitude.  Remember to Fortify the northern entrance to the village, and try to take them down a peg for their witty insolence.",
-		"This week is one of rememberance.  Think of the times when our tribe came forth from The Cave of Crying.  Of the friends and loved ones lost.  Remember peace, and cry for what is lost.",
-		"This week is one of rememberance.  Think of the times when our tribe has failed at our duties and work together as the family we are to try and solve internal issues. Tomorrow can be better, if only we try today.")
+	// forbids = "Against abuse of pre-collapse technology, especially pre-collapse weapons of war. Your pipboy is pre-blessed."
+	// enforces = "The tribe operate as if they are a part of a singular clan. Any harm dealt upon another member is likened to harm placed upon your brother or sister. Above all things, the tribe comes first."
+	// objectivesList = list(
+	// 	"The Clan has decided to look for fresh blood from the out-peoples.  See if you can find someone to willingly join the tribe and learn our ways.",
+	// 	"This week we hunt, gecko's are to be reduced in numbers to a more sustainable level on this land for having murdered too many of our brahmin.",
+	// 	"This week we hunt, the Cazador menace is too strong in this land.  Their stingers are dangerous and the elders demand their extinction.",
+	// 	"The harvest leaders far off have asked us to find a cursed Pre-Fall weapon that throws burning light at whatever you seek to destroy.  All of them must be found and destroyed, or our crops might fail.",
+	// 	"The Village rests, defend it and prosper this week.  Peace is rare, and we should enjoy it with song, dance, and good company.  Feel free to include outsiders if they will follow our ways when on our lands.",
+	// 	"The Village rests, defend it and prosper this week.  Peace is rare, but at least we can build defenses and take solitude in our isolation.",
+	// 	"The swamp calls the hunters forth, seek out the thing that shines and return it to the spiritual leaders to appease the spirits.  If no spiritual leader can be found then hide the item from the out-peoples.",
+	// 	"Something awful happened a bit back and it calls for blood, harass the outlaws of Redwater for their predations of wandering tribesman.  Remember to fortify the southern tunnel to their lands.  We should try to take at least one of them prisoner, and see how they like the collar on their own necks.",
+	// 	"The people of tribe of Nash insulted us in recent weeks, harass the people of Nash for their highbrow attitude.  Remember to Fortify the northern entrance to the village, and try to take them down a peg for their witty insolence.",
+	// 	"This week is one of rememberance.  Think of the times when our tribe came forth from The Cave of Crying.  Of the friends and loved ones lost.  Remember peace, and cry for what is lost.",
+	// 	"This week is one of rememberance.  Think of the times when our tribe has failed at our duties and work together as the family we are to try and solve internal issues. Tomorrow can be better, if only we try today.")
 
-//////////////////////////////
-/// Tribal Chief
-/// The leader of the tribe, who gets first dibs on the cute tribal furries
-/datum/job/tribal/chief
-	title = "Chief"
-	flag = F13CHIEF
-	total_positions = 1
-	spawn_positions = 1
-	supervisors = "The Elders of the tribe."
-	enforces = "The ways of the Sulphur River spirits."
-	forbids = "Against abuse of pre-collapse technology, especially pre-collapse weapons of war. Your pipboy is pre-blessed."
-	description = "The leader and central political figure in this village of the Suplphur Bottom Tribe. You engage in diplomatic meetings with the powers present within the Region to ensure the village's safety and independence."
-	outfit = /datum/outfit/job/tribal/f13chief
-	paycheck = COINS_TO_CREDITS(150) // 150 copper per hour
+// //////////////////////////////
+// /// Tribal Chief
+// /// The leader of the tribe, who gets first dibs on the cute tribal furries
+// /datum/job/tribal/chief
+// 	title = "Chief"
+// 	flag = F13CHIEF
+// 	total_positions = 1
+// 	spawn_positions = 1
+// 	supervisors = "The Elders of the tribe."
+// 	enforces = "The ways of the Sulphur River spirits."
+// 	forbids = "Against abuse of pre-collapse technology, especially pre-collapse weapons of war. Your pipboy is pre-blessed."
+// 	description = "The leader and central political figure in this village of the Suplphur Bottom Tribe. You engage in diplomatic meetings with the powers present within the Region to ensure the village's safety and independence."
+// 	outfit = /datum/outfit/job/tribal/f13chief
+// 	paycheck = COINS_TO_CREDITS(150) // 150 copper per hour
 
-//////////////////////////////
-/// Tribal Spiritual Leader
-/// The spiritual leader of the tribe, who gets first dibs on the other end of those cute tribal furries
-/datum/job/tribal/spiritual_leader
-	title = "Spiritual Leader"
-	flag = F13SHAMAN
-	total_positions = 2
-	spawn_positions = 2
-	supervisors = "The chief.  You are a peer to the harvest leader."
-	enforces = "The ways of the Sulphur River spirits."
-	forbids = "Against abuse of pre-collapse technology, especially pre-collapse weapons of war. Your pipboy is pre-blessed."
-	description = "The spiritual leader and medical leader of the Mountain River Tribe. You aid villagers in their day to day lives but also have access to the spiritual realm via your scrying orb to render assistance on a wider scale."
-	outfit = /datum/outfit/job/tribal/f13shaman
-	paycheck = COINS_TO_CREDITS(250) // 100 copper per hour
+// //////////////////////////////
+// /// Tribal Spiritual Leader
+// /// The spiritual leader of the tribe, who gets first dibs on the other end of those cute tribal furries
+// /datum/job/tribal/spiritual_leader
+// 	title = "Spiritual Leader"
+// 	flag = F13SHAMAN
+// 	total_positions = 2
+// 	spawn_positions = 2
+// 	supervisors = "The chief.  You are a peer to the harvest leader."
+// 	enforces = "The ways of the Sulphur River spirits."
+// 	forbids = "Against abuse of pre-collapse technology, especially pre-collapse weapons of war. Your pipboy is pre-blessed."
+// 	description = "The spiritual leader and medical leader of the Mountain River Tribe. You aid villagers in their day to day lives but also have access to the spiritual realm via your scrying orb to render assistance on a wider scale."
+// 	outfit = /datum/outfit/job/tribal/f13shaman
+// 	paycheck = COINS_TO_CREDITS(250) // 100 copper per hour
 
 //////////////////////////////
 /// Tribal Head Forager
 /// The head forager of the tribe, who leads the hunters to find cute tribal furries
 /datum/job/tribal/head_forager
-	title = "Head Forager"
+	title = "Head Warrior"
 	flag = F13HHUNTER
-	total_positions = 1
-	spawn_positions = 1
-	supervisors = "The Elders of the tribe and the chief."
-	enforces = "The ways of the Sulphur River spirits."
-	forbids = "Against abuse of pre-collapse technology, especially pre-collapse weapons of war. Your pipboy is pre-blessed."
-	description = "You are the village Hunt Master; you organize the hunters of the tribe and are the authority in matters of protecting the tribe and the land of the Mountain River. You lead the Great Hunts and War-Bands in time of conflict."
-	outfit = /datum/outfit/job/tribal/f13Hhunter
-	paycheck = COINS_TO_CREDITS(100) // 100 copper per hour
-
-//////////////////////////////
-/// Tribal Harvest Leader
-/// The head farmer of the tribe, who leads the farmers to grow cute tribal furries
-/datum/job/tribal/harvest_leader
-	title = "Harvest Leader"
-	flag = F13DRUID
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "The Chief"
-	enforces = "The ways of the Sulphur River spirits."
-	forbids = "Against abuse of pre-collapse technology, especially pre-collapse weapons of war. Your pipboy is pre-blessed."
-	description = "You are a Harvest Leader in the tribe; while you are the one who would be performing rituals for the tribe your usual job is helping the farmers get the most out of our fields."
-	outfit = /datum/outfit/job/tribal/f13druid
+	supervisors = "The Nyan-Nyan Neko Gods and your instincts."
+	enforces = "The will of the gods and the Nyampire."
+	forbids = "Nothing in particular, victory must be found. Honor can be restored later."
+	description = "The Gods have chosen you to be a Warleader for our warriors, only you can prove if you're fit for this position.  Capture the invaders and integrate them into the Nyampire."
+	outfit = /datum/outfit/job/cb/catgirl/warrior/head
 	paycheck = COINS_TO_CREDITS(100) // 100 copper per hour
+
+/datum/job/tribal/head_forager/captured
+	title = "Captured Murrine"
+	total_positions = -1
+	spawn_positions = -1
+	supervisors = "Technically your supervisors are your captors, but that's kind of up to you."
+	enforces = "Not much in particular."
+	forbids = "Nothing in particular."
+	description = "You've been captured by the enemy. You probably want to escape, but maybe you don't."
+	outfit = /datum/outfit/job/cb/catgirl/warrior/captured
+
+// //////////////////////////////
+// /// Tribal Harvest Leader
+// /// The head farmer of the tribe, who leads the farmers to grow cute tribal furries
+// /datum/job/tribal/harvest_leader
+// 	title = "Harvest Leader"
+// 	flag = F13DRUID
+// 	total_positions = 2
+// 	spawn_positions = 2
+// 	supervisors = "The Chief"
+// 	enforces = "The ways of the Sulphur River spirits."
+// 	forbids = "Against abuse of pre-collapse technology, especially pre-collapse weapons of war. Your pipboy is pre-blessed."
+// 	description = "You are a Harvest Leader in the tribe; while you are the one who would be performing rituals for the tribe your usual job is helping the farmers get the most out of our fields."
+// 	outfit = /datum/outfit/job/tribal/f13druid
+// 	paycheck = COINS_TO_CREDITS(100) // 100 copper per hour
 
 //////////////////////////////
 /// Tribal Forager
 /// A forager of the tribe, who helps the head forager find cute tribal furries
 /datum/job/tribal/f13hunter
-	title = "Forager"
+	title = "Warrior"
 	flag = F13HUNTER
-	supervisors = "The chief and Hunt Master. Failing their appearance you fall back on the Spiritual Leader and Harvest Leader for task management."
-	enforces = "The ways of the Sulphur River spirits."
-	forbids = "Against abuse of pre-collapse technology, especially pre-collapse weapons of war. Your pipboy is pre-blessed."
-	description = "You are a Forager and lowest ranking villager of the tribe; you bring back food and relics, anything that may house a spirit infused from the Time of Crying that can be purified by the Spiritual Leader. While a protector you are also the arm of the tribe in the world, performing tasks from the Spiritual Leaders and Harvest Leaders."
-	outfit = /datum/outfit/job/tribal/f13hunter
+	total_positions = 999
+	spawn_positions = 999
+	supervisors = "The Nyan-Nyan Neko Gods, the Head Hunter and your instincts."
+	enforces = "The ways of the Nyan-Nyan Neko Nyampire."
+	forbids = "Nothing in particular, your victory is utmost over the foe."
+	description = "You are a warrior of the Nyan-Nyan Neko Nyampire, one of the greatest warriors this planet has to offer.  Clad in bones of monsters these invaders would cower before and gifted with skills untold."
+	outfit = /datum/outfit/job/cb/catgirl/warrior
 	paycheck = COINS_TO_CREDITS(75) // 75 copper per hour
 
-//////////////////////////////
-/// Tribal Guardian
-/// A guardian of the tribe, who protects the cute tribal furries
-/datum/job/tribal/guardian
-	title = "Guardian"
-	flag = F13GUARDIAN
-	total_positions = 3
-	spawn_positions = 3
-	supervisors = "All leadership, but the Chief is priority"
-	description = "A hand chosen Forager with much promise, you are one of the village Guardians. An elite Hunter given the duty to protect the village, your duty is to ensure your kin are safe at all costs, as well as follow any orders from your superiors and enforce the law of the tribe. You should focus on being available in case of emergencies."
-	outfit = /datum/outfit/job/tribal/f13guardian
-	paycheck = COINS_TO_CREDITS(200) // 200 copper per hour
+// //////////////////////////////
+// /// Tribal Guardian
+// /// A guardian of the tribe, who protects the cute tribal furries
+// /datum/job/tribal/guardian
+// 	title = "Guardian"
+// 	flag = F13GUARDIAN
+// 	total_positions = 3
+// 	spawn_positions = 3
+// 	supervisors = "All leadership, but the Chief is priority"
+// 	description = "A hand chosen Forager with much promise, you are one of the village Guardians. An elite Hunter given the duty to protect the village, your duty is to ensure your kin are safe at all costs, as well as follow any orders from your superiors and enforce the law of the tribe. You should focus on being available in case of emergencies."
+// 	outfit = /datum/outfit/job/tribal/f13guardian
+// 	paycheck = COINS_TO_CREDITS(200) // 200 copper per hour
 
-//////////////////////////////
-/// Tribal Spirit Pledged
-/// A cute furry who wants to be part of the tribe
-/datum/job/tribal/spirit_pledged
-	title = "Spirit-Pledged"
-	flag = F13SPIRITPLEDGED
-	supervisors = "All other tribals."
-	description = "An outsider to the tribe, you have been welcomed in by their higher ups to learn more about the tribes way of life. Perhaps you will attempt to join the tribe, but its not a requirement."
-	outfit = /datum/outfit/job/tribal/f13spiritpledged
-	paycheck = COINS_TO_CREDITS(50) // 50 copper per hour
+// //////////////////////////////
+// /// Tribal Spirit Pledged
+// /// A cute furry who wants to be part of the tribe
+// /datum/job/tribal/spirit_pledged
+// 	title = "Spirit-Pledged"
+// 	flag = F13SPIRITPLEDGED
+// 	supervisors = "All other tribals."
+// 	description = "An outsider to the tribe, you have been welcomed in by their higher ups to learn more about the tribes way of life. Perhaps you will attempt to join the tribe, but its not a requirement."
+// 	outfit = /datum/outfit/job/tribal/f13spiritpledged
+// 	paycheck = COINS_TO_CREDITS(50) // 50 copper per hour
 
-//////////////////////////////
-/// Tribal Dual Citizen
-/// A cute furry who wants to be part of the tribe and the town
-/datum/job/tribal/dual_citizen
-	title = "Dual Citizen"
-	flag = F13VILLAGER
-	department_flag = TRIBAL | DEP_OASIS
-	supervisors = "the town's laws and all tribe members aside from other villagers"
-	description = "A proud member of the Mountain River tribe, you do what needs to be done to ensure the survival of yourself and your people while following the laws of the tribe. While it is common to venture out into the wasteland, do not tread far or without informing your kin. You are also a citizen living in Nash. Treat your town with respect and make sure to follow the laws in place, as your premium status may be revoked if you are considered a danger to the populace. One of the local businesses may have work if you require funds."
-	outfit = /datum/outfit/job/den/f13dualcitizen
-	access = list(ACCESS_TRIBE, ACCESS_BAR)
-	minimal_access = list(ACCESS_TRIBE, ACCESS_BAR)
-	paycheck = COINS_TO_CREDITS(125) // 125 copper per hour
+// //////////////////////////////
+// /// Tribal Dual Citizen
+// /// A cute furry who wants to be part of the tribe and the town
+// /datum/job/tribal/dual_citizen
+// 	title = "Dual Citizen"
+// 	flag = F13VILLAGER
+// 	department_flag = TRIBAL | DEP_OASIS
+// 	supervisors = "the town's laws and all tribe members aside from other villagers"
+// 	description = "A proud member of the Mountain River tribe, you do what needs to be done to ensure the survival of yourself and your people while following the laws of the tribe. While it is common to venture out into the wasteland, do not tread far or without informing your kin. You are also a citizen living in Nash. Treat your town with respect and make sure to follow the laws in place, as your premium status may be revoked if you are considered a danger to the populace. One of the local businesses may have work if you require funds."
+// 	outfit = /datum/outfit/job/den/f13dualcitizen
+// 	access = list(ACCESS_TRIBE, ACCESS_BAR)
+// 	minimal_access = list(ACCESS_TRIBE, ACCESS_BAR)
+// 	paycheck = COINS_TO_CREDITS(125) // 125 copper per hour
 
 
 

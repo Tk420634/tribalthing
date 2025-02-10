@@ -16,6 +16,11 @@
 	desc = "\"Top Secret\" US Government documents, filled with complex diagrams and lists of names, dates and coordinates."
 	icon_state = "docs_verified"
 
+/obj/item/documents/catgirlparadise
+	desc = "\"Top Secret\" Documents from the Catlonial Murrines.  It includes troop amounts, placements, tactics, plans. Don't let this fall into the wrong hands."
+	icon_state = "docs_verified"
+	very_important = TRUE
+
 /obj/item/documents/syndicate
 	desc = "\"Top Secret\" documents detailing sensitive Syndicate operational intelligence."
 
