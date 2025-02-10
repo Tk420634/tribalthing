@@ -1074,13 +1074,13 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				dat += "[TextPreview(features["flavor_text"])]...<BR>"
 			//dat += "<h3>Silicon Flavor Text</h3>"
 			//dat += "<a href='?_src_=prefs;preference=silicon_flavor_text;task=input'><b>Set Silicon Examine Text</b></a><br>"
-			if(length(features["silicon_flavor_text"]) <= 40)
-				if(!length(features["silicon_flavor_text"]))
-					dat += "\[...\]"
-				else
-					dat += "[features["silicon_flavor_text"]]"
-			else
-				dat += "[TextPreview(features["silicon_flavor_text"])]...<BR>"
+			// if(length(features["silicon_flavor_text"]) <= 40)
+			// 	if(!length(features["silicon_flavor_text"]))
+			// 		dat += "\[...\]"
+			// 	else
+			// 		dat += "[features["silicon_flavor_text"]]"
+			// else
+			// 	dat += "[TextPreview(features["silicon_flavor_text"])]...<BR>"
 			dat += "<h3>OOC notes</h3>"
 			dat += "<a href='?_src_=prefs;preference=ooc_notes;task=input'><b>Set OOC notes</b></a><br>"
 			var/ooc_notes_len = length(features["ooc_notes"])
@@ -1092,62 +1092,62 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			else
 				dat += "[TextPreview(features["ooc_notes"])]...<br>"
 
-			dat += "<a href='?_src_=prefs;preference=background_info_notes;task=input'><b>Set Background Info Notes</b></a><br>"
-			var/background_info_notes_len = length(features["background_info_notes"])
-			if(background_info_notes_len <= 40)
-				if(!background_info_notes_len)
-					dat += "\[...\]<br>"
-				else
-					dat += "[features["background_info_notes"]]<br>"
-			else
-				dat += "[TextPreview(features["background_info_notes"])]...<br>"
+			// dat += "<a href='?_src_=prefs;preference=background_info_notes;task=input'><b>Set Background Info Notes</b></a><br>"
+			// var/background_info_notes_len = length(features["background_info_notes"])
+			// if(background_info_notes_len <= 40)
+			// 	if(!background_info_notes_len)
+			// 		dat += "\[...\]<br>"
+			// 	else
+			// 		dat += "[features["background_info_notes"]]<br>"
+			// else
+			// 	dat += "[TextPreview(features["background_info_notes"])]...<br>"
 
 			//outside link stuff
-			dat += "<h3>Outer hyper-links settings</h3>"
-			dat += "<a href='?_src_=prefs;preference=flist;task=input'><b>Set F-list link</b></a><br>"
-			var/flist_len = length(features["flist"])
-			if(flist_len <= 40)
-				if(!flist_len)
-					dat += "\[...\]"
-				else
-					dat += "[features["flist"]]"
-			else
-				dat += "[TextPreview(features["flist"])]...<br>"
+			// dat += "<h3>Outer hyper-links settings</h3>"
+			// dat += "<a href='?_src_=prefs;preference=flist;task=input'><b>Set F-list link</b></a><br>"
+			// var/flist_len = length(features["flist"])
+			// if(flist_len <= 40)
+			// 	if(!flist_len)
+			// 		dat += "\[...\]"
+			// 	else
+			// 		dat += "[features["flist"]]"
+			// else
+			// 	dat += "[TextPreview(features["flist"])]...<br>"
 
 			dat += "</td>"
 			dat += APPEARANCE_CATEGORY_COLUMN
 
 			//Start Creature Character
-			dat += "<h2>Simple Creature Character</h2>"
-			dat += "<b>Creature Species</b><a style='display:block;width:100px' href='?_src_=prefs;preference=creature_species;task=input'>[creature_species ? creature_species : "Eevee"]</a><BR>"
-			dat += "<b>Creature Name</b><a style='display:block;width:100px' href='?_src_=prefs;preference=creature_name;task=input'>[creature_name ? creature_name : "Eevee"]</a><BR>"
+			// dat += "<h2>Simple Creature Character</h2>"
+			// dat += "<b>Creature Species</b><a style='display:block;width:100px' href='?_src_=prefs;preference=creature_species;task=input'>[creature_species ? creature_species : "Eevee"]</a><BR>"
+			// dat += "<b>Creature Name</b><a style='display:block;width:100px' href='?_src_=prefs;preference=creature_name;task=input'>[creature_name ? creature_name : "Eevee"]</a><BR>"
 			/*
 			if(CONFIG_GET(number/body_size_min) != CONFIG_GET(number/body_size_max))
 				dat += "<b>Size:</b> <a href='?_src_=prefs;preference=creature_body_size;task=input'>[creature_body_size*100]%</a><br>"
 			dat += "<b>Scaling:</b> <a href='?_src_=prefs;preference=creature_toggle_fuzzy;task=input'>[creature_fuzzy ? "Fuzzy" : "Sharp"]</a><br>"
 			*/
-			dat += "<a href='?_src_=prefs;preference=creature_flavor_text;task=input'><b>Set Creature Examine Text</b></a><br>"
-			if(length(creature_flavor_text) <= 40)
-				if(!length(creature_flavor_text))
-					dat += "\[...\]<br>"
-				else
-					dat += "[creature_flavor_text]<br>"
-			else
-				dat += "[TextPreview(creature_flavor_text)]...<br>"
-			dat += "<a href='?_src_=prefs;preference=creature_ooc;task=input'><b>Set Creature OOC Notes</b></a><br>"
-			if(length(creature_ooc) <= 40)
-				if(!length(creature_ooc))
-					dat += "\[...\]<br>"
-				else
-					dat += "[creature_ooc]<br>"
-			else
-				dat += "[TextPreview(creature_ooc)]...<br>"
-			if(creature_species)
-				if(!LAZYLEN(GLOB.creature_selectable))
-					generate_selectable_creatures()
-				if(!(creature_species in GLOB.creature_selectable))
-					creature_species = initial(creature_species)
-				dat += "[icon2base64html(GLOB.creature_selectable_icons[creature_species])]<br>"
+			// dat += "<a href='?_src_=prefs;preference=creature_flavor_text;task=input'><b>Set Creature Examine Text</b></a><br>"
+			// if(length(creature_flavor_text) <= 40)
+			// 	if(!length(creature_flavor_text))
+			// 		dat += "\[...\]<br>"
+			// 	else
+			// 		dat += "[creature_flavor_text]<br>"
+			// else
+			// 	dat += "[TextPreview(creature_flavor_text)]...<br>"
+			// dat += "<a href='?_src_=prefs;preference=creature_ooc;task=input'><b>Set Creature OOC Notes</b></a><br>"
+			// if(length(creature_ooc) <= 40)
+			// 	if(!length(creature_ooc))
+			// 		dat += "\[...\]<br>"
+			// 	else
+			// 		dat += "[creature_ooc]<br>"
+			// else
+			// 	dat += "[TextPreview(creature_ooc)]...<br>"
+			// if(creature_species)
+			// 	if(!LAZYLEN(GLOB.creature_selectable))
+			// 		generate_selectable_creatures()
+			// 	if(!(creature_species in GLOB.creature_selectable))
+			// 		creature_species = initial(creature_species)
+			// 	dat += "[icon2base64html(GLOB.creature_selectable_icons[creature_species])]<br>"
 			// End creature Character
 
 			dat += "</td>"

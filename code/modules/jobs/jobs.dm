@@ -161,6 +161,7 @@ GLOBAL_LIST_INIT(oasis_positions, list(
 	// "Banker",
 	"Squad Leader",
 	"Trooper",
+	"Captured Native",
 	// "Prospector",
 	// "Town Doctor",
 	// "Town Scientist",
@@ -334,6 +335,7 @@ GLOBAL_LIST_INIT(silicon_positions, list(
 GLOBAL_LIST_INIT(tribal_positions, list(
 	"Head Warrior",
 	"Warrior",
+	"Captured Murrine",
 ))
 //bikrs
 //GLOBAL_LIST_INIT(biker_positions, list(

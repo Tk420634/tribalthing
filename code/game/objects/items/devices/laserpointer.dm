@@ -71,24 +71,24 @@
 	laser_act(target, user, params)
 
 /obj/item/laser_pointer/proc/laser_act(atom/target, mob/living/user, params)
-	if( !(user in (viewers(7,target))) )
-		return
+	// if( !(user in (viewers(7,target))) )
+	// 	return
 	if (!diode)
 		to_chat(user, span_notice("You point [src] at [target], but nothing happens!"))
 		return
-	if (!user.IsAdvancedToolUser())
-		to_chat(user, span_warning("You don't have the dexterity to do this!"))
-		return
-	if(HAS_TRAIT(user, TRAIT_CHUNKYFINGERS))
-		to_chat(user, span_warning("Your fingers can't press the button!"))
-		return
+	// if (!user.IsAdvancedToolUser())
+	// 	to_chat(user, span_warning("You don't have the dexterity to do this!"))
+	// 	return
+	// if(HAS_TRAIT(user, TRAIT_CHUNKYFINGERS))
+	// 	to_chat(user, span_warning("Your fingers can't press the button!"))
+	// 	return
 
 	add_fingerprint(user)
 
 	//nothing happens if the battery is drained
-	if(recharge_locked)
-		to_chat(user, span_notice("You point [src] at [target], but it's still charging."))
-		return
+	// if(recharge_locked)
+	// 	to_chat(user, span_notice("You point [src] at [target], but it's still charging."))
+	// 	return
 
 	var/outmsg
 	var/turf/targloc = get_turf(target)
@@ -135,9 +135,9 @@
 			outmsg = span_warning("You miss the lens of [C] with [src]!")
 
 	//catpeople
-	var/list/viewers = fov_viewers(1,targloc)
+	var/list/viewers = viewers(1,targloc)
 	for(var/mob/living/carbon/human/H in viewers)
-		if(!iscatperson(H) || H.incapacitated() || H.eye_blind )
+		if(!(iscatperson(H) || HAS_TRAIT(H, TRAIT_CAT)) || H.incapacitated() || H.eye_blind )
 			continue
 		if(!H.lying)
 			H.setDir(get_dir(H,targloc)) // kitty always looks at the light

@@ -25,9 +25,9 @@
 	if(!istype(C))
 		return FALSE
 
-	if(!(HAS_TRAIT(C, TRAIT_TRIBAL) || HAS_TRAIT(C, TRAIT_FORMER_TRIBAL)))
-		to_chat(user, span_warning("You need a deeper connection with the tribes to understand how to call for a bird."))
-		return FALSE
+	// if(!(HAS_TRAIT(C, TRAIT_TRIBAL) || HAS_TRAIT(C, TRAIT_FORMER_TRIBAL)))
+	// 	to_chat(user, span_warning("You need a deeper connection with the tribes to understand how to call for a bird."))
+	// 	return FALSE
 
 	return TRUE
 
@@ -193,8 +193,6 @@
 
 /obj/effect/mailbird/proc/dropAndLeave(successful)
 	var/turf/putit = get_turf(src)
-	if(bean)
-		putit = pick(orange(1, putit))
 	mail.forceMove(putit)
 	if(bean)
 		mail.throw_at(following, 1000, 5)

@@ -1116,6 +1116,16 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	icon_state = "Tribal"
 	color = "#00FF00"
 
+/obj/effect/landmark/start/f13/capturedmurrine
+	name = "Captured Murrine"
+	icon_state = "Tribal"
+	color = "#00FF00"
+
+/obj/effect/landmark/start/f13/capturedfitten
+	name = "Captured Native"
+	icon_state = "Tribal"
+	color = "#00FF00"
+
 /obj/effect/landmark/start/f13/druid
 	name = "Harvest Leader"
 	icon_state = "Tribal"

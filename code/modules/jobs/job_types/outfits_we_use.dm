@@ -14,7 +14,7 @@
 // Base Wasteland Outfit
 // This is the base default outfit for just about everyone
 // please please please base everything off this
-/datum/outfit/job/cb
+/datum/outfit/job/cb	
 	name = "Wastelander"
 	jobtype = /datum/job/wasteland/f13wastelander
 
@@ -70,6 +70,7 @@
 	belt = /obj/item/storage/belt/utility/mining/primitive
 	gloves = /obj/item/clothing/gloves/thief
 	tribal = TRUE
+	cat = TRUE
 	backpack_contents   = list(
 	/obj/item/storage/backpack/satchel/explorer,
 	/obj/item/warpaint_bowl,
@@ -81,7 +82,19 @@
 	name = "head warrior"
 	head = /obj/item/clothing/head/poppycrown
 	tribal = TRUE
+	cat = TRUE
 
+/datum/outfit/job/cb/catgirl/warrior/captured
+	name = "captured murrine"
+	uniform = /obj/item/clothing/under/f13/exile/tribal/shimsusa_loincloth
+	tribal = FALSE
+	head = null
+	backpack = null
+	suit = null
+	shoes = null
+	belt = null
+	gloves = null
+	backpack_contents = list()
 
 
 /datum/outfit/job/cb/guild
@@ -117,6 +130,18 @@
 	id = /obj/item/storage/wallet/stash/high
 	card = /obj/item/card/id/silver
 	pda = /obj/item/pda
+
+/datum/outfit/job/cb/capturedcatgirl
+	uniform = /obj/item/clothing/under/skyrat/maid
+	head = null
+	backpack = null
+	suit = null
+	shoes = null
+	belt = null
+	gloves = null
+	backpack_contents = list()
+	tribal = TRUE
+	cat = TRUE
 
 /datum/outfit/job/cb/guild/deputy
 	name = "Trooper"
