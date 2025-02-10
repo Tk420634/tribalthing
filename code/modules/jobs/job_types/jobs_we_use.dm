@@ -409,25 +409,25 @@
 	selection_color = "#ffeeaa"
 	faction = FACTION_TRIBE
 	exp_type = EXP_TYPE_TRIBAL
-	total_positions = -1
-	spawn_positions = -1
-	exp_requirements = PLAYTIME_HARD_JOB
+	// total_positions = -1
+	// spawn_positions = -1
+	// exp_requirements = PLAYTIME_HARD_JOB
 	exp_type = EXP_TYPE_LIVING
 	selection_color = "#006666"
-	forbids = "Against abuse of pre-collapse technology, especially pre-collapse weapons of war. Your pipboy is pre-blessed."
-	enforces = "The tribe operate as if they are a part of a singular clan. Any harm dealt upon another member is likened to harm placed upon your brother or sister. Above all things, the tribe comes first."
-	objectivesList = list(
-		"The Clan has decided to look for fresh blood from the out-peoples.  See if you can find someone to willingly join the tribe and learn our ways.",
-		"This week we hunt, gecko's are to be reduced in numbers to a more sustainable level on this land for having murdered too many of our brahmin.",
-		"This week we hunt, the Cazador menace is too strong in this land.  Their stingers are dangerous and the elders demand their extinction.",
-		"The harvest leaders far off have asked us to find a cursed Pre-Fall weapon that throws burning light at whatever you seek to destroy.  All of them must be found and destroyed, or our crops might fail.",
-		"The Village rests, defend it and prosper this week.  Peace is rare, and we should enjoy it with song, dance, and good company.  Feel free to include outsiders if they will follow our ways when on our lands.",
-		"The Village rests, defend it and prosper this week.  Peace is rare, but at least we can build defenses and take solitude in our isolation.",
-		"The swamp calls the hunters forth, seek out the thing that shines and return it to the spiritual leaders to appease the spirits.  If no spiritual leader can be found then hide the item from the out-peoples.",
-		"Something awful happened a bit back and it calls for blood, harass the outlaws of Redwater for their predations of wandering tribesman.  Remember to fortify the southern tunnel to their lands.  We should try to take at least one of them prisoner, and see how they like the collar on their own necks.",
-		"The people of tribe of Nash insulted us in recent weeks, harass the people of Nash for their highbrow attitude.  Remember to Fortify the northern entrance to the village, and try to take them down a peg for their witty insolence.",
-		"This week is one of rememberance.  Think of the times when our tribe came forth from The Cave of Crying.  Of the friends and loved ones lost.  Remember peace, and cry for what is lost.",
-		"This week is one of rememberance.  Think of the times when our tribe has failed at our duties and work together as the family we are to try and solve internal issues. Tomorrow can be better, if only we try today.")
+	// forbids = "Against abuse of pre-collapse technology, especially pre-collapse weapons of war. Your pipboy is pre-blessed."
+	// enforces = "The tribe operate as if they are a part of a singular clan. Any harm dealt upon another member is likened to harm placed upon your brother or sister. Above all things, the tribe comes first."
+	// objectivesList = list(
+	// 	"The Clan has decided to look for fresh blood from the out-peoples.  See if you can find someone to willingly join the tribe and learn our ways.",
+	// 	"This week we hunt, gecko's are to be reduced in numbers to a more sustainable level on this land for having murdered too many of our brahmin.",
+	// 	"This week we hunt, the Cazador menace is too strong in this land.  Their stingers are dangerous and the elders demand their extinction.",
+	// 	"The harvest leaders far off have asked us to find a cursed Pre-Fall weapon that throws burning light at whatever you seek to destroy.  All of them must be found and destroyed, or our crops might fail.",
+	// 	"The Village rests, defend it and prosper this week.  Peace is rare, and we should enjoy it with song, dance, and good company.  Feel free to include outsiders if they will follow our ways when on our lands.",
+	// 	"The Village rests, defend it and prosper this week.  Peace is rare, but at least we can build defenses and take solitude in our isolation.",
+	// 	"The swamp calls the hunters forth, seek out the thing that shines and return it to the spiritual leaders to appease the spirits.  If no spiritual leader can be found then hide the item from the out-peoples.",
+	// 	"Something awful happened a bit back and it calls for blood, harass the outlaws of Redwater for their predations of wandering tribesman.  Remember to fortify the southern tunnel to their lands.  We should try to take at least one of them prisoner, and see how they like the collar on their own necks.",
+	// 	"The people of tribe of Nash insulted us in recent weeks, harass the people of Nash for their highbrow attitude.  Remember to Fortify the northern entrance to the village, and try to take them down a peg for their witty insolence.",
+	// 	"This week is one of rememberance.  Think of the times when our tribe came forth from The Cave of Crying.  Of the friends and loved ones lost.  Remember peace, and cry for what is lost.",
+	// 	"This week is one of rememberance.  Think of the times when our tribe has failed at our duties and work together as the family we are to try and solve internal issues. Tomorrow can be better, if only we try today.")
 
 // //////////////////////////////
 // /// Tribal Chief
@@ -471,7 +471,7 @@
 	enforces = "The will of the gods and the Nyampire."
 	forbids = "Nothing in particular, victory must be found. Honor can be restored later."
 	description = "The Gods have chosen you to be a Warleader for our warriors, only you can prove if you're fit for this position.  Capture the invaders and integrate them into the Nyampire."
-	outfit = /datum/outfit/job/tribal/f13Hhunter
+	outfit = /datum/outfit/job/cb/catgirl/warrior/head
 	paycheck = COINS_TO_CREDITS(100) // 100 copper per hour
 
 // //////////////////////////////
@@ -495,11 +495,13 @@
 /datum/job/tribal/f13hunter
 	title = "Warrior"
 	flag = F13HUNTER
+	total_positions = 999
+	spawn_positions = 999
 	supervisors = "The Nyan-Nyan Neko Gods, the Head Hunter and your instincts."
 	enforces = "The ways of the Nyan-Nyan Neko Nyampire."
 	forbids = "Nothing in particular, your victory is utmost over the foe."
 	description = "You are a warrior of the Nyan-Nyan Neko Nyampire, one of the greatest warriors this planet has to offer.  Clad in bones of monsters these invaders would cower before and gifted with skills untold."
-	outfit = /datum/outfit/job/tribal/f13hunter
+	outfit = /datum/outfit/job/cb/catgirl/warrior
 	paycheck = COINS_TO_CREDITS(75) // 75 copper per hour
 
 // //////////////////////////////

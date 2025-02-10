@@ -529,7 +529,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	dat += "<a href='?_src_=prefs;preference=tab;tab=[APPEARANCE_TAB]' [current_tab == APPEARANCE_TAB ? "class='linkOn'" : ""]>Character Appearance</a>"
 	dat += "<a href='?_src_=prefs;preference=tab;tab=[CHAR_INFO_TAB]' [current_tab == CHAR_INFO_TAB ? "class='linkOn'" : ""]>Character Info</a>"
 	dat += "<a href='?_src_=prefs;preference=tab;tab=[ERP_TAB]' [current_tab == ERP_TAB ? "class='linkOn'" : ""]>Underlying Appearance</a>"
-	dat += "<a href='?_src_=prefs;preference=tab;tab=[LOADOUT_TAB]' [current_tab == LOADOUT_TAB ? "class='linkOn'" : ""]>Loadout</a>"
+	//dat += "<a href='?_src_=prefs;preference=tab;tab=[LOADOUT_TAB]' [current_tab == LOADOUT_TAB ? "class='linkOn'" : ""]>Loadout</a>"
 	dat += "<a href='?_src_=prefs;preference=tab;tab=[GAME_PREFERENCES_TAB]' [current_tab == GAME_PREFERENCES_TAB ? "class='linkOn'" : ""]>Game Preferences</a>"
 	dat += "<a href='?_src_=prefs;preference=tab;tab=[CONTENT_PREFERENCES_TAB]' [current_tab == CONTENT_PREFERENCES_TAB ? "class='linkOn'" : ""]>Content Preferences</a>"
 	dat += "<a href='?_src_=prefs;preference=tab;tab=[KEYBINDINGS_TAB]' [current_tab == KEYBINDINGS_TAB ? "class='linkOn'" : ""]>Keybindings</a>"
@@ -1064,7 +1064,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += APPEARANCE_CATEGORY_COLUMN
 			dat += "<h3>Flavor Text</h3>"
 			dat += "<a href='?_src_=prefs;preference=flavor_text;task=input'><b>Set Examine Text</b></a><br>"
-			dat += "<a href='?_src_=prefs;preference=setup_hornychat;task=input'>Configure VisualChat / Profile Pictures!</a><BR>"
+			//dat += "<a href='?_src_=prefs;preference=setup_hornychat;task=input'>Configure VisualChat / Profile Pictures!</a><BR>"
 			if(length(features["flavor_text"]) <= 40)
 				if(!length(features["flavor_text"]))
 					dat += "\[...\]"
@@ -1072,8 +1072,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "[features["flavor_text"]]"
 			else
 				dat += "[TextPreview(features["flavor_text"])]...<BR>"
-			dat += "<h3>Silicon Flavor Text</h3>"
-			dat += "<a href='?_src_=prefs;preference=silicon_flavor_text;task=input'><b>Set Silicon Examine Text</b></a><br>"
+			//dat += "<h3>Silicon Flavor Text</h3>"
+			//dat += "<a href='?_src_=prefs;preference=silicon_flavor_text;task=input'><b>Set Silicon Examine Text</b></a><br>"
 			if(length(features["silicon_flavor_text"]) <= 40)
 				if(!length(features["silicon_flavor_text"]))
 					dat += "\[...\]"

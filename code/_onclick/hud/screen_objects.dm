@@ -98,6 +98,8 @@
 	return 1
 
 /atom/movable/screen/craft
+	alpha = 0
+	mouse_opacity = 0
 	name = "crafting menu"
 	icon = 'icons/fallout/UI/screen_fallout2.dmi'
 	icon_state = "craft"

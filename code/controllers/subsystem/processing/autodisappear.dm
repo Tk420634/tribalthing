@@ -10,7 +10,7 @@ SUBSYSTEM_DEF(autodisappear)
 		AD.heartbeat()
 
 /datum/controller/subsystem/autodisappear/proc/register_thing(atom/movable/thingy, timetime)
-	var/datum/auto_disappear/AD = new /datum/auto_disappear(timetime)
+	var/datum/auto_disappear/AD = new /datum/auto_disappear(thingy, timetime)
 	vanishing |= AD
 
 /datum/controller/subsystem/autodisappear/proc/unregister_thing(atom/movable/thingy)
@@ -42,8 +42,9 @@ SUBSYSTEM_DEF(autodisappear)
 	var/lasttick
 	var/vanishing // cloood disappear
 
-/datum/auto_disappear/New(cooltime)
+/datum/auto_disappear/New(atom/thingy, cooltime)
 	. = ..()
+	thingref = WEAKREF(thingy)
 	maxtime = cooltime
 	timeleft = maxtime
 	lasttick = world.time
