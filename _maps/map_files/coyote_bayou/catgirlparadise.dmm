@@ -1168,16 +1168,6 @@
 	icon_state = "darkrustysolid"
 	},
 /area/tcommsat/server)
-"tQ" = (
-/obj/structure/bookshelf{
-	desc = "An... empty bookshelf?  It's very sturdily built.  There also appear to be claw marks on it."
-	},
-/obj/item/hairbrush,
-/obj/item/toy/plush/hairball/ambergris{
-	name = "Felinid Ambergris"
-	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/ambientlighting/building/catgirls_score_here)
 "tW" = (
 /obj/structure/rack/shelf_metal,
 /obj/item/grenade/flashbang,
@@ -1628,6 +1618,11 @@
 /obj/structure/chair/comfy/throne{
 	name = "throne"
 	},
+/obj/item/toy/plush/hairball/ambergris{
+	name = "Felinid Ambergris";
+	pixel_y = 16;
+	pixel_x = -2
+	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ambientlighting/building/catgirls_score_here)
 "ze" = (
@@ -1771,19 +1766,10 @@
 /turf/open/floor/plasteel/white,
 /area/f13/ambientlighting/building)
 "AX" = (
-/obj/structure/closet/locker,
-/obj/item/storage/box/mre/menu3,
-/obj/item/storage/box/mre/menu3,
-/obj/item/storage/box/mre/menu3,
-/obj/item/storage/box/mre/menu3,
-/obj/item/storage/box/mre/menu3,
-/obj/item/storage/box/mre/menu3,
-/obj/item/storage/box/mre/menu3,
-/obj/item/storage/box/mre/menu3,
-/obj/item/storage/box/mre/menu3,
-/obj/item/storage/box/mre/menu3,
-/obj/item/storage/box/mre/menu3,
-/obj/item/storage/box/mre/menu3,
+/obj/structure/filingcabinet{
+	pixel_x = 5
+	},
+/obj/item/documents/catgirlparadise,
 /turf/open/floor/plasteel/white,
 /area/f13/ambientlighting/building)
 "Bf" = (
@@ -3179,7 +3165,6 @@
 /area/f13/ambientlighting/building)
 "YU" = (
 /obj/structure/closet/locker,
-/obj/item/documents/catgirlparadise,
 /turf/open/floor/plasteel/white,
 /area/f13/ambientlighting/building)
 "Zi" = (
@@ -34862,7 +34847,7 @@ Md
 Md
 wl
 wl
-ux
+AX
 ux
 In
 pa
@@ -39488,7 +39473,7 @@ aa
 aa
 vR
 wl
-AX
+CN
 Md
 Mq
 zL
@@ -39695,7 +39680,7 @@ zt
 sE
 cg
 mR
-tQ
+AI
 zt
 zh
 zh
@@ -42058,7 +42043,7 @@ OQ
 OQ
 OQ
 wl
-AX
+CN
 Md
 ux
 ux
