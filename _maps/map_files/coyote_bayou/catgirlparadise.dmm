@@ -90,6 +90,10 @@
 /obj/effect/landmark/start/f13/deputy,
 /turf/open/floor/plasteel/white,
 /area/f13/ambientlighting/building)
+"bE" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/white,
+/area/f13/wasteland)
 "bG" = (
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d";
@@ -152,12 +156,22 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ambientlighting/building/catgirls_score_here)
+"cl" = (
+/turf/closed/wall/mineral/titanium/interior,
+/area/f13/wasteland)
 "cn" = (
 /obj/structure/flora/tree/cherryblossom,
 /turf/open/indestructible/ground/outside/dirt{
 	color = "#BBBBBB"
 	},
 /area/f13/wasteland/nash)
+"cr" = (
+/obj/machinery/light/small{
+	light_color = "#884444"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/white,
+/area/f13/ambientlighting/building)
 "cY" = (
 /obj/structure/statue/bone/rib,
 /turf/open/indestructible/ground/outside/dirt{
@@ -251,6 +265,18 @@
 /obj/machinery/door/airlock/grunge,
 /turf/open/floor/plasteel/white,
 /area/f13/ambientlighting/building)
+"eB" = (
+/obj/structure/statue/bos/ladyleft{
+	desc = "A statue pointing the way.  It says 'this way there be danger'.  You can read right?"
+	},
+/obj/machinery/light/small{
+	light_color = "#884444";
+	dir = 4
+	},
+/turf/open/indestructible/ground/outside/dirt{
+	color = "#BBBBBB"
+	},
+/area/f13/wasteland/nash)
 "eE" = (
 /obj/machinery/telecomms/server/presets/legion,
 /turf/open/floor/circuit/telecomms/mainframe,
@@ -1018,6 +1044,10 @@
 /obj/machinery/telecomms/bus/preset_one,
 /turf/open/floor/circuit/telecomms/mainframe,
 /area/tcommsat/server)
+"qD" = (
+/obj/machinery/door/airlock/grunge,
+/turf/open/floor/plasteel/white,
+/area/f13/wasteland/nash)
 "qK" = (
 /obj/structure/stone_tile/slab,
 /obj/structure/destructible/tribal_torch/wall/lit{
@@ -1077,14 +1107,14 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ambientlighting/building/catgirls_score_here)
 "rv" = (
-/obj/structure/flora/ausbushes/fullgrass,
-/obj/item/razor{
-	name = "grass cutter"
+/obj/machinery/light/small{
+	dir = 8;
+	light_color = "#d8b1b1"
 	},
 /turf/open/indestructible/ground/outside/dirt{
 	color = "#BBBBBB"
 	},
-/area/f13/wasteland/nash)
+/area/f13/wasteland)
 "rO" = (
 /obj/item/storage/crayons,
 /turf/open/floor/plasteel/white,
@@ -1146,6 +1176,13 @@
 /obj/structure/table/wood/settler,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ambientlighting/building/catgirls_score_here)
+"sY" = (
+/obj/machinery/light/small{
+	dir = 8;
+	light_color = "#d8b1b1"
+	},
+/turf/open/floor/plasteel/white,
+/area/f13/wasteland)
 "tb" = (
 /obj/effect/turf_decal/stripes/asteroid/line{
 	dir = 4
@@ -1231,6 +1268,19 @@
 /obj/item/laser_pointer/blue,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ambientlighting/building)
+"up" = (
+/obj/structure/flora/ausbushes/fullgrass,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/obj/machinery/light/small{
+	dir = 8;
+	light_color = "#d8b1b1"
+	},
+/turf/open/indestructible/ground/outside/dirt{
+	color = "#BBBBBB"
+	},
+/area/f13/wasteland/nash)
 "ur" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/grass/wasteland{
@@ -1714,6 +1764,14 @@
 	footstep = "grass"
 	},
 /area/f13/wasteland/nash)
+"zZ" = (
+/obj/structure/bed{
+	dir = 8
+	},
+/obj/item/bedsheet,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/white,
+/area/f13/wasteland/nash)
 "Af" = (
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d";
@@ -1746,6 +1804,11 @@
 /obj/structure/table/wood/settler,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ambientlighting/building/catgirls_score_here)
+"Am" = (
+/turf/open/indestructible/ground/outside/dirt{
+	color = "#BBBBBB"
+	},
+/area/f13/wasteland)
 "Ar" = (
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 1;
@@ -1762,6 +1825,18 @@
 	clawfootstep = "grass";
 	color = "#888888";
 	footstep = "grass"
+	},
+/area/f13/wasteland/nash)
+"Ax" = (
+/obj/structure/statue/bos/ladyright{
+	desc = "A statue pointing the way.  It says 'this way there be danger'.  You can read right?"
+	},
+/obj/machinery/light/small{
+	dir = 8;
+	light_color = "#d8b1b1"
+	},
+/turf/open/indestructible/ground/outside/dirt{
+	color = "#BBBBBB"
 	},
 /area/f13/wasteland/nash)
 "AE" = (
@@ -2233,14 +2308,6 @@
 /obj/effect/turf_decal/stripes/asteroid/line,
 /turf/open/floor/circuit/telecomms/mainframe,
 /area/tcommsat/server)
-"Gv" = (
-/obj/machinery/light/small{
-	light_color = "#884444";
-	dir = 4
-	},
-/obj/effect/landmark/start/f13/dartgunner,
-/turf/open/floor/plasteel/white,
-/area/f13/ambientlighting/building)
 "GK" = (
 /obj/structure/bed{
 	dir = 8
@@ -2252,6 +2319,18 @@
 /obj/machinery/light/floor,
 /turf/open/floor/circuit/telecomms/mainframe,
 /area/tcommsat/server)
+"GU" = (
+/obj/effect/landmark/start/f13/dartgunner,
+/turf/open/floor/plasteel/white,
+/area/f13/ambientlighting/building)
+"GY" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/open/indestructible/ground/outside/dirt{
+	color = "#BBBBBB"
+	},
+/area/f13/wasteland/nash)
 "Hb" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -2263,7 +2342,7 @@
 /obj/structure/table/wood/settler,
 /turf/open/floor/plasteel/white,
 /area/f13/ambientlighting/building)
-"HJ" = (
+"Hr" = (
 /obj/structure/stone_tile/slab,
 /obj/effect/landmark/start/f13/catsniper,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
@@ -2271,6 +2350,9 @@
 "HT" = (
 /turf/open/floor/circuit/telecomms/mainframe,
 /area/tcommsat/server)
+"HZ" = (
+/turf/open/floor/plasteel/white,
+/area/f13/wasteland)
 "If" = (
 /obj/structure/flora/ausbushes/brflowers,
 /obj/structure/flora/tree/jungle{
@@ -2553,6 +2635,14 @@
 /obj/structure/curtain,
 /turf/open/floor/plasteel/white,
 /area/f13/ambientlighting/building)
+"Oe" = (
+/obj/machinery/light/small{
+	light_color = "#884444";
+	dir = 4
+	},
+/obj/effect/landmark/start/f13/dartgunner,
+/turf/open/floor/plasteel/white,
+/area/f13/ambientlighting/building)
 "Oj" = (
 /obj/machinery/telecomms/processor/preset_three,
 /obj/machinery/light/floor,
@@ -2579,10 +2669,6 @@
 	footstep = "grass"
 	},
 /area/f13/wasteland/nash)
-"Oo" = (
-/obj/effect/landmark/start/f13/dartgunner,
-/turf/open/floor/plasteel/white,
-/area/f13/ambientlighting/building)
 "Os" = (
 /obj/effect/decal/cleanable/dirt/dust{
 	color = "#997950"
@@ -2843,6 +2929,13 @@
 /turf/open/indestructible/ground/outside/dirt{
 	color = "#BBBBBB"
 	},
+/area/f13/wasteland/nash)
+"Sf" = (
+/obj/structure/bed{
+	dir = 8
+	},
+/obj/item/bedsheet,
+/turf/open/floor/plasteel/white,
 /area/f13/wasteland/nash)
 "Sx" = (
 /obj/structure/rug/big/rug_blue,
@@ -30553,25 +30646,25 @@ fP
 fP
 fP
 fP
-fP
+wl
+wl
+wl
+wl
+wl
+wl
+wl
+eB
+vR
+vR
+vR
+eB
+vR
+vR
+vR
+vR
+vR
 OQ
-OQ
 vR
-vR
-vR
-vR
-sH
-vR
-vR
-vR
-sH
-vR
-vR
-vR
-vR
-vR
-OQ
-OQ
 vR
 OQ
 vR
@@ -30810,12 +30903,12 @@ fP
 fP
 fP
 fP
-fP
-OQ
-OQ
-OQ
-OQ
-OQ
+wl
+wl
+tW
+DJ
+WD
+lk
 wl
 wl
 XU
@@ -30824,13 +30917,13 @@ XP
 wl
 wl
 wl
-wl
-wl
-vR
-vR
+Ei
+Ei
 OQ
 vR
 vR
+vR
+OQ
 vR
 vR
 OQ
@@ -31068,26 +31161,26 @@ fP
 fP
 fP
 wl
-wl
-wl
-wl
-wl
-wl
-wl
-ze
+VE
+ux
+ux
+ux
+ux
+oY
+up
 nB
 nB
 nB
-ze
-ze
-ze
+OV
 IW
+pY
+pY
 wl
 wl
 wl
-wl
-wl
-vR
+Ei
+Ei
+OQ
 vR
 vR
 OQ
@@ -31325,26 +31418,26 @@ fP
 fP
 fP
 wl
-wl
-tW
-DJ
-WD
-lk
-wl
-pj
+ek
+ux
+ux
+ux
+ux
+eq
+nB
 nB
 qu
 nB
 ze
-ze
-ze
 IW
-wl
-GK
+pY
+Sf
 iI
 GK
 wl
-vR
+Ei
+Ei
+OQ
 vR
 vR
 vR
@@ -31582,26 +31675,26 @@ fP
 fP
 fP
 wl
-VE
+QU
 ux
 ux
 ux
-ux
+uQ
 oY
-ze
+pj
 nB
 nB
 nB
 qu
-qu
-qu
 nB
-eq
-ux
+qD
+nB
 Md
 ux
 wl
-vR
+Ei
+Ei
+OQ
 vR
 OQ
 vR
@@ -31839,7 +31932,7 @@ fP
 fP
 fP
 wl
-ek
+mA
 ux
 ux
 ux
@@ -31850,15 +31943,15 @@ nB
 nB
 nB
 ze
-rv
-ze
 DO
+pY
+pY
 wl
 wl
 wl
-wl
-wl
-vR
+Ei
+Ei
+OQ
 vR
 OQ
 vR
@@ -32096,26 +32189,26 @@ fP
 fP
 fP
 wl
-QU
-ux
-ux
-ux
-uQ
-oY
+wl
+DP
+Yj
+qt
+iT
+wl
 pj
 nB
 nB
 nB
 ze
-ze
-LW
 IW
-wl
-GK
+pY
+Sf
 It
 GK
 wl
-vR
+Ei
+Ei
+OQ
 vR
 OQ
 vR
@@ -32350,29 +32443,29 @@ ux
 ux
 wl
 fP
-fP
-fP
 wl
-mA
-ux
-ux
-ux
-ux
-eq
-nB
-nB
-nB
-qu
-qu
-qu
-nB
-nB
-eq
-ux
-Md
-Md
+wl
+wl
+wl
+wl
+wl
+wl
+wl
 wl
 vR
+nB
+nB
+qu
+qu
+nB
+qD
+nB
+Md
+Md
+wl
+Ei
+Ei
+OQ
 vR
 OQ
 vR
@@ -32607,29 +32700,29 @@ ux
 ux
 wl
 fP
-fP
-fP
 wl
-wl
-DP
-Yj
-qt
-iT
-wl
-pj
+EA
+hf
+Jt
+xr
+yq
+hf
+CL
+oY
+vR
 qu
 nB
 nB
 ze
-ze
-ze
 DO
+pY
+pY
 wl
 wl
 wl
-wl
-wl
-vR
+Ei
+Ei
+OQ
 vR
 OQ
 vR
@@ -32865,28 +32958,28 @@ ux
 wl
 fP
 wl
-wl
-wl
-wl
-wl
-wl
-wl
-wl
-wl
+RM
+ux
+of
+jN
+Mu
+ux
+ux
+oY
 ze
 qu
 nB
 nB
 ze
-ze
-ze
 IW
-wl
-WE
+pY
+zZ
 It
 GK
 wl
-vR
+Ei
+Ei
+OQ
 vR
 OQ
 vR
@@ -33122,28 +33215,28 @@ ux
 wl
 fP
 wl
-EA
-hf
-Jt
-xr
-yq
-hf
-CL
+RM
+ux
+ux
+ux
+ux
+ux
+ux
 oY
 ze
 nB
 nB
 nB
 nB
-qu
-qu
 nB
-eq
-ux
+qD
+nB
 ux
 Md
 wl
-vR
+Ei
+Ei
+OQ
 vR
 OQ
 vR
@@ -33379,11 +33472,11 @@ ux
 wl
 fP
 wl
-RM
+Cn
 ux
-of
-jN
-Mu
+ux
+ux
+ux
 ux
 ux
 oY
@@ -33392,15 +33485,15 @@ nB
 nB
 nB
 ze
-ze
-ze
 DO
+pY
+pY
 wl
 wl
 wl
-wl
-wl
-vR
+Ei
+Ei
+OQ
 vR
 OQ
 vR
@@ -33634,30 +33727,30 @@ ux
 ux
 ux
 wl
-fP
+wl
 wl
 RM
 ux
-ux
-ux
-ux
-ux
-ux
-oY
-ze
+In
+pa
+In
+pa
+Zy
+wl
+pj
 nB
 qu
 qu
 Pi
-ze
-ze
 IW
-wl
-GK
+pY
+Sf
 It
 GK
 wl
-vR
+Ei
+Ei
+OQ
 vR
 OQ
 vR
@@ -33891,30 +33984,30 @@ ux
 Md
 ux
 wl
-fP
 wl
-Cn
+wl
+EV
+ux
+In
+pa
+In
+pa
 ux
 ux
-ux
-ux
-ux
-ux
-oY
-ze
 nB
 nB
-qu
-qu
+nB
 qu
 qu
 nB
-eq
-Md
+qD
+qu
 ux
 Md
 wl
-vR
+Ei
+Ei
+OQ
 vR
 OQ
 vR
@@ -34150,28 +34243,28 @@ ux
 wl
 wl
 wl
-RM
 ux
-In
-pa
-In
-pa
-Zy
-wl
-pj
+ux
+ux
+ux
+ux
+ux
+ux
+ux
+nB
 nB
 nB
 qu
 ze
-LW
-LW
 DO
+pY
+pY
 wl
 wl
 wl
-wl
-wl
-vR
+Ei
+Ei
+OQ
 vR
 OQ
 vR
@@ -34407,28 +34500,28 @@ ux
 ux
 wl
 wl
-EV
+yJ
 ux
 In
 pa
 In
 pa
-ux
-ux
-nB
+Zy
+wl
+pj
 qu
 nB
 nB
 ze
-ze
-ze
 IW
-wl
-GK
+pY
+Sf
 It
 GK
 wl
-vR
+Ei
+Ei
+OQ
 vR
 OQ
 vR
@@ -34662,30 +34755,30 @@ Md
 ux
 ux
 Md
+nH
 wl
-wl
-ux
-ux
-ux
-ux
-ux
-ux
-ux
-ux
-nB
-qu
-qu
-nB
-nB
-nB
-qu
-nB
-eq
-ux
-ux
-ux
-wl
+TY
+ji
+In
+pa
+In
+mK
+CL
+oY
 vR
+qu
+qu
+nB
+nB
+nB
+qD
+nB
+ux
+ux
+wl
+Ei
+Ei
+OQ
 vR
 OQ
 vR
@@ -34921,28 +35014,28 @@ Md
 Md
 wl
 wl
-yJ
-ux
-In
-pa
-In
-pa
-Zy
 wl
-pj
+wl
+wl
+wl
+wl
+wl
+wl
+wl
+GY
 nB
 nB
 nB
-ze
-ze
 ze
 DO
+pY
+pY
 wl
 wl
 wl
-wl
-wl
-vR
+Ei
+Ei
+OQ
 vR
 vR
 vR
@@ -35176,30 +35269,30 @@ Md
 ux
 Md
 ux
-nH
 wl
-TY
-ji
-In
-pa
-In
-mK
-CL
+wl
+mm
+Ex
+mm
+Jb
+Ei
+Ua
+Kk
 oY
 ze
 nB
 nB
 nB
 ze
-ze
-ze
 Cy
-wl
-WE
+pY
+zZ
 It
 GK
 wl
-vR
+Ei
+Ei
+OQ
 vR
 vR
 OQ
@@ -35435,28 +35528,28 @@ ux
 Md
 wl
 wl
-wl
-wl
-wl
-wl
-wl
-wl
-wl
-wl
+UR
+Sx
+fR
+Ei
+Ei
+ne
+LP
+oY
 pj
 nB
 qu
 nB
 qu
 nB
+qD
 qu
-nB
-eq
-Md
 ux
 ux
 wl
-vR
+Ei
+Ei
+OQ
 vR
 OQ
 OQ
@@ -35691,29 +35784,29 @@ ux
 ux
 ux
 wl
-wl
-mm
-Ex
-mm
-Jb
+gG
 Ei
-Ua
-Kk
-oY
-ze
+eK
+Ei
+UR
+Ei
+ne
+ux
+ux
+nB
 nB
 qu
 nB
 ze
-ze
-ze
 DO
+pY
+pY
 wl
 wl
 wl
-wl
-wl
-vR
+Ei
+Ei
+OQ
 vR
 vR
 vR
@@ -35948,29 +36041,29 @@ ux
 Md
 ux
 wl
-wl
-UR
-Sx
-fR
+gG
+ZR
+Ei
+aw
 Ei
 Ei
-ne
-LP
-oY
-pj
+JB
+Md
+ux
+qu
 nB
 qu
 nB
 ze
-ze
-ze
 IW
-wl
-GK
+pY
+Sf
 It
 WE
 wl
-vR
+Ei
+Ei
+OQ
 vR
 vR
 vR
@@ -36207,9 +36300,9 @@ ux
 wl
 gG
 Ei
-eK
 Ei
 UR
+Ei
 Ei
 ne
 ux
@@ -36219,15 +36312,15 @@ nB
 nB
 qu
 qu
-qu
 nB
+qD
 nB
-eq
-ux
 Md
 ux
 wl
-vR
+Ei
+Ei
+OQ
 vR
 vR
 vR
@@ -36462,29 +36555,29 @@ ux
 ux
 ux
 wl
-gG
-ZR
-Ei
-aw
+wl
 Ei
 Ei
-JB
-Md
-ux
-qu
+Ei
+Ei
+Ei
+ne
+LP
+oY
+pj
 qu
 nB
 nB
-ze
-ze
 ze
 DO
+pY
+pY
 wl
 wl
 wl
-wl
-wl
-vR
+Ei
+Ei
+OQ
 vR
 vR
 vR
@@ -36719,29 +36812,29 @@ ux
 ux
 Zy
 wl
-gG
+wl
+js
+qq
+mm
+YM
 Ei
-Ei
-UR
-Ei
-Ei
-ne
-ux
-ux
-nB
+Bf
+Fg
+oY
+ze
 qu
 nB
 qu
-ze
-ze
 ze
 IW
-wl
-WE
+pY
+zZ
 It
 GK
 wl
-vR
+Ei
+vm
+OQ
 vR
 vR
 vR
@@ -36977,27 +37070,27 @@ Md
 ux
 wl
 wl
-Ei
-Ei
-Ei
-Ei
-Ei
-ne
-LP
-oY
+wl
+wl
+wl
+wl
+wl
+wl
+wl
+wl
 pj
 nB
 nB
-nB
-nB
 qu
 nB
 qu
-eq
-ux
+qD
+nB
 ux
 Md
 wl
+Ei
+vm
 vR
 vR
 vR
@@ -37231,25 +37324,25 @@ Md
 ux
 ux
 Md
-ux
-wl
-wl
-js
-qq
-mm
-YM
-Ei
-Bf
-Fg
-oY
+Zy
+cl
+Am
+Am
+rv
+Am
+rv
+Am
+rv
+Am
+rv
 ze
 qu
 nB
 nB
 ze
-LW
-LW
 Sd
+pY
+pY
 wl
 wl
 wl
@@ -37488,22 +37581,22 @@ ux
 ux
 Md
 ux
-Zy
-wl
-wl
-wl
-wl
-wl
-wl
-wl
-wl
-wl
-wl
-ze
-qu
+ux
+sY
+HZ
+HZ
+bE
+HZ
+HZ
+bE
+HZ
+HZ
+bE
 nB
 qu
 nB
+qu
+qu
 nB
 qu
 qu
@@ -37746,17 +37839,17 @@ ux
 Md
 ux
 ux
-hf
-wl
-pj
-ze
-ze
-OV
-ze
-ze
-ze
-OV
-ze
+ux
+Md
+qu
+qu
+nB
+qu
+nB
+qu
+qu
+qu
+qu
 nB
 oG
 qu
@@ -38011,7 +38104,7 @@ nB
 nB
 nB
 nB
-nB
+qu
 qu
 nB
 qu
@@ -38026,7 +38119,7 @@ nB
 nB
 qu
 qu
-MG
+nB
 vR
 vR
 vR
@@ -38274,17 +38367,17 @@ nB
 nB
 nB
 nB
-ze
-ze
-ze
 nB
-de
-ze
-ze
-de
-ze
-wl
-Sc
+qu
+MG
+nB
+MG
+nB
+nB
+MG
+nB
+ji
+vR
 vR
 vR
 vR
@@ -38541,7 +38634,7 @@ wl
 wl
 wl
 wl
-vR
+Sc
 vR
 vR
 vR
@@ -38766,9 +38859,9 @@ WY
 WY
 WY
 wl
-Oo
-Gv
-Oo
+GU
+Oe
+GU
 ap
 EU
 WP
@@ -38785,7 +38878,7 @@ oY
 wl
 wl
 pj
-nB
+qu
 nB
 nB
 ze
@@ -39553,7 +39646,7 @@ Mq
 zL
 Mq
 zL
-Zy
+cr
 wl
 pj
 nB
@@ -39815,7 +39908,7 @@ ux
 nB
 nB
 qu
-nB
+qu
 ze
 Sd
 wl
@@ -40327,7 +40420,7 @@ Mq
 LP
 wl
 pj
-nB
+qu
 nB
 nB
 ze
@@ -40586,7 +40679,7 @@ oY
 ze
 nB
 nB
-nB
+qu
 ze
 ze
 wl
@@ -40796,13 +40889,13 @@ Bp
 lV
 Ka
 zt
-HJ
+Hr
 MD
 MD
 kD
 kD
 kD
-HJ
+Hr
 zt
 vR
 vR
@@ -40841,7 +40934,7 @@ vj
 Zy
 wl
 pj
-nB
+qu
 nB
 nB
 ze
@@ -41101,7 +41194,7 @@ ze
 nB
 qu
 nB
-nB
+qu
 nB
 eq
 ux
@@ -41604,19 +41697,19 @@ vR
 vR
 wl
 FB
-ux
+Md
 Te
 oU
 Kb
 bR
-ux
+Md
 ux
 nB
 qu
 nB
 qu
 nB
-nB
+qu
 eq
 ux
 ux
@@ -42639,11 +42732,11 @@ wl
 wl
 wl
 wl
-ze
-nB
+de
 qu
-nB
-ze
+qu
+qu
+de
 ze
 wl
 wl
@@ -43153,11 +43246,11 @@ vR
 vR
 OQ
 vR
-Sc
+Ax
 vR
 vR
 vR
-Sc
+Ax
 vR
 vR
 vR
