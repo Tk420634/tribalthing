@@ -31,7 +31,7 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 	null, \
 	new/datum/stack_recipe("metal barricade", /obj/structure/deployable_barricade/metal, 2, 1, time = 1 SECONDS), \
 	new/datum/stack_recipe("iron ingot", /obj/item/ingot/iron, 6, time = 100), \
-	new/datum/stack_recipe("anomalous artifact exclusion cube", /obj/item/storage/box/artifactcontainer/metal, 1, time = 10),
+	//new/datum/stack_recipe("anomalous artifact exclusion cube", /obj/item/storage/box/artifactcontainer/metal, 1, time = 10),
 	new/datum/stack_recipe("primative chemical isolator", /obj/item/reagent_containers/glass/primitive_chem_isolator, 6, time = 20),\
 	/*new/datum/stack_recipe("metal parts", /obj/item/stack/crafting/metalparts, 5), \ very easy to find already*/
 	new/datum/stack_recipe("length of chain", /obj/item/blacksmith/chain, 1, time = 50), \
@@ -189,7 +189,7 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 GLOBAL_LIST_INIT(plasteel_recipes, list ( \
 	new/datum/stack_recipe("bomb assembly", /obj/machinery/syndicatebomb/empty, 10, time = 50), \
 	new/datum/stack_recipe("micro powered fan assembly", /obj/machinery/fan_assembly, 5, time = 50, one_per_turf = TRUE, on_floor = TRUE), \
-	new/datum/stack_recipe("anomalous artifact exclusion cube", /obj/item/storage/box/artifactcontainer/plasteel, 1, time = 10),
+	//new/datum/stack_recipe("anomalous artifact exclusion cube", /obj/item/storage/box/artifactcontainer/plasteel, 1, time = 10),
 	new /datum/stack_recipe_list("crates", list( \
 		new /datum/stack_recipe("gray crate", /obj/structure/closet/crate, 30, time = 50, one_per_turf = 1, on_floor = 1), \
 		new /datum/stack_recipe("internals crate", /obj/structure/closet/crate/internals, 30, time = 50, one_per_turf = 1, on_floor = 1), \
@@ -252,7 +252,7 @@ GLOBAL_LIST_INIT(wood_recipes, list ( \
 	// new/datum/stack_recipe("wooden quarterstaff", /obj/item/melee/classic_baton/coyote/oldquarterstaff, 1, 1, 0.5 SECONDS, is_stack = FALSE), 
 	// new/datum/stack_recipe("wooden arrow shaft", /obj/item/arrow_shaft, 1, 1, 25, 0.5 SECONDS, is_stack = FALSE), 
 	null, \
-	new/datum/stack_recipe("anomalous artifact exclusion cube", /obj/item/storage/box/artifactcontainer/wood, 1, time = 10),
+	//new/datum/stack_recipe("anomalous artifact exclusion cube", /obj/item/storage/box/artifactcontainer/wood, 1, time = 10),
 	new/datum/stack_recipe_list("pews", list( \
 		new /datum/stack_recipe("pew (middle)", /obj/structure/chair/pew, 3, one_per_turf = TRUE, on_floor = TRUE),\
 		new /datum/stack_recipe("pew (left)", /obj/structure/chair/pew/left, 3, one_per_turf = TRUE, on_floor = TRUE),\
@@ -334,31 +334,31 @@ GLOBAL_LIST_INIT(wood_recipes, list ( \
 
 /obj/item/stack/sheet/mineral/wood/attackby(obj/item/W, mob/user, params) // NOTE: sheet_types.dm is where the WOOD stack lives. Maybe move this over there.
 	// Taken from /obj/item/stack/rods/attackby in [rods.dm]
-	if(W.get_sharpness())
-		user.visible_message("[user] begins whittling [src] into a rod.", \
-				span_notice("You begin whittling [src] into a rod, suitable as a weapon shaft."), \
-				span_italic("You hear wood carving."))
-		// 7 Second Timer
-		if(!do_after(user, 70, TRUE, src))
-			return
-		// Make stick
-		var/obj/item/blacksmith/woodrod/new_item = new(user.loc)
-		user.visible_message("[user] finishes carving a rod from the [src].", \
-				span_notice("You finish carving a rod from the [src]."))
-		// Prepare to Put in Hands (if holding wood)
-		var/obj/item/stack/sheet/mineral/wood/N = src
-		var/replace = (user.get_inactive_held_item() == N)
-		// Use Wood
-		N.use(1)
-		// If stack depleted, put item in that hand (if it had one)
-		if (!N && replace)
-			user.put_in_hands(new_item)
-	if(istype(W, merge_type))
-		var/obj/item/stack/S = W
-		if(merge(S))
-			to_chat(user, span_notice("Your [S.name] stack now contains [S.get_amount()] [S.singular_name]\s."))
-	else
-		. = ..()
+	// if(W.get_sharpness())
+	// 	user.visible_message("[user] begins whittling [src] into a rod.", 
+	// 			span_notice("You begin whittling [src] into a rod, suitable as a weapon shaft."), 
+	// 			span_italic("You hear wood carving."))
+	// 	// 7 Second Timer
+	// 	if(!do_after(user, 70, TRUE, src))
+	// 		return
+	// 	// Make stick
+	// 	var/obj/item/blacksmith/woodrod/new_item = new(user.loc)
+	// 	user.visible_message("[user] finishes carving a rod from the [src].", 
+	// 			span_notice("You finish carving a rod from the [src]."))
+	// 	// Prepare to Put in Hands (if holding wood)
+	// 	var/obj/item/stack/sheet/mineral/wood/N = src
+	// 	var/replace = (user.get_inactive_held_item() == N)
+	// 	// Use Wood
+	// 	N.use(1)
+	// 	// If stack depleted, put item in that hand (if it had one)
+	// 	if (!N && replace)
+	// 		user.put_in_hands(new_item)
+	// if(istype(W, merge_type))
+	// 	var/obj/item/stack/S = W
+	// 	if(merge(S))
+	// 		to_chat(user, span_notice("Your [S.name] stack now contains [S.get_amount()] [S.singular_name]\s."))
+	// else
+	// 	. = ..()
 
 /obj/item/stack/sheet/mineral/wood/get_main_recipes()
 	. = ..()
@@ -1062,7 +1062,7 @@ prefall alloys
 GLOBAL_LIST_INIT(prefall_recipes, list ( \
 	new/datum/stack_recipe("modern chair", /obj/structure/chair/comfy/modern, 2, time = 5, one_per_turf = TRUE, on_floor = TRUE),
 	new/datum/stack_recipe("gun locker", /obj/structure/guncase, 4, time = 10, one_per_turf = TRUE, on_floor = TRUE),
-	new/datum/stack_recipe("anomalous artifact exclusion cube", /obj/item/storage/box/artifactcontainer/prefall, 1, time = 10),
+//	new/datum/stack_recipe("anomalous artifact exclusion cube", /obj/item/storage/box/artifactcontainer/prefall, 1, time = 10),
 ))
 
 /obj/item/stack/sheet/prefall

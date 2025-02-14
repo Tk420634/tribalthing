@@ -63,6 +63,7 @@
 	projectile_type = /obj/item/projectile/bullet/reusable/foam_dart/riot
 	icon_state = "foamdart_riot"
 	custom_materials = list(/datum/material/iron = 1125)
+	berryable = TRUE
 
 /obj/item/ammo_casing/caseless/foam_dart/mag
 	name = "magfoam dart"

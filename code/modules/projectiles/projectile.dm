@@ -197,6 +197,13 @@
 
 	var/is_crit_above = 9999
 
+	var/firedfrom_x = 0
+	var/firedfrom_y = 0
+	var/ramp_up_max
+	var/ramp_up_start
+	var/ramp_up_end
+	var/ramped
+
 	/// Multichance_hit_behaviour
 	var/critical_hit = 0  //0 = no critical hit; 1 = head; 2 = arms; 3 = legs
 
@@ -578,8 +585,6 @@
 	permutated |= target		//Make sure we're never hitting it again. If we ever run into weirdness with piercing projectiles needing to hit something multiple times.. well.. that's a to-do.
 	if(LAZYLEN(faction) && faction_check(target))
 		return process_hit(T, select_target(T), qdel_self, TRUE)		//Hit whatever else we can since we're piercing through but we're still on the same tile.
-	if(is_supereffective(target))
-		damage += (supereffective_damage * damage_mod)
 	if(!prehit(target))
 		return process_hit(T, select_target(T), qdel_self, hit_something)		//Hit whatever else we can since that didn't work.
 	SEND_SIGNAL(target, COMSIG_PROJECTILE_PREHIT, args)
@@ -691,6 +696,29 @@
 	if(!(T in permutated) && can_hit_target(T, permutated, T == original, TRUE))
 		return T
 	//Returns null if nothing at all was found.
+
+/obj/item/projectile/proc/set_ramp(atom/A)
+	if(isnull(ramp_up_max) || isnull(ramp_up_start) || isnull(ramp_up_end))
+		return
+	var/turf/origin = locate(firedfrom_x, firedfrom_y, z)
+	var/turf/targ = get_turf(A)
+	var/disto = GET_DIST_EUCLIDEAN(origin, targ)
+	if(disto < ramp_up_start)
+		return
+	var/mult = 1
+	if(disto >= ramp_up_end)
+		mult = ramp_up_max
+	else
+		var/range = ramp_up_end - ramp_up_start
+		var/more_range = disto - ramp_up_start
+		var/proport = more_range / max(range, 0.1)
+		if(ramp_up_max < 1)
+			proport = 1 - proport
+		mult = ramp_up_max * proport
+	damage *= mult
+	ramp_up_max = null
+	ramp_up_start = null
+	ramp_up_end = null
 
 /obj/item/projectile/proc/check_ricochet(atom/A)
 	if(ricochets > ricochets_max)		//safety thing, we don't care about what the other thing says about this.

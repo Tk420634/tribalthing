@@ -157,6 +157,9 @@
 	no_pin_required = TRUE
 	fire_sound = 'sound/weapons/punchmiss.ogg'
 	init_recoil = LASER_HANDGUN_RECOIL(1.2, 1)
+	ramp_up_max = 0.33 // damage multi
+	ramp_up_start = 8 // tiles
+	ramp_up_end = 16 // also tiles
 
 /obj/item/gun/energy/kinetic_accelerator/crossbow/sling/staff
 	name = "sling staff"
@@ -175,6 +178,9 @@
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slower
 	)
+	ramp_up_max = 0.33 // damage multi
+	ramp_up_start = 14 // tiles
+	ramp_up_end = 20 // also tiles
 
 /obj/item/gun/energy/kinetic_accelerator/crossbow/halloween
 	name = "candy corn crossbow"

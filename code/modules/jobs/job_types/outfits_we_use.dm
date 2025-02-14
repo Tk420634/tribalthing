@@ -78,6 +78,24 @@
 	/obj/item/gun/energy/kinetic_accelerator/crossbow/sling,
 	)
 
+/datum/outfit/job/cb/catgirl/warrior/sniper
+	name = "cat sniper"
+	head = /obj/item/clothing/head/kevlarhelmet/ghillie
+	backpack = /obj/item/storage/backpack
+	uniform = /obj/item/clothing/under/civ/mayan_loincloth
+	suit = /obj/item/clothing/suit/civ13/coat/ghillie
+	shoes = /obj/item/clothing/shoes/sandal
+	belt = /obj/item/storage/belt/utility/mining/primitive
+	gloves = /obj/item/clothing/gloves/thief
+	tribal = TRUE
+	cat = TRUE
+	backpack_contents   = list(
+	/obj/item/storage/backpack/satchel/explorer,
+	/obj/item/warpaint_bowl,
+	/obj/item/gun/flintlock/musket/catgirl,
+	/obj/item/ammo_box/foambox/catbox
+		)
+
 /datum/outfit/job/cb/catgirl/warrior/head
 	name = "head warrior"
 	head = /obj/item/clothing/head/poppycrown
@@ -155,6 +173,21 @@
 		/obj/item/grenade/flashbang = 3,
 		/obj/item/melee/classic_baton/telescopic = 1,
 		/obj/item/gun/energy/taser = 1,
+		/obj/item/flashlight/seclite = 1
+	)
+
+/datum/outfit/job/cb/guild/deputy/gunner
+	name = "Dart Gunner"
+	jobtype = /datum/job/townfolk/f13deputy
+	head = /obj/item/clothing/head/beret/enclave
+	belt = /obj/item/storage/bag/casings
+	uniform = /obj/item/clothing/under/f13/enclave/peacekeeper
+	gloves = /obj/item/clothing/gloves/f13/leather/fingerless
+	shoes = /obj/item/clothing/shoes/jackboots
+	suit_store = /obj/item/gun/ballistic/automatic/lewis/murr
+	backpack_contents = list(
+		/obj/item/grenade/flashbang = 3,
+		/obj/item/melee/classic_baton/telescopic = 1,
 		/obj/item/flashlight/seclite = 1
 	)
 

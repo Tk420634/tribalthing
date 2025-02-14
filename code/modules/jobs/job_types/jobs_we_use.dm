@@ -168,38 +168,6 @@
 
 
 
-//////////////////////////////
-/// sheriff
-/// A sheriff, here to serve drinks and listen to people's problems
-/datum/job/townfolk/f13sheriff
-	title = "Squad Leader"
-	flag = F13BARKEEP	
-	description = "You are a Sheriff, responsible for the operation of the local sheriffery. You are the backbone of the settlement, providing safety and security for the community. Your work is essential to the survival of the town."
-	supervisors = "the Adventurers Guild"
-	outfit = /datum/outfit/job/cb/guild/deputy/sheriff
-	access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
-	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
-//////////////////////////////
-/// Deputy
-/// A Deputy, here to serve drinks and listen to people's problems
-/datum/job/townfolk/f13deputy
-	title = "Trooper"
-	flag = F13BARKEEP	
-	description = "You are a Deput, responsible for the operation of the local sheriffery. You are the backbone of the settlement, providing safety and security for the community. Your work is essential to the survival of the town."
-	supervisors = "the Adventurers Guild"
-	outfit = /datum/outfit/job/cb/guild/deputy
-	access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
-	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
-//////////////////////////////
-/// Deputy
-/// A Deputy, here to serve drinks and listen to people's problems
-/datum/job/townfolk/f13deputy/capturedcatgirl
-	title = "Captured Native"
-	description = "You were captured by the invading Murrines, they dressed you in a maid outfit and have been trying to teach you to clean."
-	supervisors = "None, sorta.  The marines if you want to be technical."
-	enforces = "Not much in particular, but like.  If you wanna try to escape go ahead."
-	forbids = "Not a whole lot of much. Live your life, crechor."
-	outfit = /datum/outfit/job/cb/capturedcatgirl
 
 
 
@@ -508,60 +476,6 @@
 // 	outfit = /datum/outfit/job/tribal/f13shaman
 // 	paycheck = COINS_TO_CREDITS(250) // 100 copper per hour
 
-//////////////////////////////
-/// Tribal Head Forager
-/// The head forager of the tribe, who leads the hunters to find cute tribal furries
-/datum/job/tribal/head_forager
-	title = "Head Warrior"
-	flag = F13HHUNTER
-	total_positions = 2
-	spawn_positions = 2
-	supervisors = "The Nyan-Nyan Neko Gods and your instincts."
-	enforces = "The will of the gods and the Nyampire."
-	forbids = "Nothing in particular, victory must be found. Honor can be restored later."
-	description = "The Gods have chosen you to be a Warleader for our warriors, only you can prove if you're fit for this position.  Capture the invaders and integrate them into the Nyampire."
-	outfit = /datum/outfit/job/cb/catgirl/warrior/head
-	paycheck = COINS_TO_CREDITS(100) // 100 copper per hour
-
-/datum/job/tribal/head_forager/captured
-	title = "Captured Murrine"
-	total_positions = -1
-	spawn_positions = -1
-	supervisors = "Technically your supervisors are your captors, but that's kind of up to you."
-	enforces = "Not much in particular."
-	forbids = "Nothing in particular."
-	description = "You've been captured by the enemy. You probably want to escape, but maybe you don't."
-	outfit = /datum/outfit/job/cb/catgirl/warrior/captured
-
-// //////////////////////////////
-// /// Tribal Harvest Leader
-// /// The head farmer of the tribe, who leads the farmers to grow cute tribal furries
-// /datum/job/tribal/harvest_leader
-// 	title = "Harvest Leader"
-// 	flag = F13DRUID
-// 	total_positions = 2
-// 	spawn_positions = 2
-// 	supervisors = "The Chief"
-// 	enforces = "The ways of the Sulphur River spirits."
-// 	forbids = "Against abuse of pre-collapse technology, especially pre-collapse weapons of war. Your pipboy is pre-blessed."
-// 	description = "You are a Harvest Leader in the tribe; while you are the one who would be performing rituals for the tribe your usual job is helping the farmers get the most out of our fields."
-// 	outfit = /datum/outfit/job/tribal/f13druid
-// 	paycheck = COINS_TO_CREDITS(100) // 100 copper per hour
-
-//////////////////////////////
-/// Tribal Forager
-/// A forager of the tribe, who helps the head forager find cute tribal furries
-/datum/job/tribal/f13hunter
-	title = "Warrior"
-	flag = F13HUNTER
-	total_positions = 999
-	spawn_positions = 999
-	supervisors = "The Nyan-Nyan Neko Gods, the Head Hunter and your instincts."
-	enforces = "The ways of the Nyan-Nyan Neko Nyampire."
-	forbids = "Nothing in particular, your victory is utmost over the foe."
-	description = "You are a warrior of the Nyan-Nyan Neko Nyampire, one of the greatest warriors this planet has to offer.  Clad in bones of monsters these invaders would cower before and gifted with skills untold."
-	outfit = /datum/outfit/job/cb/catgirl/warrior
-	paycheck = COINS_TO_CREDITS(75) // 75 copper per hour
 
 // //////////////////////////////
 // /// Tribal Guardian
