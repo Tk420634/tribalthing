@@ -206,7 +206,7 @@
 
 /obj/item/clothing/head/beret/enclave
 	name = "enclave beret"
-	desc = "A standard issue black beret of the Enclave."
+	desc = "A standard issue black beret of the Catlonial Murrines, worn by Machine Gunners."
 	icon_state = "remnant"
 	inhand_icon_state = "remnant"
 	flags_inv = HIDEEARS|HIDEFACE

@@ -406,9 +406,9 @@
 	who.hud = src
 	infodisplay += who
 
-	bank = new /atom/movable/screen/bank()
-	bank.hud = src
-	infodisplay += bank
+	// bank = new /atom/movable/screen/bank()
+	// bank.hud = src
+	// infodisplay += bank
 
 	erp_tools_button = new /atom/movable/screen/erp_tools_button()
 	erp_tools_button.hud = src
@@ -438,17 +438,17 @@
 	give_button.hud = src
 	infodisplay += give_button	
 	
-	reload_button = new /atom/movable/screen/reload_button()
-	reload_button.hud = src
-	infodisplay += reload_button
+	// reload_button = new /atom/movable/screen/reload_button()
+	// reload_button.hud = src
+	// infodisplay += reload_button
 
 	// beans_hud_button = new /atom/movable/screen/beans_hud_button()
 	// beans_hud_button.hud = src
 	// infodisplay += beans_hud_button
 
-	tend_hud_button = new /atom/movable/screen/tend_hud_button()
-	tend_hud_button.hud = src
-	infodisplay += tend_hud_button
+	// tend_hud_button = new /atom/movable/screen/tend_hud_button()
+	// tend_hud_button.hud = src
+	// infodisplay += tend_hud_button
 
 	// butt_hud_button = new /atom/movable/screen/butt_hud_button()
 	// butt_hud_button.hud = src

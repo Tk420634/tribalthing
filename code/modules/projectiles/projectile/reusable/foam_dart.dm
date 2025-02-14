@@ -7,7 +7,7 @@
 	icon = 'icons/obj/guns/toy.dmi'
 	icon_state = "foamdart_proj"
 	ammo_type = /obj/item/ammo_casing/caseless/foam_dart
-	range = 10
+	// range = 10
 	var/modified = FALSE
 	var/obj/item/pen/pen = null
 

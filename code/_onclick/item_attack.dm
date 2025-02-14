@@ -237,8 +237,8 @@
 		return TRUE
 	return FALSE
 
-/obj/item/proc/do_berry(mob/living/carbon/human/target, mob/living/carbon/human/hitter)
-	if(!target || !hitter)
+/obj/item/proc/do_berry(mob/living/carbon/human/target)
+	if(!target)
 		return
 	var/datum/reagents/R = target.reagents
 	switch(berry)
@@ -251,6 +251,9 @@
 		if("blind")
 			target.flash_act(8, noblur = TRUE)
 			to_chat(target, span_userdanger("Oh no! That [src] had some flash berry on it! Your eyes hurt!"))
+	un_berry()
+
+/obj/item/proc/un_berry()
 	berry = null
 	remove_atom_colour(ADMIN_COLOUR_PRIORITY)
 

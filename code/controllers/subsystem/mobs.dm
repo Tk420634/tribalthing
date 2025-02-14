@@ -18,6 +18,7 @@ SUBSYSTEM_DEF(mobs)
 	var/debug_no_icon_2_html = FALSE
 	var/debug_everyone_has_robuster_searching = FALSE
 
+	var/no_cool_reload = TRUE // yes! no!
 	var/use_pvp_check = FALSE
 	var/all_damage_is_stamina = TRUE
 	var/autoheal_to_stamina = TRUE

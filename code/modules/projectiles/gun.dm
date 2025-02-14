@@ -186,6 +186,9 @@ ATTACHMENTS
 	var/recharge_queued = 1
 	/// Cooldown between times the gun will tell you it shot, 0.5 seconds cus its not super duper important
 	COOLDOWN_DECLARE(shoot_message_antispam)
+	var/ramp_up_max
+	var/ramp_up_start
+	var/ramp_up_end
 
 	/// Is the player currently reloading this gun?
 	var/reloading = FALSE
@@ -361,7 +364,7 @@ ATTACHMENTS
 		shootprops[CSP_INDEX_DISTANCE],
 		ignore_walls = shootprops[CSP_INDEX_IGNORE_WALLS],
 		distant_sound = shootprops[CSP_INDEX_DISTANT_SOUND],
-		distant_range = shootprops[CSP_INDEX_DISTANT_RANGE]
+		distant_range = shootprops[CSP_INDEX_DISTANT_RANGE],
 		)
 //	if(!silenced && message && COOLDOWN_FINISHED(src, shoot_message_antispam))
 //		COOLDOWN_START(src, shoot_message_antispam, GUN_SHOOT_MESSAGE_ANTISPAM_TIME)
@@ -1667,6 +1670,8 @@ GLOBAL_LIST_INIT(gun_yeet_words, list(
 	return FALSE
 
 /mob/living/carbon/human/ReloadGun(throw_if_no_gun_in_active_hand)
+	if(SSmobs.no_cool_reload)
+		return
 	var/I = get_active_held_item()
 	var/obj/item/gun/G
 	if(istype(I, /obj/item/gun))

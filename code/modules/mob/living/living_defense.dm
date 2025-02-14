@@ -84,11 +84,9 @@
 			var/mob/shootier = P.firer
 			shootier.show_message(span_alert("Your shot honorably misses your sleeping or wounded target!"))
 		return FALSE
-	var/totaldamage = P.damage
-	var/staminadamage = P.stamina
 	var/final_percent = 0
+	var/list/returnlist = list()
 	if(P.original != src || P.firer != src) //try to block or reflect the bullet, can't do so when shooting oneself
-		var/list/returnlist = list()
 		var/returned = mob_run_block(P, P.damage, "the [P.name]", ATTACK_TYPE_PROJECTILE, P.armour_penetration, P.firer, def_zone, returnlist)
 		final_percent = returnlist[BLOCK_RETURN_PROJECTILE_BLOCK_PERCENTAGE]
 		if(returned & BLOCK_SHOULD_REDIRECT)
@@ -99,8 +97,11 @@
 		if(returned & BLOCK_SUCCESS)
 			P.on_hit(src, final_percent, def_zone)
 			return BULLET_ACT_BLOCK
-		totaldamage = block_calculate_resultant_damage(totaldamage, returnlist)
-		staminadamage = block_calculate_resultant_damage(staminadamage, returnlist)
+	P.set_ramp(src)
+	var/totaldamage = P.damage
+	var/staminadamage = P.stamina
+	totaldamage = block_calculate_resultant_damage(totaldamage, returnlist)
+	staminadamage = block_calculate_resultant_damage(staminadamage, returnlist)
 	var/armor = run_armor_check(def_zone, P.flag, null, null, P.armour_penetration, null)
 	var/dt = max(run_armor_check(def_zone, "damage_threshold", null, null, 0, null) - P.damage_threshold_penetration, 0)
 	if(!P.nodamage)
@@ -113,6 +114,8 @@
 	var/armor_ratio = armor * 0.01
 	if(missing > 0)
 		final_percent += missing * armor_ratio
+	if(P.berry)
+		P.do_berry(src)
 	return P.on_hit(src, final_percent, def_zone) ? BULLET_ACT_HIT : BULLET_ACT_BLOCK
 
 /// Returns TRUE if the thing is fired by a player controlled mob, and we're too wounded to be killed

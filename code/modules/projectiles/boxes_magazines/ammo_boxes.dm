@@ -1652,12 +1652,24 @@
 	name = "ammo box (Foam Darts)"
 	icon = 'icons/obj/guns/toy.dmi'
 	icon_state = "foambox"
-	ammo_type = /obj/item/ammo_casing/caseless/foam_dart
+	ammo_type = /obj/item/ammo_casing/caseless/foam_dart/riot
 	caliber = list(CALIBER_FOAM)
 	max_ammo = 40
 	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = MATS_PISTOL_HEAVY_BOX)
 	randomize_ammo_count = FALSE
+
+/obj/item/ammo_box/foambox/catbox
+	name = "ammo box (Foam Darts)"
+	icon = 'icons/obj/guns/toy.dmi'
+	icon_state = "foambox"
+	ammo_type = /obj/item/ammo_casing/caseless/foam_dart/riot
+	caliber = list(CALIBER_FOAM)
+	max_ammo = 20
+	w_class = WEIGHT_CLASS_SMALL
+	custom_materials = list(/datum/material/iron = MATS_PISTOL_HEAVY_BOX)
+	randomize_ammo_count = FALSE
+
 
 /obj/item/ammo_box/foambox/mag
 	name = "ammo box (Magnetic Foam Darts)"
