@@ -43,6 +43,10 @@
 	color = "#BBBBBB"
 	},
 /area/f13/ambientlighting/building)
+"aJ" = (
+/obj/machinery/door/airlock/grunge,
+/turf/open/floor/plasteel/white,
+/area/f13/wasteland/nash)
 "aR" = (
 /obj/structure/flora/grass/wasteland{
 	color = "#33BB33";
@@ -90,10 +94,6 @@
 /obj/effect/landmark/start/f13/deputy,
 /turf/open/floor/plasteel/white,
 /area/f13/ambientlighting/building)
-"bE" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/white,
-/area/f13/wasteland)
 "bG" = (
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d";
@@ -156,22 +156,12 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ambientlighting/building/catgirls_score_here)
-"cl" = (
-/turf/closed/wall/mineral/titanium/interior,
-/area/f13/wasteland)
 "cn" = (
 /obj/structure/flora/tree/cherryblossom,
 /turf/open/indestructible/ground/outside/dirt{
 	color = "#BBBBBB"
 	},
 /area/f13/wasteland/nash)
-"cr" = (
-/obj/machinery/light/small{
-	light_color = "#884444"
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/white,
-/area/f13/ambientlighting/building)
 "cY" = (
 /obj/structure/statue/bone/rib,
 /turf/open/indestructible/ground/outside/dirt{
@@ -265,18 +255,6 @@
 /obj/machinery/door/airlock/grunge,
 /turf/open/floor/plasteel/white,
 /area/f13/ambientlighting/building)
-"eB" = (
-/obj/structure/statue/bos/ladyleft{
-	desc = "A statue pointing the way.  It says 'this way there be danger'.  You can read right?"
-	},
-/obj/machinery/light/small{
-	light_color = "#884444";
-	dir = 4
-	},
-/turf/open/indestructible/ground/outside/dirt{
-	color = "#BBBBBB"
-	},
-/area/f13/wasteland/nash)
 "eE" = (
 /obj/machinery/telecomms/server/presets/legion,
 /turf/open/floor/circuit/telecomms/mainframe,
@@ -877,6 +855,18 @@
 /obj/effect/decal/cleanable/oil/slippery,
 /turf/open/floor/carpet,
 /area/f13/ambientlighting/building)
+"ol" = (
+/obj/structure/statue/bos/ladyright{
+	desc = "A statue pointing the way.  It says 'this way there be danger'.  You can read right?"
+	},
+/obj/machinery/light/small{
+	dir = 8;
+	light_color = "#d8b1b1"
+	},
+/turf/open/indestructible/ground/outside/dirt{
+	color = "#BBBBBB"
+	},
+/area/f13/wasteland/nash)
 "op" = (
 /obj/machinery/telecomms/server/presets/supply,
 /turf/open/floor/plasteel/f13{
@@ -969,6 +959,14 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/f13/ambientlighting/building)
+"pQ" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/open/indestructible/ground/outside/dirt{
+	color = "#BBBBBB"
+	},
+/area/f13/wasteland/nash)
 "pY" = (
 /turf/closed/wall/mineral/titanium/interior,
 /area/f13/wasteland/nash)
@@ -978,6 +976,11 @@
 	color = "#BBBBBB"
 	},
 /area/f13/wasteland/nash)
+"qc" = (
+/obj/structure/stone_tile/slab,
+/obj/effect/landmark/start/f13/catsniper,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/ambientlighting/building/catgirls_score_here)
 "qj" = (
 /obj/effect/turf_decal/stripes/asteroid/line{
 	dir = 4
@@ -1044,10 +1047,6 @@
 /obj/machinery/telecomms/bus/preset_one,
 /turf/open/floor/circuit/telecomms/mainframe,
 /area/tcommsat/server)
-"qD" = (
-/obj/machinery/door/airlock/grunge,
-/turf/open/floor/plasteel/white,
-/area/f13/wasteland/nash)
 "qK" = (
 /obj/structure/stone_tile/slab,
 /obj/structure/destructible/tribal_torch/wall/lit{
@@ -1107,13 +1106,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ambientlighting/building/catgirls_score_here)
 "rv" = (
-/obj/machinery/light/small{
-	dir = 8;
-	light_color = "#d8b1b1"
-	},
-/turf/open/indestructible/ground/outside/dirt{
-	color = "#BBBBBB"
-	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/white,
 /area/f13/wasteland)
 "rO" = (
 /obj/item/storage/crayons,
@@ -1176,13 +1170,6 @@
 /obj/structure/table/wood/settler,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ambientlighting/building/catgirls_score_here)
-"sY" = (
-/obj/machinery/light/small{
-	dir = 8;
-	light_color = "#d8b1b1"
-	},
-/turf/open/floor/plasteel/white,
-/area/f13/wasteland)
 "tb" = (
 /obj/effect/turf_decal/stripes/asteroid/line{
 	dir = 4
@@ -1268,19 +1255,6 @@
 /obj/item/laser_pointer/blue,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ambientlighting/building)
-"up" = (
-/obj/structure/flora/ausbushes/fullgrass,
-/obj/machinery/light/small{
-	dir = 1
-	},
-/obj/machinery/light/small{
-	dir = 8;
-	light_color = "#d8b1b1"
-	},
-/turf/open/indestructible/ground/outside/dirt{
-	color = "#BBBBBB"
-	},
-/area/f13/wasteland/nash)
 "ur" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/grass/wasteland{
@@ -1529,6 +1503,11 @@
 	color = "#BBBBBB"
 	},
 /area/f13/wasteland/nash)
+"xq" = (
+/turf/open/indestructible/ground/outside/dirt{
+	color = "#BBBBBB"
+	},
+/area/f13/wasteland)
 "xr" = (
 /obj/effect/decal/cleanable/oil/slippery,
 /turf/open/floor/plating/wooden2,
@@ -1764,14 +1743,6 @@
 	footstep = "grass"
 	},
 /area/f13/wasteland/nash)
-"zZ" = (
-/obj/structure/bed{
-	dir = 8
-	},
-/obj/item/bedsheet,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/white,
-/area/f13/wasteland/nash)
 "Af" = (
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d";
@@ -1804,11 +1775,6 @@
 /obj/structure/table/wood/settler,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ambientlighting/building/catgirls_score_here)
-"Am" = (
-/turf/open/indestructible/ground/outside/dirt{
-	color = "#BBBBBB"
-	},
-/area/f13/wasteland)
 "Ar" = (
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 1;
@@ -1827,18 +1793,6 @@
 	footstep = "grass"
 	},
 /area/f13/wasteland/nash)
-"Ax" = (
-/obj/structure/statue/bos/ladyright{
-	desc = "A statue pointing the way.  It says 'this way there be danger'.  You can read right?"
-	},
-/obj/machinery/light/small{
-	dir = 8;
-	light_color = "#d8b1b1"
-	},
-/turf/open/indestructible/ground/outside/dirt{
-	color = "#BBBBBB"
-	},
-/area/f13/wasteland/nash)
 "AE" = (
 /obj/machinery/telecomms/hub/preset,
 /turf/open/floor/circuit/telecomms/mainframe,
@@ -1850,6 +1804,13 @@
 /obj/item/hairbrush,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ambientlighting/building/catgirls_score_here)
+"AJ" = (
+/obj/machinery/light/small{
+	dir = 8;
+	light_color = "#d8b1b1"
+	},
+/turf/open/floor/plasteel/white,
+/area/f13/wasteland)
 "AO" = (
 /obj/structure/flora/tree/jungle{
 	color = "#BEBEBE";
@@ -1966,6 +1927,19 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/f13/ambientlighting/building)
+"Cu" = (
+/obj/structure/flora/ausbushes/fullgrass,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/obj/machinery/light/small{
+	dir = 8;
+	light_color = "#d8b1b1"
+	},
+/turf/open/indestructible/ground/outside/dirt{
+	color = "#BBBBBB"
+	},
+/area/f13/wasteland/nash)
 "Cv" = (
 /obj/item/kirbyplants/bonsai/blue{
 	pixel_y = 14;
@@ -2319,18 +2293,6 @@
 /obj/machinery/light/floor,
 /turf/open/floor/circuit/telecomms/mainframe,
 /area/tcommsat/server)
-"GU" = (
-/obj/effect/landmark/start/f13/dartgunner,
-/turf/open/floor/plasteel/white,
-/area/f13/ambientlighting/building)
-"GY" = (
-/obj/machinery/light/small{
-	dir = 1
-	},
-/turf/open/indestructible/ground/outside/dirt{
-	color = "#BBBBBB"
-	},
-/area/f13/wasteland/nash)
 "Hb" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -2342,17 +2304,9 @@
 /obj/structure/table/wood/settler,
 /turf/open/floor/plasteel/white,
 /area/f13/ambientlighting/building)
-"Hr" = (
-/obj/structure/stone_tile/slab,
-/obj/effect/landmark/start/f13/catsniper,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/ambientlighting/building/catgirls_score_here)
 "HT" = (
 /turf/open/floor/circuit/telecomms/mainframe,
 /area/tcommsat/server)
-"HZ" = (
-/turf/open/floor/plasteel/white,
-/area/f13/wasteland)
 "If" = (
 /obj/structure/flora/ausbushes/brflowers,
 /obj/structure/flora/tree/jungle{
@@ -2369,6 +2323,9 @@
 /obj/item/mop,
 /turf/open/floor/plasteel/white,
 /area/f13/ambientlighting/building)
+"Is" = (
+/turf/closed/wall/mineral/titanium/interior,
+/area/f13/wasteland)
 "It" = (
 /obj/structure/dresser,
 /obj/machinery/light/small{
@@ -2561,6 +2518,9 @@
 	color = "#BBBBBB"
 	},
 /area/f13/wasteland/nash)
+"Ma" = (
+/turf/open/floor/plasteel/white,
+/area/f13/wasteland)
 "Md" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,
@@ -2633,14 +2593,6 @@
 	pixel_x = 3
 	},
 /obj/structure/curtain,
-/turf/open/floor/plasteel/white,
-/area/f13/ambientlighting/building)
-"Oe" = (
-/obj/machinery/light/small{
-	light_color = "#884444";
-	dir = 4
-	},
-/obj/effect/landmark/start/f13/dartgunner,
 /turf/open/floor/plasteel/white,
 /area/f13/ambientlighting/building)
 "Oj" = (
@@ -2930,13 +2882,6 @@
 	color = "#BBBBBB"
 	},
 /area/f13/wasteland/nash)
-"Sf" = (
-/obj/structure/bed{
-	dir = 8
-	},
-/obj/item/bedsheet,
-/turf/open/floor/plasteel/white,
-/area/f13/wasteland/nash)
 "Sx" = (
 /obj/structure/rug/big/rug_blue,
 /turf/open/indestructible/ground/outside/dirt{
@@ -3034,6 +2979,13 @@
 /obj/structure/bonfire/dense/prelit,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ambientlighting/building/catgirls_score_here)
+"TN" = (
+/obj/structure/bed{
+	dir = 8
+	},
+/obj/item/bedsheet,
+/turf/open/floor/plasteel/white,
+/area/f13/wasteland/nash)
 "TQ" = (
 /obj/structure/stone_tile/slab,
 /obj/structure/destructible/tribal_torch/wall/lit{
@@ -3043,6 +2995,14 @@
 /obj/structure/campfire,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ambientlighting/building/catgirls_score_here)
+"TS" = (
+/obj/structure/bed{
+	dir = 8
+	},
+/obj/item/bedsheet,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/white,
+/area/f13/wasteland/nash)
 "TU" = (
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 8;
@@ -3101,6 +3061,15 @@
 	color = "#BBBBBB"
 	},
 /area/f13/ambientlighting/building)
+"UZ" = (
+/obj/machinery/light/small{
+	dir = 8;
+	light_color = "#d8b1b1"
+	},
+/turf/open/indestructible/ground/outside/dirt{
+	color = "#BBBBBB"
+	},
+/area/f13/wasteland)
 "Vj" = (
 /obj/structure/fence/door,
 /turf/open/indestructible/ground/outside/dirt{
@@ -3114,6 +3083,18 @@
 	},
 /turf/closed/indestructible/riveted/boss{
 	name = "temple wall"
+	},
+/area/f13/wasteland/nash)
+"VB" = (
+/obj/structure/statue/bos/ladyleft{
+	desc = "A statue pointing the way.  It says 'this way there be danger'.  You can read right?"
+	},
+/obj/machinery/light/small{
+	light_color = "#884444";
+	dir = 4
+	},
+/turf/open/indestructible/ground/outside/dirt{
+	color = "#BBBBBB"
 	},
 /area/f13/wasteland/nash)
 "VE" = (
@@ -3176,6 +3157,10 @@
 "Wy" = (
 /obj/structure/rug/big/rug_blue,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/ambientlighting/building)
+"Wz" = (
+/obj/effect/landmark/start/f13/dartgunner,
+/turf/open/floor/plasteel/white,
 /area/f13/ambientlighting/building)
 "WD" = (
 /obj/item/gun/energy/taser,
@@ -3251,6 +3236,14 @@
 /obj/item/reagent_containers/food/snacks/kebab/rat/double,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ambientlighting/building/catgirls_score_here)
+"Xp" = (
+/obj/machinery/light/small{
+	light_color = "#884444";
+	dir = 4
+	},
+/obj/effect/landmark/start/f13/dartgunner,
+/turf/open/floor/plasteel/white,
+/area/f13/ambientlighting/building)
 "Xq" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/indestructible/ground/outside/civ/grass3{
@@ -3357,6 +3350,13 @@
 /obj/machinery/light/small{
 	light_color = "#884444"
 	},
+/turf/open/floor/plasteel/white,
+/area/f13/ambientlighting/building)
+"ZA" = (
+/obj/machinery/light/small{
+	light_color = "#884444"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,
 /area/f13/ambientlighting/building)
 "ZL" = (
@@ -30653,11 +30653,11 @@ wl
 wl
 wl
 wl
-eB
+VB
 vR
 vR
 vR
-eB
+VB
 vR
 vR
 vR
@@ -31167,7 +31167,7 @@ ux
 ux
 ux
 oY
-up
+Cu
 nB
 nB
 nB
@@ -31431,7 +31431,7 @@ nB
 ze
 IW
 pY
-Sf
+TN
 iI
 GK
 wl
@@ -31687,7 +31687,7 @@ nB
 nB
 qu
 nB
-qD
+aJ
 nB
 Md
 ux
@@ -32202,7 +32202,7 @@ nB
 ze
 IW
 pY
-Sf
+TN
 It
 GK
 wl
@@ -32458,7 +32458,7 @@ nB
 qu
 qu
 nB
-qD
+aJ
 nB
 Md
 Md
@@ -32973,7 +32973,7 @@ nB
 ze
 IW
 pY
-zZ
+TS
 It
 GK
 wl
@@ -33229,7 +33229,7 @@ nB
 nB
 nB
 nB
-qD
+aJ
 nB
 ux
 Md
@@ -33744,7 +33744,7 @@ qu
 Pi
 IW
 pY
-Sf
+TN
 It
 GK
 wl
@@ -34000,7 +34000,7 @@ nB
 qu
 qu
 nB
-qD
+aJ
 qu
 ux
 Md
@@ -34515,7 +34515,7 @@ nB
 ze
 IW
 pY
-Sf
+TN
 It
 GK
 wl
@@ -34771,7 +34771,7 @@ qu
 nB
 nB
 nB
-qD
+aJ
 nB
 ux
 ux
@@ -35022,7 +35022,7 @@ wl
 wl
 wl
 wl
-GY
+pQ
 nB
 nB
 nB
@@ -35286,7 +35286,7 @@ nB
 ze
 Cy
 pY
-zZ
+TS
 It
 GK
 wl
@@ -35542,7 +35542,7 @@ qu
 nB
 qu
 nB
-qD
+aJ
 qu
 ux
 ux
@@ -36057,7 +36057,7 @@ nB
 ze
 IW
 pY
-Sf
+TN
 It
 WE
 wl
@@ -36313,7 +36313,7 @@ nB
 qu
 qu
 nB
-qD
+aJ
 nB
 Md
 ux
@@ -36828,7 +36828,7 @@ qu
 ze
 IW
 pY
-zZ
+TS
 It
 GK
 wl
@@ -37084,7 +37084,7 @@ nB
 qu
 nB
 qu
-qD
+aJ
 nB
 ux
 Md
@@ -37325,16 +37325,16 @@ ux
 ux
 Md
 Zy
-cl
-Am
-Am
-rv
-Am
-rv
-Am
-rv
-Am
-rv
+Is
+xq
+xq
+UZ
+xq
+UZ
+xq
+UZ
+xq
+UZ
 ze
 qu
 nB
@@ -37582,16 +37582,16 @@ ux
 Md
 ux
 ux
-sY
-HZ
-HZ
-bE
-HZ
-HZ
-bE
-HZ
-HZ
-bE
+AJ
+Ma
+Ma
+rv
+Ma
+Ma
+rv
+Ma
+Ma
+rv
 nB
 qu
 nB
@@ -38376,7 +38376,7 @@ nB
 nB
 MG
 nB
-ji
+MG
 vR
 vR
 vR
@@ -38859,9 +38859,9 @@ WY
 WY
 WY
 wl
-GU
-Oe
-GU
+Wz
+Xp
+Wz
 ap
 EU
 WP
@@ -39646,7 +39646,7 @@ Mq
 zL
 Mq
 zL
-cr
+ZA
 wl
 pj
 nB
@@ -40889,13 +40889,13 @@ Bp
 lV
 Ka
 zt
-Hr
+qc
 MD
 MD
 kD
 kD
 kD
-Hr
+qc
 zt
 vR
 vR
@@ -43246,11 +43246,11 @@ vR
 vR
 OQ
 vR
-Ax
+ol
 vR
 vR
 vR
-Ax
+ol
 vR
 vR
 vR
