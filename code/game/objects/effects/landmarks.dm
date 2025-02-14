@@ -1136,6 +1136,11 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	icon_state = "Tribal"
 	color = "#00FF00"
 
+/obj/effect/landmark/start/f13/nyanfiltrator
+	name = "Nyanfiltrator"
+	icon_state = "Tribal"
+	color = "#FFFF00"
+
 /obj/effect/landmark/start/f13/druid
 	name = "Harvest Leader"
 	icon_state = "Tribal"

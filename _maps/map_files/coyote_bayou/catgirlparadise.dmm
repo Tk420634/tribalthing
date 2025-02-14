@@ -43,10 +43,6 @@
 	color = "#BBBBBB"
 	},
 /area/f13/ambientlighting/building)
-"aJ" = (
-/obj/machinery/door/airlock/grunge,
-/turf/open/floor/plasteel/white,
-/area/f13/wasteland/nash)
 "aR" = (
 /obj/structure/flora/grass/wasteland{
 	color = "#33BB33";
@@ -146,6 +142,28 @@
 	color = "#BBBBBB"
 	},
 /area/f13/wasteland/nash)
+"ca" = (
+/turf/open/floor/plasteel/white,
+/area/f13/wasteland)
+"cd" = (
+/obj/machinery/light/small{
+	light_color = "#884444"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/white,
+/area/f13/ambientlighting/building)
+"cf" = (
+/obj/structure/statue/bos/ladyright{
+	desc = "A statue pointing the way.  It says 'this way there be danger'.  You can read right?"
+	},
+/obj/machinery/light/small{
+	dir = 8;
+	light_color = "#d8b1b1"
+	},
+/turf/open/indestructible/ground/outside/dirt{
+	color = "#BBBBBB"
+	},
+/area/f13/wasteland/nash)
 "cg" = (
 /obj/structure/table/wood/settler,
 /obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
@@ -182,6 +200,13 @@
 /obj/structure/rack/shelf_metal,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ambientlighting/building)
+"dh" = (
+/obj/machinery/light/small{
+	dir = 8;
+	light_color = "#d8b1b1"
+	},
+/turf/open/floor/plasteel/white,
+/area/f13/wasteland)
 "dn" = (
 /obj/structure/simple_door/tent,
 /obj/item/lock_bolt{
@@ -325,6 +350,9 @@
 	color = "#BBBBBB"
 	},
 /area/f13/wasteland/nash)
+"fJ" = (
+/turf/closed/wall/mineral/titanium/interior,
+/area/f13/wasteland)
 "fP" = (
 /turf/closed/mineral/random/low_chance{
 	icon_state = "rockyash"
@@ -725,18 +753,9 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ambientlighting/building/catgirls_score_here)
 "mA" = (
-/obj/item/clothing/gloves/f13/leather/fingerless,
-/obj/structure/rack/shelf_metal,
-/obj/item/clothing/gloves/f13/leather/fingerless,
-/obj/item/clothing/gloves/f13/leather/fingerless,
-/obj/item/clothing/gloves/f13/leather/fingerless,
-/obj/item/clothing/gloves/f13/leather/fingerless,
-/obj/item/clothing/gloves/f13/leather/fingerless,
-/obj/item/clothing/gloves/f13/leather/fingerless,
-/obj/item/clothing/gloves/f13/leather/fingerless,
-/obj/item/clothing/gloves/f13/leather/fingerless,
+/obj/machinery/door/airlock/grunge,
 /turf/open/floor/plasteel/white,
-/area/f13/ambientlighting/building)
+/area/f13/wasteland/nash)
 "mJ" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/effect/decal/cleanable/dirt/dust{
@@ -845,6 +864,10 @@
 /obj/machinery/telecomms/bus/preset_three,
 /turf/open/floor/circuit/telecomms/mainframe,
 /area/tcommsat/server)
+"oe" = (
+/obj/effect/landmark/start/f13/dartgunner,
+/turf/open/floor/plasteel/white,
+/area/f13/ambientlighting/building)
 "of" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
@@ -855,24 +878,28 @@
 /obj/effect/decal/cleanable/oil/slippery,
 /turf/open/floor/carpet,
 /area/f13/ambientlighting/building)
-"ol" = (
-/obj/structure/statue/bos/ladyright{
-	desc = "A statue pointing the way.  It says 'this way there be danger'.  You can read right?"
-	},
-/obj/machinery/light/small{
-	dir = 8;
-	light_color = "#d8b1b1"
-	},
-/turf/open/indestructible/ground/outside/dirt{
-	color = "#BBBBBB"
-	},
-/area/f13/wasteland/nash)
 "op" = (
 /obj/machinery/telecomms/server/presets/supply,
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
 	},
 /area/tcommsat/server)
+"oy" = (
+/obj/item/clothing/gloves/f13/leather/fingerless,
+/obj/structure/rack/shelf_metal,
+/obj/item/clothing/gloves/f13/leather/fingerless,
+/obj/item/clothing/gloves/f13/leather/fingerless,
+/obj/item/clothing/gloves/f13/leather/fingerless,
+/obj/item/clothing/gloves/f13/leather/fingerless,
+/obj/item/clothing/gloves/f13/leather/fingerless,
+/obj/item/clothing/gloves/f13/leather/fingerless,
+/obj/item/clothing/gloves/f13/leather/fingerless,
+/obj/item/clothing/gloves/f13/leather/fingerless,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/open/floor/plasteel/white,
+/area/f13/ambientlighting/building)
 "oG" = (
 /obj/structure/statue_fal{
 	name = "statue of John Murrine";
@@ -959,14 +986,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/f13/ambientlighting/building)
-"pQ" = (
-/obj/machinery/light/small{
-	dir = 1
-	},
-/turf/open/indestructible/ground/outside/dirt{
-	color = "#BBBBBB"
-	},
-/area/f13/wasteland/nash)
 "pY" = (
 /turf/closed/wall/mineral/titanium/interior,
 /area/f13/wasteland/nash)
@@ -976,11 +995,6 @@
 	color = "#BBBBBB"
 	},
 /area/f13/wasteland/nash)
-"qc" = (
-/obj/structure/stone_tile/slab,
-/obj/effect/landmark/start/f13/catsniper,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/ambientlighting/building/catgirls_score_here)
 "qj" = (
 /obj/effect/turf_decal/stripes/asteroid/line{
 	dir = 4
@@ -1106,9 +1120,12 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ambientlighting/building/catgirls_score_here)
 "rv" = (
-/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/bed{
+	dir = 8
+	},
+/obj/item/bedsheet,
 /turf/open/floor/plasteel/white,
-/area/f13/wasteland)
+/area/f13/wasteland/nash)
 "rO" = (
 /obj/item/storage/crayons,
 /turf/open/floor/plasteel/white,
@@ -1399,6 +1416,19 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/f13/ambientlighting/building)
+"wa" = (
+/obj/structure/flora/ausbushes/fullgrass,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/obj/machinery/light/small{
+	dir = 8;
+	light_color = "#d8b1b1"
+	},
+/turf/open/indestructible/ground/outside/dirt{
+	color = "#BBBBBB"
+	},
+/area/f13/wasteland/nash)
 "wi" = (
 /obj/structure/rug/carpet{
 	pixel_x = 11;
@@ -1406,6 +1436,14 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ambientlighting/building)
+"wj" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/open/indestructible/ground/outside/dirt{
+	color = "#BBBBBB"
+	},
+/area/f13/wasteland/nash)
 "wl" = (
 /turf/closed/wall/mineral/titanium/interior,
 /area/f13/ambientlighting/building)
@@ -1503,11 +1541,6 @@
 	color = "#BBBBBB"
 	},
 /area/f13/wasteland/nash)
-"xq" = (
-/turf/open/indestructible/ground/outside/dirt{
-	color = "#BBBBBB"
-	},
-/area/f13/wasteland)
 "xr" = (
 /obj/effect/decal/cleanable/oil/slippery,
 /turf/open/floor/plating/wooden2,
@@ -1734,6 +1767,10 @@
 /obj/structure/chair/stool,
 /turf/open/floor/plasteel/white,
 /area/f13/ambientlighting/building)
+"zW" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/white,
+/area/f13/wasteland)
 "zX" = (
 /obj/structure/flora/wasteplant/fever_blossom,
 /turf/open/indestructible/ground/outside/civ/grass3{
@@ -1804,13 +1841,6 @@
 /obj/item/hairbrush,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ambientlighting/building/catgirls_score_here)
-"AJ" = (
-/obj/machinery/light/small{
-	dir = 8;
-	light_color = "#d8b1b1"
-	},
-/turf/open/floor/plasteel/white,
-/area/f13/wasteland)
 "AO" = (
 /obj/structure/flora/tree/jungle{
 	color = "#BEBEBE";
@@ -1897,6 +1927,14 @@
 /obj/item/storage/belt/utility/mining/primitive,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ambientlighting/building)
+"BH" = (
+/obj/item/twohanded/required/kirbyplants/random,
+/obj/machinery/light/small{
+	dir = 8;
+	light_color = "#d8b1b1"
+	},
+/turf/open/floor/plasteel/white,
+/area/f13/ambientlighting/building)
 "BI" = (
 /obj/structure/table/wood/settler,
 /obj/item/toy/crayon/green,
@@ -1927,19 +1965,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/f13/ambientlighting/building)
-"Cu" = (
-/obj/structure/flora/ausbushes/fullgrass,
-/obj/machinery/light/small{
-	dir = 1
-	},
-/obj/machinery/light/small{
-	dir = 8;
-	light_color = "#d8b1b1"
-	},
-/turf/open/indestructible/ground/outside/dirt{
-	color = "#BBBBBB"
-	},
-/area/f13/wasteland/nash)
 "Cv" = (
 /obj/item/kirbyplants/bonsai/blue{
 	pixel_y = 14;
@@ -2073,6 +2098,11 @@
 /obj/item/flashlight/seclite,
 /turf/open/floor/plasteel/white,
 /area/f13/ambientlighting/building)
+"DV" = (
+/obj/structure/stone_tile/slab,
+/obj/effect/landmark/start/f13/nyanfiltrator,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/ambientlighting/building/catgirls_score_here)
 "DW" = (
 /obj/structure/rack/shelf_metal,
 /obj/item/clothing/under/civ/mayan_loincloth,
@@ -2103,6 +2133,22 @@
 "Ea" = (
 /obj/structure/table/wood/settler,
 /obj/item/storage/box/cups,
+/turf/open/floor/plasteel/white,
+/area/f13/ambientlighting/building)
+"Eb" = (
+/obj/item/melee/classic_baton/telescopic,
+/obj/structure/rack/shelf_metal,
+/obj/item/melee/classic_baton/telescopic,
+/obj/item/melee/classic_baton/telescopic,
+/obj/item/melee/classic_baton/telescopic,
+/obj/item/melee/classic_baton/telescopic,
+/obj/item/melee/classic_baton/telescopic,
+/obj/item/melee/classic_baton/telescopic,
+/obj/item/melee/classic_baton/telescopic,
+/obj/item/melee/classic_baton/telescopic,
+/obj/machinery/light/small{
+	dir = 1
+	},
 /turf/open/floor/plasteel/white,
 /area/f13/ambientlighting/building)
 "Ed" = (
@@ -2323,9 +2369,6 @@
 /obj/item/mop,
 /turf/open/floor/plasteel/white,
 /area/f13/ambientlighting/building)
-"Is" = (
-/turf/closed/wall/mineral/titanium/interior,
-/area/f13/wasteland)
 "It" = (
 /obj/structure/dresser,
 /obj/machinery/light/small{
@@ -2518,9 +2561,18 @@
 	color = "#BBBBBB"
 	},
 /area/f13/wasteland/nash)
-"Ma" = (
-/turf/open/floor/plasteel/white,
-/area/f13/wasteland)
+"LZ" = (
+/obj/structure/statue/bos/ladyleft{
+	desc = "A statue pointing the way.  It says 'this way there be danger'.  You can read right?"
+	},
+/obj/machinery/light/small{
+	light_color = "#884444";
+	dir = 4
+	},
+/turf/open/indestructible/ground/outside/dirt{
+	color = "#BBBBBB"
+	},
+/area/f13/wasteland/nash)
 "Md" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,
@@ -2576,6 +2628,11 @@
 	footstep = "grass"
 	},
 /area/f13/wasteland/nash)
+"Nd" = (
+/turf/open/indestructible/ground/outside/dirt{
+	color = "#BBBBBB"
+	},
+/area/f13/wasteland)
 "Nr" = (
 /obj/structure/toilet{
 	dir = 8
@@ -2793,6 +2850,14 @@
 /obj/structure/bonfire/dense/prelit,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ambientlighting/building/catgirls_score_here)
+"QH" = (
+/obj/structure/bed{
+	dir = 8
+	},
+/obj/item/bedsheet,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/white,
+/area/f13/wasteland/nash)
 "QJ" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/ywflowers,
@@ -2979,13 +3044,6 @@
 /obj/structure/bonfire/dense/prelit,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ambientlighting/building/catgirls_score_here)
-"TN" = (
-/obj/structure/bed{
-	dir = 8
-	},
-/obj/item/bedsheet,
-/turf/open/floor/plasteel/white,
-/area/f13/wasteland/nash)
 "TQ" = (
 /obj/structure/stone_tile/slab,
 /obj/structure/destructible/tribal_torch/wall/lit{
@@ -2995,14 +3053,6 @@
 /obj/structure/campfire,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ambientlighting/building/catgirls_score_here)
-"TS" = (
-/obj/structure/bed{
-	dir = 8
-	},
-/obj/item/bedsheet,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/white,
-/area/f13/wasteland/nash)
 "TU" = (
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 8;
@@ -3055,13 +3105,21 @@
 	footstep = "grass"
 	},
 /area/f13/wasteland/nash)
+"UP" = (
+/obj/machinery/light/small{
+	light_color = "#884444";
+	dir = 4
+	},
+/obj/effect/landmark/start/f13/dartgunner,
+/turf/open/floor/plasteel/white,
+/area/f13/ambientlighting/building)
 "UR" = (
 /obj/item/toy/plush/mouse,
 /turf/open/indestructible/ground/outside/dirt{
 	color = "#BBBBBB"
 	},
 /area/f13/ambientlighting/building)
-"UZ" = (
+"Va" = (
 /obj/machinery/light/small{
 	dir = 8;
 	light_color = "#d8b1b1"
@@ -3085,31 +3143,11 @@
 	name = "temple wall"
 	},
 /area/f13/wasteland/nash)
-"VB" = (
-/obj/structure/statue/bos/ladyleft{
-	desc = "A statue pointing the way.  It says 'this way there be danger'.  You can read right?"
-	},
-/obj/machinery/light/small{
-	light_color = "#884444";
-	dir = 4
-	},
-/turf/open/indestructible/ground/outside/dirt{
-	color = "#BBBBBB"
-	},
-/area/f13/wasteland/nash)
 "VE" = (
-/obj/item/melee/classic_baton/telescopic,
-/obj/structure/rack/shelf_metal,
-/obj/item/melee/classic_baton/telescopic,
-/obj/item/melee/classic_baton/telescopic,
-/obj/item/melee/classic_baton/telescopic,
-/obj/item/melee/classic_baton/telescopic,
-/obj/item/melee/classic_baton/telescopic,
-/obj/item/melee/classic_baton/telescopic,
-/obj/item/melee/classic_baton/telescopic,
-/obj/item/melee/classic_baton/telescopic,
-/turf/open/floor/plasteel/white,
-/area/f13/ambientlighting/building)
+/obj/structure/stone_tile/slab,
+/obj/effect/landmark/start/f13/catsniper,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/ambientlighting/building/catgirls_score_here)
 "VF" = (
 /obj/machinery/light/floor,
 /turf/open/floor/plasteel/f13{
@@ -3157,10 +3195,6 @@
 "Wy" = (
 /obj/structure/rug/big/rug_blue,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/ambientlighting/building)
-"Wz" = (
-/obj/effect/landmark/start/f13/dartgunner,
-/turf/open/floor/plasteel/white,
 /area/f13/ambientlighting/building)
 "WD" = (
 /obj/item/gun/energy/taser,
@@ -3236,14 +3270,6 @@
 /obj/item/reagent_containers/food/snacks/kebab/rat/double,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ambientlighting/building/catgirls_score_here)
-"Xp" = (
-/obj/machinery/light/small{
-	light_color = "#884444";
-	dir = 4
-	},
-/obj/effect/landmark/start/f13/dartgunner,
-/turf/open/floor/plasteel/white,
-/area/f13/ambientlighting/building)
 "Xq" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/indestructible/ground/outside/civ/grass3{
@@ -3350,13 +3376,6 @@
 /obj/machinery/light/small{
 	light_color = "#884444"
 	},
-/turf/open/floor/plasteel/white,
-/area/f13/ambientlighting/building)
-"ZA" = (
-/obj/machinery/light/small{
-	light_color = "#884444"
-	},
-/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,
 /area/f13/ambientlighting/building)
 "ZL" = (
@@ -30653,11 +30672,11 @@ wl
 wl
 wl
 wl
-VB
+LZ
 vR
 vR
 vR
-VB
+LZ
 vR
 vR
 vR
@@ -31161,13 +31180,13 @@ fP
 fP
 fP
 wl
-VE
+Eb
 ux
 ux
 ux
 ux
 oY
-Cu
+wa
 nB
 nB
 nB
@@ -31431,7 +31450,7 @@ nB
 ze
 IW
 pY
-TN
+rv
 iI
 GK
 wl
@@ -31687,7 +31706,7 @@ nB
 nB
 qu
 nB
-aJ
+mA
 nB
 Md
 ux
@@ -31932,7 +31951,7 @@ fP
 fP
 fP
 wl
-mA
+oy
 ux
 ux
 ux
@@ -32202,7 +32221,7 @@ nB
 ze
 IW
 pY
-TN
+rv
 It
 GK
 wl
@@ -32458,7 +32477,7 @@ nB
 qu
 qu
 nB
-aJ
+mA
 nB
 Md
 Md
@@ -32973,7 +32992,7 @@ nB
 ze
 IW
 pY
-TS
+QH
 It
 GK
 wl
@@ -33229,7 +33248,7 @@ nB
 nB
 nB
 nB
-aJ
+mA
 nB
 ux
 Md
@@ -33744,7 +33763,7 @@ qu
 Pi
 IW
 pY
-TN
+rv
 It
 GK
 wl
@@ -34000,7 +34019,7 @@ nB
 qu
 qu
 nB
-aJ
+mA
 qu
 ux
 Md
@@ -34515,7 +34534,7 @@ nB
 ze
 IW
 pY
-TN
+rv
 It
 GK
 wl
@@ -34771,7 +34790,7 @@ qu
 nB
 nB
 nB
-aJ
+mA
 nB
 ux
 ux
@@ -35022,7 +35041,7 @@ wl
 wl
 wl
 wl
-pQ
+wj
 nB
 nB
 nB
@@ -35286,7 +35305,7 @@ nB
 ze
 Cy
 pY
-TS
+QH
 It
 GK
 wl
@@ -35542,7 +35561,7 @@ qu
 nB
 qu
 nB
-aJ
+mA
 qu
 ux
 ux
@@ -36057,7 +36076,7 @@ nB
 ze
 IW
 pY
-TN
+rv
 It
 WE
 wl
@@ -36313,7 +36332,7 @@ nB
 qu
 qu
 nB
-aJ
+mA
 nB
 Md
 ux
@@ -36828,7 +36847,7 @@ qu
 ze
 IW
 pY
-TS
+QH
 It
 GK
 wl
@@ -37084,7 +37103,7 @@ nB
 qu
 nB
 qu
-aJ
+mA
 nB
 ux
 Md
@@ -37325,16 +37344,16 @@ ux
 ux
 Md
 Zy
-Is
-xq
-xq
-UZ
-xq
-UZ
-xq
-UZ
-xq
-UZ
+fJ
+Nd
+Nd
+Va
+Nd
+Va
+Nd
+Va
+Nd
+Va
 ze
 qu
 nB
@@ -37582,16 +37601,16 @@ ux
 Md
 ux
 ux
-AJ
-Ma
-Ma
-rv
-Ma
-Ma
-rv
-Ma
-Ma
-rv
+dh
+ca
+ca
+zW
+ca
+ca
+zW
+ca
+ca
+zW
 nB
 qu
 nB
@@ -38859,9 +38878,9 @@ WY
 WY
 WY
 wl
-Wz
-Xp
-Wz
+oe
+UP
+oe
 ap
 EU
 WP
@@ -39646,7 +39665,7 @@ Mq
 zL
 Mq
 zL
-ZA
+cd
 wl
 pj
 nB
@@ -40428,7 +40447,7 @@ Sd
 wl
 AU
 ux
-CL
+BH
 ux
 GK
 wl
@@ -40633,7 +40652,7 @@ vR
 FD
 zt
 vg
-MD
+DV
 KN
 sX
 sX
@@ -40889,13 +40908,13 @@ Bp
 lV
 Ka
 zt
-qc
+VE
+DV
 MD
-MD
 kD
 kD
 kD
-qc
+VE
 zt
 vR
 vR
@@ -41199,7 +41218,7 @@ nB
 eq
 ux
 ux
-Qq
+ux
 ux
 YU
 wl
@@ -41385,14 +41404,14 @@ OQ
 OQ
 vR
 OQ
-OQ
-OQ
-OQ
-OQ
-OQ
-OQ
-OQ
-OQ
+vR
+vR
+vR
+vR
+vR
+vR
+vR
+vR
 zt
 zt
 Ed
@@ -43246,11 +43265,11 @@ vR
 vR
 OQ
 vR
-ol
+cf
 vR
 vR
 vR
-ol
+cf
 vR
 vR
 vR

@@ -90,8 +90,20 @@
 	supervisors = "The Nyan-Nyan Neko Gods, the Head Hunter and your instincts."
 	enforces = "The ways of the Nyan-Nyan Neko Nyampire."
 	forbids = "Nothing in particular, your victory is utmost over the foe."
-	description = "You are a warrior of the Nyan-Nyan Neko Nyampire, one of the greatest warriors this planet has to offer.  Clad in bones of monsters these invaders would cower before and gifted with skills untold."
+	description = "You are a sniper, trained with a blow dart gun and taught in the ways of being a bush."
 	outfit = /datum/outfit/job/cb/catgirl/warrior/sniper
+	paycheck = COINS_TO_CREDITS(75) // 75 copper per hour
+
+/datum/job/tribal/nyanfiltrator
+	title = "Nyanfiltrator"
+	flag = F13HUNTER
+	total_positions = 2
+	spawn_positions = 2
+	supervisors = "The Nyan-Nyan Neko Gods, the Head Hunter and your instincts."
+	enforces = "The ways of the Nyan-Nyan Neko Nyampire."
+	forbids = "Nothing in particular, your victory is utmost over the foe."
+	description = "A high class warrior, gifted with magical tech rendered from the ancients to hide yourself on the move and trained to use brass knyackles to down foes rapidly from behind."
+	outfit = /datum/outfit/job/cb/catgirl/warrior/nyanfiltrator
 	paycheck = COINS_TO_CREDITS(75) // 75 copper per hour
 
 /datum/job/tribal/head_forager/captured

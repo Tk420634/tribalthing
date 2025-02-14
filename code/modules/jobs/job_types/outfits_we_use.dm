@@ -78,6 +78,24 @@
 	/obj/item/gun/energy/kinetic_accelerator/crossbow/sling,
 	)
 
+/datum/outfit/job/cb/catgirl/warrior/nyanfiltrator
+	name = "Nyanfiltrator"
+	head = null
+	suit = null
+	backpack = /obj/item/storage/backpack
+	uniform = /obj/item/clothing/under/civ/mayan_loincloth
+	shoes = /obj/item/clothing/shoes/sandal
+	belt = /obj/item/stealthboy
+	gloves = /obj/item/clothing/gloves/thief
+	tribal = TRUE
+	cat = TRUE
+	backpack_contents   = list(
+	/obj/item/storage/backpack/satchel/explorer,
+	/obj/item/warpaint_bowl,
+	/obj/item/restraints/legcuffs/bola = 2,
+	/obj/item/melee/unarmed/brass/knyackles = 2,
+	)
+
 /datum/outfit/job/cb/catgirl/warrior/sniper
 	name = "cat sniper"
 	head = /obj/item/clothing/head/kevlarhelmet/ghillie
@@ -85,7 +103,7 @@
 	uniform = /obj/item/clothing/under/civ/mayan_loincloth
 	suit = /obj/item/clothing/suit/civ13/coat/ghillie
 	shoes = /obj/item/clothing/shoes/sandal
-	belt = /obj/item/storage/belt/utility/mining/primitive
+	belt = /obj/item/storage/bag/casings
 	gloves = /obj/item/clothing/gloves/thief
 	tribal = TRUE
 	cat = TRUE

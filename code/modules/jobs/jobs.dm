@@ -337,6 +337,7 @@ GLOBAL_LIST_INIT(tribal_positions, list(
 	"Head Warrior",
 	"Warrior",
 	"Blowsniper",
+	"Nyanfiltrator",
 	"Captured Murrine",
 ))
 //bikrs
