@@ -1,20 +1,42 @@
-/datum/language/draconic
-	name = "Draconic"
-	desc = "The common language of lizard-people, composed of sibilant hisses and rattles."
-	speech_verb = "hisses"
-	ask_verb = "hisses"
-	exclaim_verb = "roars"
-	key = "o"
+/datum/language/murrine
+	name = "Murrine"
+	desc = "The a."
+	speech_verb = "overs"
+	ask_verb = "tangos"
+	exclaim_verb = "tacticals"
+	key = "q"
 	flags = TONGUELESS_SPEECH
-	space_chance = 40
+	space_chance = 100
 	syllables = list(
-		"za", "az", "ze", "ez", "zi", "iz", "zo", "oz", "zu", "uz", "zs", "sz",
-		"ha", "ah", "he", "eh", "hi", "ih", "ho", "oh", "hu", "uh", "hs", "sh",
-		"la", "al", "le", "el", "li", "il", "lo", "ol", "lu", "ul", "ls", "sl",
-		"ka", "ak", "ke", "ek", "ki", "ik", "ko", "ok", "ku", "uk", "ks", "sk",
-		"sa", "as", "se", "es", "si", "is", "so", "os", "su", "us", "ss", "ss",
-		"ra", "ar", "re", "er", "ri", "ir", "ro", "or", "ru", "ur", "rs", "sr",
-		"a",  "a",  "e",  "e",  "i",  "i",  "o",  "o",  "u",  "u",  "s",  "s"
+		
+		"alpha",
+		"bravo", 
+		"charlie", "calico"
+		"delta",
+		"echo",
+		"foxtrot",
+		"golf",
+		"hotel",
+		"india",
+		"juliet",
+		"kilo",
+		"lima",
+		"mike",
+		"november",
+		"oscar",
+		"papa",
+		"quebec", "queen",
+		"romeo",
+		"sierra", "sphynx"
+		"tango", "tabby", "tomcat",
+		"uniform",
+		"victory",
+		"whiskey", "whisker",
+		"x-ray",
+		"yankee",
+		"zulu",
+		"snafu",
+		
 	)
-	icon_state = "lizard"
+	icon_state = "galcom"
 	default_priority = 90
