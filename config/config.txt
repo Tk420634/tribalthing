@@ -24,7 +24,7 @@ $include policy.txt
 @SERVERNAME CatGirl Paradise
 
 ## Server tagline: This will appear right below the server's title.
-SERVERTAGLINE [18+] Soft PVP over an ERP shell, beat each other with sticks then beat each other off!
+SERVERTAGLINE [18+] Lite PVP with a backdrop for Tribal vs Marine ERP set in a goofy backdrop! https://discord.gg/n4nhyEyPNC
 ## Server SQL name: This is the name used to identify the server to the SQL DB, distinct from SERVERNAME as it must be at most 32 characters.
 # SERVERSQLNAME fo13sql
 

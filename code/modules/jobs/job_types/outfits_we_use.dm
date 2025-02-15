@@ -128,6 +128,7 @@
 	belt = null
 	gloves = null
 	backpack_contents = list()
+	murrine = TRUE
 
 
 /datum/outfit/job/cb/guild
@@ -190,6 +191,7 @@
 		/obj/item/gun/energy/taser = 1,
 		/obj/item/flashlight/seclite = 1
 	)
+	murrine = TRUE
 
 /datum/outfit/job/cb/guild/deputy/gunner
 	name = "Dart Gunner"
@@ -204,6 +206,7 @@
 		/obj/item/melee/classic_baton/telescopic = 1,
 		/obj/item/flashlight/seclite = 1
 	)
+	murrine = TRUE
 
 /datum/outfit/job/cb/guild/deputy/engineer
 	name = "Murrine Engineer"
@@ -221,6 +224,7 @@
 		/obj/item/turret_box/foam,
 	)
 	l_pocket = /obj/item/multitool
+	murrine = TRUE
 
 
 
@@ -237,6 +241,7 @@
 		/obj/item/gun/energy/taser = 1,
 		/obj/item/flashlight/seclite = 1
 	)
+	murrine = TRUE
 
 /datum/outfit/job/cb/guild/radio
 	name = "Radio Operator"
