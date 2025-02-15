@@ -11,6 +11,7 @@
 	outfit = /datum/outfit/job/cb/guild/deputy/sheriff
 	access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
 	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
+	faction = "murrine"
 //////////////////////////////
 /// Deputy
 /// A Deputy, here to serve drinks and listen to people's problems
@@ -18,10 +19,11 @@
 	title = "Trooper"
 	flag = F13BARKEEP	
 	description = "You are a Trooper. You are the backbone of the settlement, here to capture catgirls to be made into maids. Your work is essential to the survival of the town."
-	supervisors = "the Adventurers Guild"
+	supervisors = "The Squad Leaders"
 	outfit = /datum/outfit/job/cb/guild/deputy
 	access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
 	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
+	faction = "murrine"
 //////////////////////////////
 /// Deputy
 /// A Deputy, here to serve drinks and listen to people's problems
@@ -30,11 +32,24 @@
 	flag = F13BARKEEP	
 	total_positions = 3
 	spawn_positions = 3
-	description = "You are a Trooper. You are the backbone of the settlement, here to capture catgirls to be made into maids. You get a gun that shoots darts real fast. Your work is essential to the survival of the town."
-	supervisors = "the Adventurers Guild"
+	description = "You are a Murrine Gunner, armed with a dart machinegun capable of mobile supressing fire."
+	supervisors = "The Squad Leaders"
 	outfit = /datum/outfit/job/cb/guild/deputy/gunner
 	access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
 	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
+	faction = "murrine"
+
+/datum/job/townfolk/murrineengineer
+	title = "Murrine Engineer"
+	flag = F13BARKEEP
+	total_positions = 2
+	spawn_positions = 2
+	description = "You are a Murrine Engineer, a master of mechanical turrets and area denial."
+	supervisors = "The Squad Leaders"
+	outfit = /datum/outfit/job/cb/guild/deputy/engineer
+	access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
+	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
+	faction = "murrine"
 //////////////////////////////
 /// Deputy
 /// A Deputy, here to serve drinks and listen to people's problems
@@ -45,6 +60,7 @@
 	enforces = "Not much in particular, but like.  If you wanna try to escape go ahead."
 	forbids = "Not a whole lot of much. Live your life, crechor."
 	outfit = /datum/outfit/job/cb/capturedcatgirl
+	faction = "cat"
 
 
 
@@ -64,6 +80,7 @@
 	description = "The Gods have chosen you to be a Warleader for our warriors, only you can prove if you're fit for this position.  Capture the invaders and integrate them into the Nyampire."
 	outfit = /datum/outfit/job/cb/catgirl/warrior/head
 	paycheck = COINS_TO_CREDITS(100) // 100 copper per hour
+	faction = "cat"
 
 //////////////////////////////
 /// Tribal Forager
@@ -79,6 +96,7 @@
 	description = "You are a warrior of the Nyan-Nyan Neko Nyampire, one of the greatest warriors this planet has to offer.  Clad in bones of monsters these invaders would cower before and gifted with skills untold."
 	outfit = /datum/outfit/job/cb/catgirl/warrior
 	paycheck = COINS_TO_CREDITS(75) // 75 copper per hour
+	faction = "cat"
 //////////////////////////////
 /// Tribal Forager
 /// A forager of the tribe, who helps the head forager find cute tribal furries
@@ -93,6 +111,7 @@
 	description = "You are a sniper, trained with a blow dart gun and taught in the ways of being a bush."
 	outfit = /datum/outfit/job/cb/catgirl/warrior/sniper
 	paycheck = COINS_TO_CREDITS(75) // 75 copper per hour
+	faction = "cat"
 
 /datum/job/tribal/nyanfiltrator
 	title = "Nyanfiltrator"
@@ -105,6 +124,7 @@
 	description = "A high class warrior, gifted with magical tech rendered from the ancients to hide yourself on the move and trained to use brass knyackles to down foes rapidly from behind."
 	outfit = /datum/outfit/job/cb/catgirl/warrior/nyanfiltrator
 	paycheck = COINS_TO_CREDITS(75) // 75 copper per hour
+	faction = "cat"
 
 /datum/job/tribal/head_forager/captured
 	title = "Captured Murrine"
@@ -115,6 +135,7 @@
 	forbids = "Nothing in particular."
 	description = "You've been captured by the enemy. You probably want to escape, but maybe you don't."
 	outfit = /datum/outfit/job/cb/catgirl/warrior/captured
+	faction = "murrine"
 
 
 
@@ -171,6 +192,7 @@
 	ramp_up_max = 0.33 // damage multi
 	ramp_up_start = 15 // tiles
 	ramp_up_end = 15 // also tiles
+	fire_sound = 'sound/items/syringeproj.ogg'
 
 /obj/item/ammo_box/magazine/lewis/foam
 	name = "huge foamdish"
@@ -185,4 +207,54 @@
 
 /obj/item/ammo_box/magazine/lewis/foam/empty
 	start_empty = 1
+
+/// A packed up turrent
+/obj/item/turret_box/foam
+	name = "packaged auto-dartling gun"
+	desc = "A turret, packed up and ready to deploy. Ammo not included, unless repackaged."
+	icon = 'icons/obj/objects.dmi'
+	icon_state = "hivebot_fab_on"
+	w_class = WEIGHT_CLASS_NORMAL
+	turret_type = /obj/machinery/porta_turret/f13/nash/foam
+
+/obj/item/ammo_box/magazine/internal/turret/foam
+	ammo_type = /obj/item/ammo_casing/caseless/foam_dart/riot
+	caliber = list(CALIBER_FOAM)
+
+/// Nash's Friendliest Autogun
+/// needs ammo~
+/obj/machinery/porta_turret/f13/nash/foam
+	name = "portable YiffSoft Point Defense Playset"
+	icon = 'icons/obj/turrets.dmi'
+	icon_state = "syndie_off"
+	base_icon_state = "syndie"
+	desc = "<i>Calling all Yiffers!</i> Are YOU tired of <i><u>girrrrls</u></i> breaking into YOUR BattleFort{tm}?? YiffSoft's \
+		got your back, soldier! It can hold UP TO 300 YiffSoft TurboFoxy UltraDarts in its MEGA EXTENDED HOPPER, to unleash \
+		HOT FOAM on ANYONE brave enough to stand within 11 meters of YOUR YiffSoft Point Defense Playset!! Made of \
+		SPACE AGE YIFFER-TUFF plastic that can take a BEATING and be DEPLOYABLE again!! Ages 30 and up. \
+		Keep out of reach of catgirls, it'll serve them if they deploy it!! \
+		<br><br>\
+		This turret comes pre-loaded with 50-100 <b>Foam Darts</b>, which will need to be manually reloaded into this thing \
+		if you want it to keep shooting. \
+		This is a 'portable' turret, in that it can be packaged back up into a handy carrying case if hit with a <b>multitool</b>.\
+		It can be repaired by stuffing <b>Foam Darts<b> into it. Unload all the darts loaded inside by <b>alt-clicking</b> it.\
+		Yes it accepts casing bags, just smack this with that to load whatever's in there."
+	scan_range = 11
+	turret_flags = TURRET_DEFAULT_TARGET_FLAGS | TURRET_DEFAULT_UTILITY
+	stun_projectile = /obj/item/ammo_casing/caseless/foam_dart/riot
+	lethal_projectile = /obj/item/ammo_casing/caseless/foam_dart/riot
+	lethal_projectile_sound = 'sound/items/syringeproj.ogg'
+	stun_projectile_sound = 'sound/items/syringeproj.ogg'
+	faction = list("murrine")
+	our_mag = /obj/item/ammo_box/magazine/internal/turret/foam
+	integrity_failure = 0.01
+
+/obj/machinery/porta_turret/f13/nash/foam/obj_break(damage_flag)
+	if(!(flags_1 & NODECONSTRUCT_1))
+		stat |= BROKEN
+	playsound(get_turf(src), 'sound/machines/machinery_break_1.ogg', 80, 1, SOUND_DISTANCE(10), ignore_walls = TRUE)
+	unload_all_ammo()
+	var/obj/item/turret_box/foam/D = new(get_turf(src))
+	D.noammo = TRUE
+	qdel(src)
 

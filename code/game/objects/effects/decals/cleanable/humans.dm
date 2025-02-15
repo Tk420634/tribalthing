@@ -9,6 +9,7 @@
 	color = BLOOD_COLOR_HUMAN //default so we don't have white splotches everywhere.
 	var/rainbow = FALSE
 	beauty = -100
+	disappear_after = 30 SECONDS
 
 
 

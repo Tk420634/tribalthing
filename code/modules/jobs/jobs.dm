@@ -162,6 +162,7 @@ GLOBAL_LIST_INIT(oasis_positions, list(
 	"Squad Leader",
 	"Trooper",
 	"Dartgunner",
+	"Murrine Engineer",
 	"Captured Native",
 	// "Prospector",
 	// "Town Doctor",

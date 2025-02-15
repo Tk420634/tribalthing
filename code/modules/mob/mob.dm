@@ -603,9 +603,9 @@
 	if(CONFIG_GET(flag/norespawn))
 		return
 	/* check player is actually dead */
-	if((stat != DEAD || !( SSticker )))
-		to_chat(usr, span_boldnotice("You must be dead to use this!"))
-		return
+	// if((stat != DEAD || !( SSticker )))
+	// 	to_chat(usr, span_boldnotice("You must be dead to use this!"))
+	// 	return
 
 	var/is_admin = check_rights_for(src.client, R_ADMIN)
 	var/test = world.time - src.timeofdeath //How long dead for in deciseconds -- src can either be the corpse or ghost
@@ -622,7 +622,7 @@
 	/*end src.mind.current - we survived the various checks, so perform the actual respawn */
 	log_game("[key_name(usr)] used abandon mob.")
 
-	to_chat(usr, span_boldnotice("Please roleplay correctly!"))
+	to_chat(usr, span_boldnotice("You can now join back in! It can even be the same character!"))
 
 	if(!client)
 		log_game("[key_name(usr)] AM failed due to disconnect.")

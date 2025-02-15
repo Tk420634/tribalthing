@@ -242,13 +242,16 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 
 	spreadFire(AM)
 
-/mob/living/carbon/human/despawn()
+/mob/living/carbon/human/despawn(respawn)
 	var/datum/job/job_to_free = SSjob.GetJob(job)
 	job_to_free?.current_positions--
 	GLOB.data_core.remove_record_by_name(real_name)
 	var/dat = "[key_name(src)] has despawned as [src]."
 	log_game(dat)
-	ghostize()
+	if(respawn)
+		abandon_mob()
+	else
+		ghostize()
 	qdel(src)
 
 /mob/living/carbon/human/Topic(href, href_list)

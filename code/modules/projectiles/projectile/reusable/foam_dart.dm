@@ -1,9 +1,9 @@
 /obj/item/projectile/bullet/reusable/foam_dart
 	name = "foam dart"
 	desc = "I hope you're wearing eye protection."
-	damage = 0 // It's a damn toy.
-	damage_type = OXY
-	nodamage = TRUE
+	damage = 25 // It's a damn toy.
+	damage_type = BRUTE
+	// nodamage = TRUE
 	icon = 'icons/obj/guns/toy.dmi'
 	icon_state = "foamdart_proj"
 	ammo_type = /obj/item/ammo_casing/caseless/foam_dart
@@ -21,7 +21,7 @@
 	var/obj/item/projectile/bullet/reusable/foam_dart/newdart = newcasing.BB
 	newdart.modified = modified
 	newdart.damage = damage
-	newdart.nodamage = nodamage
+	// newdart.nodamage = nodamage
 	newdart.damage_type = damage_type
 	if(pen)
 		newdart.pen = pen
@@ -38,7 +38,7 @@
 	name = "riot foam dart"
 	icon_state = "foamdart_riot_proj"
 	ammo_type = /obj/item/ammo_casing/caseless/foam_dart/riot
-	stamina = 25
+	// stamina = 25
 
 /obj/item/projectile/bullet/reusable/foam_dart/mag
 	name = "magfoam dart"

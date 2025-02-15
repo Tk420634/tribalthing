@@ -2,7 +2,7 @@
 
 /turf/closed/wall/f13/
 	name = "glitch"
-	desc = "<font color='#6eaa2c'>You suddenly realize the truth - there is no spoon.<br>Something has caused a glitch in the simulation. You can click yourself and drag onto this to leave the round at any time, and can even come</font>"
+	desc = "<font color='#6eaa2c'>You suddenly realize the truth - there is no spoon.<br>Something has caused a glitch in the simulation.</font>"
 	icon = 'icons/fallout/turfs/walls.dmi'
 	icon_state = "matrix"
 
@@ -47,7 +47,7 @@
 
 /turf/closed/wall/f13/wood/house
 	name = "house wall"
-	desc = "A weathered Pre-Fall house wall."
+	desc = "A weathered pre-War house wall."
 	icon = 'icons/turf/walls/house_wall_dirty.dmi'
 	icon_state = "wall-0"
 	hardness = 50
@@ -198,7 +198,7 @@
 
 /turf/closed/wall/f13/supermart
 	name = "supermart wall"
-	desc = "A Pre-Fall supermart wall made of reinforced concrete."
+	desc = "A pre-War supermart wall made of reinforced concrete."
 	icon = 'icons/turf/walls/f13superstore.dmi'
 	icon_state = "supermart"
 //	icon_type_smooth = "supermart"
@@ -232,10 +232,9 @@
 //	icon_type_smooth = "vault"
 	hardness = 130
 	explosion_block = 5
-	smoothing_flags = null
+//	smoothing_flags = SMOOTH_OLD
 	smoothing_groups = list(SMOOTH_GROUP_WALLS, SMOOTH_GROUP_VAULT_WALLS)
-//	canSmoothWith = list(SMOOTH_GROUP_VAULT_WALLS, SMOOTH_GROUP_WINDOW_FULLTILE)
-	canSmoothWith = null
+	canSmoothWith = list(SMOOTH_GROUP_VAULT_WALLS, SMOOTH_GROUP_WINDOW_FULLTILE)
 
 /turf/closed/wall/r_wall/f13
 	name = "glitch"
@@ -305,75 +304,222 @@
 
 /turf/closed/indestructible/f13/subway
 	name = "tunnel wall"
-	desc = "This wall is made of reinforced concrete.<br>Pre-Fall engineers knew how to build reliable things."
+	desc = "This wall is made of reinforced concrete.<br>Pre-War engineers knew how to build reliable things."
 	icon = 'icons/fallout/turfs/walls/subway.dmi'
 	icon_state = "subwaytop"
 
 /turf/closed/indestructible/f13/matrix //The Chosen One from Arroyo!
-	name = "matrix"
-	desc = "<font color='#6eaa2c'>You suddenly realize the truth - there is no spoon.<br>Digital simulation ends here.</font>"
+	name = "departure zone"
+	desc = "This is the way to depart from this world and go to wherever your character goes when they're not here. Click here (or drag someone here) to depart."
 	icon_state = "matrix"
 	var/in_use = FALSE
 
+/turf/closed/indestructible/f13/matrix/attack_hand(mob/user, act_intent, attackchain_flags)
+	. = ..()
+	departify(user)
+
 /turf/closed/indestructible/f13/matrix/MouseDrop_T(atom/dropping, mob/user)
 	. = ..()
-	if(!isliving(user) || user.incapacitated(allow_crit = TRUE) || !isliving(dropping))
+	departify(user, dropping)
+
+/turf/closed/indestructible/f13/matrix/proc/departify(mob/living/user, mob/living/dropping = null)
+	if(!user)
+		return
+	if(!dropping)
+		dropping = user
+	if(!isliving(user))
+		to_chat(user, span_warning("You're dead! Shoo!"))
+		return
+	if(!isliving(dropping))
+		to_chat(user, span_warning("That's not something that this thing can do anything with!"))
+		return
+	if(QDELETED(dropping))
+		to_chat(user, span_warning("They're already on their way out!"))
+		return
+	if(!isliving(user)|| !isliving(dropping))
 		return //No ghosts or incapacitated folk allowed to do this.
 	if(in_use) // Someone's already going in.
+		to_chat(user, span_warning("Someone is already using that thing, or it just stopped working. Try a different tile =3"))
 		return
 	if(SSmobs.there_is_no_escape)
-		to_chat(user, span_warning("This method of escape has been disabled. Sorry! You're allowed to ghost out and respawn though, just ahelp and tell an admin to ditch your body."))
+		to_chat(user, span_warning("This method of escape has been disabled. Sorry!"))
 		return
-	var/mob/living/departing_mob = dropping
-	if(departing_mob != user && departing_mob.client)
-		to_chat(user, span_warning("This one retains their free will. It's their choice if they want to depart or not."))
-		return
-	if(alert("Are you sure you want to [departing_mob == user ? "depart the area for good (you" : "send this person away (they"] will be removed from the current round, the job slot freed)?", "Departing the swamps", "Confirm", "Cancel") != "Confirm")
-		return
-	if(user.incapacitated(allow_crit = TRUE) || QDELETED(departing_mob) || (departing_mob != user && departing_mob.client) || get_dist(src, dropping) > 2 || get_dist(src, user) > 2)
-		return //Things have changed since the alert happened.
-	if(departing_mob.logout_time && departing_mob.logout_time + 2 MINUTES > world.time)
-		to_chat(user, span_warning("This mind has only recently departed. Wait at most two minutes before sending this character out of the round."))
-		return
-	user.visible_message(span_warning("[user] [departing_mob == user ? "is trying to leave the swamps!" : "is trying to send [departing_mob] away!"]"), span_notice("You [departing_mob == user ? "are trying to leave the swamps." : "are trying to send [departing_mob] away."]"))
-	icon_state = "matrix_going" // ALERT, WEE WOO
-	update_icon()
-	in_use = TRUE
-	if(!do_after(user, 50, target = src))
-		icon_state = initial(icon_state)
-		in_use = FALSE
-		return
-	icon_state = initial(icon_state)
-	in_use = FALSE
-	update_icon()
-	var/dat
-	if(ishuman(departing_mob))
-		dat = "[key_name(user)] has despawned [departing_mob == user ? "themselves" : departing_mob]."
-	else if(isanimal(departing_mob))
-		dat = "[key_name(user)] has despawned [departing_mob == user ? "themselves" : departing_mob]."
-	if(!length(departing_mob.contents))
-		dat += " none."
+	if(dropping == user)
+		. = depart_self(user)
 	else
-		var/atom/movable/content = departing_mob.contents[1]
-		dat += " [content.name]"
-		for(var/i in 2 to length(departing_mob.contents))
-			content = departing_mob.contents[i]
-			dat += ", [content.name]"
-		dat += "."
-	message_admins(dat)
-	log_admin(dat)
-	if(departing_mob.stat == DEAD)
-		departing_mob.visible_message(span_notice("[user] pushes the body of [departing_mob] over the border. They're someone else's problem now."))
-	else
-		departing_mob.visible_message(span_notice("[departing_mob == user ? "Out of their own volition, " : "Ushered by [user], "][departing_mob] crosses the border and departs the swamps."))
-	
-	if(departing_mob.client.is_in_game >= 1)
-		// if(departing_mob.client.is_in_game == 2)
-		// 	to_chat(world, span_nicegreen("You hear through the grapevine that [departing_mob.name] has left the county."))
-		departing_mob.client.is_in_game = 0
-	
-	departing_mob.despawn()
+		. = depart_other(user, dropping)
+	if(!.)
+		message_admins("[key_name(user)] tried to depart [key_name(dropping)], but something went wrong. Be a dear and delete them manually, would you?")
 
+/turf/closed/indestructible/f13/matrix/proc/depart_self(mob/living/user)
+	if(in_use)
+		return TRUE
+	in_use = TRUE
+	var/igo = alert(
+		user,
+		"This will depart you from the game (despawn you). You can come back any time you want! Are you sure you want to do this?",
+		"Time to go!",
+		"Depart!",
+		"Cancel",
+	)
+	if(igo != "Depart!")
+		in_use = FALSE
+		return TRUE
+	var/dumpit = alert(
+		user,
+		"Want to dump all your stuff into a bag before you go? It'll sit here until you come back (or someone else takes it!).",
+		"Durg?",
+		"Dump it!",
+		"No thanks",
+	)
+	dumpit = (dumpit == "Dump it!") ? TRUE : FALSE
+	// var/lockit = CHECK_PREFS(user, DUMP_STUFF_ON_LOGOUT)
+	var/worked = FALSE
+	if(do_after(
+		user,
+		(3 SECONDS),
+		FALSE,
+		src,
+		TRUE,
+		null,
+		null,
+		null,
+		FALSE,
+		TRUE,
+		TRUE,
+		TRUE,
+		TRUE,
+	))
+		worked = TRUE
+	in_use = FALSE
+	if(!worked)
+		to_chat(user, span_warning("Okay nevermind!!"))
+		return TRUE
+	to_chat(user, span_notice("You have departed from the jungle, hope to see you soon!"))
+	user.visible_message(span_notice("[user] has departed from the jungle. Hope to see them soon!"))
+	if(dumpit)
+		to_chat(user, span_notice("Your stuff has been put into a bag."))
+		StuffPlayerContentsIntoABag(user, get_turf(user), FALSE)
+	message_admins("[key_name(user)] has departed from the jungle.")
+	log_admin("[key_name(user)] has departed from the jungel.")
+	if(user.client)
+		if(user.client?.is_in_game >= 1)
+			// if(user.client.is_in_game == 2)
+			// 	to_chat(world, span_nicegreen("I hear through the grapevine that [user.name] has left the county."))
+			user.client.is_in_game = 0
+	whoosh(user)
+	user.despawn(respawn = TRUE)
+	return TRUE
+
+/turf/closed/indestructible/f13/matrix/proc/depart_other(mob/living/user, mob/living/departing_mob)
+	if(in_use)
+		return TRUE
+	if(departing_mob.client)
+		to_chat(user, span_warning("That person is still 'with us', so they'll have to decide for themselves if they want to leave."))
+		in_use = FALSE
+		return TRUE
+	var/igo = alert(
+		user,
+		"This will depart [departing_mob] from the game (despawn them). They can come back any time they want! Are you sure you want to do this? All their stuff will be left in a sack, just in case.",
+		"Send 'em packing!",
+		"Send them away!",
+		"Cancel",
+	)
+	if(igo != "Send them away!")
+		in_use = FALSE
+		return TRUE
+	in_use = TRUE
+	var/worked = FALSE
+	if(do_after(
+		user,
+		(3 SECONDS),
+		FALSE,
+		src,
+		TRUE,
+		null,
+		null,
+		null,
+		FALSE,
+		TRUE,
+		TRUE,
+		TRUE,
+		TRUE,
+	))
+		worked = TRUE
+	in_use = FALSE
+	if(!worked)
+		to_chat(user, span_warning("Okay nevermind!!"))
+		return TRUE
+	// var/lockit = CHECK_PREFS(user, DUMP_STUFF_ON_LOGOUT)
+	to_chat(user, span_notice("[user] has sent [departing_mob] away. Hope to see them soon!"))
+	departing_mob.visible_message(span_notice("[departing_mob] has been sent away. Hope to see them soon!"))
+	StuffPlayerContentsIntoABag(departing_mob, get_turf(departing_mob), FALSE)
+	message_admins("[key_name(user)] has sent [key_name(departing_mob)] away.")
+	log_admin("[key_name(user)] has sent [key_name(departing_mob)] away.")
+	if(departing_mob.client)
+		if(departing_mob.client.is_in_game >= 1)
+			// if(departing_mob.client.is_in_game == 2)
+			// 	to_chat(world, span_nicegreen("I hear through the grapevine that [departing_mob.name] has left the county."))
+			departing_mob.client.is_in_game = 0
+	whoosh(departing_mob)
+	departing_mob.despawn(respawn = TRUE)
+	return TRUE
+
+/turf/closed/indestructible/f13/matrix/proc/whoosh(mob/departing_mob)
+	do_sparks(2, TRUE, get_turf(departing_mob))
+	// playsound(departing_mob, 'sound/effects/player_despawn.ogg', 80, TRUE)
+
+/proc/StuffPlayerContentsIntoABag(mob/who, atom/where, lockit)
+	if(!who)
+		return
+	if(!where)
+		where = get_turf(who)
+	var/obj/item/storage/despawned/box = new /obj/item/storage/despawned(where)
+	for(var/obj/item/I in who.contents)
+		if(istype(I, /obj/item/organ))
+			continue
+		if(istype(I, /obj/item/bodypart))
+			continue
+		if(HAS_TRAIT(I, TRAIT_NODROP))
+			continue
+		I.forceMove(box)
+	if(lockit)
+		box.SetOwnerKey(who)
+
+/obj/item/storage/despawned
+	name = "box of stuff"
+	desc = "A box of belongings belonging to someone who left and might want to come back."
+	icon_state = "eq_box"
+	inhand_icon_state = "backpack"
+	lefthand_file = 'icons/mob/inhands/equipment/backpack_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/backpack_righthand.dmi'
+	w_class = WEIGHT_CLASS_GIGANTIC
+	slot_flags = NONE
+	resistance_flags = INDESTRUCTIBLE
+	component_type = /datum/component/storage/concrete/debug_sack
+	var/owner_key
+
+/obj/item/storage/despawned/Initialize()
+	. = ..()
+	if(prob(0.1))
+		aboob()
+
+/obj/item/storage/despawned/proc/aboob()
+	name = "Box of Abu-Kar"
+	desc = "LORE ITEM"
+	desc += "<br>WT: 2.0 Weight Reduction: 100%"
+	desc += "<br>Capacity: 10 Size Capacity: GIANT"
+	desc += "<br><br>[initial(desc)]"
+
+/obj/item/storage/despawned/examine(mob/user)
+	. = ..()
+	if(user.ckey == owner_key)
+		to_chat(user, span_greentext("This is your stuff! It belongs to you! =3"))
+
+/obj/item/storage/despawned/proc/SetOwnerKey(mob/who)
+	owner_key = who.ckey
+	// var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	// STR.lock_key = owner_key
 
 /turf/closed/indestructible/f13/obsidian //Just like that one game studio that worked on the original game, or that block in Minecraft!
 	name = "obsidian"

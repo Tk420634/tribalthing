@@ -73,6 +73,7 @@
 	cat = TRUE
 	backpack_contents   = list(
 	/obj/item/storage/backpack/satchel/explorer,
+	/obj/item/melee/classic_baton/coyote/oldquarterstaff/disputestick,
 	/obj/item/warpaint_bowl,
 	/obj/item/restraints/legcuffs/bola = 2,
 	/obj/item/gun/energy/kinetic_accelerator/crossbow/sling,
@@ -82,19 +83,15 @@
 	name = "Nyanfiltrator"
 	head = null
 	suit = null
-	backpack = /obj/item/storage/backpack
+	backpack = null
 	uniform = /obj/item/clothing/under/civ/mayan_loincloth
 	shoes = /obj/item/clothing/shoes/sandal
 	belt = /obj/item/stealthboy
 	gloves = /obj/item/clothing/gloves/thief
+	l_pocket = /obj/item/melee/unarmed/brass/knyackles
+	r_pocket = /obj/item/melee/unarmed/brass/knyackles
 	tribal = TRUE
 	cat = TRUE
-	backpack_contents   = list(
-	/obj/item/storage/backpack/satchel/explorer,
-	/obj/item/warpaint_bowl,
-	/obj/item/restraints/legcuffs/bola = 2,
-	/obj/item/melee/unarmed/brass/knyackles = 2,
-	)
 
 /datum/outfit/job/cb/catgirl/warrior/sniper
 	name = "cat sniper"
@@ -204,10 +201,27 @@
 	shoes = /obj/item/clothing/shoes/jackboots
 	suit_store = /obj/item/gun/ballistic/automatic/lewis/murr
 	backpack_contents = list(
-		/obj/item/grenade/flashbang = 3,
 		/obj/item/melee/classic_baton/telescopic = 1,
 		/obj/item/flashlight/seclite = 1
 	)
+
+/datum/outfit/job/cb/guild/deputy/engineer
+	name = "Murrine Engineer"
+	jobtype = /datum/job/townfolk/f13deputy
+	head = /obj/item/clothing/head/beret/eng
+	belt = /obj/item/storage/bag/casings
+	uniform = /obj/item/clothing/under/f13/enclave/peacekeeper
+	gloves = /obj/item/clothing/gloves/f13/leather/fingerless
+	shoes = /obj/item/clothing/shoes/jackboots
+	suit_store = null
+	backpack_contents = list(
+		/obj/item/melee/classic_baton/telescopic = 1,
+		/obj/item/flashlight/seclite = 1,
+		/obj/item/ammo_box/foambox/catbox = 2,
+		/obj/item/turret_box/foam,
+	)
+	l_pocket = /obj/item/multitool
+
 
 
 /datum/outfit/job/cb/guild/deputy/sheriff
@@ -219,7 +233,6 @@
 	gloves = /obj/item/clothing/gloves/f13/leather/fingerless
 	shoes = /obj/item/clothing/shoes/jackboots
 	backpack_contents = list(
-		/obj/item/grenade/flashbang = 3,
 		/obj/item/melee/classic_baton/telescopic = 1,
 		/obj/item/gun/energy/taser = 1,
 		/obj/item/flashlight/seclite = 1

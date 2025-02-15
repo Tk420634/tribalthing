@@ -302,6 +302,7 @@
 	var/gunsmith_four = FALSE //F13 gunsmith perk, ability to craft Tier 5 guns and ammo
 	var/tribal = FALSE //F13 gunsmith perk, ability to craft Tier 5 guns and ammo
 	var/cat = FALSE //F13 gunsmith perk, ability to craft Tier 5 guns and ammo
+	var/murrine = FALSE //F13 gunsmith perk, ability to craft Tier 5 guns and ammo
 
 
 /datum/outfit/job/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
@@ -359,6 +360,8 @@
 		SSquirks.AddQuirkToMob(H, /datum/quirk/tribespeak, TRUE, TRUE)
 	if(cat == TRUE)
 		SSquirks.AddQuirkToMob(H, /datum/quirk/cat, TRUE, TRUE)
+	if(murrine == TRUE)
+		SSquirks.AddQuirkToMob(H, /datum/quirk/tacticool, TRUE, TRUE)
 
 /datum/outfit/job/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
 	if(visualsOnly)

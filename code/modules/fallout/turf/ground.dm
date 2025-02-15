@@ -181,7 +181,7 @@ GLOBAL_LIST_INIT(grass_plant_list, list(
 	))
 
 GLOBAL_LIST_INIT(tree_plant_list, list(
-	/obj/structure/flora/tree/jungle = 15,
+	//obj/structure/flora/tree/jungle = 15,
 	/obj/structure/flora/tree/jungle/small = 15,
 	/obj/structure/flora/tree/med_pine = 7,
 	/obj/structure/flora/tree/med_pine_dead = 7,

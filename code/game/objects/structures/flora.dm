@@ -19,6 +19,7 @@
 	layer = FLY_LAYER
 	plane = MOB_PLANE
 	var/log_amount = 10
+	var/cuttable_down = TRUE
 
 /obj/structure/flora/tree/Bumped(atom/movable/AM)
 	. = ..()
@@ -41,7 +42,7 @@
 
 
 /obj/structure/flora/tree/attackby(obj/item/W, mob/user, params)
-	if(log_amount && (!(flags_1 & NODECONSTRUCT_1)))
+	if(cuttable_down && log_amount && (!(flags_1 & NODECONSTRUCT_1)))
 		if(W.sharpness && W.force > 0)
 			if(W.hitsound)
 				playsound(get_turf(src), 'sound/effects/wood_cutting.ogg', 100, 0, 0)
@@ -163,6 +164,7 @@
 	pixel_x = -48
 	pixel_y = -20
 	opacity = 1
+	cuttable_down = FALSE
 
 /obj/structure/flora/tree/jungle/Initialize()
 	. = ..()
