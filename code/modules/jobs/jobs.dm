@@ -117,9 +117,9 @@ GLOBAL_LIST_INIT(faction_whitelist_positions, list(
 
 // "Chief",
 // "Spiritual Leader",
-	// "Head Warrior",
+// "Head Warrior",
 // "Harvest Leader",
- 	// "Warrior",
+// "Warrior",
 
 // "Noyan",
 // "Steward",
