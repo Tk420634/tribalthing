@@ -146,7 +146,7 @@
 			Deactivate()
 		else
 			return
-	animate(user, alpha = 30, time = 1 SECONDS)
+	animate(user, alpha = 30, time = 0.5 SECONDS)
 	ADD_TRAIT(user, "stealthinvis", src)
 	applying_to = user
 	to_chat(user, span_notice("You activate \The [src]."))
@@ -162,7 +162,7 @@
 		user = applying_to
 	if(!user)
 		CRASH("Deactivate called without a user or applying_to!")
-	animate(user, alpha = initial(user.alpha), time = 3 SECONDS)
+	animate(user, alpha = initial(user.alpha), time = 0.5 SECONDS)
 	to_chat(user, span_notice("\The [src] deactivates!"))
 	user.faction -= factionlist
 	REMOVE_TRAIT(user, "stealthinvis", src)

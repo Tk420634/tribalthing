@@ -300,7 +300,7 @@
 			"Fate" = image(icon = 'icons/mob/screen_gen.dmi', icon_state = "fate"),
 		)
 	var/mob/user = usr
-	var/choice = show_radial_menu(user, src, choices, radius = 32,)
+	var/choice = show_radial_menu(user, src, choices, radius = 28, ultradense = TRUE, linedir = NORTH)
 	switch(choice)
 		if("Brawn")
 			user.emote("special_strength")
