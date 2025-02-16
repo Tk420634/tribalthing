@@ -311,6 +311,8 @@
 	// check through the important things
 	parts += "<div class='panel greenborder'>"
 	for(var/atom/thingy in important_things)
+		if (thingy == null)
+			continue
 		var/turf/where = get_turf(thingy)
 		var/murine_got_it = where.z != onmap_z // went off the map
 		var/kitten_got_it = istype(get_area(where), /area/f13/ambientlighting/building/catgirls_score_here)
