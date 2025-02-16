@@ -284,7 +284,7 @@ Transfer_mind is there to check if mob is being deleted/not going to have a body
 Works together with spawning an observer, noted above.
 */
 
-/mob/proc/ghostize(can_reenter_corpse = TRUE, special = FALSE, penalize = FALSE, voluntary = FALSE)
+/mob/proc/ghostize(can_reenter_corpse = TRUE, special = FALSE, penalize = FALSE, voluntary = FALSE, respawn)
 	var/sig_flags = SEND_SIGNAL(src, COMSIG_MOB_GHOSTIZE, can_reenter_corpse, special, penalize)
 	SEND_SIGNAL(src, COMSIG_MOB_GHOSTIZE_FINAL, can_reenter_corpse, special, penalize)
 	penalize = !(sig_flags & COMPONENT_DO_NOT_PENALIZE_GHOSTING) && (penalize)
@@ -326,6 +326,9 @@ Works together with spawning an observer, noted above.
 	if(!check_rights_for(src.client, R_ADMIN))
 		//message_admins("[key_name(src)] is now a ghost.")
 		log_world("[key_name(src)] is now a ghost.")
+	if(respawn)
+		spawn(0.5 SECONDS)
+			ghost.abandon_mob()
 	return ghost
 
 /*

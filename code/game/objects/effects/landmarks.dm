@@ -1126,6 +1126,36 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	icon_state = "Tribal"
 	color = "#00FF00"
 
+/obj/effect/landmark/start/f13/dartgunner
+	name = "Dartgunner"
+	icon_state = "Tribal"
+	color = "#00FF00"
+
+/obj/effect/landmark/start/f13/murrineengineer
+	name = "Murrine Engineer"
+	icon_state = "ussgt"
+	color = "#FFFFFF"
+
+/obj/effect/landmark/start/f13/housekeeping
+	name = "Housekeeping Specialist"
+	icon_state = "ussgt"
+	color = "#FF00FF"
+
+/obj/effect/landmark/start/f13/catsniper
+	name = "Blowsniper"
+	icon_state = "Tribal"
+	color = "#00FF00"
+
+/obj/effect/landmark/start/f13/nyanfiltrator
+	name = "Nyanfiltrator"
+	icon_state = "Tribal"
+	color = "#FFFF00"
+
+/obj/effect/landmark/start/f13/influencer
+	name = "Influencer"
+	icon_state = "Tribal"
+	color = "#FF00FF"
+
 /obj/effect/landmark/start/f13/druid
 	name = "Harvest Leader"
 	icon_state = "Tribal"

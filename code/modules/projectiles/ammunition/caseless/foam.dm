@@ -52,7 +52,7 @@
 	var/obj/item/projectile/bullet/reusable/foam_dart/FD = BB
 	if(FD.pen)
 		FD.damage = initial(FD.damage)
-		FD.nodamage = initial(FD.nodamage)
+		// FD.nodamage = initial(FD.nodamage)
 		user.put_in_hands(FD.pen)
 		to_chat(user, span_notice("You remove [FD.pen] from [src]."))
 		FD.pen = null
@@ -63,6 +63,7 @@
 	projectile_type = /obj/item/projectile/bullet/reusable/foam_dart/riot
 	icon_state = "foamdart_riot"
 	custom_materials = list(/datum/material/iron = 1125)
+	berryable = TRUE
 
 /obj/item/ammo_casing/caseless/foam_dart/mag
 	name = "magfoam dart"

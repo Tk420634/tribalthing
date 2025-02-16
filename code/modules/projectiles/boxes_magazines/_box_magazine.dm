@@ -363,17 +363,20 @@
 
 /obj/item/ammo_box/proc/pop_casing(mob/user, to_ground, silent)
 	if(unloadable)
-		to_chat(user, span_notice("You can't remove ammo from \the [src]!"))
+		if(user)
+			to_chat(user, span_notice("You can't remove ammo from \the [src]!"))
 		return FALSE
 	var/obj/item/ammo_casing/A = get_round()
 	if(!A)
-		to_chat(user, span_alert("There's nothing in \the [src]!"))
+		if(user)
+			to_chat(user, span_alert("There's nothing in \the [src]!"))
 		return FALSE
-	if(to_ground || !user.put_in_hands(A))
+	if(to_ground || (user && !user.put_in_hands(A)))
 		A.bounce_away(FALSE, NONE)
 	playsound(src, 'sound/weapons/bulletinsert.ogg', 60, 1)
 	if(!silent)
-		to_chat(user, span_notice("You remove a round from \the [src]!"))
+		if(user)
+			to_chat(user, span_notice("You remove a round from \the [src]!"))
 	update_icon()
 	return A
 

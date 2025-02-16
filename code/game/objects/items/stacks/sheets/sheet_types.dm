@@ -31,7 +31,7 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 	null, \
 	new/datum/stack_recipe("metal barricade", /obj/structure/deployable_barricade/metal, 2, 1, time = 1 SECONDS), \
 	new/datum/stack_recipe("iron ingot", /obj/item/ingot/iron, 6, time = 100), \
-	new/datum/stack_recipe("anomalous artifact exclusion cube", /obj/item/storage/box/artifactcontainer/metal, 1, time = 10),
+	//new/datum/stack_recipe("anomalous artifact exclusion cube", /obj/item/storage/box/artifactcontainer/metal, 1, time = 10),
 	new/datum/stack_recipe("primative chemical isolator", /obj/item/reagent_containers/glass/primitive_chem_isolator, 6, time = 20),\
 	/*new/datum/stack_recipe("metal parts", /obj/item/stack/crafting/metalparts, 5), \ very easy to find already*/
 	new/datum/stack_recipe("length of chain", /obj/item/blacksmith/chain, 1, time = 50), \
@@ -189,7 +189,7 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 GLOBAL_LIST_INIT(plasteel_recipes, list ( \
 	new/datum/stack_recipe("bomb assembly", /obj/machinery/syndicatebomb/empty, 10, time = 50), \
 	new/datum/stack_recipe("micro powered fan assembly", /obj/machinery/fan_assembly, 5, time = 50, one_per_turf = TRUE, on_floor = TRUE), \
-	new/datum/stack_recipe("anomalous artifact exclusion cube", /obj/item/storage/box/artifactcontainer/plasteel, 1, time = 10),
+	//new/datum/stack_recipe("anomalous artifact exclusion cube", /obj/item/storage/box/artifactcontainer/plasteel, 1, time = 10),
 	new /datum/stack_recipe_list("crates", list( \
 		new /datum/stack_recipe("gray crate", /obj/structure/closet/crate, 30, time = 50, one_per_turf = 1, on_floor = 1), \
 		new /datum/stack_recipe("internals crate", /obj/structure/closet/crate/internals, 30, time = 50, one_per_turf = 1, on_floor = 1), \
@@ -252,7 +252,7 @@ GLOBAL_LIST_INIT(wood_recipes, list ( \
 	// new/datum/stack_recipe("wooden quarterstaff", /obj/item/melee/classic_baton/coyote/oldquarterstaff, 1, 1, 0.5 SECONDS, is_stack = FALSE), 
 	// new/datum/stack_recipe("wooden arrow shaft", /obj/item/arrow_shaft, 1, 1, 25, 0.5 SECONDS, is_stack = FALSE), 
 	null, \
-	new/datum/stack_recipe("anomalous artifact exclusion cube", /obj/item/storage/box/artifactcontainer/wood, 1, time = 10),
+	//new/datum/stack_recipe("anomalous artifact exclusion cube", /obj/item/storage/box/artifactcontainer/wood, 1, time = 10),
 	new/datum/stack_recipe_list("pews", list( \
 		new /datum/stack_recipe("pew (middle)", /obj/structure/chair/pew, 3, one_per_turf = TRUE, on_floor = TRUE),\
 		new /datum/stack_recipe("pew (left)", /obj/structure/chair/pew/left, 3, one_per_turf = TRUE, on_floor = TRUE),\
@@ -334,31 +334,31 @@ GLOBAL_LIST_INIT(wood_recipes, list ( \
 
 /obj/item/stack/sheet/mineral/wood/attackby(obj/item/W, mob/user, params) // NOTE: sheet_types.dm is where the WOOD stack lives. Maybe move this over there.
 	// Taken from /obj/item/stack/rods/attackby in [rods.dm]
-	if(W.get_sharpness())
-		user.visible_message("[user] begins whittling [src] into a rod.", \
-				span_notice("You begin whittling [src] into a rod, suitable as a weapon shaft."), \
-				span_italic("You hear wood carving."))
-		// 7 Second Timer
-		if(!do_after(user, 70, TRUE, src))
-			return
-		// Make stick
-		var/obj/item/blacksmith/woodrod/new_item = new(user.loc)
-		user.visible_message("[user] finishes carving a rod from the [src].", \
-				span_notice("You finish carving a rod from the [src]."))
-		// Prepare to Put in Hands (if holding wood)
-		var/obj/item/stack/sheet/mineral/wood/N = src
-		var/replace = (user.get_inactive_held_item() == N)
-		// Use Wood
-		N.use(1)
-		// If stack depleted, put item in that hand (if it had one)
-		if (!N && replace)
-			user.put_in_hands(new_item)
-	if(istype(W, merge_type))
-		var/obj/item/stack/S = W
-		if(merge(S))
-			to_chat(user, span_notice("Your [S.name] stack now contains [S.get_amount()] [S.singular_name]\s."))
-	else
-		. = ..()
+	// if(W.get_sharpness())
+	// 	user.visible_message("[user] begins whittling [src] into a rod.", 
+	// 			span_notice("You begin whittling [src] into a rod, suitable as a weapon shaft."), 
+	// 			span_italic("You hear wood carving."))
+	// 	// 7 Second Timer
+	// 	if(!do_after(user, 70, TRUE, src))
+	// 		return
+	// 	// Make stick
+	// 	var/obj/item/blacksmith/woodrod/new_item = new(user.loc)
+	// 	user.visible_message("[user] finishes carving a rod from the [src].", 
+	// 			span_notice("You finish carving a rod from the [src]."))
+	// 	// Prepare to Put in Hands (if holding wood)
+	// 	var/obj/item/stack/sheet/mineral/wood/N = src
+	// 	var/replace = (user.get_inactive_held_item() == N)
+	// 	// Use Wood
+	// 	N.use(1)
+	// 	// If stack depleted, put item in that hand (if it had one)
+	// 	if (!N && replace)
+	// 		user.put_in_hands(new_item)
+	// if(istype(W, merge_type))
+	// 	var/obj/item/stack/S = W
+	// 	if(merge(S))
+	// 		to_chat(user, span_notice("Your [S.name] stack now contains [S.get_amount()] [S.singular_name]\s."))
+	// else
+	// 	. = ..()
 
 /obj/item/stack/sheet/mineral/wood/get_main_recipes()
 	. = ..()
@@ -415,42 +415,44 @@ GLOBAL_LIST_INIT(bamboo_recipes, list ( \
 
 // Cloth
 
+	// new/datum/stack_recipe("custom backpack", /obj/item/storage/backpack/chameleon, 4),
+	// new/datum/stack_recipe("custom jumpsuit", /obj/item/clothing/under/chameleon, 5),
+	// new/datum/stack_recipe("custom gloves", /obj/item/clothing/gloves/chameleon, 5),
+	// new/datum/stack_recipe("custom shoes", /obj/item/clothing/shoes/chameleon, 5),
+	// new/datum/stack_recipe("custom neck cloak", /obj/item/clothing/neck/cloak/chameleon, 5),
+	// new/datum/stack_recipe("custom hat", /obj/item/clothing/head/chameleon, 5),
+	// new/datum/stack_recipe("duffel bag", /obj/item/storage/backpack/duffelbag, 6),
+	// null,
+	// new/datum/stack_recipe("produce bag", /obj/item/storage/bag/plants, 4),
+	// new/datum/stack_recipe("mining satchel", /obj/item/storage/bag/ore, 4),
+	// new/datum/stack_recipe("medical bag", /obj/item/storage/bag/chemistry, 4),
+	// new/datum/stack_recipe("bio bag", /obj/item/storage/bag/bio, 4),
+	// new/datum/stack_recipe("casings bag", /obj/item/storage/bag/casings, 4),
+	// new/datum/stack_recipe("salvage bag", /obj/item/storage/bag/salvage, 4),
+	// null,
+	// new/datum/stack_recipe("string", /obj/item/weaponcrafting/string, 1, time = 10),
+	// new/datum/stack_recipe("improvised gauze", /obj/item/stack/medical/gauze/improvised, 1, 2, 6),
+	// new/datum/stack_recipe("improvised suture", /obj/item/stack/medical/suture/emergency, 3),
+	// new/datum/stack_recipe("rag", /obj/item/reagent_containers/rag, 1),
+	// new/datum/stack_recipe("towel", /obj/item/reagent_containers/rag/towel, 3),
+	// new/datum/stack_recipe("empty sandbag", /obj/item/emptysandbag, 4),
+	// new/datum/stack_recipe("padded floor tile", /obj/item/stack/tile/padded, 1, 4, 20),
+	// new/datum/stack_recipe("mattress", /obj/structure/bed/mattress, 2, one_per_turf = TRUE, on_floor = TRUE),
+	// new/datum/stack_recipe("bedroll", /obj/item/roller/bedroll, 4, one_per_turf = TRUE, on_floor = TRUE),
+	// null,
+	// new/datum/stack_recipe("blindfold", /obj/item/clothing/glasses/sunglasses/blindfold, 2),
+	// new/datum/stack_recipe("beekeeping hood", /obj/item/clothing/head/beekeeper_head, 2),
+	// new/datum/stack_recipe("beekeeping suit", /obj/item/clothing/suit/beekeeper_suit, 4),
+	// new/datum/stack_recipe("money pouch", /obj/item/storage/wallet/stash/pouch, 5),
+	// new/datum/stack_recipe("9mm ammo belt", /obj/item/ammo_box/magazine/autopipe/empty, 12),
+	// null,
+	// new/datum/stack_recipe("19x19 Canvas", /obj/item/canvas/nineteenXnineteen, 4),
+	// new/datum/stack_recipe("23x19 Canvas", /obj/item/canvas/twentythreeXnineteen, 4),
+	// new/datum/stack_recipe("23x23 Canvas", /obj/item/canvas/twentythreeXtwentythree, 4),
+	// null,
+
+
 GLOBAL_LIST_INIT(cloth_recipes, list ( \
-	new/datum/stack_recipe("custom backpack", /obj/item/storage/backpack/chameleon, 4), \
-	new/datum/stack_recipe("custom jumpsuit", /obj/item/clothing/under/chameleon, 5), \
-	new/datum/stack_recipe("custom gloves", /obj/item/clothing/gloves/chameleon, 5), \
-	new/datum/stack_recipe("custom shoes", /obj/item/clothing/shoes/chameleon, 5), \
-	new/datum/stack_recipe("custom neck cloak", /obj/item/clothing/neck/cloak/chameleon, 5), \
-	new/datum/stack_recipe("custom hat", /obj/item/clothing/head/chameleon, 5), \
-	new/datum/stack_recipe("duffel bag", /obj/item/storage/backpack/duffelbag, 6), \
-	null, \
-	new/datum/stack_recipe("produce bag", /obj/item/storage/bag/plants, 4), \
-	new/datum/stack_recipe("mining satchel", /obj/item/storage/bag/ore, 4), \
-	new/datum/stack_recipe("medical bag", /obj/item/storage/bag/chemistry, 4), \
-	new/datum/stack_recipe("bio bag", /obj/item/storage/bag/bio, 4), \
-	new/datum/stack_recipe("casings bag", /obj/item/storage/bag/casings, 4), \
-	new/datum/stack_recipe("salvage bag", /obj/item/storage/bag/salvage, 4), \
-	null, \
-	new/datum/stack_recipe("string", /obj/item/weaponcrafting/string, 1, time = 10), \
-	new/datum/stack_recipe("improvised gauze", /obj/item/stack/medical/gauze/improvised, 1, 2, 6), \
-	new/datum/stack_recipe("improvised suture", /obj/item/stack/medical/suture/emergency, 3), \
-	new/datum/stack_recipe("rag", /obj/item/reagent_containers/rag, 1), \
-	new/datum/stack_recipe("towel", /obj/item/reagent_containers/rag/towel, 3), \
-	new/datum/stack_recipe("empty sandbag", /obj/item/emptysandbag, 4), \
-	new/datum/stack_recipe("padded floor tile", /obj/item/stack/tile/padded, 1, 4, 20), \
-	new/datum/stack_recipe("mattress", /obj/structure/bed/mattress, 2, one_per_turf = TRUE, on_floor = TRUE), \
-	new/datum/stack_recipe("bedroll", /obj/item/roller/bedroll, 4, one_per_turf = TRUE, on_floor = TRUE), \
-	null, \
-	new/datum/stack_recipe("blindfold", /obj/item/clothing/glasses/sunglasses/blindfold, 2), \
-	new/datum/stack_recipe("beekeeping hood", /obj/item/clothing/head/beekeeper_head, 2), \
-	new/datum/stack_recipe("beekeeping suit", /obj/item/clothing/suit/beekeeper_suit, 4), \
-	new/datum/stack_recipe("money pouch", /obj/item/storage/wallet/stash/pouch, 5), \
-	new/datum/stack_recipe("9mm ammo belt", /obj/item/ammo_box/magazine/autopipe/empty, 12), \
-	null, \
-	new/datum/stack_recipe("19x19 Canvas", /obj/item/canvas/nineteenXnineteen, 4), \
-	new/datum/stack_recipe("23x19 Canvas", /obj/item/canvas/twentythreeXnineteen, 4), \
-	new/datum/stack_recipe("23x23 Canvas", /obj/item/canvas/twentythreeXtwentythree, 4), \
-	null, \
 	new/datum/stack_recipe_list("bedsheet", list( \
 			new/datum/stack_recipe("bedsheet", /obj/item/bedsheet, 3), \
 			new/datum/stack_recipe("enclave bedsheet", /obj/item/bedsheet/enclave, 3), \
@@ -497,20 +499,20 @@ GLOBAL_LIST_INIT(cloth_recipes, list ( \
 			new/datum/stack_recipe("yellow double bedsheet", /obj/item/bedsheet/doublesheetyellow, 3), \
 		)), \
 		new/datum/stack_recipe_list("rugs and mats", list( \
-			new /datum/stack_recipe("black and red run carpet", /obj/structure/rug/carpet, 10, time = 30, one_per_turf = FALSE, on_floor = TRUE),\
-			new /datum/stack_recipe("royal purple run carpet", /obj/structure/rug/carpet2, 10, time = 30, one_per_turf = FALSE, on_floor = TRUE),\
-			new /datum/stack_recipe("red run carpet", /obj/structure/rug/carpet3, 10, time = 30, one_per_turf = FALSE, on_floor = TRUE),\
-			new /datum/stack_recipe("turquoise run carpet", /obj/structure/rug/carpet4, 10, time = 30, one_per_turf = FALSE, on_floor = TRUE),\
+			new /datum/stack_recipe("black and red run carpet", /obj/structure/rug/carpet, 10, time = 30, one_per_turf = FALSE, on_floor = TRUE), \
+			new /datum/stack_recipe("royal purple run carpet", /obj/structure/rug/carpet2, 10, time = 30, one_per_turf = FALSE, on_floor = TRUE), \
+			new /datum/stack_recipe("red run carpet", /obj/structure/rug/carpet3, 10, time = 30, one_per_turf = FALSE, on_floor = TRUE), \
+			new /datum/stack_recipe("turquoise run carpet", /obj/structure/rug/carpet4, 10, time = 30, one_per_turf = FALSE, on_floor = TRUE), \
 			null, \
-			new /datum/stack_recipe("rubber rug", /obj/structure/rug/big/rug_rubber, 10, time = 30, one_per_turf = FALSE, on_floor = TRUE),\
-			new /datum/stack_recipe("fancy rug", /obj/structure/rug/big/rug_fancy, 10, time = 30, one_per_turf = FALSE, on_floor = TRUE),\
-			new /datum/stack_recipe("red rug", /obj/structure/rug/big/rug_red, 10, time = 30, one_per_turf = FALSE, on_floor = TRUE),\
-			new /datum/stack_recipe("yellow rug", /obj/structure/rug/big/rug_yellow, 10, time = 30, one_per_turf = FALSE, on_floor = TRUE),\
-			new /datum/stack_recipe("blue shag rug", /obj/structure/rug/big/rug_blue_shag, 10, time = 30, one_per_turf = FALSE, on_floor = TRUE),\
-			new /datum/stack_recipe("blue rug", /obj/structure/rug/big/rug_blue, 10, time = 30, one_per_turf = FALSE, on_floor = TRUE),\
+			new /datum/stack_recipe("rubber rug", /obj/structure/rug/big/rug_rubber, 10, time = 30, one_per_turf = FALSE, on_floor = TRUE), \
+			new /datum/stack_recipe("fancy rug", /obj/structure/rug/big/rug_fancy, 10, time = 30, one_per_turf = FALSE, on_floor = TRUE), \
+			new /datum/stack_recipe("red rug", /obj/structure/rug/big/rug_red, 10, time = 30, one_per_turf = FALSE, on_floor = TRUE), \
+			new /datum/stack_recipe("yellow rug", /obj/structure/rug/big/rug_yellow, 10, time = 30, one_per_turf = FALSE, on_floor = TRUE), \
+			new /datum/stack_recipe("blue shag rug", /obj/structure/rug/big/rug_blue_shag, 10, time = 30, one_per_turf = FALSE, on_floor = TRUE), \
+			new /datum/stack_recipe("blue rug", /obj/structure/rug/big/rug_blue, 10, time = 30, one_per_turf = FALSE, on_floor = TRUE), \
 			null, \
-			new /datum/stack_recipe("blank mat", /obj/structure/rug/mat, 10, time = 30, one_per_turf = FALSE, on_floor = TRUE),\
-			new /datum/stack_recipe("welcome mat", /obj/structure/rug/mat/welcome, 10, time = 30, one_per_turf = FALSE, on_floor = TRUE),\
+			new /datum/stack_recipe("blank mat", /obj/structure/rug/mat, 10, time = 30, one_per_turf = FALSE, on_floor = TRUE), \
+			new /datum/stack_recipe("welcome mat", /obj/structure/rug/mat/welcome, 10, time = 30, one_per_turf = FALSE, on_floor = TRUE), \
 		)), \
 	null, \
 ))
@@ -1062,7 +1064,7 @@ prefall alloys
 GLOBAL_LIST_INIT(prefall_recipes, list ( \
 	new/datum/stack_recipe("modern chair", /obj/structure/chair/comfy/modern, 2, time = 5, one_per_turf = TRUE, on_floor = TRUE),
 	new/datum/stack_recipe("gun locker", /obj/structure/guncase, 4, time = 10, one_per_turf = TRUE, on_floor = TRUE),
-	new/datum/stack_recipe("anomalous artifact exclusion cube", /obj/item/storage/box/artifactcontainer/prefall, 1, time = 10),
+//	new/datum/stack_recipe("anomalous artifact exclusion cube", /obj/item/storage/box/artifactcontainer/prefall, 1, time = 10),
 ))
 
 /obj/item/stack/sheet/prefall

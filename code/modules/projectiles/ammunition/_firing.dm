@@ -74,6 +74,9 @@
 		SSeffects.do_effect(EFFECT_SMOKE_CONE_SMALL, get_turf(src), get_turf(target))
 	BB.original = target
 	BB.firer = user
+	var/turf/here = get_turf(src)
+	BB.firedfrom_x = here.x
+	BB.firedfrom_y = here.y
 	var/shooter_living = istype(user)
 	// var/am_player = isplayer(user)
 	if(SSmobs.use_pvp_check || !isplayer(BB.firer))
@@ -103,6 +106,13 @@
 		BB.pixels_per_second *= G.projectile_speed_multiplier
 		if(BB.zone_accuracy_type == ZONE_WEIGHT_GUNS_CHOICE)
 			BB.zone_accuracy_type = G.get_zone_accuracy_type()
+		if(!isnull(G.ramp_up_max) && !isnull(G.ramp_up_start) && !isnull(G.ramp_up_end))
+			BB.ramp_up_max = G.ramp_up_max
+			BB.ramp_up_start = G.ramp_up_start
+			BB.ramp_up_end = G.ramp_up_end
+		if(G.berry)
+			BB.berry = G.berry
+			un_berry()
 		//SEND_SIGNAL(src, COMSIG_GUN_SHOT, BB, G) // time to modify it more uwu
 		/* if(HAS_TRAIT(user, TRAIT_CRIT_SHOT)) // imma spend 12 points to shoot myself in the face
 			BB.ricochets_max = max(BB.ricochets_max, 10) //bouncy!

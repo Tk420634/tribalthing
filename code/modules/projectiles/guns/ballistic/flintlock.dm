@@ -24,18 +24,19 @@
 	var/prefire_randomness = FLINTLOCK_PISTOL_PREFIRE_STD // copilot suggested this
 	var/datum/looping_sound/musket_load/load_loop // for the loading sound
 	var/datum/looping_sound/musket_fuse/fuse_loop // for the loading sound
+	var/obj/item/ammo_casing/baseload = /obj/item/ammo_casing/caseless/flintlock
 	weapon_special_component = null
 
 /obj/item/gun/flintlock/Initialize()
 	. = ..()
 	load_loop = new(list(src), FALSE)
 	fuse_loop = new(list(src), FALSE)
-	chambered = new /obj/item/ammo_casing/caseless/flintlock(src)
+	chambered = new baseload(src)
 
 /obj/item/gun/flintlock/admin_fill_gun()
 	if(chambered)
 		return
-	chambered = new /obj/item/ammo_casing/caseless/flintlock(src)
+	chambered = new baseload(src)
 	cocked = TRUE
 	update_icon()
 	return TRUE

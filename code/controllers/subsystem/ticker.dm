@@ -171,7 +171,7 @@ SUBSYSTEM_DEF(ticker)
 				start_at = world.time + (CONFIG_GET(number/lobby_countdown) * 10)
 			for(var/client/C in GLOB.clients)
 				window_flash(C, ignorepref = TRUE) //let them know lobby has opened up.
-			to_chat(world, span_boldnotice("Welcome to [station_name()]!"))
+			to_chat(world, span_boldnotice("GOOOOOOD MOOOORNING [station_name()]!!"))
 			send2chat("New round starting on [SSmapping.config.map_name]!", CONFIG_GET(string/chat_announce_new_game))
 			current_state = GAME_STATE_PREGAME
 			//Everyone who wants to be an observer is now spawned
@@ -301,7 +301,7 @@ SUBSYSTEM_DEF(ticker)
 		gametime_offset = world.timeofday + timezone_offset_positive - timezone_offset_negative
 	SSdbcore.SetRoundStart()
 
-	to_chat(world, span_notice("<B>Welcome to [station_name()], enjoy your stay!</B>"))
+	to_chat(world, span_notice("<B>GOOOOOD MOOOOORNING [station_name()]!!</B>"))
 	SEND_SOUND(world, sound(begin_music))
 
 	current_state = GAME_STATE_PLAYING

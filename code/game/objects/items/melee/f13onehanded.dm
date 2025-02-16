@@ -823,6 +823,15 @@
 	force = 30
 	backstab_multiplier = 1.1
 
+/obj/item/melee/unarmed/brass/knyackles
+	name = "brass knayckles"
+	desc = "A core of brass, formed around ones hand, covered in a soft material to soften the blow from 'skull cracking' to 'sleepy time'."
+	icon_state = "brass"
+	inhand_icon_state = "brass"
+	attack_verb = list("thumped", "bapd", "hornswaggled")
+	force = 30
+	backstab_multiplier = 3.4
+
 /obj/item/melee/unarmed/brass/spiked
 	name = "spiked knuckes"
 	desc = "Unlike normal brass knuckles, these have a metal plate across the knuckles with four spikes on, one for each knuckle. So not only does the victim feel the force of the punch, but also the devastating effects of spikes being driven in."

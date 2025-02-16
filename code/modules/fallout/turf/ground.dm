@@ -69,7 +69,7 @@
 #define GRASS_SPONTANEOUS 		  	2
 #define GRASS_WEIGHT			  	8
 #define RAND_PLANT_CHANCE			50
-#define HIDDEN_STASH_CHANCE			0.2
+#define HIDDEN_STASH_CHANCE			0.0
 
 GLOBAL_LIST_INIT(lush_plant_spawn_list, list(
 	/obj/structure/flora/grass/wasteland = 1,
@@ -153,9 +153,9 @@ GLOBAL_LIST_INIT(grass_plant_list, list(
 	// /obj/structure/flora/wild_plant/petunia/purplewhite = 2,
 	// /obj/structure/flora/wild_plant/petunia/redwhite =  2,
 	// /obj/structure/flora/wild_plant/petunia/bluewhite = 2,
-	/obj/structure/flora/ausbushes/ppflowers = 2,
-	/obj/structure/flora/ausbushes/ywflowers = 2,
-	/obj/structure/flora/ausbushes/brflowers = 2,
+	// /obj/structure/flora/ausbushes/ppflowers = 2,
+	// /obj/structure/flora/ausbushes/ywflowers = 2,
+	// /obj/structure/flora/ausbushes/brflowers = 2,
 	/obj/structure/flora/ausbushes/stalkybush = 2,
 	/obj/structure/flora/ausbushes/sunnybush = 2,
 	/obj/structure/flora/ausbushes/palebush = 2,
@@ -181,7 +181,7 @@ GLOBAL_LIST_INIT(grass_plant_list, list(
 	))
 
 GLOBAL_LIST_INIT(tree_plant_list, list(
-	/obj/structure/flora/tree/jungle = 15,
+	//obj/structure/flora/tree/jungle = 15,
 	/obj/structure/flora/tree/jungle/small = 15,
 	/obj/structure/flora/tree/med_pine = 7,
 	/obj/structure/flora/tree/med_pine_dead = 7,

@@ -1,5 +1,5 @@
 <!-- Most valid html will work in here, excluding images. -->
 
-<h1>Welcome to Coyote Bayou!</h1>
+<h1>Welcome to Cat Girl Paradise!!</h1>
 <br>
-A furry post apocalyptic slice of life!<br>
+A lite PVP/ERP Slapstick experience!<br>

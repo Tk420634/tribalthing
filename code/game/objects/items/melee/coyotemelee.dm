@@ -624,8 +624,9 @@
 	attack_verb = list("articulated", "clocked", "bonked")
 	hitsound = 'sound/weapons/smash.ogg'
 	attack_speed = CLICK_CD_MELEE * 0.7
-	block_chance = 30 // Skill based gameplay
+	block_chance = 15 // Skill based gameplay
 	berryable = TRUE
+	block_parry_data = /datum/block_parry_data/bokken
 
 /obj/item/melee/coyote/olddervish
 	name = "Old Dervish Blade"

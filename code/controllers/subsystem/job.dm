@@ -14,6 +14,7 @@ SUBSYSTEM_DEF(job)
 	var/list/latejoin_trackers = list()	//Don't read this list, use GetLateJoinTurfs() instead
 
 	var/overflow_role = "Wastelander" //CHANGE
+	var/no_user_loadout = TRUE
 
 	var/debug_admins_are_exempt_from_timelocks = FALSE
 
@@ -712,6 +713,8 @@ SUBSYSTEM_DEF(job)
 
 
 /datum/controller/subsystem/job/proc/equip_loadout(mob/dead/new_player/N, mob/living/M, equipbackpackstuff, bypass_prereqs = FALSE, can_drop = TRUE)
+	if(no_user_loadout)
+		return
 	var/mob/the_mob = N
 	if(!the_mob)
 		the_mob = M // cause this doesn't get assigned if player is a latejoiner

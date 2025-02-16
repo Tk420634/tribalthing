@@ -33,6 +33,8 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 	var/debug_migration = FALSE // fucs with our savefile
 	var/debug_conflicts = FALSE
 
+	var/no_user_quirks = TRUE
+
 	var/dp = FALSE
 	var/dp_prob = 1
 	var/dp_rate = 15 SECONDS
@@ -596,6 +598,8 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 
 /datum/controller/subsystem/processing/quirks/proc/AssignQuirks(mob/living/user, client/cli, spawn_effects, roundstart = FALSE, datum/job/job)
 	if(!user || !cli)
+		return
+	if(no_user_quirks)
 		return
 	var/badquirks = 0
 	var/datum/preferences/P = extract_prefs(cli)

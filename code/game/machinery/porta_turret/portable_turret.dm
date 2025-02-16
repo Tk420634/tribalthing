@@ -671,6 +671,8 @@
 		// Ignore stamcritted targets
 		if(maximum_valid_stat == CONSCIOUS && IS_STAMCRIT(potential_target))
 			continue
+		if(HAS_TRAIT(potential_target, "stealthinvis"))
+			continue
 		/// If it cares about faction, and the thing's your faction, skip it
 		if(!(turret_flags & TF_IGNORE_FACTION))
 			if(in_faction(potential_target))
@@ -1982,7 +1984,7 @@
 		It can be repaired with a <b>welder<b>."
 	density = TRUE
 	use_power = FALSE
-	max_integrity = 160
+	max_integrity = 80
 	integrity_failure = 0.1
 	armor = ARMOR_VALUE_HEAVY
 	always_up = TRUE
@@ -2028,6 +2030,13 @@
 	QDEL_NULL(our_mag)
 	QDEL_NULL(chambered)
 
+/obj/machinery/porta_turret/f13/nash/AltClick(mob/user)
+	. = ..()
+	if(!do_after(user, 3 SECONDS, TRUE, src, TRUE, null, null, null, TRUE, TRUE, TRUE, TRUE, TRUE))
+		to_chat(user, span_alert("You were interrupted!!"))
+		return
+	unload_all_ammo(user)
+
 /obj/machinery/porta_turret/f13/nash/examine(mob/user)
 	. = ..()
 	if(istype(our_mag) && length(our_mag.caliber))
@@ -2043,8 +2052,9 @@
 		return FALSE
 	if(keep_it && our_mag.give_round(chambered))
 		return TRUE
-	chambered.forceMove(get_turf(src))
-	chambered.bounce_away(TRUE, 3, turn(dir, -90))
+	if(!istype(chambered, /obj/item/ammo_casing/caseless))
+		chambered.forceMove(get_turf(src))
+		chambered.bounce_away(TRUE, 3, turn(dir, -90))
 	chambered = null
 	return TRUE
 
@@ -2061,11 +2071,13 @@
 /obj/machinery/porta_turret/f13/nash/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/ammo_box))
 		if(istype(our_mag))
+			sorta_heal_turret(user)
 			our_mag.attackby(I, user)
 			chamber_new_round(FALSE)
 			return
 	if(istype(I, /obj/item/ammo_casing))
 		if(istype(our_mag))
+			sorta_heal_turret(user)
 			our_mag.attackby(I, user)
 			chamber_new_round(FALSE)
 	if(istype(I, /obj/item/storage/bag/casings))
@@ -2073,11 +2085,24 @@
 			dump_bag_in_turret(I, user)
 	if(I.tool_behaviour == TOOL_MULTITOOL)
 		undeploy_turret(I, user)
+		heal_turret(I, user)
 		return
 	if(I.tool_behaviour == TOOL_WELDER)
 		heal_turret(I, user)
 		return
 	. = ..()
+
+/obj/machinery/porta_turret/f13/nash/proc/unload_all_ammo(mob/user)
+	if(!our_mag)
+		return
+	if(!LAZYLEN(our_mag.stored_ammo))
+		if(user)
+			to_chat(user, span_notice("[src] has no ammo in it!"))
+		return
+	for(var/i in 1 to LAZYLEN(our_mag.stored_ammo))
+		our_mag.pop_casing(user, TRUE, TRUE)
+	if(user)
+		to_chat(user, span_notice("You dump all the ammo out of [src] onto the ground. Well done!"))
 
 /obj/machinery/porta_turret/f13/nash/proc/dump_bag_in_turret(obj/item/storage/bag/casings/saq, mob/user)
 	if(!istype(saq))
@@ -2100,6 +2125,7 @@
 			continue
 		if(our_mag.give_round(casing))
 			SEND_SIGNAL(saq, COMSIG_TRY_STORAGE_TAKE, casing, our_mag, FALSE)
+			sorta_heal_turret(user)
 		else
 			continue
 		count++
@@ -2124,9 +2150,27 @@
 	our_mag = null
 	qdel(src)
 
+/obj/machinery/porta_turret/f13/nash/proc/sorta_heal_turret(mob/user)
+	if(obj_integrity >= initial(obj_integrity))
+		return
+	obj_integrity = min(initial(obj_integrity), obj_integrity + 5)
+	visible_message("[src] looks a bit more fixed up!")
+
+/obj/machinery/porta_turret/f13/nash/process()
+	update_maptext()
+	. = ..()
+
+/obj/machinery/porta_turret/f13/nash/proc/update_maptext()
+	maptext = ""
+	if(!our_mag)
+		return
+	maptext = "[LAZYLEN(our_mag.stored_ammo)]/[our_mag.max_ammo]"
+	maptext_width = 128
+	maptext_y = -6
+
 /obj/machinery/porta_turret/f13/nash/proc/heal_turret(obj/item/weldertool, mob/user)
 	if(stat & BROKEN)
-		user.show_message(span_alert("It's beyond repair!"))
+		user.show_message(span_alert("It's byond repair!"))
 		return
 	if(!weldertool.tool_start_check(user, amount=1))
 		user.show_message(span_alert("You need at least 1 unit of fuel in your welder!"))
@@ -2204,6 +2248,8 @@
 	var/amount = FLOOR(rand(num_bullets * 0.5, num_bullets), 1)
 	return amount
 
+
+
 /// A packed up turrent
 /obj/item/turret_box
 	name = "packaged port-a-turret"
@@ -2215,6 +2261,7 @@
 	var/obj/machinery/porta_turret/f13/nash/turret_type = /obj/machinery/porta_turret/f13/nash
 	/// magazine inside the gun, if it was packed up after deploying
 	var/obj/item/ammo_box/magazine/stored_mag
+	var/noammo
 
 /obj/item/turret_box/Initialize()
 	. = ..()
@@ -2237,13 +2284,21 @@
 		user.show_message(span_alert("You were interrupted!"))
 		return
 	var/obj/machinery/porta_turret/f13/nash/turret_new = new turret_type(get_turf(src))
-	if(istype(stored_mag))
+	if(istype(stored_mag) && !noammo)
 		QDEL_NULL(turret_new.our_mag)
 		turret_new.our_mag = stored_mag
 		stored_mag.forceMove(turret_new)
 		turret_new.eject_chambered_round(TRUE)
 		turret_new.chamber_new_round()
+	if(noammo)
+		if(turret_new.our_mag && LAZYLEN(turret_new.our_mag.stored_ammo))
+			QDEL_LIST(turret_new.our_mag.stored_ammo)
+	if("cat" in user.faction)
+		turret_new.faction = list("cat") // cat
+	else if("murrine" in user.faction)
+		turret_new.faction = list("murrine") // cat
 	user.visible_message(span_notice("[user] unpacks [src], deploying [turret_new]."))
 	stored_mag = null
 	qdel(src)
-	
+
+

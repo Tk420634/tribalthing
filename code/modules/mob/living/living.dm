@@ -1613,11 +1613,14 @@
 	return
 
 //Coyote Add
-/mob/living/proc/despawn()
+/mob/living/proc/despawn(respawn)
 	SSwho.KillCustoms(ckey, "despawned")
 	var/dat = "[key_name(src)] has despawned as [src]."
 	log_game(dat)
-	ghostize()
+	if(respawn)
+		abandon_mob()
+	else
+		ghostize()
 	qdel(src)
 //End Coyote Add
 

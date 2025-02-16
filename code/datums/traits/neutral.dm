@@ -446,7 +446,6 @@
 	lose_text = span_notice("You've forgotten the ways of your ancestors..")
 	human_only = FALSE
 
-
 /datum/quirk/tribespeak/add()
 	var/mob/living/H = quirk_holder
 	H.grant_language(/datum/language/tribal)
@@ -475,6 +474,26 @@
 	var/mob/living/H = quirk_holder
 	if(!QDELETED(H))
 		H.remove_language(/datum/language/pokemon)
+
+/datum/quirk/tacticool
+	name = "Language - Tacticool Language Comprehension"
+	desc = "You're somehow capable of understanding and speaking the common tactical language."
+	value = 0
+	category = "Language Quirks"
+	mechanics = "You can speak the tactical langage, or at least understand it. Maybe you really are the very best."
+	conflicts = list()
+	gain_text = span_notice("You remember how to speak to tactical.")
+	lose_text = span_notice("You've forgotten how to speak tactical.")
+	human_only = FALSE
+
+/datum/quirk/tacticool/add()
+	var/mob/living/H = quirk_holder
+	H.grant_language(/datum/language/murrine)
+
+/datum/quirk/tacticool/remove()
+	var/mob/living/H = quirk_holder
+	if(!QDELETED(H))
+		H.remove_language(/datum/language/murrine)
 
 /datum/quirk/in_heat
 	name = "ERP Receptive"

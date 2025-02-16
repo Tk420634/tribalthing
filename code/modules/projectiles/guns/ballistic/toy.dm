@@ -115,18 +115,21 @@
 	icon = 'icons/obj/guns/toy.dmi'
 	can_suppress = FALSE
 	item_flags = NONE
+	pin = /obj/item/firing_pin
 	mag_type = /obj/item/ammo_box/magazine/toy
 	init_mag_type = /obj/item/ammo_box/magazine/toy/m762/riot
 	casing_ejector = FALSE
 	clumsy_check = FALSE
 	init_firemodes = list(
-		/datum/firemode/automatic/rpm200,
+		/datum/firemode/automatic/rpm100,
 		/datum/firemode/burst/three,
 		/datum/firemode/semi_auto
 	)
+	ramp_up_max = 0.25 // 0.25x
+	ramp_up_start = 10 // tiles
+	ramp_up_end = 11 // also tiles
 
 /obj/item/gun/ballistic/automatic/l6_saw/toy/unrestricted //Use this for actual toys
-	pin = /obj/item/firing_pin
 	mag_type = /obj/item/ammo_box/magazine/toy
 	init_mag_type = /obj/item/ammo_box/magazine/toy/m762
 

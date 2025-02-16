@@ -1,8 +1,8 @@
 /obj/item/stealthboy
-	name = "Stealth Module"
-	desc = "Something that looks suspiciously like a datapal, but works to hide you from critters. It takes a few seconds to turn on, and will recharge while its off. ALT+click to activate!"
-	icon = 'icons/obj/pda.dmi' //Placeholder till ones sprited
-	icon_state = "pda" //Placeholder till ones sprited
+	name = "Nyampire Sneak-box"
+	desc = "Something that looks suspiciously like a pda, but works to hide you from critters. It takes a few seconds to turn on, and will recharge while its off. ALT+click to activate!"
+	icon = 'icons/obj/pda_rugged.dmi' //Placeholder till ones sprited
+	icon_state = "pda-neko" //Placeholder till ones sprited
 	item_flags = NOBLUDGEON
 	slot_flags = INV_SLOTBIT_BELT
 	throwforce = 5
@@ -17,7 +17,7 @@
 	var/do_boop = FALSE
 	var/do_warn = TRUE
 	var/on = FALSE
-	var/warn_time = 5 SECONDS
+	var/warn_time = 1 SECONDS
 	var/max_time_left = 20 SECONDS
 	var/time_left = 20 SECONDS
 	var/min_time_left = 15 SECONDS
@@ -146,7 +146,7 @@
 			Deactivate()
 		else
 			return
-	animate(user, alpha = 60, time = 3 SECONDS)
+	animate(user, alpha = 30, time = 1 SECONDS)
 	ADD_TRAIT(user, "stealthinvis", src)
 	applying_to = user
 	to_chat(user, span_notice("You activate \The [src]."))
