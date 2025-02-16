@@ -162,6 +162,7 @@ GLOBAL_LIST_INIT(oasis_positions, list(
 	"Squad Leader",
 	"Trooper",
 	"Dartgunner",
+	"Housekeeping Specialist",
 	"Murrine Engineer",
 	"Captured Native",
 	// "Prospector",
@@ -339,6 +340,7 @@ GLOBAL_LIST_INIT(tribal_positions, list(
 	"Warrior",
 	"Blowsniper",
 	"Nyanfiltrator",
+	"Influencer",
 	"Captured Murrine",
 ))
 //bikrs

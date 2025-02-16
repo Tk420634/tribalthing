@@ -573,6 +573,10 @@
 /obj/effect/landmark/start/f13/Hhunter,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ambientlighting/building/catgirls_score_here)
+"jY" = (
+/obj/effect/landmark/start/f13/housekeeping,
+/turf/open/floor/plasteel/white,
+/area/f13/ambientlighting/building)
 "kc" = (
 /obj/structure/table/wood/settler,
 /obj/structure/showcase/machinery/microwave,
@@ -2433,6 +2437,14 @@
 /obj/item/lock_bolt,
 /turf/open/floor/plasteel/white,
 /area/f13/ambientlighting/building)
+"JT" = (
+/obj/structure/stone_tile/slab,
+/obj/structure/chair/bench{
+	dir = 8
+	},
+/obj/effect/landmark/start/f13/influencer,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/ambientlighting/building/catgirls_score_here)
 "Ka" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /turf/open/indestructible/ground/outside/dirt{
@@ -38634,8 +38646,8 @@ ux
 ux
 ux
 ux
-ux
-ux
+jY
+jY
 QH
 rv
 wl
@@ -41136,8 +41148,8 @@ VE
 zO
 MD
 kD
-kD
-kD
+JT
+JT
 VE
 zt
 vR

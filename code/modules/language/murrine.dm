@@ -8,10 +8,9 @@
 	flags = TONGUELESS_SPEECH
 	space_chance = 100
 	syllables = list(
-		
 		"alpha",
 		"bravo", 
-		"charlie", "calico"
+		"charlie", "calico",
 		"delta",
 		"echo",
 		"foxtrot",
@@ -27,7 +26,7 @@
 		"papa",
 		"quebec", "queen",
 		"romeo",
-		"sierra", "sphynx"
+		"sierra", "sphynx",
 		"tango", "tabby", "tomcat",
 		"uniform",
 		"victory",
@@ -36,7 +35,6 @@
 		"yankee",
 		"zulu",
 		"snafu",
-		
 	)
 	icon_state = "galcom"
 	default_priority = 90

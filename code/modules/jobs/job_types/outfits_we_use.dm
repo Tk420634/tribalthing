@@ -93,6 +93,18 @@
 	tribal = TRUE
 	cat = TRUE
 
+/datum/outfit/job/cb/catgirl/warrior/influencer
+	name = "Influencer"
+	head = null
+	suit = null
+	backpack = null
+	uniform = /obj/item/clothing/under/civ/mayan_loincloth
+	shoes = /obj/item/clothing/shoes/sandal
+	belt = null
+	gloves = /obj/item/clothing/gloves/thief
+	tribal = TRUE
+	cat = TRUE
+
 /datum/outfit/job/cb/catgirl/warrior/sniper
 	name = "cat sniper"
 	head = /obj/item/clothing/head/kevlarhelmet/ghillie
@@ -189,6 +201,19 @@
 		/obj/item/grenade/flashbang = 3,
 		/obj/item/melee/classic_baton/telescopic = 1,
 		/obj/item/gun/energy/taser = 1,
+		/obj/item/flashlight/seclite = 1
+	)
+	murrine = TRUE
+
+/datum/outfit/job/cb/guild/deputy/housekeeping
+	name = "Housekeeping Specialist"
+	head = /obj/item/clothing/head/beret/purple
+	belt = /obj/item/storage/belt/army
+	uniform = /obj/item/clothing/under/f13/enclave/peacekeeper
+	gloves = /obj/item/clothing/gloves/f13/leather/fingerless
+	shoes = /obj/item/clothing/shoes/jackboots
+	backpack_contents = list(
+		/obj/item/melee/classic_baton/telescopic = 1,
 		/obj/item/flashlight/seclite = 1
 	)
 	murrine = TRUE
