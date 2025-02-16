@@ -63,7 +63,7 @@
 /datum/outfit/job/cb/catgirl/warrior
 	name = "warrior"
 	head = /obj/item/clothing/head/helmet/f13/wayfarer/antler 
-	backpack = /obj/item/storage/backpack
+	backpack = /obj/item/storage/backpack/trekker
 	uniform = /obj/item/clothing/under/civ/mayan_loincloth
 	suit = /obj/item/clothing/suit/armor/light/tribal/bone
 	shoes = /obj/item/clothing/shoes/sandal
@@ -72,7 +72,6 @@
 	tribal = TRUE
 	cat = TRUE
 	backpack_contents   = list(
-	/obj/item/storage/backpack/satchel/explorer,
 	/obj/item/melee/classic_baton/coyote/oldquarterstaff/disputestick,
 	/obj/item/warpaint_bowl,
 	/obj/item/restraints/legcuffs/bola = 2,
@@ -108,7 +107,7 @@
 /datum/outfit/job/cb/catgirl/warrior/sniper
 	name = "cat sniper"
 	head = /obj/item/clothing/head/kevlarhelmet/ghillie
-	backpack = /obj/item/storage/backpack
+	backpack = /obj/item/storage/backpack/trekker
 	uniform = /obj/item/clothing/under/civ/mayan_loincloth
 	suit = /obj/item/clothing/suit/civ13/coat/ghillie
 	shoes = /obj/item/clothing/shoes/sandal
@@ -117,7 +116,6 @@
 	tribal = TRUE
 	cat = TRUE
 	backpack_contents   = list(
-	/obj/item/storage/backpack/satchel/explorer,
 	/obj/item/warpaint_bowl,
 	/obj/item/gun/flintlock/musket/catgirl,
 	/obj/item/ammo_box/foambox/catbox
@@ -146,7 +144,7 @@
 /datum/outfit/job/cb/guild
 	name = "Guild Base"
 	ears = /obj/item/radio/headset/headset_town/guild
-	id = /obj/item/storage/wallet/stash/mid
+	id = null
 
 /datum/outfit/job/cb/guild/barkeep
 	name = "Barkeep"
