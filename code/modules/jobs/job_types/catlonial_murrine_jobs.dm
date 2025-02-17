@@ -30,8 +30,8 @@
 /datum/job/townfolk/murrinegunner
 	title = "Dartgunner"
 	flag = F13BARKEEP	
-	total_positions = 3
-	spawn_positions = 3
+	total_positions = 2
+	spawn_positions = 2
 	description = "You are a Murrine Gunner, armed with a dart machinegun capable of mobile supressing fire."
 	supervisors = "The Squad Leaders"
 	outfit = /datum/outfit/job/cb/guild/deputy/gunner
@@ -60,7 +60,7 @@
 	enforces = "Not much in particular, but like.  If you wanna try to escape go ahead."
 	forbids = "Not a whole lot of much. Live your life, crechor."
 	outfit = /datum/outfit/job/cb/capturedcatgirl
-	faction = "cat"
+	faction = list("murrine", "cat")
 
 
 /datum/job/townfolk/f13deputy/teacher
@@ -114,8 +114,8 @@
 /datum/job/tribal/snipergunter
 	title = "Blowsniper"
 	flag = F13HUNTER
-	total_positions = 3
-	spawn_positions = 3
+	total_positions = 2
+	spawn_positions = 2
 	supervisors = "The Nyan-Nyan Neko Gods, the Head Hunter and your instincts."
 	enforces = "The ways of the Nyan-Nyan Neko Nyampire."
 	forbids = "Nothing in particular, your victory is utmost over the foe."
@@ -159,7 +159,7 @@
 	forbids = "Nothing in particular."
 	description = "You've been captured by the enemy. You probably want to escape, but maybe you don't."
 	outfit = /datum/outfit/job/cb/catgirl/warrior/captured
-	faction = "murrine"
+	faction = list("murrine", "cat")
 
 
 
@@ -178,7 +178,7 @@
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY //need both hands to fire
 	added_spread = 0
-	damage_multiplier = 1
+	damage_multiplier = 5
 	dryfire_text = "*not loaded*"
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow //slow for the sake of macros, but not toooo slow
@@ -191,9 +191,9 @@
 	fire_sound = 'sound/items/syringeproj.ogg'
 	zoom_factor = 2
 	berryable = TRUE
-	ramp_up_max = 4 // 4x
-	ramp_up_start = 7 // tiles
-	ramp_up_end = 15 // also tiles
+	// ramp_up_max = 20 // 4x
+	// ramp_up_start = 7 // tiles
+	// ramp_up_end = 15 // also tiles
 
 
 /obj/item/gun/ballistic/automatic/lewis/murr
@@ -210,12 +210,13 @@
 	weapon_weight = GUN_TWO_HAND_ONLY
 	init_recoil = LMG_RECOIL(1.2, 1.2)
 	slowdown = GUN_SLOWDOWN_RIFLE_LMG * 1.5
+	damage_multiplier = 0.8
 	init_firemodes = list(
 		/datum/firemode/automatic/rpm150
 	)
-	ramp_up_max = 0.33 // damage multi
-	ramp_up_start = 15 // tiles
-	ramp_up_end = 15 // also tiles
+	// ramp_up_max = 0.33 // damage multi
+	// ramp_up_start = 15 // tiles
+	// ramp_up_end = 15 // also tiles
 	fire_sound = 'sound/items/syringeproj.ogg'
 
 /obj/item/ammo_box/magazine/lewis/foam

@@ -110,7 +110,7 @@
 
 //Mime
 /obj/item/clothing/head/beret
-	name = "beret"
+	name = "squad leader beret"
 	desc = "A beret, a mime's favorite headwear."
 	icon_state = "beret"
 	dog_fashion = /datum/dog_fashion/head/beret

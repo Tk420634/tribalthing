@@ -135,7 +135,7 @@
 			outmsg = span_warning("You miss the lens of [C] with [src]!")
 
 	//catpeople
-	var/list/viewers = viewers(1,targloc)
+	var/list/viewers = viewers(3,targloc)
 	for(var/mob/living/carbon/human/H in viewers)
 		if(!(iscatperson(H) || HAS_TRAIT(H, TRAIT_CAT)) || H.incapacitated() || H.eye_blind )
 			continue

@@ -105,7 +105,7 @@
 	safe_town = TRUE
 
 /area/f13/wasteland/nash
-	name = "The city of Nash"
+	name = "The jungles of Felida'ya"
 	safe_town = TRUE
 
 /area/f13/wasteland/ashdown

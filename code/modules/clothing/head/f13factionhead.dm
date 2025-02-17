@@ -205,11 +205,10 @@
 	inhand_icon_state = "hat_enclave_peacekeeper"
 
 /obj/item/clothing/head/beret/enclave
-	name = "enclave beret"
+	name = "Murrines Gunner Beret"
 	desc = "A standard issue black beret of the Catlonial Murrines, worn by Machine Gunners."
 	icon_state = "remnant"
 	inhand_icon_state = "remnant"
-	flags_inv = HIDEEARS|HIDEFACE
 	flags_cover = null
 
 /obj/item/clothing/head/beret/enclave/science

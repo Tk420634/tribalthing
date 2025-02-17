@@ -407,6 +407,10 @@
 	},
 /turf/open/floor/circuit/telecomms/mainframe,
 /area/tcommsat/server)
+"hh" = (
+/obj/effect/landmark/start/f13/housekeeping,
+/turf/open/floor/plasteel/white,
+/area/f13/ambientlighting/building)
 "hG" = (
 /obj/structure/closet/locker,
 /obj/item/storage/box/mre/menu4,
@@ -539,6 +543,15 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ambientlighting/building)
+"jp" = (
+/obj/structure/flora/grass/wasteland{
+	color = "#33BB33";
+	icon_state = "tall_grass_3"
+	},
+/turf/open/indestructible/ground/outside/dirt{
+	color = "#BBBBBB"
+	},
+/area/f13/wasteland/nash)
 "js" = (
 /obj/item/toy/plush/mouse,
 /obj/structure/bed/dogbed,
@@ -573,10 +586,6 @@
 /obj/effect/landmark/start/f13/Hhunter,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ambientlighting/building/catgirls_score_here)
-"jY" = (
-/obj/effect/landmark/start/f13/housekeeping,
-/turf/open/floor/plasteel/white,
-/area/f13/ambientlighting/building)
 "kc" = (
 /obj/structure/table/wood/settler,
 /obj/structure/showcase/machinery/microwave,
@@ -846,9 +855,7 @@
 	dir = 8;
 	light_color = "#f4e3b0"
 	},
-/turf/closed/indestructible/riveted/boss{
-	name = "temple wall"
-	},
+/turf/open/floor/plasteel/cult,
 /area/f13/wasteland/nash)
 "nR" = (
 /obj/structure/flora/grass/wasteland{
@@ -29982,7 +29989,7 @@ vR
 vR
 vR
 vR
-vR
+kf
 vR
 vR
 OQ
@@ -30239,9 +30246,9 @@ vR
 vR
 vR
 vR
+kf
+kf
 vR
-OQ
-OQ
 OQ
 OQ
 OQ
@@ -30497,8 +30504,8 @@ vR
 vR
 vR
 vR
-OQ
-OQ
+kf
+kf
 vR
 OQ
 at
@@ -30753,10 +30760,10 @@ vR
 vR
 vR
 vR
-OQ
-OQ
-OQ
 vR
+vR
+kf
+kf
 vR
 vR
 OQ
@@ -31011,10 +31018,10 @@ vR
 vR
 vR
 OQ
-OQ
-OQ
 vR
 vR
+kf
+kf
 vR
 vR
 at
@@ -31269,10 +31276,10 @@ vR
 OQ
 OQ
 OQ
-OQ
 vR
 vR
-vR
+kf
+kf
 vR
 OQ
 kf
@@ -31526,12 +31533,12 @@ OQ
 OQ
 OQ
 OQ
-OQ
 vR
 vR
-OQ
-OQ
-OQ
+vR
+kf
+vR
+vR
 kf
 vH
 kf
@@ -31786,9 +31793,9 @@ vR
 OQ
 vR
 vR
+kf
 vR
-OQ
-OQ
+vR
 eZ
 Pc
 kf
@@ -32044,7 +32051,7 @@ vR
 vR
 vR
 vR
-OQ
+kf
 vR
 uB
 kf
@@ -32301,7 +32308,7 @@ vR
 kf
 vR
 vR
-vR
+kf
 uB
 kf
 uB
@@ -32655,7 +32662,7 @@ zt
 dn
 zt
 qk
-vR
+jp
 Bp
 Bp
 Bp
@@ -32912,7 +32919,7 @@ OM
 OM
 zt
 LK
-vR
+jp
 Bp
 Bp
 Bp
@@ -33027,9 +33034,9 @@ vR
 vR
 vR
 vR
-OQ
-OQ
-at
+vR
+vR
+vR
 at
 at
 at
@@ -33283,9 +33290,9 @@ vR
 OQ
 OQ
 OQ
-OQ
-at
-OQ
+vR
+vR
+vR
 vR
 vR
 vR
@@ -33541,9 +33548,9 @@ OQ
 vR
 OQ
 vR
-OQ
-OQ
-OQ
+vR
+vR
+vR
 OQ
 OQ
 OQ
@@ -33798,8 +33805,8 @@ OQ
 vR
 vR
 OQ
-OQ
-OQ
+vR
+vR
 vR
 vR
 fI
@@ -38646,8 +38653,8 @@ ux
 ux
 ux
 ux
-jY
-jY
+hh
+hh
 QH
 rv
 wl
@@ -42043,11 +42050,11 @@ OQ
 at
 at
 at
-OQ
-OQ
-OQ
-at
-at
+vR
+vR
+vR
+vR
+vR
 at
 at
 at
@@ -42300,11 +42307,11 @@ OQ
 OQ
 OQ
 OQ
-OQ
 vR
 vR
-OQ
-OQ
+vR
+vR
+vR
 OQ
 OQ
 OQ
@@ -42814,11 +42821,11 @@ OQ
 OQ
 OQ
 OQ
-OQ
-OQ
-OQ
-OQ
-OQ
+vR
+vR
+vR
+vR
+vR
 OQ
 OQ
 OQ
@@ -43073,10 +43080,10 @@ OQ
 OQ
 OQ
 OQ
-OQ
-OQ
-OQ
-OQ
+vR
+vR
+vR
+vR
 OQ
 OQ
 OQ
@@ -43330,9 +43337,9 @@ OQ
 OQ
 OQ
 OQ
-OQ
-OQ
-OQ
+vR
+vR
+vR
 vR
 vR
 vR
@@ -43588,8 +43595,8 @@ OQ
 OQ
 OQ
 OQ
-OQ
-OQ
+vR
+vR
 vR
 vR
 vR

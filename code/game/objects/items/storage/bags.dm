@@ -509,12 +509,10 @@
 
 /obj/item/storage/bag/casings/proc/Pickup_casings(mob/living/user)
 	var/show_message = FALSE
-	var/turf/tile = user.loc
-	if (!isturf(tile))
-		return
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	if(STR)
-		for(var/obj/item/ammo_casing/loosie in tile)
+		var/list/everythingaround = range(1, get_turf(src))
+		for(var/obj/item/ammo_casing/loosie in everythingaround)
 			if(!is_type_in_typecache(loosie, STR.can_hold))
 				continue
 			if(!loosie.is_pickable)
@@ -528,6 +526,7 @@
 				to_chat(user, span_warning("Your [name] is full and can't hold any more!"))
 				spam_protection = TRUE
 				break
+			stoplag()
 
 	if(show_message)
 		playsound(user, "rustle", 50, TRUE)

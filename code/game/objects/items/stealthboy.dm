@@ -127,7 +127,7 @@
 	if(on)
 		return
 	user.playsound_local(get_turf(src), 'sound/effects/stealthcock_precum.ogg', 75, FALSE)
-	if(!do_after(user, 5 SECONDS, TRUE, src, TRUE, null, null, null, FALSE, TRUE, TRUE, FALSE, FALSE))
+	if(!do_after(user, 1 SECONDS, TRUE, src, TRUE, null, null, null, FALSE, TRUE, TRUE, FALSE, FALSE))
 		user.playsound_local(get_turf(src), 'sound/effects/stealthcock_cant.ogg', 75, FALSE)
 		to_chat(user, span_alert("[src] failed to activate!"))
 		return
