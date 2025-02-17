@@ -2045,7 +2045,7 @@
 
 /obj/machinery/porta_turret/f13/nash/proc/out_of_ammo_alert()
 	playsound(get_turf(src), 'sound/machines/triple_beep.ogg', 100, FALSE, 0, ignore_walls = TRUE)
-	say("OUT OF: AMMO! NEED: [span_notice(english_list(our_mag.caliber))]!")
+	say("OUT OF: AMMO! NEED: [span_notice(english_list(our_mag.caliber))]!", only_overhead = TRUE)
 
 /obj/machinery/porta_turret/f13/nash/proc/eject_chambered_round(keep_it)
 	if(!istype(chambered))

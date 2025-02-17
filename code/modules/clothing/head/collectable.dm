@@ -67,7 +67,6 @@
 	name = "collectable beret"
 	desc = "A collectable red beret. It smells faintly of garlic."
 	icon_state = "beret"
-
 	dog_fashion = /datum/dog_fashion/head/beret
 
 /obj/item/clothing/head/collectable/welding
