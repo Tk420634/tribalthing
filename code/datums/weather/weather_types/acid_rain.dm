@@ -1,7 +1,7 @@
 /datum/weather/acid_rain
 	name = "miasma storm"
 	desc = "The local environment is host to toxic airborn substances that are flowing in."
-	probability = 25
+	probability = 0
 
 	telegraph_duration = 70 SECONDS
 	telegraph_overlay = "miasma"

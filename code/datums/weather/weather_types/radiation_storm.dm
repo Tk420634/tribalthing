@@ -1,7 +1,7 @@
 /datum/weather/rad_storm
 	name = "radiation storm"
 	desc = "A thunderstorm of intense radiation passes through the area dealing radiation damage to those who are unprotected."
-	probability = 6
+	probability = 0
 
 	telegraph_duration = 700
 	telegraph_message = span_userdanger("The skies slowly turn into a glowing green, distant distorted thunder can be heard as dark clouds approach.")
@@ -18,7 +18,7 @@
 	end_message = span_userdanger("The air seems to be cooling off again as the radiation storm passes, the sky returning to it's normal color.")
 
 	tag_weather = WEATHER_RADS
-	area_types = list(/area/f13/wasteland, /area/f13/desert, /area/f13/farm, /area/f13/forest)
+	area_types = list(/area/f13/desert, /area/f13/farm, /area/f13/forest)
 	protected_areas = list(
 		/area/maintenance,
 		/area/ai_monitored/turret_protected/ai_upload,

@@ -34,6 +34,7 @@
 	var/can_taste = TRUE
 	var/datum/grope_kiss_MERP/grope
 	var/list/lastgrope
+	var/foreheadable = FALSE
 
 /// Course our first hand item would be a tongue
 /obj/item/hand_item/tactile/tender //chimken
@@ -89,6 +90,7 @@
 	action_verb_s = "kisses"
 	action_verb_ing = "kissing"
 	can_taste = FALSE
+	foreheadable = TRUE
 
 /obj/item/hand_item/tactile/kisser/horny
 	grope = /datum/grope_kiss_MERP/kiss
@@ -157,6 +159,11 @@
 /obj/item/hand_item/tactile/proc/lick_atom(atom/movable/licked, mob/living/user)
 	if(SEND_SIGNAL(licked, COMSIG_ATOM_LICKED, user, src))
 		return
+	if(foreheadable && user.zone_selected == BODY_ZONE_HEAD && ishuman(licked))
+		var/mob/living/carbon/human/H = licked
+		if(H.getOrganLoss(ORGAN_SLOT_BRAIN))
+			H.adjustOrganLoss(ORGAN_SLOT_BRAIN, -2)
+			user.visible_message(span_notice("[user] kisses [H]'s bruised head and makes it feel better! =3"))
 	if(do_a_grope(user, licked))
 		return
 	var/list/lick_words = get_lick_words(user)

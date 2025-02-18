@@ -400,7 +400,7 @@
 				mode = SHUTTLE_DOCKED
 				setTimer(SSshuttle.emergencyDockTime)
 				send2irc("Server", "The train has arrived at the station.")
-				priority_announce("The SPACE TRAIN has arrived at the SPACE DOCK. It will depart for SPACE in [timeLeft(600)] minutes. Have your tickets ready.", null, 'sound/f13/mysterious_stranger.ogg', "[SSshuttle.train_company]")
+				priority_announce("The SPACE TRAIN has arrived at the SPACE DOCK. It will depart for SPACE in [timeLeft(600)] minutes. Have your tickets ready.", null, 'sound/voice/catpeople/distressed.ogg', "[SSshuttle.train_company]")
 				// priority_announce("The [SSshuttle.train_name] from [SSshuttle.where_from] has arrived at [SSshuttle.local_train_station]. It will depart for [SSshuttle.where_to] in [timeLeft(600)] minutes. Have your tickets ready.", null, 'sound/f13/mysterious_stranger.ogg', "[SSshuttle.train_company]")
 				ShuttleDBStuff()
 

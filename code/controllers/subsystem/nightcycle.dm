@@ -35,23 +35,23 @@ SUBSYSTEM_DEF(nightcycle)
 
 	// Variables for badmining
 	var/sunrise_sun_color = "#4ca5f8"
-	var/sunrise_sun_power = 95
+	var/sunrise_sun_power = 200
 	var/morning_sun_color = "#4ca5f8"
-	var/morning_sun_power = 115
+	var/morning_sun_power = 200
 	var/latemorn_sun_color = "#4ca5f8"
-	var/latemorn_sun_power = 125
+	var/latemorn_sun_power = 200
 	var/daytime_sun_color = "#4ca5f8"
-	var/daytime_sun_power = 155
+	var/daytime_sun_power = 200
 	var/afternoon_sun_color = "#4ca5f8"
-	var/afternoon_sun_power = 120
+	var/afternoon_sun_power = 200
 	var/lateafternoon_sun_color = "#4ca5f8"
-	var/lateafternoon_sun_power = 85
+	var/lateafternoon_sun_power = 200
 	var/sunset_sun_color = "#4ca5f8"
-	var/sunset_sun_power = 105
+	var/sunset_sun_power = 200
 	var/fullsunset_sun_color = "#4ca5f8"
-	var/fullsunset_sun_power = 75
+	var/fullsunset_sun_power = 200
 	var/nighttime_sun_color = "#4ca5f8"
-	var/nighttime_sun_power = 65 
+	var/nighttime_sun_power = 200
 
 	/// If defined with any number besides null it will determine how long each cycle lasts.
 //	var/custom_cycle_wait = 1600 SECONDS

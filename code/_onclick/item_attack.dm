@@ -240,10 +240,13 @@
 /obj/item/proc/do_berry(mob/living/carbon/human/target)
 	if(!target)
 		return
+	un_berry()
 	var/datum/reagents/R = target.reagents
 	switch(berry)
 		if("tipsy")
-			R.add_reagent(/datum/reagent/consumable/ethanol/bacchus_blessing, 4)
+			R.add_reagent(/datum/reagent/consumable/ethanol/atomicbomb, 5)
+			if(prob(5))
+				R.add_reagent(/datum/reagent/toxin/bonehurtingjuice, 10)
 			to_chat(target, span_userdanger("Oh no! That [src] had some tipsy berry on it! You feel tipsy!"))
 		if("slow")
 			R.add_reagent(/datum/reagent/drug/slower, 5)
@@ -251,7 +254,6 @@
 		if("blind")
 			target.flash_act(8, noblur = TRUE)
 			to_chat(target, span_userdanger("Oh no! That [src] had some flash berry on it! Your eyes hurt!"))
-	un_berry()
 
 /obj/item/proc/un_berry()
 	berry = null

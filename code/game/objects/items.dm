@@ -1229,17 +1229,17 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 		berry = "tipsy"
 		to_chat(user, "You apply [bewwy] to [src].")
 		qdel(bewwy)
-		add_atom_colour("#FF0000", ADMIN_COLOUR_PRIORITY)
+		add_atom_colour("#FF00FF", ADMIN_COLOUR_PRIORITY)
 	if(istype(bewwy, /obj/item/reagent_containers/food/snacks/grown/berries/amar/slow))
 		berry = "slow"
 		to_chat(user, "You apply [bewwy] to [src].")
 		qdel(bewwy)
-		add_atom_colour("#00FF00", ADMIN_COLOUR_PRIORITY)
+		add_atom_colour("#0000FF", ADMIN_COLOUR_PRIORITY)
 	if(istype(bewwy, /obj/item/reagent_containers/food/snacks/grown/berries/majo/blind))
 		berry = "blind"
 		to_chat(user, "You apply [bewwy] to [src].")
 		qdel(bewwy)
-		add_atom_colour("#0000FF", ADMIN_COLOUR_PRIORITY)
+		add_atom_colour("#00FFFF", ADMIN_COLOUR_PRIORITY)
 
 
 /obj/item/importantize()

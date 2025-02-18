@@ -110,8 +110,9 @@
 			BB.ramp_up_max = G.ramp_up_max
 			BB.ramp_up_start = G.ramp_up_start
 			BB.ramp_up_end = G.ramp_up_end
-		if(G.berry)
+		if(G.berry || berry)
 			BB.berry = G.berry
+			G.un_berry()
 			un_berry()
 		//SEND_SIGNAL(src, COMSIG_GUN_SHOT, BB, G) // time to modify it more uwu
 		/* if(HAS_TRAIT(user, TRAIT_CRIT_SHOT)) // imma spend 12 points to shoot myself in the face
