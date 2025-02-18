@@ -240,7 +240,6 @@
 /obj/item/proc/do_berry(mob/living/carbon/human/target)
 	if(!target)
 		return
-	un_berry()
 	var/datum/reagents/R = target.reagents
 	switch(berry)
 		if("tipsy")
@@ -254,6 +253,7 @@
 		if("blind")
 			target.flash_act(8, noblur = TRUE)
 			to_chat(target, span_userdanger("Oh no! That [src] had some flash berry on it! Your eyes hurt!"))
+	un_berry()
 
 /obj/item/proc/un_berry()
 	berry = null
