@@ -1087,9 +1087,7 @@
 	dir = 1;
 	pixel_y = 12
 	},
-/turf/closed/indestructible/riveted/boss{
-	name = "temple wall"
-	},
+/turf/open/floor/plasteel/cult,
 /area/f13/wasteland/nash)
 "qW" = (
 /obj/structure/flora/wild_plant/flower/red_two{

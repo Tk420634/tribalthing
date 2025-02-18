@@ -177,7 +177,7 @@ GLOBAL_LIST_INIT(grass_plant_list, list(
 	/obj/structure/flora/wasteplant/berrybush/amar = 3,
 	/obj/structure/flora/wasteplant/berrybush/azul = 3, 
 	/obj/structure/flora/wasteplant/berrybush/majo = 3,
-	/obj/item/reagent_containers/food/snacks/grown/berries/marron = 3,
+	/obj/structure/flora/wasteplant/berrybush/marron = 3,
 	))
 
 GLOBAL_LIST_INIT(tree_plant_list, list(
