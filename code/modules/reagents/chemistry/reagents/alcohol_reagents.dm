@@ -1417,20 +1417,20 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	value = REAGENT_VALUE_RARE
 
 /datum/reagent/consumable/ethanol/atomicbomb/on_mob_life(mob/living/carbon/M)
-	M.set_drugginess(50)
+	// M.set_drugginess(50)
 	if(!HAS_TRAIT(M, TRAIT_ALCOHOL_TOLERANCE))
 		M.confused = max(M.confused+2,0)
 		M.Dizzy(10)
 	M.slurring = max(M.slurring,50)
 	M.slurring += 3
-	switch(current_cycle)
-		if(51 to 200)
-			M.Sleeping(100, FALSE)
-			. = 1
-		if(201 to INFINITY)
-			M.AdjustSleeping(40, FALSE)
-			M.adjustToxLoss(2, 0)
-			. = 1
+	// switch(current_cycle)
+	// 	if(51 to 200)
+	// 		M.Sleeping(100, FALSE)
+	// 		. = 1
+	// 	if(201 to INFINITY)
+	// 		M.AdjustSleeping(40, FALSE)
+	// 		M.adjustToxLoss(2, 0)
+	// 		. = 1
 	..()
 
 /datum/reagent/consumable/ethanol/gargle_blaster

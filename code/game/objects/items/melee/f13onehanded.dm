@@ -555,8 +555,9 @@
 	return
 
 /obj/item/melee/classic_baton/attack(mob/living/target, mob/living/user)
-	if(!on)
-		return ..()
+	// if(!on)
+	// 	return ..()
+	. = ..()
 
 	/*if(IS_STAMCRIT(user))//CIT CHANGE - makes batons unusuable in stamina softcrit
 		to_chat(user, span_warning("You're too exhausted for that."))//CIT CHANGE - ditto

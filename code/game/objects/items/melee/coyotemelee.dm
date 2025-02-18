@@ -611,7 +611,7 @@
 	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
 	flags_1 = CONDUCT_1
 	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
-	force = 0
+	force = 25
 	throwforce = 0
 	wound_bonus = -20
 	force_unwielded = 0

@@ -170,14 +170,14 @@ GLOBAL_LIST_INIT(grass_plant_list, list(
 	// /obj/structure/flora/wasteplant/lily = 2,
 	// /obj/structure/flora/wasteplant/forgetmenot = 2,
 	// /obj/structure/flora/wasteplant/geranium =2,
-	/obj/structure/flora/ausbushes/fullgrass = 85,
+	/obj/structure/flora/ausbushes/fullgrass = 88,
 	/obj/structure/flora/ausbushes/leafybush = 35,
 	/obj/structure/flora/ausbushes/ywflowers = 10,
 	/obj/structure/flora/wild_plant/flower/yellowhite = 5,
 	/obj/structure/flora/wasteplant/berrybush/amar = 3,
 	/obj/structure/flora/wasteplant/berrybush/azul = 3, 
 	/obj/structure/flora/wasteplant/berrybush/majo = 3,
-
+	/obj/item/reagent_containers/food/snacks/grown/berries/marron = 3,
 	))
 
 GLOBAL_LIST_INIT(tree_plant_list, list(

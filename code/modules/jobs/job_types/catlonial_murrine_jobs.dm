@@ -178,7 +178,7 @@
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY //need both hands to fire
 	added_spread = 0
-	damage_multiplier = 5
+	damage_multiplier = 9 //nyan times
 	dryfire_text = "*not loaded*"
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow //slow for the sake of macros, but not toooo slow
