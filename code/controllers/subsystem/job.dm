@@ -713,13 +713,15 @@ SUBSYSTEM_DEF(job)
 
 
 /datum/controller/subsystem/job/proc/equip_loadout(mob/dead/new_player/N, mob/living/M, equipbackpackstuff, bypass_prereqs = FALSE, can_drop = TRUE)
-	if(no_user_loadout)
+	if(no_user_loadout && !check_rights(R_ADMIN, FALSE))
 		return
 	var/mob/the_mob = N
 	if(!the_mob)
 		the_mob = M // cause this doesn't get assigned if player is a latejoiner
 	var/list/chosen_gear = the_mob.client.prefs.loadout_data["SAVE_[the_mob.client.prefs.loadout_slot]"]
 	var/datum/preferences/the_prefs = the_mob.client.prefs
+	if(!the_prefs.spawn_with_loadout)
+		return
 	if(the_mob.client && the_mob.client.prefs && (chosen_gear && chosen_gear.len))
 		if(!ishuman(M))//no silicons allowed
 			return

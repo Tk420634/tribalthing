@@ -474,6 +474,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/see_fancy_offscreen_runechat = TRUE
 	/// lets the user see runechat that's hidden behind a wall
 	var/see_hidden_runechat = TRUE
+	var/spawn_with_loadout = FALSE
 
 /datum/preferences/New(client/C)
 	parent = C
@@ -529,7 +530,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	dat += "<a href='?_src_=prefs;preference=tab;tab=[APPEARANCE_TAB]' [current_tab == APPEARANCE_TAB ? "class='linkOn'" : ""]>Character Appearance</a>"
 	dat += "<a href='?_src_=prefs;preference=tab;tab=[CHAR_INFO_TAB]' [current_tab == CHAR_INFO_TAB ? "class='linkOn'" : ""]>Character Info</a>"
 	dat += "<a href='?_src_=prefs;preference=tab;tab=[ERP_TAB]' [current_tab == ERP_TAB ? "class='linkOn'" : ""]>Underlying Appearance</a>"
-	//dat += "<a href='?_src_=prefs;preference=tab;tab=[LOADOUT_TAB]' [current_tab == LOADOUT_TAB ? "class='linkOn'" : ""]>Loadout</a>"
+	if(check_rights_for(parent, R_ADMIN))
+		dat += "<a href='?_src_=prefs;preference=tab;tab=[LOADOUT_TAB]' [current_tab == LOADOUT_TAB ? "class='linkOn'" : ""]>Loadout</a>"
 	dat += "<a href='?_src_=prefs;preference=tab;tab=[GAME_PREFERENCES_TAB]' [current_tab == GAME_PREFERENCES_TAB ? "class='linkOn'" : ""]>Game Preferences</a>"
 	dat += "<a href='?_src_=prefs;preference=tab;tab=[CONTENT_PREFERENCES_TAB]' [current_tab == CONTENT_PREFERENCES_TAB ? "class='linkOn'" : ""]>Content Preferences</a>"
 	dat += "<a href='?_src_=prefs;preference=tab;tab=[KEYBINDINGS_TAB]' [current_tab == KEYBINDINGS_TAB ? "class='linkOn'" : ""]>Keybindings</a>"
@@ -1643,6 +1645,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				chosen_gear = list()
 
 			dat += "<table align='center' width='100%'>"
+			if(check_rights_for(parent, R_ADMIN))
+				dat += span_boldannounce("HEY ADMIN, DONT SPAWN IN WITH YOUR LOADOUT UNLESS YOURE DOING AN EVENT THING!!!!!")
+				dat += "Currently <a href='?_src_=prefs;preference=togglegearspawn'>[spawn_with_loadout ? "SPAWNING WITH" : "NOT SPAWNING WITH"]</a> your loadout."
 			dat += "<tr><td colspan=4><center><b><font color='[gear_points == 0 ? "#E62100" : "#CCDDFF"]'>[gear_points]</font> loadout points remaining.</b> \[<a href='?_src_=prefs;preference=gear;clear_loadout=1'>Clear Loadout</a>\]</center></td></tr>"
 			dat += "<tr><td colspan=4><center>You can choose up to [MAX_FREE_PER_CAT] free items per category.</center></td></tr>"
 			dat += "<tr><td colspan=4><center><b>"
@@ -2579,6 +2584,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		qdel(query_get_jobban)
 		return
 
+	if(href_list["preference"] == "togglegearspawn")
+		TOGGLE_VAR(spawn_with_loadout)
 	if(href_list["preference"] == "quirk_migrate")
 		SSquirks.ConvertOldQuirklistToNewQuirklist(src, )
 	if(href_list["preference"] == "change_genital_order")

@@ -390,6 +390,9 @@ GLOBAL_LIST_EMPTY(chat_chuds)
 	dingus:
 		for(var/client/C in GLOB.clients)
 			var/mob/M = C.mob
+			if(M == source)
+				CC.visible_close[M] = TRUE // you can see you!
+				continue dingus
 			if(isnewplayer(M))
 				continue dingus // quit talkin to ghosts, unless ur an admeme
 			var/turf/viewer_turf = get_turf(M)
