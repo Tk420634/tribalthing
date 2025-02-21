@@ -329,10 +329,12 @@ SUBSYSTEM_DEF(chat)
 			return
 		LAZYADD(payload_by_client[client], list(message))
 
-/datum/controller/subsystem/chat/proc/SanitizeUserImages(someone)
-	if(!someone)
-		return
-	var/datum/preferences/P = extract_prefs(someone)
+/datum/controller/subsystem/chat/proc/SanitizeUserImages(datum/rental_mommy/chat/momchat, someone)
+	var/datum/preferences/P
+	if(momchat)
+		P = momchat.prefs_override || extract_prefs(momchat.source) // and, hm, maybe not today, probably tomorrow
+	else
+		P = extract_prefs(someone)
 	if(!P)
 		return
 	var/list/PP = P.ProfilePics // this is my PP
@@ -475,10 +477,12 @@ SUBSYSTEM_DEF(chat)
 	P.save_character()
 
 /// makes sure that the user has a properly filled out set of preferences lists for their hornychat
-/datum/controller/subsystem/chat/proc/SanitizeUserPreferences(someone)
-	if(!someone) // You'll be able to set colors and such for each of the message modes!
-		return // So you could, say, have your I AM YELLING block look more YELLY
-	var/datum/preferences/P = extract_prefs(someone) // and, hm, maybe not today, probably tomorrow
+/datum/controller/subsystem/chat/proc/SanitizeUserPreferences(datum/rental_mommy/chat/mommy, someone)
+	var/datum/preferences/P
+	if(mommy)
+		P = mommy.prefs_override || extract_prefs(mommy.source) // and, hm, maybe not today, probably tomorrow
+	else
+		P = extract_prefs(someone)
 	if(!P)
 		return
 	var/list/HP = P.mommychat_settings // this is my PP
@@ -544,8 +548,12 @@ SUBSYSTEM_DEF(chat)
 /// GEE DAN, LETS MAKE PROFILE PICS AND SETTINGS BE TWO ENTIRELY SEPARATE LISTS
 /// WHAT A GREAT IDEA, NO WAY THIS WOULD CAUSE DISCREPANCIES you fukcking dikc
 /// This proc comapres mommychat_settings to ProfilePics and updates the two to match
-/datum/controller/subsystem/chat/proc/CoordinateSettingsAndPics(someone, whichchanged)
-	var/datum/preferences/P = extract_prefs(someone)
+/datum/controller/subsystem/chat/proc/CoordinateSettingsAndPics(datum/rental_mommy/chat/momchat, someone, whichchanged)
+	var/datum/preferences/P
+	if(momchat)
+		P = momchat.prefs_override || extract_prefs(momchat.source) // and, hm, maybe not today, probably tomorrow
+	else
+		P = extract_prefs(someone)
 	if(!P)
 		return
 	if(whichchanged != CHANGED_IMAGES && whichchanged != CHANGED_SETTINGS)
@@ -573,7 +581,7 @@ SUBSYSTEM_DEF(chat)
 	var/datum/preferences/P = extract_prefs(whosit)
 	if(!P)
 		return
-	SanitizeUserImages(P)
+	SanitizeUserImages(null, P)
 	var/list/PP = P.ProfilePics
 	for(var/PPentry in PP)
 		if(PPentry["Mode"] == mode)
@@ -720,7 +728,7 @@ SUBSYSTEM_DEF(chat)
 	var/m_mode       = mommy.message_mode || MODE_SAY
 	var/m_radio	     = mommy.is_radio
 	if(!LAZYLEN(P.mommychat_settings[m_mode]))
-		SanitizeUserPreferences(mommy.source)
+		SanitizeUserPreferences(mommy)
 
 	/// look for something in m_rawmessage formatted as :exammple: and extract that to look up a custom image
 	/// We'll extract this, store it as a var, and use it as an override for the profile image
@@ -1734,8 +1742,8 @@ SUBSYSTEM_DEF(chat)
 	/// first, the stock images
 	/// not using em lol
 	/// then, the user's images
-	SSchat.SanitizeUserImages(P)
-	SSchat.SanitizeUserPreferences(P)
+	SSchat.SanitizeUserImages(null, P)
+	SSchat.SanitizeUserPreferences(null, P)
 	data["AutoContrast"] = CHECK_PREFS(P, USE_AUTO_CONTRAST)
 	data["SeeOthers"] = CHECK_PREFS(P, SHOW_ME_HORNY_FURRIES)
 	data["UserImages"] = P.ProfilePics
@@ -2579,7 +2587,7 @@ SUBSYSTEM_DEF(chat)
 		update_static_data(M)
 		if(. != CHANGED_NOTHING)
 			// we need to update the settings and pics to match
-			SSchat.CoordinateSettingsAndPics(P, .)
+			SSchat.CoordinateSettingsAndPics(null, P, .)
 		P.save_character()
 
 
