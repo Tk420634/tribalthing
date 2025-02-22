@@ -30,8 +30,8 @@ SUBSYSTEM_DEF(nightcycle)
 	wait = 10 SECONDS
 	// Control vars
 	var/current_time = DAYTIME
-	var/current_sun_color = "#bf9292"
-	var/current_sun_power = 40
+	var/current_sun_color = "#FFFFFF"
+	var/current_sun_power = 200
 
 	// Variables for badmining
 	var/sunrise_sun_color = "#FFFFFF"
