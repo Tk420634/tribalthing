@@ -1101,6 +1101,14 @@
 	mutantrace_variation = STYLE_DIGITIGRADE
 	blood_overlay_type = "armor"
 
+/obj/item/clothing/suit/armor/light/tribal/bone/jagnyar
+	name = "Jagnyar warrior armor"
+	color = "#BB3333"
+
+/obj/item/clothing/suit/armor/light/tribal/bone/stickspinner
+	name = "spinner warrior armor"
+	color = "#444444"
+
 /obj/item/clothing/suit/armor/light/tribal/bone/cool
 	name = "bone armor suit"
 	desc = "A tribal armor plate, crafted from animal bone."

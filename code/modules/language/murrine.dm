@@ -5,7 +5,6 @@
 	ask_verb = "tangos"
 	exclaim_verb = "tacticals"
 	key = "q"
-	flags = TONGUELESS_SPEECH
 	space_chance = 100
 	syllables = list(
 		"alpha",

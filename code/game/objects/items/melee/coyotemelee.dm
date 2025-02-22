@@ -310,6 +310,10 @@
 	attack_verb = list("wrecked", "bashed", "smashed")
 	hitsound = 'sound/weapons/smash.ogg'
 	
+/obj/item/melee/coyote/club/whomper
+	name = "whomper"
+	desc = "A wooden whomper, issued to Murrines in the Bruiser corp to stop problems flat."
+
 
 /obj/item/melee/coyote/club/mace
 	name = "mace"
@@ -515,6 +519,11 @@
 	attack_verb = list("batter-gashed", "sliced", "diced")
 	hitsound = 'sound/weapons/smash.ogg'
 
+/obj/item/melee/coyote/macuahuitl/nya
+	name = "Nyampire Nyacuahuitl"
+	desc = "A squishy sort of not quite sword. Made for booping fools in the noggin."
+	reflectshot_chance = 20
+
 /obj/item/melee/coyote/oldkhopesh
 	name = "Old Khopesh"
 	desc = "Man, you could really use a chariot right now. This curved blade acts more like an axe than a sword does, chopping comes easy."
@@ -564,6 +573,11 @@
 	hitsound = 'sound/weapons/smash.ogg'
 	attack_speed = CLICK_CD_MELEE * 0.7
 	block_chance = 15
+
+/obj/item/melee/classic_baton/coyote/oldquarterstaff/nya
+	name = "Nyampire Quartersnyaff"
+	color = "#FF0000"
+	reflectshot_chance = 95
 
 /* /obj/item/melee/classic_baton/coyote/oldquarterstaff/attack(mob/living/M, mob/living/user)
 	. = ..()

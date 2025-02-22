@@ -50,6 +50,43 @@
 	access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
 	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
 	faction = "murrine"
+
+/datum/job/townfolk/murrineranger
+	title = "Murrine Ranger"
+	flag = F13BARKEEP
+	total_positions = 2
+	spawn_positions = 2
+	description = "You are a Murrine Ranger, master of speed and the best of the worst."
+	supervisors = "The Squad Leaders"
+	outfit = /datum/outfit/job/cb/guild/deputy/ranger
+	access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
+	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
+	faction = "murrine"
+
+/datum/job/townfolk/murrinebruiser
+	title = "Murrine Bruiser"
+	flag = F13BARKEEP
+	total_positions = 2
+	spawn_positions = 2
+	description = "You are a Murrine Bruiser, the bulwark of the corp."
+	supervisors = "The Squad Leaders"
+	outfit = /datum/outfit/job/cb/guild/deputy/bruiser
+	access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
+	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
+	faction = "murrine"
+
+
+/datum/job/townfolk/murrinegrenadier
+	title = "Murrine Grenadier"
+	flag = F13BARKEEP
+	total_positions = 2
+	spawn_positions = 2
+	description = "You are a Murrine Grenadier, a real tosser."
+	supervisors = "The Squad Leaders"
+	outfit = /datum/outfit/job/cb/guild/deputy/grenadier
+	access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
+	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
+	faction = "murrine"
 //////////////////////////////
 /// Deputy
 /// A Deputy, here to serve drinks and listen to people's problems
@@ -134,6 +171,45 @@
 	forbids = "Nothing in particular, your victory is utmost over the foe."
 	description = "A high class warrior, gifted with magical tech rendered from the ancients to hide yourself on the move and trained to use brass knyackles to down foes rapidly from behind."
 	outfit = /datum/outfit/job/cb/catgirl/warrior/nyanfiltrator
+	paycheck = COINS_TO_CREDITS(75) // 75 copper per hour
+	faction = "cat"
+
+/datum/job/tribal/jagnyarwarrior
+	title = "Jagnyar Warrior"
+	flag = F13HUNTER
+	total_positions = 2
+	spawn_positions = 2
+	supervisors = "The Nyan-Nyan Neko Gods, the Head Hunter and your instincts."
+	enforces = "The ways of the Nyan-Nyan Neko Nyampire."
+	forbids = "Nothing in particular, your victory is utmost over the foe."
+	description = "The Nyampires most decorated warriors, raised from birth to be the fastest and bestest, better than all the restest."
+	outfit = /datum/outfit/job/cb/catgirl/jagnyarwarrior
+	paycheck = COINS_TO_CREDITS(75) // 75 copper per hour
+	faction = "cat"
+
+/datum/job/tribal/stickspinner
+	title = "Stick-Spinner"
+	flag = F13HUNTER
+	total_positions = 2
+	spawn_positions = 2
+	supervisors = "The Nyan-Nyan Neko Gods, the Head Hunter and your instincts."
+	enforces = "The ways of the Nyan-Nyan Neko Nyampire."
+	forbids = "Nothing in particular, your victory is utmost over the foe."
+	description = "A warrior dedicated to the defense of the Nyampire, your skills with the Quartersnyaff are legendary."
+	outfit = /datum/outfit/job/cb/catgirl/stickspinner
+	paycheck = COINS_TO_CREDITS(75) // 75 copper per hour
+	faction = "cat"
+
+/datum/job/tribal/catnapper
+	title = "Catnapper"
+	flag = F13HUNTER
+	total_positions = 2
+	spawn_positions = 2
+	supervisors = "The Nyan-Nyan Neko Gods, the Head Hunter and your instincts."
+	enforces = "The ways of the Nyan-Nyan Neko Nyampire."
+	forbids = "Nothing in particular, your victory is utmost over the foe."
+	description = "Trained in the arts of the gripwire and its finer uses your purpose is area de-nyial."
+	outfit = /datum/outfit/job/cb/catgirl/warrior/catnapper
 	paycheck = COINS_TO_CREDITS(75) // 75 copper per hour
 	faction = "cat"
 

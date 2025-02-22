@@ -194,7 +194,7 @@ Dan's even bigger Say() rewrite.
 		. = replacetext(input, "@", "<b>[thing.name]</b>")
 	return
 
-/// Quirky citadel proc for our custom sayverbs to strip the verb out. Snowflakey as hell, say rewrite 3.0 when?
+/// Quirky citadel proc for our custom sayverbs to strip the verb out. Snowflakey as hell, say rewrite 3.0 when? // now, bitch
 /atom/movable/proc/quoteless_say_quote(input, list/spans = list(speech_span), message_mode, datum/rental_mommy/chat/momchat)
 	if((input[1] == "!") && (length_char(input) > 1))
 		if(momchat)
@@ -228,6 +228,7 @@ Dan's even bigger Say() rewrite.
 		var/datum/language/D = GLOB.language_datum_instances[language]
 		if(momchat)
 			momchat.cant_language = TRUE
+			momchat.lang_scrambled_message = raw_message
 		raw_message = D.scramble(raw_message)
 	else
 		raw_message = "..?"

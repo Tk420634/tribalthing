@@ -1,3 +1,6 @@
+/mob/living/proc/check_overrides(datum/rental_mommy/chat/momchat)
+	return
+
 /mob/living/proc/Ellipsis(original_msg, chance = 50, keep_words)
 	if(chance <= 0)
 		return "..."
@@ -179,6 +182,7 @@
 		momchat.close_message_range = SSchat.base_radio_reduced_distance
 		momchat.far_message_range = SSchat.extended_radio_reduced_distance
 
+	check_overrides(momchat)
 	send_speech(momchat)
 	if(momchat.direct_to_mob)
 		return momchat // make sure to put her back (wet or otherwise)
@@ -271,8 +275,10 @@
 		return
 	// Recompose message for AI hrefs, language incomprehension.
 	if(momchat?.cant_language)
-		var/msg = momchat ? momchat.original_message : raw_message
-		message = compose_message(speaker, message_language, msg, radio_freq, spans, message_mode, FALSE, source, data)
+		var/msg = momchat ? momchat.lang_scrambled_message : raw_message
+		message = compose_message(speaker, momchat.language, msg, radio_freq, spans, message_mode, FALSE, source, data)
+		if(momchat)
+			momchat.message = message
 	/// abject misery - replaces doubled double quotes with single double quotes
 	message = replacetext(message, "\"\"", "\"")
 	// Create map text prior to modifying message for goonchat
@@ -432,6 +438,15 @@
 	maxHealth = 1
 	wander = FALSE
 	var/speak_cooldown = 0
+	var/languo
+	var/datum/preferences/soul
+
+/mob/living/simple_animal/debug_chatterboy/Initialize()
+	. = ..()
+	soul = new()
+
+/mob/living/simple_animal/debug_chatterboy/check_overrides(datum/rental_mommy/chat/momchat)
+	momchat.prefs_override = soul
 
 /mob/living/simple_animal/debug_chatterboy/BiologicalLife(seconds, times_fired)
 	. = ..()
@@ -455,7 +470,7 @@
 		"I stuff all the cheeseburgers in my mouth and swallow them whole.",
 	)
 	playsound(src, 'sound/effects/bwoing.ogg', 100, TRUE)
-	say(speech)
+	say(speech, language = languo)
 
 /mob/living/simple_animal/debug_chatterboy/radiolad
 	name = "Chatterboy w/ radio"
@@ -468,6 +483,11 @@
 	R.become_hearing_sensitive(INNATE_TRAIT)
 	R.name = "CHATTERBOY CHATPIECE"
 	. = ..()
+
+/mob/living/simple_animal/debug_chatterboy/languagetest
+	name = "Chatterboymon"
+	desc = "A debug chatterboymon. He's here to help you debug your chatterboys. He's not actually a chatterboy, though. He's just a rock."
+	languo = /datum/language/pokemon
 
 /mob/proc/binarycheck()
 	return FALSE
@@ -615,20 +635,23 @@
 		return FALSE
 	if(isdummy(mommy.source))
 		return TRUE // previews n such
+	if(!isatom(mommy.source))
+		return
 	// if(istype(mommy.source, /atom/movable/virtualspeaker)) // radios n such
 	// 	if(!CHECK_PREFS(src, RADIOPREF_HEAR_RADIO_BLURBLES))
 	// 		return FALSE
 	// 	return TRUE
 	if(mommy.is_actually_radio)
 		return FALSE // to do: make this work good
-	if(!ishuman(mommy.source))
+	if(!mommy.prefs_override) // only reason nonhumans can't horny is cus they lack prefs, if prefs then horny
+		if(!ishuman(mommy.source))
+			return FALSE
+		var/mob/living/carbon/human/H = mommy.source
+		if(!H.client)
+			return FALSE
+	if(z != mommy.source.z)
 		return FALSE
-	var/mob/living/carbon/human/H = mommy.source
-	if(!H.client)
-		return FALSE
-	if(z != H.z)
-		return FALSE
-	if(get_dist(H, src) > SSchat.max_horny_distance) //If they're not right next to you, don't hornify them
+	if(get_dist(mommy.source, src) > SSchat.max_horny_distance) //If they're not right next to you, don't hornify them
 		return FALSE
 	return TRUE // lets get yiffy
 

@@ -212,13 +212,6 @@ GLOBAL_LIST_INIT(plant_type_weighted, list(
 // 	flags_1 = ADJACENCIES_OVERLAY
 // 	greeble = OUTSIDE_JUNK_DISTRIBUTION
 
-/turf/open/indestructible/ground/outside/river
-	name = "river"
-	icon_state = "riverwateruhh"
-	desc = "A river."
-	slowdown = 2
-	flags_1 = ADJACENCIES_OVERLAY
-
 
 //////////////
 // SAVANNAH //
@@ -500,6 +493,17 @@ GLOBAL_LIST_INIT(junk_type_weighted, list(
 	slowdown = 2
 	flags_1 = ADJACENCIES_OVERLAY
 
+/turf/open/indestructible/ground/outside/river/Entered(atom/movable/AM, atom/oldloc)
+	. = ..()
+	// if(istype(AM, /mob/living))
+	// 	var/mob/living/L = AM
+	// 	L.update_water()
+	// 	if(L.check_submerged() <= 0)
+	// 		return
+	// 	if(!istype(oldloc, /turf/open/indestructible/ground/outside/water))
+	// 		to_chat(L, span_warning("You get drenched in water!"))
+	AM.water_act(5)
+	give_mob_washies(AM)
 
 /turf/open/indestructible/ground/outside/road_s
 	name = "\proper road"
@@ -593,6 +597,7 @@ GLOBAL_LIST_INIT(junk_type_weighted, list(
 	// 	if(!istype(oldloc, /turf/open/indestructible/ground/outside/water))
 	// 		to_chat(L, span_warning("You get drenched in water!"))
 	AM.water_act(5)
+	give_mob_washies(AM)
 
 // /turf/open/indestructible/ground/outside/water/Exited(atom/movable/AM, atom/newloc)
 // 	. = ..()

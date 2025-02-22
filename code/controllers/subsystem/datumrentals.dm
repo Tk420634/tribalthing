@@ -173,6 +173,7 @@ SUBSYSTEM_DEF(rentaldatums)
 	var/dots_some_anyway
 	var/dots_please
 	var/list/exclusive_targets = list()
+	var/lang_scrambled_message
 
 /datum/rental_mommy/chat/copy_mommy(datum/rental_mommy/chat/mommy)
 	if(!..())
@@ -251,6 +252,7 @@ SUBSYSTEM_DEF(rentaldatums)
 	dots_some_anyway                   = mommy.dots_some_anyway
 	dots_please                        = mommy.dots_please
 	exclusive_targets                  = mommy.exclusive_targets
+	lang_scrambled_message             = mommy.lang_scrambled_message
 
 /datum/rental_mommy/chat/wipe()
 	original_message                   = ""
@@ -327,6 +329,7 @@ SUBSYSTEM_DEF(rentaldatums)
 	dots_some_anyway                   = null
 	dots_please                        = null
 	exclusive_targets                  = list()
+	lang_scrambled_message             = null
 
 /datum/rental_mommy/pda
 	var/name            = ""

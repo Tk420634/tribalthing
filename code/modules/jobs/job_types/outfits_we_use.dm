@@ -78,6 +78,41 @@
 	/obj/item/gun/energy/kinetic_accelerator/crossbow/sling,
 	)
 
+/datum/outfit/job/cb/catgirl/jagnyarwarrior
+	name = "Jagnyar Warrior"
+	head = /obj/item/clothing/head/helmet/f13/wayfarer/antler 
+	backpack = /obj/item/storage/backpack/trekker
+	uniform = /obj/item/clothing/under/civ/mayan_loincloth
+	suit = /obj/item/clothing/suit/armor/light/tribal/bone/jagnyar
+	shoes = /obj/item/clothing/shoes/sandal
+	belt = /obj/item/storage/belt/utility/mining/primitive
+	gloves = /obj/item/clothing/gloves/thief
+	tribal = TRUE
+	cat = TRUE
+	superzoomies = TRUE
+	backpack_contents   = list(
+		/obj/item/melee/coyote/macuahuitl/nya = 1,
+		/obj/item/warpaint_bowl,
+		/obj/item/restraints/legcuffs/bola = 2,
+		/obj/item/gun/energy/kinetic_accelerator/crossbow/sling,
+	)
+
+/datum/outfit/job/cb/catgirl/stickspinner
+	name = "Stick-Spinner"
+	head = /obj/item/clothing/head/helmet/f13/wayfarer/antler 
+	backpack = /obj/item/storage/backpack/trekker
+	uniform = /obj/item/clothing/under/civ/mayan_loincloth
+	suit = /obj/item/clothing/suit/armor/light/tribal/bone/stickspinner
+	shoes = /obj/item/clothing/shoes/sandal
+	belt = /obj/item/storage/belt/utility/mining/primitive
+	gloves = /obj/item/clothing/gloves/thief
+	tribal = TRUE
+	cat = TRUE
+	backpack_contents   = list(
+	/obj/item/melee/classic_baton/coyote/oldquarterstaff/nya = 1,
+	/obj/item/warpaint_bowl,
+	)
+
 /datum/outfit/job/cb/catgirl/warrior/nyanfiltrator
 	name = "Nyanfiltrator"
 	head = null
@@ -89,6 +124,24 @@
 	gloves = /obj/item/clothing/gloves/thief
 	l_pocket = /obj/item/melee/unarmed/brass/knyackles
 	r_pocket = /obj/item/melee/unarmed/brass/knyackles
+	tribal = TRUE
+	cat = TRUE
+
+/datum/outfit/job/cb/catgirl/warrior/catnapper
+	name = "Catnapper"
+	head = /obj/item/clothing/head/helmet/f13/deathskull
+	suit = null
+	backpack = /obj/item/storage/backpack/trekker
+	uniform = /obj/item/clothing/under/civ/mayan_loincloth
+	shoes = /obj/item/clothing/shoes/sandal
+	belt = null
+	gloves = /obj/item/clothing/gloves/thief
+	backpack_contents   = list(
+		/obj/item/restraints/legcuffs/beartrap = 6,
+		/obj/item/melee/classic_baton/coyote/oldquarterstaff/disputestick,
+		/obj/item/warpaint_bowl,
+		/obj/item/restraints/legcuffs/bola = 4,
+		)
 	tribal = TRUE
 	cat = TRUE
 
@@ -249,6 +302,54 @@
 	l_pocket = /obj/item/multitool
 	murrine = TRUE
 
+/datum/outfit/job/cb/guild/deputy/ranger
+	name = "Murrine Ranger"
+	jobtype = /datum/job/townfolk/f13deputy
+	head = /obj/item/clothing/head/beret/ncr/ncr_sof
+	belt = null
+	uniform = /obj/item/clothing/under/f13/enclave/peacekeeper
+	gloves = /obj/item/clothing/gloves/f13/leather/fingerless
+	shoes = /obj/item/clothing/shoes/jackboots/fast
+	suit_store = /obj/item/gun/energy/laser/cranklasergun/tg/spamlaser
+	backpack_contents = list(
+		/obj/item/melee/classic_baton/telescopic = 1,
+		/obj/item/flashlight/seclite = 1,
+	)
+	murrine = TRUE
+
+/datum/outfit/job/cb/guild/deputy/bruiser
+	name = "Murrine Bruiser"
+	jobtype = /datum/job/townfolk/f13deputy
+	head = /obj/item/clothing/head/beret/ncr/ncr_sof/bruiser
+	belt = null
+	uniform = /obj/item/clothing/under/f13/enclave/peacekeeper
+	gloves = /obj/item/clothing/gloves/f13/leather/fingerless
+	shoes = /obj/item/clothing/shoes/jackboots
+	suit_store = null
+	backpack_contents = list(
+		/obj/item/melee/coyote/club/whomper = 1,
+		/obj/item/shield/coyote/riotweathered = 1,
+	)
+	murrine = TRUE
+
+
+/datum/outfit/job/cb/guild/deputy/grenadier
+	name = "Murrine Grenadier"
+	jobtype = /datum/job/townfolk/f13deputy
+	head = /obj/item/clothing/head/f13/army/beret
+	belt = null
+	uniform = /obj/item/clothing/under/f13/enclave/peacekeeper
+	gloves = /obj/item/clothing/gloves/f13/leather/fingerless
+	shoes = /obj/item/clothing/shoes/jackboots
+	suit_store = null
+	backpack_contents = list(
+		/obj/item/melee/classic_baton/telescopic = 1,
+		/obj/item/gun/energy/taser = 1,
+		/obj/item/grenade/smokebomb = 4,
+		/obj/item/grenade/barrier = 2,
+		/obj/item/grenade/flashbang = 4,
+	)
+	murrine = TRUE
 
 
 /datum/outfit/job/cb/guild/deputy/sheriff

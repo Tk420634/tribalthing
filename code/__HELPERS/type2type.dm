@@ -97,7 +97,7 @@
 		if(SOUTHWEST)
 			return "southwest"
 		else
-	return
+			return "here"
 
 //Turns text into proper directions
 /proc/text2dir(direction)
