@@ -365,14 +365,14 @@
 	if(igo != "Depart!")
 		in_use = FALSE
 		return TRUE
-	var/dumpit = alert(
-		user,
-		"Want to dump all your stuff into a bag before you go? It'll sit here until you come back (or someone else takes it!).",
-		"Durg?",
-		"Dump it!",
-		"No thanks",
-	)
-	dumpit = (dumpit == "Dump it!") ? TRUE : FALSE
+	// var/dumpit = alert(
+	// 	user,
+	// 	"Want to dump all your stuff into a bag before you go? It'll sit here until you come back (or someone else takes it!).",
+	// 	"Durg?",
+	// 	"No thanks",
+	// 	"Dump it!",
+	// )
+	// dumpit = (dumpit == "Dump it!") ? TRUE : FALSE
 	// var/lockit = CHECK_PREFS(user, DUMP_STUFF_ON_LOGOUT)
 	var/worked = FALSE
 	if(do_after(
@@ -397,9 +397,11 @@
 		return TRUE
 	to_chat(user, span_notice("You have departed from the jungle, hope to see you soon!"))
 	user.visible_message(span_notice("[user] has departed from the jungle. Hope to see them soon!"))
-	if(dumpit)
-		to_chat(user, span_notice("Your stuff has been put into a bag."))
-		StuffPlayerContentsIntoABag(user, get_turf(user), FALSE)
+	// if(dumpit)
+	// 	to_chat(user, span_notice("Your stuff has been put into a bag."))
+	// 	StuffPlayerContentsIntoABag(user, get_turf(user), FALSE)
+	// else
+	StuffPlayerContentsIntoABag(user, get_turf(user), FALSE, TRUE)
 	message_admins("[key_name(user)] has departed from the jungle.")
 	log_admin("[key_name(user)] has departed from the jungel.")
 	if(user.client)
@@ -453,7 +455,7 @@
 	// var/lockit = CHECK_PREFS(user, DUMP_STUFF_ON_LOGOUT)
 	to_chat(user, span_notice("[user] has sent [departing_mob] away. Hope to see them soon!"))
 	departing_mob.visible_message(span_notice("[departing_mob] has been sent away. Hope to see them soon!"))
-	StuffPlayerContentsIntoABag(departing_mob, get_turf(departing_mob), FALSE)
+	StuffPlayerContentsIntoABag(departing_mob, get_turf(departing_mob), FALSE, TRUE)
 	message_admins("[key_name(user)] has sent [key_name(departing_mob)] away.")
 	log_admin("[key_name(user)] has sent [key_name(departing_mob)] away.")
 	if(departing_mob.client)
@@ -469,7 +471,7 @@
 	do_sparks(2, TRUE, get_turf(departing_mob))
 	// playsound(departing_mob, 'sound/effects/player_despawn.ogg', 80, TRUE)
 
-/proc/StuffPlayerContentsIntoABag(mob/who, atom/where, lockit)
+/proc/StuffPlayerContentsIntoABag(mob/who, atom/where, lockit, just_important)
 	if(!who)
 		return
 	if(!where)
@@ -482,7 +484,12 @@
 			continue
 		if(HAS_TRAIT(I, TRAIT_NODROP))
 			continue
+		if(just_important && !I.important)
+			continue
 		I.forceMove(box)
+	if(!LAZYLEN(box.contents) && box.name != "Box of Abu-Kar")
+		qdel(box)
+		return
 	if(lockit)
 		box.SetOwnerKey(who)
 

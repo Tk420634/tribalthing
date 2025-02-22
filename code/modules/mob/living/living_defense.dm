@@ -51,6 +51,7 @@
 
 /mob/living/proc/handle_projectile_attack_redirection(obj/item/projectile/P, redirection_mode, silent = FALSE)
 	P.ignore_source_check = TRUE
+	P.factionize(faction)
 	switch(redirection_mode)
 		if(REDIRECT_METHOD_DEFLECT)
 			P.setAngle(SIMPLIFY_DEGREES(P.Angle + rand(120, 240)))

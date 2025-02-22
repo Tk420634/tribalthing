@@ -1136,6 +1136,21 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	icon_state = "ussgt"
 	color = "#FFFFFF"
 
+/obj/effect/landmark/start/f13/murrineranger
+	name = "Murrine Ranger"
+	icon_state = "ussgt"
+	color = "#00FFFF"
+
+/obj/effect/landmark/start/f13/murrinegrenadier
+	name = "Murrine Grenadier"
+	icon_state = "ussgt"
+	color = "#FFFF00"
+
+/obj/effect/landmark/start/f13/murrinebruiser
+	name = "Murrine Bruiser"
+	icon_state = "ussgt"
+	color = "#335566"
+
 /obj/effect/landmark/start/f13/housekeeping
 	name = "Housekeeping Specialist"
 	icon_state = "ussgt"
@@ -1150,6 +1165,21 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	name = "Nyanfiltrator"
 	icon_state = "Tribal"
 	color = "#FFFF00"
+
+/obj/effect/landmark/start/f13/jagnyar
+	name = "Jagnyar Warrior"
+	icon_state = "Tribal"
+	color = "#FF0000"
+
+/obj/effect/landmark/start/f13/stickspinner
+	name = "Stick-Spinner"
+	icon_state = "Tribal"
+	color = "#889967"
+
+/obj/effect/landmark/start/f13/catnapper
+	name = "Catnapper"
+	icon_state = "Tribal"
+	color = "#9FFF9F"
 
 /obj/effect/landmark/start/f13/influencer
 	name = "Influencer"

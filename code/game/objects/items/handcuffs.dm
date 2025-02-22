@@ -241,7 +241,7 @@
 	breakouttime = 300	//Deciseconds = 30s = 0.5 minute
 
 /obj/item/restraints/legcuffs/beartrap
-	name = "bear trap"
+	name = "kittycat gripwire"
 	throw_speed = 1
 	throw_range = 1
 	icon_state = "beartrap"
@@ -249,6 +249,8 @@
 	desc = "A trap used to catch bears and other legged creatures."
 	var/armed = FALSE
 	var/trap_damage = 30
+	var/faction
+	var/ownerkey
 
 /obj/item/restraints/legcuffs/beartrap/Initialize()
 	. = ..()
@@ -259,12 +261,34 @@
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
 
+/obj/item/restraints/legcuffs/beartrap/proc/factionize(mob/user)
+	if("cat" in user.faction)
+		faction = "cat"
+		color = "#007711"
+		ownerkey = extract_quid(user)
+	else if("murrine" in user.faction)
+		faction = "murrine"
+		color = "#775577"
+		ownerkey = null
+	else
+		faction = null
+		color = "#FFFFFF"
+		ownerkey = null
+
+/obj/item/restraints/legcuffs/beartrap/pickup(mob/living/user)
+	. = ..()
+	factionize(user)
+
 /obj/item/restraints/legcuffs/beartrap/attack_self(mob/user)
-	..()
+	. = ..()
 	if(ishuman(user) && !user.stat && !user.restrained())
 		armed = !armed
 		icon_state = "[initial(icon_state)][armed]"
-		to_chat(user, span_notice("[src] is now [armed ? "armed" : "disarmed"]"))
+		if(armed)
+			to_chat(user, span_notice("[src] is now armed, and you've put it down!"))
+			user.dropItemToGround(src)
+		else
+			to_chat(user, span_notice("[src] is now disarmed!"))
 
 /obj/item/restraints/legcuffs/beartrap/proc/spring_trap(datum/source, atom/movable/AM, thrown_at = FALSE)
 	SIGNAL_HANDLER
@@ -280,6 +304,9 @@
 
 	if(!thrown_at && L.movement_type & (FLYING|FLOATING)) //don't close the trap if they're flying/floating over it.
 		snap = FALSE
+	
+	if(faction in L.faction)
+		return
 
 	var/def_zone = BODY_ZONE_CHEST
 	if(snap && iscarbon(L))
@@ -302,6 +329,15 @@
 			L.visible_message(span_danger("\The [src] ensnares [L]!"), \
 					span_userdanger("\The [src] ensnares you!"))
 		L.apply_damage(trap_damage, BRUTE, def_zone)
+		alert_setter()
+
+/obj/item/restraints/legcuffs/beartrap/proc/alert_setter()
+	if(!ownerkey)
+		return
+	var/mob/living/L = extract_mob(ownerkey)
+	var/them2us = get_dir(L, src)
+	var/dirwords = dir2text(them2us)
+	to_chat(L, span_notice("You hear one of your traps go off to the [dirwords]!"))
 
 /**
  * Closes a bear trap

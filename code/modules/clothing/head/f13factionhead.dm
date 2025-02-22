@@ -611,10 +611,15 @@
 	inhand_icon_state = "ncr_sapper_beret"
 
 /obj/item/clothing/head/beret/ncr/ncr_sof
-	name = "NCR SOF beret"
-	desc = "A tan beret, issued members of the New California Republic Special Operations Command."
+	name = "Murrines SOF beret"
+	desc = "A tan beret, issued members of the Murrines special forces."
 	icon_state = "ncr_sof_beret"
 	inhand_icon_state = "ncr_sof_beret"
+
+/obj/item/clothing/head/beret/ncr/ncr_sof/bruiser
+	name = "Murrines Bruiser beret"
+	desc = "The specialist beret given to a bruiser, it's pretty smushed."
+	color = "#335588"
 
 /obj/item/clothing/head/beret/ncr_dresscap
 	name = "NCR peaked cap"
@@ -1129,8 +1134,8 @@
 	inhand_icon_state = "army_general"
 
 /obj/item/clothing/head/f13/army/beret
-	name = "US Army beret"
-	desc = "A black beret, standard issue for all US Army personnel not authorised to wear a different beret."
+	name = "Murrines grenadier beret"
+	desc = "A black berret with a flaming grenade on it, harkening to the days of yore."
 	icon = 'icons/fallout/clothing/hats.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/head.dmi'
 	icon_state = "army_beret"

@@ -14,11 +14,8 @@
 	},
 /area/f13/wasteland/nash)
 "ap" = (
-/obj/effect/landmark/start/f13/deputy,
-/obj/machinery/light/small{
-	light_color = "#884444";
-	dir = 4
-	},
+/obj/structure/chair/stool,
+/obj/effect/landmark/start/f13/murrineranger,
 /turf/open/floor/plasteel/white,
 /area/f13/ambientlighting/building)
 "at" = (
@@ -87,9 +84,11 @@
 /turf/open/floor/plasteel/white,
 /area/f13/ambientlighting/building)
 "bC" = (
-/obj/effect/landmark/start/f13/deputy,
-/turf/open/floor/plasteel/white,
-/area/f13/ambientlighting/building)
+/obj/structure/stone_tile/slab,
+/obj/structure/chair/bench,
+/obj/effect/landmark/start/f13/jagnyar,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/ambientlighting/building/catgirls_score_here)
 "bG" = (
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d";
@@ -408,7 +407,9 @@
 /turf/open/floor/circuit/telecomms/mainframe,
 /area/tcommsat/server)
 "hh" = (
-/obj/effect/landmark/start/f13/housekeeping,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/chair/stool,
+/obj/effect/landmark/start/f13/murrinegrenadier,
 /turf/open/floor/plasteel/white,
 /area/f13/ambientlighting/building)
 "hG" = (
@@ -583,7 +584,6 @@
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 4
 	},
-/obj/effect/landmark/start/f13/Hhunter,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ambientlighting/building/catgirls_score_here)
 "kc" = (
@@ -625,6 +625,7 @@
 /obj/structure/chair/bench{
 	dir = 8
 	},
+/obj/effect/landmark/start/f13/catnapper,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ambientlighting/building/catgirls_score_here)
 "kJ" = (
@@ -766,6 +767,8 @@
 	dir = 1
 	},
 /obj/structure/destructible/tribal_torch/wall/lit,
+/obj/effect/landmark/start/f13/hunter,
+/obj/effect/landmark/start/f13/hunter,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ambientlighting/building/catgirls_score_here)
 "mA" = (
@@ -846,9 +849,10 @@
 /area/f13/ambientlighting/building)
 "nI" = (
 /obj/structure/stone_tile/slab,
-/obj/effect/landmark/start/f13/nyanfiltrator,
-/turf/open/floor/plasteel/cult,
-/area/f13/wasteland/nash)
+/obj/structure/chair/bench,
+/obj/effect/landmark/start/f13/catnapper,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/ambientlighting/building/catgirls_score_here)
 "nJ" = (
 /obj/structure/stone_tile/slab,
 /obj/structure/destructible/tribal_torch/wall/lit{
@@ -873,10 +877,10 @@
 	},
 /area/f13/wasteland/nash)
 "nX" = (
-/obj/structure/stone_tile/slab,
-/obj/effect/landmark/start/f13/Hhunter,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/ambientlighting/building/catgirls_score_here)
+/obj/structure/chair/stool,
+/obj/effect/landmark/start/f13/deputy,
+/turf/open/floor/plasteel/white,
+/area/f13/ambientlighting/building)
 "oa" = (
 /obj/effect/turf_decal/stripes/asteroid/line{
 	dir = 6
@@ -885,9 +889,13 @@
 /turf/open/floor/circuit/telecomms/mainframe,
 /area/tcommsat/server)
 "oe" = (
-/obj/effect/landmark/start/f13/dartgunner,
-/turf/open/floor/plasteel/white,
-/area/f13/ambientlighting/building)
+/obj/structure/stone_tile/slab,
+/obj/structure/chair/bench{
+	dir = 4
+	},
+/obj/effect/landmark/start/f13/nyanfiltrator,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/ambientlighting/building/catgirls_score_here)
 "of" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
@@ -1004,11 +1012,18 @@
 	dir = 8;
 	light_color = "#d8b1b1"
 	},
+/obj/effect/landmark/start/f13/dartgunner,
 /turf/open/floor/plasteel/white,
 /area/f13/ambientlighting/building)
 "pY" = (
 /turf/closed/wall/mineral/titanium/interior,
 /area/f13/wasteland/nash)
+"pZ" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/chair/stool,
+/obj/effect/landmark/start/f13/dartgunner,
+/turf/open/floor/plasteel/white,
+/area/f13/ambientlighting/building)
 "qb" = (
 /obj/structure/flora/ausbushes/sunnybush,
 /turf/open/indestructible/ground/outside/dirt{
@@ -1138,12 +1153,14 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ambientlighting/building/catgirls_score_here)
 "rv" = (
-/obj/machinery/light/small{
-	light_color = "#884444"
+/obj/structure/stone_tile/slab,
+/obj/structure/chair/bench{
+	dir = 1
 	},
-/obj/effect/landmark/start/f13/murrineengineer,
-/turf/open/floor/plasteel/white,
-/area/f13/ambientlighting/building)
+/obj/structure/destructible/tribal_torch/wall/lit,
+/obj/effect/landmark/start/f13/catsniper,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/ambientlighting/building/catgirls_score_here)
 "rO" = (
 /obj/item/storage/crayons,
 /turf/open/floor/plasteel/white,
@@ -1214,6 +1231,12 @@
 /area/tcommsat/server)
 "tf" = (
 /obj/structure/rug/big/rug_red,
+/turf/open/floor/plasteel/white,
+/area/f13/ambientlighting/building)
+"tk" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/chair/stool,
+/obj/effect/landmark/start/f13/murrineranger,
 /turf/open/floor/plasteel/white,
 /area/f13/ambientlighting/building)
 "tE" = (
@@ -1367,7 +1390,6 @@
 	dir = 1;
 	pixel_y = 12
 	},
-/obj/effect/landmark/start/f13/catsniper,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ambientlighting/building/catgirls_score_here)
 "vj" = (
@@ -1781,15 +1803,22 @@
 	name = "temple wall"
 	},
 /area/f13/ambientlighting/building)
+"zC" = (
+/obj/structure/stone_tile/slab,
+/obj/structure/chair/bench,
+/obj/effect/landmark/start/f13/nyanfiltrator,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/ambientlighting/building/catgirls_score_here)
 "zL" = (
 /obj/structure/chair/stool,
 /turf/open/floor/plasteel/white,
 /area/f13/ambientlighting/building)
 "zO" = (
-/obj/structure/stone_tile/slab,
-/obj/effect/landmark/start/f13/nyanfiltrator,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/ambientlighting/building/catgirls_score_here)
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/chair/stool,
+/obj/effect/landmark/start/f13/sheriff,
+/turf/open/floor/plasteel/white,
+/area/f13/ambientlighting/building)
 "zW" = (
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland/nash)
@@ -1843,6 +1872,12 @@
 	color = "#BBBBBB"
 	},
 /area/f13/wasteland/nash)
+"Au" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/chair/stool,
+/obj/effect/landmark/start/f13/deputy,
+/turf/open/floor/plasteel/white,
+/area/f13/ambientlighting/building)
 "Aw" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /turf/open/indestructible/ground/outside/civ/grass3{
@@ -2241,9 +2276,13 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ambientlighting/building/catgirls_score_here)
 "EU" = (
-/obj/effect/landmark/start/f13/sheriff,
-/turf/open/floor/plasteel/white,
-/area/f13/ambientlighting/building)
+/obj/structure/stone_tile/slab,
+/obj/structure/chair/bench{
+	dir = 1
+	},
+/obj/effect/landmark/start/f13/catsniper,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/ambientlighting/building/catgirls_score_here)
 "EV" = (
 /obj/structure/chalkboard{
 	pixel_x = 13
@@ -2442,6 +2481,11 @@
 /obj/item/lock_bolt,
 /turf/open/floor/plasteel/white,
 /area/f13/ambientlighting/building)
+"JJ" = (
+/obj/structure/chair/stool,
+/obj/effect/landmark/start/f13/murrinebruiser,
+/turf/open/floor/plasteel/white,
+/area/f13/ambientlighting/building)
 "JT" = (
 /obj/structure/stone_tile/slab,
 /obj/structure/chair/bench{
@@ -2543,6 +2587,7 @@
 "KN" = (
 /obj/structure/stone_tile/slab,
 /obj/structure/chair/bench,
+/obj/effect/landmark/start/f13/stickspinner,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ambientlighting/building/catgirls_score_here)
 "KX" = (
@@ -2803,13 +2848,10 @@
 	},
 /area/f13/wasteland/nash)
 "Pt" = (
-/obj/structure/stone_tile/slab,
-/obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 4
-	},
-/obj/effect/landmark/start/f13/hunter,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/ambientlighting/building/catgirls_score_here)
+/obj/structure/chair/stool,
+/obj/effect/landmark/start/f13/housekeeping,
+/turf/open/floor/plasteel/white,
+/area/f13/ambientlighting/building)
 "Pz" = (
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d";
@@ -2880,9 +2922,13 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ambientlighting/building/catgirls_score_here)
 "QH" = (
-/obj/effect/landmark/start/f13/murrineengineer,
-/turf/open/floor/plasteel/white,
-/area/f13/ambientlighting/building)
+/obj/structure/stone_tile/slab,
+/obj/structure/chair/bench{
+	dir = 1
+	},
+/obj/effect/landmark/start/f13/Hhunter,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/ambientlighting/building/catgirls_score_here)
 "QJ" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/ywflowers,
@@ -3113,6 +3159,11 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ambientlighting/building/catgirls_score_here)
+"Ue" = (
+/obj/structure/chair/stool,
+/obj/effect/landmark/start/f13/murrineengineer,
+/turf/open/floor/plasteel/white,
+/area/f13/ambientlighting/building)
 "Ux" = (
 /obj/structure/bed/dogbed,
 /obj/item/toy/plush/mouse,
@@ -3130,11 +3181,16 @@
 	footstep = "grass"
 	},
 /area/f13/wasteland/nash)
-"UP" = (
-/obj/machinery/light/small{
-	light_color = "#884444";
-	dir = 4
+"UG" = (
+/obj/structure/stone_tile/slab,
+/obj/structure/chair/bench{
+	dir = 1
 	},
+/obj/effect/landmark/start/f13/hunter,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/ambientlighting/building/catgirls_score_here)
+"UP" = (
+/obj/structure/chair/stool,
 /obj/effect/landmark/start/f13/dartgunner,
 /turf/open/floor/plasteel/white,
 /area/f13/ambientlighting/building)
@@ -3169,10 +3225,10 @@
 	},
 /area/f13/wasteland/nash)
 "VE" = (
-/obj/structure/stone_tile/slab,
-/obj/effect/landmark/start/f13/catsniper,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/ambientlighting/building/catgirls_score_here)
+/obj/structure/chair/stool,
+/obj/effect/landmark/start/f13/sheriff,
+/turf/open/floor/plasteel/white,
+/area/f13/ambientlighting/building)
 "VF" = (
 /obj/machinery/light/floor,
 /turf/open/floor/plasteel/f13{
@@ -3256,13 +3312,11 @@
 /turf/open/floor/circuit/telecomms/mainframe,
 /area/tcommsat/server)
 "WP" = (
-/obj/effect/landmark/start/f13/sheriff,
-/obj/machinery/light/small{
-	light_color = "#884444";
-	dir = 4
-	},
-/turf/open/floor/plasteel/white,
-/area/f13/ambientlighting/building)
+/obj/structure/stone_tile/slab,
+/obj/structure/chair/bench,
+/obj/effect/landmark/start/f13/catsniper,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/ambientlighting/building/catgirls_score_here)
 "WR" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/rug/big/rug_rubber,
@@ -3422,10 +3476,10 @@
 	},
 /area/f13/ambientlighting/building)
 "ZU" = (
-/obj/structure/stone_tile/slab,
-/obj/effect/landmark/start/f13/hunter,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/ambientlighting/building/catgirls_score_here)
+/obj/structure/chair/stool,
+/obj/effect/landmark/start/f13/murrinegrenadier,
+/turf/open/floor/plasteel/white,
+/area/f13/ambientlighting/building)
 "ZV" = (
 /obj/effect/turf_decal/stripes/asteroid/corner{
 	dir = 8
@@ -38582,7 +38636,7 @@ zt
 ya
 MD
 MD
-LC
+oe
 LC
 LC
 MD
@@ -38651,10 +38705,10 @@ ux
 ux
 ux
 ux
-hh
-hh
-QH
-rv
+ux
+ux
+ux
+Zy
 wl
 pj
 ze
@@ -38832,17 +38886,17 @@ lV
 Bp
 Bp
 Bp
-nI
+Bp
 vR
 vR
 zt
 TQ
 MD
-KN
+zC
 EP
 Al
 AR
-ih
+UG
 zt
 vR
 vR
@@ -38903,15 +38957,15 @@ WY
 WY
 WY
 wl
-oe
-UP
-oe
-ap
-EU
-WP
-bC
-bC
-bC
+ux
+ji
+ux
+ji
+ux
+ji
+ux
+ux
+ux
 wl
 wl
 oY
@@ -39095,7 +39149,7 @@ nG
 zt
 ya
 MD
-KN
+WP
 SX
 QC
 bs
@@ -39172,10 +39226,10 @@ gG
 wl
 uD
 hf
-zL
+UP
 pC
-zL
-zL
+Pt
+Pt
 hf
 oY
 ze
@@ -39352,11 +39406,11 @@ Bp
 jM
 MD
 MD
-KN
+WP
 PA
 QR
 EP
-ih
+UG
 zt
 vR
 vR
@@ -39609,11 +39663,11 @@ Bp
 jM
 MD
 MD
-KN
+bC
 EP
 sX
 iQ
-ih
+QH
 zt
 vR
 vR
@@ -39686,10 +39740,10 @@ vR
 wl
 CN
 Md
-Mq
-zL
-Mq
-zL
+pZ
+nX
+Au
+nX
 cd
 wl
 pj
@@ -39943,10 +39997,10 @@ vR
 wl
 hG
 ux
-zL
-Mq
-Mq
-zL
+ZU
+hh
+tk
+ap
 ux
 ux
 nB
@@ -40123,11 +40177,11 @@ Bp
 jM
 MD
 MD
-KN
+bC
 EP
 sX
 sX
-ih
+QH
 zt
 vR
 vR
@@ -40457,10 +40511,10 @@ vR
 KX
 ux
 ux
-zL
-zL
-zL
-Mq
+Ue
+Ue
+VE
+zO
 LP
 wl
 pj
@@ -40641,7 +40695,7 @@ KN
 Xl
 TH
 sX
-mu
+rv
 zt
 vR
 vR
@@ -40714,8 +40768,8 @@ Qo
 Vj
 Md
 ux
-zL
-zL
+JJ
+JJ
 Mq
 Mq
 ux
@@ -40893,12 +40947,12 @@ vR
 FD
 zt
 vg
-zO
-KN
+MD
+nI
 sX
 sX
 iQ
-ih
+EU
 zt
 vR
 vR
@@ -41149,13 +41203,13 @@ Bp
 lV
 Ka
 zt
-VE
-zO
+MD
+MD
 MD
 kD
 JT
 JT
-VE
+MD
 zt
 vR
 vR
@@ -41408,10 +41462,10 @@ vR
 zt
 Rx
 jU
-nX
-ZU
-Pt
-ZU
+MD
+MD
+jU
+MD
 Rx
 zt
 vR
