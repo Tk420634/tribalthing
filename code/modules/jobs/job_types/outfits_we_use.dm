@@ -251,7 +251,7 @@
 	backpack_contents = list(
 		/obj/item/grenade/flashbang = 3,
 		/obj/item/melee/classic_baton/telescopic = 1,
-		/obj/item/gun/energy/taser = 1,
+		/obj/item/gun/energy/disabler = 1,
 		/obj/item/flashlight/seclite = 1
 	)
 	murrine = TRUE
@@ -344,7 +344,7 @@
 	suit_store = null
 	backpack_contents = list(
 		/obj/item/melee/classic_baton/telescopic = 1,
-		/obj/item/gun/energy/taser = 1,
+		/obj/item/gun/energy/disabler = 1,
 		/obj/item/grenade/smokebomb = 4,
 		/obj/item/grenade/barrier = 2,
 		/obj/item/grenade/flashbang = 4,
@@ -362,7 +362,7 @@
 	shoes = /obj/item/clothing/shoes/jackboots
 	backpack_contents = list(
 		/obj/item/melee/classic_baton/telescopic = 1,
-		/obj/item/gun/energy/taser = 1,
+		/obj/item/gun/energy/disabler = 1,
 		/obj/item/flashlight/seclite = 1
 	)
 	murrine = TRUE

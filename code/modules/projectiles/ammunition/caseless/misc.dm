@@ -42,7 +42,7 @@
 	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
 	icon_state = "rock"
 	inhand_icon_state = "rock"
-	force = 15
+	force = 36
 	throwforce = 20
 	throw_speed = 1 // you can see it comin'
 	throw_range = 10 //you can chuck a rock pretty far. good luck hitting anything though
