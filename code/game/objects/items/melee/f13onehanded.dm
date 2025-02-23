@@ -830,8 +830,8 @@
 	icon_state = "brass"
 	inhand_icon_state = "brass"
 	attack_verb = list("thumped", "bapd", "hornswaggled")
-	force = 40
-	backstab_multiplier = 3.5
+	force = 50 //needs to multiply to 150
+	backstab_multiplier = 3
 
 /obj/item/melee/unarmed/brass/spiked
 	name = "spiked knuckes"

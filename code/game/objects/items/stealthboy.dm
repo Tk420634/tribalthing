@@ -1,5 +1,5 @@
 /obj/item/stealthboy
-	name = "Nyampire Sneak-box"
+	name = "Nyampire Sneak-box Mk. II"
 	desc = "Something that looks suspiciously like a pda, but works to hide you from critters. It takes a few seconds to turn on, and will recharge while its off. ALT+click to activate!"
 	icon = 'icons/obj/pda_rugged.dmi' //Placeholder till ones sprited
 	icon_state = "pda-neko" //Placeholder till ones sprited

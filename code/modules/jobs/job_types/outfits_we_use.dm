@@ -328,7 +328,7 @@
 	suit_store = null
 	backpack_contents = list(
 		/obj/item/melee/coyote/club/whomper = 1,
-		/obj/item/shield/coyote/riotweathered = 1,
+		/obj/item/shield/coyote/kiteshield = 1,
 	)
 	murrine = TRUE
 

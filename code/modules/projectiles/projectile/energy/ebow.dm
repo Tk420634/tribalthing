@@ -22,7 +22,7 @@
 
 /obj/item/projectile/energy/bolt/rock
 	damage = 30
-	damage_list = list( "25" = 20, "30" = 64, "35" = 15, "45" = 1)
+	damage_list = list( "30" = 20, "33" = 64, "40" = 15, "50" = 1)
 	damage_type = BRUTE
 	flag = "bullet"
 	sharpness = SHARP_POINTY
