@@ -522,7 +522,8 @@
 /obj/item/melee/coyote/macuahuitl/nya
 	name = "Nyampire Nyacuahuitl"
 	desc = "A squishy sort of not quite sword. Made for booping fools in the noggin."
-	reflectshot_chance = 20
+	reflectshot_chance = 50
+	block_chance = 15
 
 /obj/item/melee/coyote/oldkhopesh
 	name = "Old Khopesh"

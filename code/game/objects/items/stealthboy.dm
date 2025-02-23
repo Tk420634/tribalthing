@@ -89,7 +89,7 @@
 	if(CanActivate(user, TRUE))
 		StartActivating(user)
 	else
-		user.playsound_local(get_turf(src), 'sound/effects/stealthcock_cant.ogg', 75, FALSE)
+		user.playsound_local(get_turf(src), 'sound/effects/stealthcock_cant.ogg', 15, FALSE)
 
 /obj/item/stealthboy/proc/CanActivate(mob/living/carbon/human/user, msg)
 	if(!user)
@@ -126,9 +126,9 @@
 /obj/item/stealthboy/proc/StartActivating(mob/living/carbon/human/user)
 	if(on)
 		return
-	user.playsound_local(get_turf(src), 'sound/effects/stealthcock_precum.ogg', 75, FALSE)
+	user.playsound_local(get_turf(src), 'sound/effects/stealthcock_precum.ogg', 15, FALSE)
 	if(!do_after(user, 1 SECONDS, TRUE, src, TRUE, null, null, null, FALSE, TRUE, TRUE, FALSE, FALSE))
-		user.playsound_local(get_turf(src), 'sound/effects/stealthcock_cant.ogg', 75, FALSE)
+		user.playsound_local(get_turf(src), 'sound/effects/stealthcock_cant.ogg', 15, FALSE)
 		to_chat(user, span_alert("[src] failed to activate!"))
 		return
 	if(CanActivate(user, TRUE))
@@ -146,7 +146,7 @@
 			Deactivate()
 		else
 			return
-	animate(user, alpha = 30, time = 0.5 SECONDS)
+	animate(user, alpha = 0, time = 0.5 SECONDS)
 	ADD_TRAIT(user, "stealthinvis", src)
 	applying_to = user
 	to_chat(user, span_notice("You activate \The [src]."))
@@ -155,7 +155,7 @@
 	START_PROCESSING(SSfastprocess, src)
 	on = TRUE
 	do_sparks(1, TRUE, get_turf(src), /datum/effect_system/spark_spread/quantum)
-	user.playsound_local(get_turf(src), 'sound/effects/stealthcock_cum.ogg', 75, FALSE)
+	user.playsound_local(get_turf(src), 'sound/effects/stealthcock_cum.ogg', 15, FALSE)
 
 /obj/item/stealthboy/proc/Deactivate(mob/living/carbon/human/user, msg)
 	if(!user)
@@ -170,7 +170,7 @@
 	on = FALSE
 	applying_to = null
 	do_sparks(4, TRUE, get_turf(src), /datum/effect_system/spark_spread/quantum)
-	user.playsound_local(get_turf(src), 'sound/effects/stealthcock_muc.ogg', 75, FALSE)
+	user.playsound_local(get_turf(src), 'sound/effects/stealthcock_muc.ogg', 15, FALSE)
 
 /obj/item/stealthboy/process()
 	if(!on)
@@ -194,7 +194,7 @@
 	if(time_left <= warn_time && do_warn)
 		var/mob/user = loc
 		if(ismob(user))
-			user.playsound_local(get_turf(src), 'sound/effects/stealthcock_nearly_muc.ogg', 75, FALSE)
+			user.playsound_local(get_turf(src), 'sound/effects/stealthcock_nearly_muc.ogg', 15, FALSE)
 			do_warn = FALSE
 	if(time_left <= 0)
 		Deactivate()
@@ -209,7 +209,7 @@
 	if(do_boop && time_left > min_time_left)
 		var/mob/user = loc
 		if(ismob(user))
-			user.playsound_local(get_turf(src), 'sound/effects/stealthcock_can_work_now.ogg', 75, FALSE)
+			user.playsound_local(get_turf(src), 'sound/effects/stealthcock_can_work_now.ogg', 15, FALSE)
 			do_boop = FALSE
 	if(time_left > warn_time && !do_warn)
 		do_warn = TRUE
