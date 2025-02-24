@@ -371,24 +371,7 @@
 /obj/item/restraints/legcuffs/beartrap/energy/cyborg
 	breakouttime = 20 // Cyborgs shouldn't have a strong restraint
 
-/obj/item/restraints/legcuffs/bola
-	name = "bola"
-	desc = "A restraining device designed to be thrown at the target. Upon connecting with said target, it will wrap around their legs, making it difficult for them to move quickly."
-	icon_state = "bola"
-	breakouttime = 20//easy to apply, easy to break out of
-	gender = NEUTER
-	slowdown = 1.3
-	var/knockdown = 0
 
-/obj/item/restraints/legcuffs/bola/throw_at(atom/target, range, speed, mob/thrower, spin=1, diagonals_first = 0, datum/callback/callback)
-	if(!..())
-		return
-	playsound(src.loc,'sound/weapons/bolathrow.ogg', 75, 1)
-
-/obj/item/restraints/legcuffs/bola/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
-	if(..() || !iscarbon(hit_atom))//if it gets caught or the target can't be cuffed,
-		return//abort
-	ensnare(hit_atom)
 
 /obj/item/restraints/legcuffs/bola/fragile
 	name = "crude bola"

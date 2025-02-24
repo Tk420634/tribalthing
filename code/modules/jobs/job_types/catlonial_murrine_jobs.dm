@@ -270,7 +270,7 @@
 	// ramp_up_max = 20 // 4x
 	// ramp_up_start = 7 // tiles
 	// ramp_up_end = 15 // also tiles
-
+	factionbound = list("cat")
 
 /obj/item/gun/ballistic/automatic/lewis/murr
 	name = "Leeroy automatic dartling gun"
@@ -305,6 +305,7 @@
 	w_class = WEIGHT_CLASS_NORMAL // suffer
 	multiple_sprites = 2
 	custom_materials = list(/datum/material/iron = MATS_LIGHT_MEGA_CAN_MAGAZINE)
+	factionbound = list("murine")
 
 /obj/item/ammo_box/magazine/lewis/foam/empty
 	start_empty = 1
@@ -358,4 +359,206 @@
 	var/obj/item/turret_box/foam/D = new(get_turf(src))
 	D.noammo = TRUE
 	qdel(src)
+
+/obj/item/melee/classic_baton/coyote/oldquarterstaff/disputestick
+	name = "Dispute Stick"
+	desc = "A large stick, culturally used for dispute duels, whoevers still standing by the end had a better argument."
+	icon = 'modular_coyote/icons/objects/weapons.dmi'
+	icon_state = "handle"
+	inhand_icon_state = "debranched_stick_old"
+	lefthand_file = 'modular_coyote/icons/objects/lefthand_weapons.dmi'
+	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
+	flags_1 = CONDUCT_1
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
+	force = 25
+	throwforce = 0
+	wound_bonus = -20
+	force_unwielded = 0
+	force_wielded = 0
+	stam_dmg = 18
+	cooldown = 13
+	bare_wound_bonus = 0
+	sharpness = SHARP_NONE
+	w_class = WEIGHT_CLASS_TINY
+	attack_verb = list("articulated", "clocked", "bonked")
+	hitsound = 'sound/weapons/smash.ogg'
+	attack_speed = CLICK_CD_MELEE * 0.7
+	block_chance = 15 // Skill based gameplay
+	berryable = TRUE
+	block_parry_data = /datum/block_parry_data/bokken
+	factionbound = list("cat")
+
+/obj/item/restraints/legcuffs/bola
+	name = "bola"
+	desc = "A restraining device designed to be thrown at the target. Upon connecting with said target, it will wrap around their legs, making it difficult for them to move quickly."
+	icon_state = "bola"
+	breakouttime = 20//easy to apply, easy to break out of
+	gender = NEUTER
+	slowdown = 1.3
+	var/knockdown = 0
+
+/obj/item/restraints/legcuffs/bola/throw_at(atom/target, range, speed, mob/thrower, spin=1, diagonals_first = 0, datum/callback/callback)
+	if(!..())
+		return
+	playsound(src.loc,'sound/weapons/bolathrow.ogg', 75, 1)
+
+/obj/item/restraints/legcuffs/bola/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
+	if(..() || !iscarbon(hit_atom))//if it gets caught or the target can't be cuffed,
+		return//abort
+	ensnare(hit_atom)
+
+/obj/item/gun/energy/disabler
+	name = "disabler"
+	desc = "A self-defense weapon that exhausts organic targets, weakening them until they collapse."
+	icon_state = "disabler"
+	inhand_icon_state = null
+	ammo_type = list(/obj/item/ammo_casing/energy/disabler)
+	ammo_x_offset = 3
+	weapon_class = WEAPON_CLASS_SMALL
+	weapon_weight = GUN_ONE_HAND_ONLY
+	factionbound = list("murine")
+
+/obj/item/gun/energy/laser/cranklasergun/tg/spamlaser
+	name = "repeating blaster"
+	desc = "The odd design of the Trident Gammaworks M950 repeating blaster allows for an extremely high number of shots, but the weapon's power is rather low in turn. Before the end of the world, it was marketed as an anti-varmint weapon. Turns out, it's still largely used as one after the end."
+	icon_state = "spamlaser"
+	weapon_weight = GUN_TWO_HAND_ONLY
+	w_class = WEIGHT_CLASS_BULKY
+	cranking_time = 4 SECONDS
+	crank_stamina_cost = 25 // 1/5th stamina
+	crank_power = 500 // 10 cranks
+	cell_type = /obj/item/stock_parts/cell/ammo/mfc/cranklasergun/tg/spamlaser
+	ammo_type = list(/obj/item/ammo_casing/energy/cranklasergun/tg/spamlaser)
+	init_recoil = AUTOCARBINE_RECOIL(1, 1)
+	init_firemodes = list(
+	/datum/firemode/automatic/rpm200,
+	/datum/firemode/semi_auto,
+	)
+	factionbound = list("murine")
+
+/obj/item/stock_parts/cell/ammo/mfc/cranklasergun/tg/spamlaser
+	name = "integrated single charge cell"
+	desc = "An integrated single charge cell, typically used as fast discharge power bank for energy weapons."
+	icon = 'icons/fallout/objects/powercells.dmi'
+	icon_state = "mfc-full"
+	maxcharge = 5000
+	factionbound = list("murine")
+
+//Flashbangs are in flashbang.dm /obj/item/grenade/flashbang, rangers also get smokebombs /obj/item/grenade/smokebomb
+
+/obj/item/melee/coyote/club/whomper
+	name = "whomper"
+	desc = "A wooden whomper, issued to Murrines in the Bruiser corp to stop problems flat."
+
+/obj/item/shield/coyote/kiteshield
+	name = "Kite Shield"
+	icon = 'modular_coyote/icons/objects/weapons.dmi'
+	lefthand_file = 'modular_coyote/icons/objects/lefthand_weapons.dmi'
+	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
+	item_flags = ITEM_CAN_BLOCK | SLOWS_WHILE_IN_HAND
+	slowdown = 0
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
+	icon_state = "imperial_kite"
+	inhand_icon_state = "imperial_kite"
+	max_integrity = -1
+	resistance_flags = null
+
+/obj/item/melee/unarmed/brass/knyackles
+	name = "brass knayckles"
+	desc = "A core of brass, formed around ones hand, covered in a soft material to soften the blow from 'skull cracking' to 'sleepy time'."
+	icon_state = "brass"
+	inhand_icon_state = "brass"
+	attack_verb = list("thumped", "bapd", "hornswaggled")
+	force = 50 //needs to multiply to 150
+	backstab_multiplier = 5
+	factionbound = list("cat")
+
+/obj/item/melee/coyote/macuahuitl/nya
+	name = "Nyampire Nyacuahuitl"
+	desc = "A squishy sort of not quite sword. Made for booping fools in the noggin."
+	reflectshot_chance = 50
+	block_chance = 15
+	factionbound = list("cat")
+
+/obj/item/gun/energy/kinetic_accelerator/crossbow/sling
+	name = "sling"
+	desc = "A simple piece of leather, shaped to hold one rock, and hurl it at a target at high speed. Due to the abundance of stray stones and rubble, this weapon has effectively unlimited reloads."
+	ammo_type = list(/obj/item/ammo_casing/energy/bolt/sling)
+	weapon_weight = GUN_ONE_HAND_ONLY
+	w_class = WEIGHT_CLASS_TINY
+	force = 5
+	force_unwielded = 5
+	force_wielded = 10
+	throwforce = 5
+	silenced = TRUE
+	icon = 'modular_coyote/icons/objects/bows.dmi'
+	lefthand_file = 'icons/mob/inhands/equipment/belt_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/belt_righthand.dmi'
+	icon_state = "sling"
+	inhand_icon_state = "utility"
+	pin = null
+	no_pin_required = TRUE
+	fire_sound = 'sound/weapons/punchmiss.ogg'
+	init_recoil = LASER_HANDGUN_RECOIL(1.2, 1)
+	ramp_up_max = 0.33 // damage multi
+	ramp_up_start = 8 // tiles
+	ramp_up_end = 16 // also tiles
+	berryable = TRUE
+
+/obj/item/melee/classic_baton/coyote/oldquarterstaff/nya
+	name = "Nyampire Quartersnyaff"
+	color = "#FF0000"
+	reflectshot_chance = 95
+	factionbound = list("cat")
+
+//kittycat gripwire in handcuffs.dm /obj/item/restraints/legcuffs/beartrap
+
+// Telescopic baton
+/obj/item/melee/classic_baton/telescopic
+	name = "telescopic baton"
+	desc = "A compact yet robust personal defense weapon. Can be concealed when folded."
+	icon = 'icons/obj/items_and_weapons.dmi'
+	icon_state = "telebaton_0"
+	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
+	inhand_icon_state = null
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
+	w_class = WEIGHT_CLASS_NORMAL
+	item_flags = NONE
+	force = 0
+	on = FALSE
+	on_sound = 'sound/weapons/batonextend.ogg'
+	on_icon_state = "telebaton_1"
+	off_icon_state = "telebaton_0"
+	on_item_state = "nullrod"
+	force_on = 24
+	stam_dmg = 18
+	force_off = 0
+	weight_class_on = WEIGHT_CLASS_BULKY
+	total_mass = TOTAL_MASS_NORMAL_ITEM
+	bare_wound_bonus = -20
+	factionbound = list("murine")
+
+/obj/item/melee/classic_baton/telescopic/attack_self(mob/user)
+	on = !on
+	var/list/desc = get_on_description()
+	if(on)
+		to_chat(user, desc["local_on"])
+		icon_state = on_icon_state
+		inhand_icon_state = on_item_state
+		w_class = weight_class_on
+		force = force_on
+		attack_verb = list("smacked", "struck", "cracked", "beaten")
+	else
+		to_chat(user, desc["local_off"])
+		icon_state = off_icon_state
+		inhand_icon_state = null //no sprite for concealment even when in hand
+		slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
+		w_class = WEIGHT_CLASS_SMALL
+		force = force_off
+		attack_verb = list("hit", "poked")
+	playsound(loc, on_sound, 50, TRUE)
+	add_fingerprint(user)
+
+
 

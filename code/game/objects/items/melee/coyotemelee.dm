@@ -310,10 +310,6 @@
 	attack_verb = list("wrecked", "bashed", "smashed")
 	hitsound = 'sound/weapons/smash.ogg'
 	
-/obj/item/melee/coyote/club/whomper
-	name = "whomper"
-	desc = "A wooden whomper, issued to Murrines in the Bruiser corp to stop problems flat."
-
 
 /obj/item/melee/coyote/club/mace
 	name = "mace"
@@ -519,11 +515,6 @@
 	attack_verb = list("batter-gashed", "sliced", "diced")
 	hitsound = 'sound/weapons/smash.ogg'
 
-/obj/item/melee/coyote/macuahuitl/nya
-	name = "Nyampire Nyacuahuitl"
-	desc = "A squishy sort of not quite sword. Made for booping fools in the noggin."
-	reflectshot_chance = 50
-	block_chance = 15
 
 /obj/item/melee/coyote/oldkhopesh
 	name = "Old Khopesh"
@@ -575,10 +566,6 @@
 	attack_speed = CLICK_CD_MELEE * 0.7
 	block_chance = 15
 
-/obj/item/melee/classic_baton/coyote/oldquarterstaff/nya
-	name = "Nyampire Quartersnyaff"
-	color = "#FF0000"
-	reflectshot_chance = 95
 
 /* /obj/item/melee/classic_baton/coyote/oldquarterstaff/attack(mob/living/M, mob/living/user)
 	. = ..()
@@ -616,32 +603,7 @@
 		return
 	M.apply_damage(30, STAMINA, "chest", M.run_armor_check("chest", "brute")) Silence, code, be quiet for 1 million years*/
 
-/obj/item/melee/classic_baton/coyote/oldquarterstaff/disputestick
-	name = "Dispute Stick"
-	desc = "A large stick, culturally used for dispute duels, whoevers still standing by the end had a better argument."
-	icon = 'modular_coyote/icons/objects/weapons.dmi'
-	icon_state = "handle"
-	inhand_icon_state = "debranched_stick_old"
-	lefthand_file = 'modular_coyote/icons/objects/lefthand_weapons.dmi'
-	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
-	flags_1 = CONDUCT_1
-	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
-	force = 25
-	throwforce = 0
-	wound_bonus = -20
-	force_unwielded = 0
-	force_wielded = 0
-	stam_dmg = 18
-	cooldown = 13
-	bare_wound_bonus = 0
-	sharpness = SHARP_NONE
-	w_class = WEIGHT_CLASS_TINY
-	attack_verb = list("articulated", "clocked", "bonked")
-	hitsound = 'sound/weapons/smash.ogg'
-	attack_speed = CLICK_CD_MELEE * 0.7
-	block_chance = 15 // Skill based gameplay
-	berryable = TRUE
-	block_parry_data = /datum/block_parry_data/bokken
+
 
 /obj/item/melee/coyote/olddervish
 	name = "Old Dervish Blade"

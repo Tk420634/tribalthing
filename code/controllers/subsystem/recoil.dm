@@ -169,6 +169,8 @@ SUBSYSTEM_DEF(recoil)
 	var/turboreward_wielded_spread = FALSE
 	var/pro_shooter = isatom(shotter) && HAS_TRAIT(shotter,TRAIT_NICE_SHOT)
 	if(istype(shoot))
+		if(!shoot.check_faction(shotter))
+			return rand(-180, 180) // have fun!
 		var/datum/gun_recoil/gunshoot = get_gun_recoil_datum(shoot.recoil_tag)
 		if(!pro_shooter && !shoot.wielded && gunshoot.unwielded_recoil_mod > 1 && gunshoot.scoot > 0)
 			turbofrick_unwielded_spread = TRUE // hodl it right

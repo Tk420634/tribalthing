@@ -824,14 +824,6 @@
 	force = 30
 	backstab_multiplier = 1.1
 
-/obj/item/melee/unarmed/brass/knyackles
-	name = "brass knayckles"
-	desc = "A core of brass, formed around ones hand, covered in a soft material to soften the blow from 'skull cracking' to 'sleepy time'."
-	icon_state = "brass"
-	inhand_icon_state = "brass"
-	attack_verb = list("thumped", "bapd", "hornswaggled")
-	force = 50 //needs to multiply to 150
-	backstab_multiplier = 3
 
 /obj/item/melee/unarmed/brass/spiked
 	name = "spiked knuckes"

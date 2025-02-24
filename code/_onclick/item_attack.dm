@@ -91,6 +91,9 @@
  * * damage_multiplier - what to multiply the damage by
  */
 /obj/item/proc/attack(mob/living/M, mob/living/user, attackchain_flags = NONE, damage_multiplier = 1, damage_override)
+	if(M != user && !faction_check(user))
+		if(prob(50))
+			return attack(M, M, attackchain_flags, damage_multiplier, damage_override) // hit yourself, idiot
 	if(SEND_SIGNAL(src, COMSIG_ITEM_ATTACK, M, user) & COMPONENT_ITEM_NO_ATTACK)
 		return
 	SEND_SIGNAL(user, COMSIG_MOB_ITEM_ATTACK, M, user)
@@ -312,7 +315,9 @@
 	if(damage_override)
 		totitemdamage = damage_override
 	else
-		totitemdamage = max(((pre_attacked_by(I, user) * damage_multiplier) + damage_addition), 0)
+		totitemdamage = pre_attacked_by(I, user)
+	totitemdamage *= damage_multiplier
+	totitemdamage += damage_addition
 	if((user != src) && mob_run_block(I, totitemdamage, "the [I.name]", ((attackchain_flags & ATTACK_IS_PARRY_COUNTERATTACK)? ATTACK_IS_PARRY_COUNTERATTACK : NONE) | ATTACK_TYPE_MELEE, I.armour_penetration, user, null, block_return) & BLOCK_SUCCESS)
 		return FALSE
 	totitemdamage = block_calculate_resultant_damage(totitemdamage, block_return)

@@ -1,5 +1,5 @@
 /obj/item/documents
-	name = "secret documents"
+	name = "secret doguments"
 	desc = "\"Top Secret\" documents."
 	icon = 'icons/obj/bureaucracy.dmi'
 	icon_state = "docs_generic"

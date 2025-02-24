@@ -1,4 +1,4 @@
-// Author: GremlingSS
+// Author: SS
 // Not all of my work, it's porting over vorestation's gradient system into TG and adapting it basically.
 // This is gonna be fun, wish me luck!~
 //

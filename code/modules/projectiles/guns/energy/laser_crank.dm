@@ -333,29 +333,7 @@
 	e_cost = 200 // 25 shots
 
 // TG Repeating Blaster: Spawn tier swarm killer. Easier to charge, but doesn't scale well.
-/obj/item/gun/energy/laser/cranklasergun/tg/spamlaser
-	name = "repeating blaster"
-	desc = "The odd design of the Trident Gammaworks M950 repeating blaster allows for an extremely high number of shots, but the weapon's power is rather low in turn. Before the end of the world, it was marketed as an anti-varmint weapon. Turns out, it's still largely used as one after the end."
-	icon_state = "spamlaser"
-	weapon_weight = GUN_TWO_HAND_ONLY
-	w_class = WEIGHT_CLASS_BULKY
-	cranking_time = 4 SECONDS
-	crank_stamina_cost = 25 // 1/5th stamina
-	crank_power = 500 // 10 cranks
-	cell_type = /obj/item/stock_parts/cell/ammo/mfc/cranklasergun/tg/spamlaser
-	ammo_type = list(/obj/item/ammo_casing/energy/cranklasergun/tg/spamlaser)
-	init_recoil = AUTOCARBINE_RECOIL(1, 1)
-	init_firemodes = list(
-	/datum/firemode/automatic/rpm200,
-	/datum/firemode/semi_auto,
-	)
 
-/obj/item/stock_parts/cell/ammo/mfc/cranklasergun/tg/spamlaser
-	name = "integrated single charge cell"
-	desc = "An integrated single charge cell, typically used as fast discharge power bank for energy weapons."
-	icon = 'icons/fallout/objects/powercells.dmi'
-	icon_state = "mfc-full"
-	maxcharge = 5000
 
 /obj/item/ammo_casing/energy/cranklasergun/tg/spamlaser
 	projectile_type = /obj/item/projectile/beam/cranklasergun/tg/spamlaser
