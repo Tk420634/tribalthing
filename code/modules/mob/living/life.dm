@@ -84,6 +84,8 @@
 
 	handle_passive_heal()
 
+	update_mobility()
+
 	// Everything after this shouldn't process while dead (as of the time of writing)
 	if(stat == DEAD)
 		return FALSE
@@ -280,6 +282,8 @@
 
 /mob/living/proc/handle_passive_heal()
 	if(!SSmobs.autoheal_to_stamina)
+		return
+	if(!ckey)
 		return
 	var/brut = getBruteLoss()
 	var/fire = getFireLoss()

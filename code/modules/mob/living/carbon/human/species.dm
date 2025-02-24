@@ -2042,7 +2042,9 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	if(damage_override)
 		totitemdamage = damage_override
 	else
-		totitemdamage = (H.pre_attacked_by(I, user) * damage_multiplier) + damage_addition
+		totitemdamage = (H.pre_attacked_by(I, user))
+	totitemdamage *= damage_multiplier
+	totitemdamage += damage_addition
 
 	if(!affecting) //Something went wrong. Maybe the limb is missing?
 		affecting = H.get_bodypart(BODY_ZONE_CHEST) //If the limb is missing, or something went terribly wrong, just hit the chest instead

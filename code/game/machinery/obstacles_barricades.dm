@@ -446,9 +446,9 @@
 /////////////////
 
 /obj/structure/obstacle/barbedwire
-	name = "barbed wire"
+	name = "Ticklewire"
 	desc = "Don't walk into this."
-	icon_state = "barbed"
+	icon_state = "barbed" //me too buddy
 	density = FALSE
 	pass_flags_self = PASSTABLE | LETPASSTHROW
 	var/slowdown = 40
@@ -456,7 +456,7 @@
 	var/buildstackamount = 5
 
 /obj/structure/obstacle/barbedwire/end
-	icon_state = "barbed_end"
+	icon_state = "barbed_end" //scene over??? :(
 
 /obj/structure/obstacle/barbedwire/Initialize(mapload)
 	. = ..()

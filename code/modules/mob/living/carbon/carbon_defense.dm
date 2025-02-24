@@ -108,7 +108,9 @@
 	if(damage_override)
 		totitemdamage = damage_override
 	else
-		totitemdamage = max(((pre_attacked_by(I, user) * damage_multiplier) + damage_addition), 0)
+		totitemdamage = max(pre_attacked_by(I, user), 0)
+	totitemdamage *= damage_multiplier
+	totitemdamage += damage_addition
 	var/impacting_zone = (user == src)? check_zone(user.zone_selected) : ran_zone(user.zone_selected)
 	var/list/block_return = list()
 	if((user != src) && (mob_run_block(I, totitemdamage, "the [I]", ((attackchain_flags & ATTACK_IS_PARRY_COUNTERATTACK)? ATTACK_TYPE_PARRY_COUNTERATTACK : NONE) | ATTACK_TYPE_MELEE, I.armour_penetration, user, impacting_zone, block_return) & BLOCK_SUCCESS))

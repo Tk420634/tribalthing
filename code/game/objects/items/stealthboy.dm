@@ -54,6 +54,7 @@
 		"faithless",
 		"vines",
 	)
+	factionbound = list("cat")
 
 /obj/item/stealthboy/Destroy()
 	Deactivate()
@@ -127,7 +128,10 @@
 	if(on)
 		return
 	user.playsound_local(get_turf(src), 'sound/effects/stealthcock_precum.ogg', 15, FALSE)
-	if(!do_after(user, 1 SECONDS, TRUE, src, TRUE, null, null, null, FALSE, TRUE, TRUE, FALSE, FALSE))
+	var/fadetime = 1 SECONDS
+	if(!faction_check(user))
+		fadetime = 5 SECONDS
+	if(!do_after(user, fadetime, TRUE, src, TRUE, null, null, null, TRUE, TRUE, TRUE, FALSE, FALSE))
 		user.playsound_local(get_turf(src), 'sound/effects/stealthcock_cant.ogg', 15, FALSE)
 		to_chat(user, span_alert("[src] failed to activate!"))
 		return
@@ -146,7 +150,10 @@
 			Deactivate()
 		else
 			return
-	animate(user, alpha = 0, time = 0.5 SECONDS)
+	var/fadetime = 0.5 SECONDS
+	if(!faction_check(user))
+		fadetime = 5 SECONDS
+	animate(user, alpha = 0, time = fadetime SECONDS)
 	ADD_TRAIT(user, "stealthinvis", src)
 	applying_to = user
 	to_chat(user, span_notice("You activate \The [src]."))
@@ -186,6 +193,13 @@
 	if(!CanRemainActive())
 		Deactivate()
 		return
+	if(!check_faction(loc))
+		if(prob(2))
+			Deactivate()
+		if(prob(10))
+			do_sparks(4, TRUE, get_turf(src), /datum/effect_system/spark_spread/quantum)
+		if(prob(5))
+			playsound(src, 'sound/f13effects/sunsetsounds/geck.ogg', 100, TRUE)
 	var/delta = world.time - last_tick
 	last_tick = world.time
 	time_left -= delta
@@ -205,6 +219,9 @@
 		return
 	var/delta = world.time - last_tick
 	last_tick = world.time
+	if(!faction_check(loc))
+		if(prob(80))
+			return // lol
 	time_left += (delta * 0.75)
 	if(do_boop && time_left > min_time_left)
 		var/mob/user = loc

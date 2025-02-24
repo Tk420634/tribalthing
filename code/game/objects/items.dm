@@ -204,6 +204,8 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 	var/reflectshot_chance = 0
 
+	var/list/factionbound
+
 /obj/item/Initialize()
 
 	if(attack_verb)
@@ -1248,6 +1250,8 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	resistance_flags |= INDESTRUCTIBLE
 
 /obj/item/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
+	if(!faction_check(owner))
+		return
 	if(!reflectshot_chance)
 		return ..()
 	if(!wielded)
@@ -1314,10 +1318,19 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 				int_mod = 1.50
 			if(9)
 				int_mod = 1.75
-		damage_multiplier = (backstab_multiplier * int_mod) // Apply the backstab multiplier
+		damage_multiplier *= (backstab_multiplier * int_mod) // Apply the backstab multiplier
 		playsound(user.loc, 'sound/effects/dismember.ogg', 50, 1, -1) // Play a backstab sound
 		to_chat(user, "<span class='notice'>You backstab [M]!</span>")
 	. = ..()
+
+/obj/item/proc/check_faction(mob/player)
+	if(!LAZYLEN(factionbound))
+		return TRUE
+	if(!player)
+		return TRUE
+	if(factionbound & player.faction)
+		return TRUE
+	return FALSE
 
 /obj/item/MouseDrop(mob/over, src_location, over_location)
 	var/mob/living/L = usr

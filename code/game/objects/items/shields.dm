@@ -757,19 +757,7 @@ The telescopic shields are legacy and don't fit, but the code might be of intere
 	resistance_flags = null
 
 
-/obj/item/shield/coyote/kiteshield
-	name = "Kite Shield"
-	icon = 'modular_coyote/icons/objects/weapons.dmi'
-	lefthand_file = 'modular_coyote/icons/objects/lefthand_weapons.dmi'
-	righthand_file = 'modular_coyote/icons/objects/righthand_weapons.dmi'
-	item_flags = ITEM_CAN_BLOCK | SLOWS_WHILE_IN_HAND
-	slowdown = 0
-	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
-	icon_state = "imperial_kite"
-	inhand_icon_state = "imperial_kite"
-	
-	max_integrity = -1
-	resistance_flags = null
+
 
 /obj/item/shield/coyote/pegasusshield
 	name = "Pegasus Shield"

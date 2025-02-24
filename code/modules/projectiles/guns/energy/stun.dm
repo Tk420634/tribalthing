@@ -61,15 +61,7 @@
 	use_cyborg_cell = TRUE
 	selfcharge = EGUN_NO_SELFCHARGE
 
-/obj/item/gun/energy/disabler
-	name = "disabler"
-	desc = "A self-defense weapon that exhausts organic targets, weakening them until they collapse."
-	icon_state = "disabler"
-	inhand_icon_state = null
-	ammo_type = list(/obj/item/ammo_casing/energy/disabler)
-	ammo_x_offset = 3
-	weapon_class = WEAPON_CLASS_SMALL
-	weapon_weight = GUN_ONE_HAND_ONLY
+
 
 /obj/item/gun/energy/disabler/debug
 	name = "debug disabler"
