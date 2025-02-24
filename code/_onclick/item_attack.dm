@@ -208,7 +208,7 @@
 		var/dammod = min(damage_override / max(1, force), 1)
 		damage_override += (force_modifier * dammod)
 	if(HAS_TRAIT(user, "stealthinvis"))
-		damage multiplier = min(damage_multiplier, 3)
+		damage_multiplier = min(damage_multiplier, 3)
 	M.attacked_by(src, user, attackchain_flags, damage_multiplier, damage_addition = force_modifier, damage_override = damage_override)
 	if(berry && ishuman(M))
 		do_berry(M, user)
