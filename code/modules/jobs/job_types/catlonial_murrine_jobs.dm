@@ -472,6 +472,7 @@
 	force = 50 //needs to multiply to 150
 	backstab_multiplier = 5
 	factionbound = list("cat")
+	berryable = TRUE
 
 /obj/item/melee/coyote/macuahuitl/nya
 	name = "Nyampire Nyacuahuitl"
@@ -479,6 +480,7 @@
 	reflectshot_chance = 50
 	block_chance = 15
 	factionbound = list("cat")
+	berryable = TRUE
 
 /obj/item/gun/energy/kinetic_accelerator/crossbow/sling
 	name = "sling"
@@ -510,6 +512,7 @@
 	color = "#FF0000"
 	reflectshot_chance = 95
 	factionbound = list("cat")
+	berryable = TRUE
 
 //kittycat gripwire in handcuffs.dm /obj/item/restraints/legcuffs/beartrap
 
