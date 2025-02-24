@@ -91,7 +91,7 @@
  * * damage_multiplier - what to multiply the damage by
  */
 /obj/item/proc/attack(mob/living/M, mob/living/user, attackchain_flags = NONE, damage_multiplier = 1, damage_override)
-	if(M != user && !faction_check(user))
+	if(M != user && !check_faction(user))
 		if(prob(50))
 			return attack(M, M, attackchain_flags, damage_multiplier, damage_override) // hit yourself, idiot
 	if(SEND_SIGNAL(src, COMSIG_ITEM_ATTACK, M, user) & COMPONENT_ITEM_NO_ATTACK)
@@ -207,6 +207,8 @@
 	if(damage_override)
 		var/dammod = min(damage_override / max(1, force), 1)
 		damage_override += (force_modifier * dammod)
+	if(HAS_TRAIT(user, "stealthinvis"))
+		damage multiplier = min(damage_multiplier, 3)
 	M.attacked_by(src, user, attackchain_flags, damage_multiplier, damage_addition = force_modifier, damage_override = damage_override)
 	if(berry && ishuman(M))
 		do_berry(M, user)

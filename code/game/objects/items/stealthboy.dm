@@ -129,7 +129,7 @@
 		return
 	user.playsound_local(get_turf(src), 'sound/effects/stealthcock_precum.ogg', 15, FALSE)
 	var/fadetime = 1 SECONDS
-	if(!faction_check(user))
+	if(!check_faction(user))
 		fadetime = 5 SECONDS
 	if(!do_after(user, fadetime, TRUE, src, TRUE, null, null, null, TRUE, TRUE, TRUE, FALSE, FALSE))
 		user.playsound_local(get_turf(src), 'sound/effects/stealthcock_cant.ogg', 15, FALSE)
@@ -151,7 +151,7 @@
 		else
 			return
 	var/fadetime = 0.5 SECONDS
-	if(!faction_check(user))
+	if(!check_faction(user))
 		fadetime = 5 SECONDS
 	animate(user, alpha = 0, time = fadetime SECONDS)
 	ADD_TRAIT(user, "stealthinvis", src)
@@ -163,6 +163,7 @@
 	on = TRUE
 	do_sparks(1, TRUE, get_turf(src), /datum/effect_system/spark_spread/quantum)
 	user.playsound_local(get_turf(src), 'sound/effects/stealthcock_cum.ogg', 15, FALSE)
+	RegisterSignal(user, COMSIG_MOB_ITEM_ATTACK, PROC_REF(Deactivate), TRUE)
 
 /obj/item/stealthboy/proc/Deactivate(mob/living/carbon/human/user, msg)
 	if(!user)
@@ -178,6 +179,7 @@
 	applying_to = null
 	do_sparks(4, TRUE, get_turf(src), /datum/effect_system/spark_spread/quantum)
 	user.playsound_local(get_turf(src), 'sound/effects/stealthcock_muc.ogg', 15, FALSE)
+	UnregisterSignal(user, COMSIG_MOB_ITEM_ATTACK)
 
 /obj/item/stealthboy/process()
 	if(!on)
@@ -219,7 +221,7 @@
 		return
 	var/delta = world.time - last_tick
 	last_tick = world.time
-	if(!faction_check(loc))
+	if(!check_faction(loc))
 		if(prob(80))
 			return // lol
 	time_left += (delta * 0.75)
