@@ -818,27 +818,27 @@
 	damageMult = initial(damageMult)
 
 //snowblock//
-/datum/emote/living/carbon/snower
-	key = "snow"
-	key_third_person = "snow"
-	restraint_check = TRUE
+// /datum/emote/living/carbon/snower
+// 	key = "snow"
+// 	key_third_person = "snow"
+// 	restraint_check = TRUE
 
 
-/datum/emote/living/carbon/snower/run_emote(mob/user)
-	. = ..()
-	var/MM = text2num(time2text(world.timeofday, "MM"))
-	if(MM == 12 || MM == 1 || MM == 2)
-		if(user.get_active_held_item())
-			to_chat(user, span_warning("Your hands are too full to gather up snow!"))
-			return
-		var/obj/item/stack/sheet/mineral/snow/snow = new(user)
+// /datum/emote/living/carbon/snower/run_emote(mob/user)
+// 	. = ..()
+// 	var/MM = text2num(time2text(world.timeofday, "MM"))
+// 	if(MM == 12 || MM == 1 || MM == 2)
+// 		if(user.get_active_held_item())
+// 			to_chat(user, span_warning("Your hands are too full to gather up snow!"))
+// 			return
+// 		var/obj/item/stack/sheet/mineral/snow/snow = new(user)
 
-		if(user.put_in_hands(snow))
-			to_chat(user, span_notice("You gather up some snow!"))
-		else
-			qdel(snow)
-	else
-		to_chat(user, span_notice("It's the wrong season for snow..."))
+// 		if(user.put_in_hands(snow))
+// 			to_chat(user, span_notice("You gather up some snow!"))
+// 		else
+// 			qdel(snow)
+// 	else
+// 		to_chat(user, span_notice("It's the wrong season for snow..."))
 
 /datum/emote/living/carbon/tsk
 	key = "tsk"
