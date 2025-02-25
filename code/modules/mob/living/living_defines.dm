@@ -179,3 +179,5 @@
 	var/icon_resting
 
 	var/coolshadow = TRUE
+
+	var/stamcrit_timeout = 0

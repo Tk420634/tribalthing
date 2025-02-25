@@ -11,7 +11,56 @@
 /atom/movable/screen/staminas/Click(location,control,params)
 	if(isliving(usr))
 		var/mob/living/L = usr
-		to_chat(L, span_notice("You have <b>[L.getStaminaLoss()]</b> stamina loss.<br>Your stamina buffer can take <b>[L.stambuffer]</b> stamina loss, and recharges at no cost.<br>Your stamina buffer is <b>[(L.stambuffer*(100/L.stambuffer))-(L.bufferedstam*(100/L.stambuffer))]%</b> full."))
+		var/stamheal = 5
+		var/timeout = 7 SECONDS
+		var/end_mod = 1
+		switch(get_stat(STAT_ENDURANCE)) // COOLSTAT IMPLEMENTATION: ENDURANCE
+			if(0, 1)
+				stamheal *= 0.1
+				timeout *= 2
+				end_mod = 4
+			if(2)
+				stamheal *= 0.25
+				timeout *= 1.8
+				end_mod = 3
+			if(3)
+				stamheal *= 0.75
+				timeout *= 1.5
+				end_mod = 2
+			if(4)
+				stamheal *= 1
+				timeout *= 1.25
+				end_mod = 1.5
+			if(5)
+				stamheal *= 1.1
+				timeout *= 1
+				end_mod = 1
+			if(6)
+				stamheal *= 1.5
+				timeout *= 0.9
+				end_mod = 0.90
+			if(7)
+				stamheal *= 2
+				timeout *= 0.85
+				end_mod = 0.80
+			if(8)
+				stamheal *= 2.5
+				timeout *= 0.80
+				end_mod = 0.65
+			if(9)
+				stamheal *= 3.5
+				timeout *= 0.75
+				end_mod = 0.45
+		var/list/words = list()
+		words += "You have around <b>[STAMINA_CRIT - L.getStaminaLoss()]</b> stamina."
+		words += "You'll normally restore [stamheal] stamina every 2-ish seconds."
+		words += "If this goes below zero-ish, you'll be helpless and unable to restore stamina for around <b>[round(timeout*0.1, 0.5)]</b> seconds"
+		var/moreless = end_mod > 1 ? "[span_alert("[end_mod]x")]" : "[span_green("[end_mod]x")]"
+		words += "You also take [moreless] stamina damage, due to your robust toughness and physique."
+		if(prob(0.5))
+			words += "bitch"
+		var/werds = words.Join("<br>")
+		to_chat(L, span_notice("[werds]"))
 
 /atom/movable/screen/staminas/update_icon_state()
 	var/mob/living/carbon/user = hud?.mymob
