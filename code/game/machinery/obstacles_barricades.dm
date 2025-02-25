@@ -237,7 +237,7 @@
 /obj/structure/barricade/wooden/attackby(obj/item/weapon/I, mob/living/user, params)
 	if(!istype(src, /obj/structure/barricade/wooden/planks) && !istype(src, /obj/structure/barricade/wooden/crude) && istype(I, /obj/item/stack/sheet/))
 		if(isfloorturf(loc) || isplatingturf(loc))
-			if(istype(I, /obj/item/stack/sheet/mineral/wood))
+			/* if(istype(I, /obj/item/stack/sheet/mineral/wood))
 				var/obj/item/stack/sheet/mineral/wood/W = I
 				if(W.amount >= 3)
 					var/list/walls = list(
@@ -272,7 +272,8 @@
 								return TRUE
 				else
 					to_chat(user, span_warning("You need atleast 3 wood to build a structure!"))
-			else if(istype(I, /obj/item/stack/sheet/glass))
+			else  */
+			if(istype(I, /obj/item/stack/sheet/glass))
 				var/obj/item/stack/sheet/glass/G = I
 				if(G.amount >= 3)
 					var/list/windows = list(

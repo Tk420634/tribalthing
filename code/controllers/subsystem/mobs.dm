@@ -23,6 +23,7 @@ SUBSYSTEM_DEF(mobs)
 	var/all_damage_is_stamina = TRUE
 	var/autoheal_to_stamina = TRUE
 	var/disable_stambuffer = TRUE
+	var/heal_traumas_when_brain_is_okay = TRUE
 
 	var/distance_where_a_player_needs_to_be_in_for_npcs_to_fight_other_npcs = 12
 
