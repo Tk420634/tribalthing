@@ -305,7 +305,7 @@
 	w_class = WEIGHT_CLASS_NORMAL // suffer
 	multiple_sprites = 2
 	custom_materials = list(/datum/material/iron = MATS_LIGHT_MEGA_CAN_MAGAZINE)
-	factionbound = list("murine")
+	factionbound = list("murrine")
 
 /obj/item/ammo_box/magazine/lewis/foam/empty
 	start_empty = 1
@@ -416,7 +416,7 @@
 	ammo_x_offset = 3
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_ONLY
-	factionbound = list("murine")
+	factionbound = list("murrine")
 
 /obj/item/gun/energy/laser/cranklasergun/tg/spamlaser
 	name = "repeating blaster"
@@ -434,7 +434,7 @@
 	/datum/firemode/automatic/rpm200,
 	/datum/firemode/semi_auto,
 	)
-	factionbound = list("murine")
+	factionbound = list("murrine")
 
 /obj/item/stock_parts/cell/ammo/mfc/cranklasergun/tg/spamlaser
 	name = "integrated single charge cell"
@@ -442,7 +442,7 @@
 	icon = 'icons/fallout/objects/powercells.dmi'
 	icon_state = "mfc-full"
 	maxcharge = 5000
-	factionbound = list("murine")
+	factionbound = list("murrine")
 
 //Flashbangs are in flashbang.dm /obj/item/grenade/flashbang, rangers also get smokebombs /obj/item/grenade/smokebomb
 
@@ -540,7 +540,7 @@
 	weight_class_on = WEIGHT_CLASS_BULKY
 	total_mass = TOTAL_MASS_NORMAL_ITEM
 	bare_wound_bonus = -20
-	factionbound = list("murine")
+	factionbound = list("murrine")
 
 /obj/item/melee/classic_baton/telescopic/attack_self(mob/user)
 	on = !on
