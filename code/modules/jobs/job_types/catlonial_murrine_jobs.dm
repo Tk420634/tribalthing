@@ -462,6 +462,8 @@
 	inhand_icon_state = "imperial_kite"
 	max_integrity = -1
 	resistance_flags = null
+	reflectshot_chance = 95
+	slowdown = 0.1
 
 /obj/item/melee/unarmed/brass/knyackles
 	name = "brass knayckles"
@@ -477,7 +479,7 @@
 /obj/item/melee/coyote/macuahuitl/nya
 	name = "Nyampire Nyacuahuitl"
 	desc = "A squishy sort of not quite sword. Made for booping fools in the noggin."
-	reflectshot_chance = 50
+	reflectshot_chance = 35
 	block_chance = 15
 	factionbound = list("cat")
 	berryable = TRUE
@@ -513,6 +515,7 @@
 	reflectshot_chance = 95
 	factionbound = list("cat")
 	berryable = TRUE
+	slowdown = 0.1
 
 //kittycat gripwire in handcuffs.dm /obj/item/restraints/legcuffs/beartrap
 
