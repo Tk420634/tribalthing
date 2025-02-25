@@ -62,7 +62,8 @@
 					timeout *= 0.75
 			stamcrit_timeout = world.time + timeout
 			to_chat(src, span_userdanger("You're knocked down and totally helpless~"))
-			var/timez = span_green("[round(timeout*0.1, 0.5)] seconds")
+			var/tmtt = round(timeout*0.1, 0.5)
+			var/timez = span_green("[tmtt] seconds")
 			to_chat(src, span_notice("If left alone, you should start feeling better in about [timez]!"))
 	if((combat_flags & COMBAT_FLAG_HARD_STAMCRIT) && stam_damage <= STAMINA_SOFTCRIT)
 		to_chat(src, span_notice("You don't feel nearly as exhausted anymore."))
