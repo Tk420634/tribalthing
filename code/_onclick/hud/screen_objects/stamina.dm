@@ -14,7 +14,7 @@
 		var/stamheal = 5
 		var/timeout = 7 SECONDS
 		var/end_mod = 1
-		switch(get_stat(STAT_ENDURANCE)) // COOLSTAT IMPLEMENTATION: ENDURANCE
+		switch(L.get_stat(STAT_ENDURANCE)) // COOLSTAT IMPLEMENTATION: ENDURANCE
 			if(0, 1)
 				stamheal *= 0.1
 				timeout *= 2
