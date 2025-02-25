@@ -2191,7 +2191,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 			return
 		user.visible_message(span_notice("[user] forces [p_them()]self up to [p_their()] feet!"), span_notice("You force yourself up to your feet!"))
 		user.set_resting(FALSE, TRUE)
-		user.adjustStaminaLossBuffered(user.stambuffer) //Rewards good stamina management by making it easier to instantly get up from resting
+		user.adjustStaminaLoss(20) //Rewards good stamina management by making it easier to instantly get up from resting
 		playsound(user, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
 
 /datum/species/proc/altdisarm(mob/living/carbon/human/user, mob/living/carbon/human/target, datum/martial_art/attacker_style)

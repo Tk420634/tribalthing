@@ -522,26 +522,30 @@ GLOBAL_LIST_INIT(ballmer_windows_me_msg, list("Yo man, what if, we like, uh, put
 	if(can_regen_stamina())
 		if(stamcrit_timeout > 1)
 			to_chat(src, span_green("You start to feel less helpless, you should be able to stand up... sooner or later!"))
+			stamcrit_timeout = 0
+			var/deficit = getStaminaLoss() - STAMINA_CRIT
+			adjustStaminaLoss(-deficit + 5)
 		var/stamheal = 5
-		switch(get_stat(STAT_ENDURANCE)) // COOLSTAT IMPLEMENTATION: ENDURANCE
-			if(0, 1)
-				stamheal *= 0.1
-			if(2)
-				stamheal *= 0.25
-			if(3)
-				stamheal *= 0.75
-			if(4)
-				stamheal *= 1
-			if(5)
-				stamheal *= 1.1
-			if(6)
-				stamheal *= 1.5
-			if(7)
-				stamheal *= 2
-			if(8)
-				stamheal *= 2.5
-			if(9)
-				stamheal *= 3.5
+		if(!(combat_flags & COMBAT_FLAG_HARD_STAMCRIT))
+			switch(get_stat(STAT_ENDURANCE)) // COOLSTAT IMPLEMENTATION: ENDURANCE
+				if(0, 1)
+					stamheal *= 0.1
+				if(2)
+					stamheal *= 0.25
+				if(3)
+					stamheal *= 0.75
+				if(4)
+					stamheal *= 1
+				if(5)
+					stamheal *= 1.1
+				if(6)
+					stamheal *= 1.2
+				if(7)
+					stamheal *= 1.35
+				if(8)
+					stamheal *= 1.5
+				if(9)
+					stamheal *= 1.7
 		adjustStaminaLoss(-stamheal)
 
 	// if(!(combat_flags & COMBAT_FLAG_HARD_STAMCRIT) && incomingstammult != 1)

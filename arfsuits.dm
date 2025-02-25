@@ -1939,8 +1939,8 @@
 ///////////////////
 
 /obj/item/clothing/suit/armor/light/leather
-	name = "leather armor"
-	desc = "Before the war motorcycle-football was one of the largest specator sports in America. This armor copies the style of armor used by the players,	using leather boiled in corn oil to make hard sheets to emulate the light weight and toughness of the original polymer armor."
+	name = "murrine light combat armor"
+	desc = "The Catlonial Murrines light combat armor Mk. I, designed to resist rocks, and sticks.  It's made out of faux naugahyde and of military quality.  Which is to say its fake knock off leather and falling apart when brand new!  Perfection!"
 	icon = 'icons/fallout/clothing/armored_light.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 	icon_state = "leather_armor"

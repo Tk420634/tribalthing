@@ -43,13 +43,13 @@
 			var/timeout = 7 SECONDS
 			switch(get_stat(STAT_ENDURANCE)) // COOLSTAT IMPLEMENTATION: ENDURANCE
 				if(0, 1)
-					timeout *= 2
-				if(2)
-					timeout *= 1.8
-				if(3)
 					timeout *= 1.5
+				if(2)
+					timeout *= 1.45
+				if(3)
+					timeout *= 1.35
 				if(4)
-					timeout *= 1.25
+					timeout *= 1.2
 				if(5)
 					timeout *= 1
 				if(6)

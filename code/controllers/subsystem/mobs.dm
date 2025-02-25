@@ -22,6 +22,7 @@ SUBSYSTEM_DEF(mobs)
 	var/use_pvp_check = FALSE
 	var/all_damage_is_stamina = TRUE
 	var/autoheal_to_stamina = TRUE
+	var/disable_stambuffer = TRUE
 
 	var/distance_where_a_player_needs_to_be_in_for_npcs_to_fight_other_npcs = 12
 
