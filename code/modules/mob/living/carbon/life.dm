@@ -523,7 +523,7 @@ GLOBAL_LIST_INIT(ballmer_windows_me_msg, list("Yo man, what if, we like, uh, put
 		if(stamcrit_timeout > 1)
 			to_chat(src, span_green("You start to feel less helpless, you should be able to stand up... sooner or later!"))
 			stamcrit_timeout = 0
-			var/deficit = getStaminaLoss() - STAMINA_CRIT
+			var/deficit = getStaminaLoss() - STAMINA_SOFTCRIT
 			adjustStaminaLoss(-deficit + 5)
 		var/stamheal = 5
 		if(!(combat_flags & COMBAT_FLAG_HARD_STAMCRIT))
@@ -742,9 +742,12 @@ GLOBAL_LIST_INIT(ballmer_windows_me_msg, list("Yo man, what if, we like, uh, put
 ////////////////
 
 /mob/living/carbon/proc/handle_brain_damage()
+	var/bdamage = getOrganLoss(ORGAN_SLOT_BRAIN)
 	for(var/T in get_traumas())
 		var/datum/brain_trauma/BT = T
 		BT.on_life()
+		if(SSmobs.heal_traumas_when_brain_is_okay && bdamage < 1 && prob(5))
+			cure_trauma_type(BT.type)
 
 /////////////////////////////////////
 //MONKEYS WITH TOO MUCH CHOLOESTROL//

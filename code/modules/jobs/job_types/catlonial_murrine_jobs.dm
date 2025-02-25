@@ -417,6 +417,8 @@
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_ONLY
 	factionbound = list("murrine")
+	selfcharge = TRUE
+	self_recharge_duration = 5 SECONDS
 
 /obj/item/gun/energy/laser/cranklasergun/tg/spamlaser
 	name = "repeating blaster"

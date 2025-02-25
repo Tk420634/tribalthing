@@ -1252,8 +1252,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ambientlighting/building/catgirls_score_here)
 "sz" = (
-/obj/structure/barricade/barswindow,
 /obj/structure/table/wood/settler,
+/obj/structure/barricade/bars,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ambientlighting/building/catgirls_score_here)
 "sE" = (
@@ -3406,8 +3406,8 @@
 	},
 /area/f13/ambientlighting/building)
 "Vh" = (
-/obj/structure/barricade/barswindow,
 /obj/structure/table/wood/settler,
+/obj/structure/barricade/bars,
 /turf/open/floor/plasteel/white,
 /area/f13/ambientlighting/building)
 "Vj" = (
