@@ -123,6 +123,7 @@
 	icon = 'icons/mob/screen_gen.dmi'
 	screen_loc = "WEST,SOUTH to EAST,NORTH"
 	icon_state = "flash"
+	color = "#000000"
 
 /atom/movable/screen/fullscreen/flash/static
 	icon = 'icons/mob/screen_gen.dmi'

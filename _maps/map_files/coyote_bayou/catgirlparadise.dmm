@@ -1245,6 +1245,11 @@
 "sh" = (
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ambientlighting/building/catgirls_score_here)
+"sz" = (
+/obj/structure/barricade/barswindow,
+/obj/structure/table/wood/settler,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/ambientlighting/building/catgirls_score_here)
 "sE" = (
 /obj/structure/table/wood/settler,
 /obj/item/reagent_containers/food/condiment/milk,
@@ -3393,6 +3398,11 @@
 /turf/open/indestructible/ground/outside/dirt{
 	color = "#BBBBBB"
 	},
+/area/f13/ambientlighting/building)
+"Vh" = (
+/obj/structure/barricade/barswindow,
+/obj/structure/table/wood/settler,
+/turf/open/floor/plasteel/white,
 /area/f13/ambientlighting/building)
 "Vj" = (
 /obj/structure/fence/door,
@@ -36608,7 +36618,7 @@ Ei
 UR
 Ei
 Ei
-ne
+Vh
 ux
 ux
 ux
@@ -37555,7 +37565,7 @@ jM
 jM
 jM
 la
-yR
+sz
 sh
 sh
 sh

@@ -248,7 +248,7 @@
 	var/datum/reagents/R = target.reagents
 	switch(berry)
 		if("tipsy")
-			R.add_reagent(/datum/reagent/consumable/ethanol/atomicbomb, 5)
+			R.add_reagent(/datum/reagent/consumable/ethanol/gargle_blaster, 20)
 			if(prob(5))
 				R.add_reagent(/datum/reagent/toxin/bonehurtingjuice, 10)
 			to_chat(target, span_userdanger("Oh no! That [src] had some tipsy berry on it! You feel tipsy!"))
