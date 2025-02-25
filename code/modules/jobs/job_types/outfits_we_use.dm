@@ -246,6 +246,7 @@
 	head = /obj/item/clothing/head/helmet/swat
 	belt = /obj/item/storage/belt/army
 	uniform = /obj/item/clothing/under/f13/enclave/peacekeeper
+	suit = /obj/item/clothing/suit/armor/light/leather
 	gloves = /obj/item/clothing/gloves/f13/leather/fingerless
 	shoes = /obj/item/clothing/shoes/jackboots
 	backpack_contents = list(

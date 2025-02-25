@@ -129,7 +129,7 @@
 	inhand_icon_state = "sneakboots"
 
 /obj/item/clothing/shoes/jackboots/fast
-	slowdown = -1
+	slowdown = -0.5
 
 /obj/item/clothing/shoes/winterboots
 	name = "winter boots"

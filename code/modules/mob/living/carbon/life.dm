@@ -506,15 +506,51 @@ GLOBAL_LIST_INIT(ballmer_windows_me_msg, list("Yo man, what if, we like, uh, put
 											"We're US Government but we need to unlock nano parts, what's the deal with that?"
 											))
 
+/mob/living/carbon/proc/can_regen_stamina()
+	var/scrit = combat_flags & COMBAT_FLAG_HARD_STAMCRIT
+	if(scrit)
+		return (world.time > stamcrit_timeout)
+	return TRUE
+
 //this updates all special effects: stun, sleeping, knockdown, druggy, stuttering, etc..
 /mob/living/carbon/handle_status_effects()
 	..()
-	if(getStaminaLoss())		//CIT CHANGE - prevents stamina regen while combat mode is active (Stam regen is currently enabled)
-		adjustStaminaLoss(!CHECK_MOBILITY(src, MOBILITY_STAND) ? ((combat_flags & COMBAT_FLAG_HARD_STAMCRIT) ? STAM_RECOVERY_STAM_CRIT : STAM_RECOVERY_RESTING) : STAM_RECOVERY_NORMAL)
+	// if(getStaminaLoss())		//CIT CHANGE - prevents stamina regen while combat mode is active (Stam regen is currently enabled)
+		// adjustStaminaLoss(!CHECK_MOBILITY(src, MOBILITY_STAND) ? ((combat_flags & COMBAT_FLAG_HARD_STAMCRIT) ? STAM_RECOVERY_STAM_CRIT : STAM_RECOVERY_RESTING) : STAM_RECOVERY_NORMAL)
+		// adjustStaminaLoss()
 
-	if(!(combat_flags & COMBAT_FLAG_HARD_STAMCRIT) && incomingstammult != 1)
-		incomingstammult = max(0.01, incomingstammult)
-		incomingstammult = min(1, incomingstammult*2)
+	if(can_regen_stamina())
+		if(stamcrit_timeout > 1)
+			to_chat(src, span_green("You start to feel less helpless, you should be able to stand up... sooner or later!"))
+			stamcrit_timeout = 0
+			var/deficit = getStaminaLoss() - STAMINA_CRIT
+			adjustStaminaLoss(-deficit + 5)
+		var/stamheal = 5
+		if(!(combat_flags & COMBAT_FLAG_HARD_STAMCRIT))
+			switch(get_stat(STAT_ENDURANCE)) // COOLSTAT IMPLEMENTATION: ENDURANCE
+				if(0, 1)
+					stamheal *= 0.1
+				if(2)
+					stamheal *= 0.25
+				if(3)
+					stamheal *= 0.75
+				if(4)
+					stamheal *= 1
+				if(5)
+					stamheal *= 1.1
+				if(6)
+					stamheal *= 1.2
+				if(7)
+					stamheal *= 1.35
+				if(8)
+					stamheal *= 1.5
+				if(9)
+					stamheal *= 1.7
+		adjustStaminaLoss(-stamheal)
+
+	// if(!(combat_flags & COMBAT_FLAG_HARD_STAMCRIT) && incomingstammult != 1)
+	// 	incomingstammult = max(0.01, incomingstammult)
+	// 	incomingstammult = min(1, incomingstammult*2)
 
 	//CIT CHANGES START HERE. STAMINA BUFFER STUFF
 	if(bufferedstam && world.time > stambufferregentime)

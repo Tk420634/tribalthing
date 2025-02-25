@@ -1467,7 +1467,7 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 		remove_movespeed_modifier(/datum/movespeed_modifier/damage_slowdown_flying)
 		// remove_movespeed_modifier(/datum/movespeed_modifier/wound_slowdown)
 		return
-	var/stambufferinfluence = (bufferedstam*(100/stambuffer))*0.2 //CIT CHANGE - makes stamina buffer influence movedelay
+	var/stambufferinfluence = SSmobs.disable_stambuffer ? 0 : (bufferedstam*(100/stambuffer))*0.2 //CIT CHANGE - makes stamina buffer influence movedelay
 	if(!HAS_TRAIT(src, TRAIT_IGNOREDAMAGESLOWDOWN))	//if we want to ignore slowdown from damage, but not from equipment
 		var/health_deficiency = ((maxHealth + stambufferinfluence) - health + (getStaminaLoss()*0.75))//CIT CHANGE - reduces the impact of staminaloss and makes stamina buffer influence it
 		var/wound_slowness = 0

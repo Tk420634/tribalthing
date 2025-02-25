@@ -26,22 +26,46 @@
 		pixel_z = pseudo_z_axis
 
 /mob/living/carbon/update_stamina()
-	var/total_health = getStaminaLoss()
-	if(total_health >= STAMINA_SOFTCRIT)
+	var/stam_damage = getStaminaLoss()
+	if(stam_damage >= STAMINA_SOFTCRIT)
 		if(!(combat_flags & COMBAT_FLAG_SOFT_STAMCRIT))
 			ENABLE_BITFIELD(combat_flags, COMBAT_FLAG_SOFT_STAMCRIT)
 	else
 		if(combat_flags & COMBAT_FLAG_SOFT_STAMCRIT)
 			DISABLE_BITFIELD(combat_flags, COMBAT_FLAG_SOFT_STAMCRIT)
-	if(total_health)
-		if(!(combat_flags & COMBAT_FLAG_HARD_STAMCRIT) && total_health >= STAMINA_CRIT && !stat)
-			to_chat(src, span_notice("You're too exhausted to keep going..."))
+	if(stam_damage)
+		if(!(combat_flags & COMBAT_FLAG_HARD_STAMCRIT) && stam_damage >= STAMINA_CRIT && !stat)
 			set_resting(TRUE, FALSE, FALSE)
 			SEND_SIGNAL(src, COMSIG_DISABLE_COMBAT_MODE)
 			ENABLE_BITFIELD(combat_flags, COMBAT_FLAG_HARD_STAMCRIT)
 			filters += CIT_FILTER_STAMINACRIT
 			update_mobility()
-	if((combat_flags & COMBAT_FLAG_HARD_STAMCRIT) && total_health <= STAMINA_SOFTCRIT)
+			var/timeout = 7 SECONDS
+			switch(get_stat(STAT_ENDURANCE)) // COOLSTAT IMPLEMENTATION: ENDURANCE
+				if(0, 1)
+					timeout *= 1.5
+				if(2)
+					timeout *= 1.45
+				if(3)
+					timeout *= 1.35
+				if(4)
+					timeout *= 1.2
+				if(5)
+					timeout *= 1
+				if(6)
+					timeout *= 0.9
+				if(7)
+					timeout *= 0.85
+				if(8)
+					timeout *= 0.80
+				if(9)
+					timeout *= 0.75
+			stamcrit_timeout = world.time + timeout
+			to_chat(src, span_userdanger("You're knocked down and totally helpless~"))
+			var/tmtt = round(timeout*0.1, 0.5)
+			var/timez = span_green("[tmtt] seconds")
+			to_chat(src, span_notice("If left alone, you should start feeling better in about [timez]!"))
+	if((combat_flags & COMBAT_FLAG_HARD_STAMCRIT) && stam_damage <= STAMINA_SOFTCRIT)
 		to_chat(src, span_notice("You don't feel nearly as exhausted anymore."))
 		DISABLE_BITFIELD(combat_flags, COMBAT_FLAG_HARD_STAMCRIT | COMBAT_FLAG_SOFT_STAMCRIT)
 		filters -= CIT_FILTER_STAMINACRIT
