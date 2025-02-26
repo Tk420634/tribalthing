@@ -1254,8 +1254,10 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 		return
 	if(!reflectshot_chance)
 		return ..()
-	if(!wielded)
-		return NONE
+	// if(!wielded)
+	// 	return NONE
+	if(owner.get_active_held_item() != src && !owner.get_inactive_held_item() != src )
+		return ..()
 	if(!prob(reflectshot_chance))
 		return ..()
 	if(attack_type & ATTACK_TYPE_PROJECTILE)

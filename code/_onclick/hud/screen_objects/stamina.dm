@@ -11,46 +11,9 @@
 /atom/movable/screen/staminas/Click(location,control,params)
 	if(isliving(usr))
 		var/mob/living/L = usr
-		var/stamheal = 5
-		var/timeout = 7 SECONDS
-		var/end_mod = 1
-		switch(L.get_stat(STAT_ENDURANCE)) // COOLSTAT IMPLEMENTATION: ENDURANCE
-			if(0, 1)
-				stamheal *= 0.1
-				timeout *= 2
-				end_mod = 4
-			if(2)
-				stamheal *= 0.25
-				timeout *= 1.8
-				end_mod = 3
-			if(3)
-				stamheal *= 0.75
-				timeout *= 1.5
-				end_mod = 2
-			if(4)
-				stamheal *= 1
-				timeout *= 1.25
-				end_mod = 1.5
-			if(5)
-				stamheal *= 1.1
-				timeout *= 1
-				end_mod = 1
-			if(6)
-				stamheal *= 1.5
-				timeout *= 0.9
-				end_mod = 0.90
-			if(7)
-				stamheal *= 2
-				timeout *= 0.85
-				end_mod = 0.80
-			if(8)
-				stamheal *= 2.5
-				timeout *= 0.80
-				end_mod = 0.65
-			if(9)
-				stamheal *= 3.5
-				timeout *= 0.75
-				end_mod = 0.45
+		var/stamheal = SSmobs.stat_roll_stamina_recovery_per_tick(L)
+		var/timeout = SSmobs.stat_roll_stamcrit_timeout(L)
+		var/end_mod = SSmobs.stat_roll_incoming_stamina_damage(L)
 		var/list/words = list()
 		words += "You have around <b>[STAMINA_CRIT - L.getStaminaLoss()]</b> stamina."
 		words += "You'll normally restore [stamheal] stamina every 2-ish seconds."

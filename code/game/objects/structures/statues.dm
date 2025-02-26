@@ -272,6 +272,7 @@
 
 /obj/structure/statue/wood
 	obj_integrity = 150
+	resistance_flags = INDESTRUCTIBLE
 	material_drop_type = /obj/item/stack/sheet/mineral/wood
 
 /obj/structure/statue/wood/headstonewood

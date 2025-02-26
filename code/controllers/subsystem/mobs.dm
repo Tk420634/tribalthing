@@ -107,6 +107,87 @@ SUBSYSTEM_DEF(mobs)
 		candidates |= mpath
 	return candidates
 
+
+
+///////////////////// STATS
+/datum/controller/subsystem/mobs/proc/stat_roll_incoming_stamina_damage(mob/living/mob)
+	if(!isliving(mob))
+		return 1
+	var/endmod = 1
+	switch(mob.get_stat(STAT_ENDURANCE)) // COOLSTAT IMPLEMENTATION: ENDURANCE
+		if(0, 1)
+			endmod = 4
+		if(2)
+			endmod = 3
+		if(3)
+			endmod = 2
+		if(4)
+			endmod = 1.5
+		if(5)
+			endmod = 1
+		if(6)
+			endmod = 0.90
+		if(7)
+			endmod = 0.80
+		if(8)
+			endmod = 0.65
+		if(9)
+			endmod = 0.45
+	return endmod
+
+/datum/controller/subsystem/mobs/proc/stat_roll_stamina_recovery_per_tick(mob/living/mob)
+	if(!isliving(mob))
+		return 5
+	var/stamheal = 5
+	switch(mob.get_stat(STAT_ENDURANCE)) // COOLSTAT IMPLEMENTATION: ENDURANCE
+		if(0, 1)
+			stamheal *= 0.1
+		if(2)
+			stamheal *= 0.25
+		if(3)
+			stamheal *= 0.75
+		if(4)
+			stamheal *= 1
+		if(5)
+			stamheal *= 1.1
+		if(6)
+			stamheal *= 1.2
+		if(7)
+			stamheal *= 1.35
+		if(8)
+			stamheal *= 1.5
+		if(9)
+			stamheal *= 1.7
+	return stamheal
+
+/datum/controller/subsystem/mobs/proc/stat_roll_stamcrit_timeout(mob/living/mob)
+	if(!isliving(mob))
+		return 7 SECONDS
+	var/timeout = 7 SECONDS
+	switch(mob.get_stat(STAT_ENDURANCE)) // COOLSTAT IMPLEMENTATION: ENDURANCE
+		if(0, 1)
+			timeout *= 1.5
+		if(2)
+			timeout *= 1.45
+		if(3)
+			timeout *= 1.35
+		if(4)
+			timeout *= 1.2
+		if(5)
+			timeout *= 1
+		if(6)
+			timeout *= 0.9
+		if(7)
+			timeout *= 0.85
+		if(8)
+			timeout *= 0.80
+		if(9)
+			timeout *= 0.75
+	return timeout
+
+
+
+
 ////////////////////mob tally////////////////////
 /datum/mob_tally
 	var/mob/living/mymob
