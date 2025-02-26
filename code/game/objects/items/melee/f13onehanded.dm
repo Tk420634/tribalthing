@@ -754,7 +754,7 @@
 	lefthand_file = 'icons/fallout/onmob/weapons/melee1h_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/melee1h_righthand.dmi'
 	attack_speed = CLICK_CD_MELEE * 0.9
-	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_GLOVES | INV_SLOTBIT_BACK
+	slot_flags = INV_SLOTBIT_BELT | INV_SLOTBIT_BACK
 	w_class = WEIGHT_CLASS_SMALL
 	flags_1 = CONDUCT_1
 	sharpness = SHARP_NONE
@@ -762,8 +762,8 @@
 	throwforce = 10
 	throw_range = 5
 	attack_verb = list("punched", "jabbed", "whacked")
-	var/can_adjust_unarmed = TRUE
-	var/unarmed_adjusted = TRUE
+	var/can_adjust_unarmed = FALSE //fuck unarmed fuck unarmed fuck unarmed fuck unarmed fuck unarmed fuck unarmed 
+	var/unarmed_adjusted = FALSE
 
 /obj/item/melee/unarmed/equipped(mob/user, slot)
 	. = ..()
