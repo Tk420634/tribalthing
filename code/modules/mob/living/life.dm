@@ -34,6 +34,7 @@
 		stat_intelligence = 1
 		stat_agility = 1
 		stat_luck = 1
+		message_admins(span_userdanger("HEY [src] has invalidly high stats! Gibbing them to be sure!"))
 		gib()
 		return
 	

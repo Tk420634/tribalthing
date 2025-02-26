@@ -128,3 +128,79 @@ SUBSYSTEM_DEF(mobs)
 		// message_admins("ERROR: mob_tally for [mymob] num_in_play < 0")
 		num_in_play = 0
 
+///////////////////// STATS
+/datum/mob_tally/proc/stat_roll_incoming_stamina_damage(mob/living/mob)
+	if(!isliving(mob))
+		return 1
+	var/endmod = 1
+	switch(mob.get_stat(STAT_ENDURANCE)) // COOLSTAT IMPLEMENTATION: ENDURANCE
+		if(0, 1)
+			end_mod = 4
+		if(2)
+			end_mod = 3
+		if(3)
+			end_mod = 2
+		if(4)
+			end_mod = 1.5
+		if(5)
+			end_mod = 1
+		if(6)
+			end_mod = 0.90
+		if(7)
+			end_mod = 0.80
+		if(8)
+			end_mod = 0.65
+		if(9)
+			end_mod = 0.45
+	return end_mod
+
+/datum/mob_tally/proc/stat_roll_stamina_recovery_per_tick(mob/living/mob)
+	if(!isliving(mob))
+		return 5
+	var/stamheal = 5
+	switch(mob.get_stat(STAT_ENDURANCE)) // COOLSTAT IMPLEMENTATION: ENDURANCE
+		if(0, 1)
+			stamheal *= 0.1
+		if(2)
+			stamheal *= 0.25
+		if(3)
+			stamheal *= 0.75
+		if(4)
+			stamheal *= 1
+		if(5)
+			stamheal *= 1.1
+		if(6)
+			stamheal *= 1.2
+		if(7)
+			stamheal *= 1.35
+		if(8)
+			stamheal *= 1.5
+		if(9)
+			stamheal *= 1.7
+	return stamheal
+
+/datum/mob_tally/proc/stat_roll_stamcrit_timeout(mob/living/mob)
+	if(!isliving(mob))
+		return 7 SECONDS
+	var/timeout = 7 SECONDS
+	switch(mob.get_stat(STAT_ENDURANCE)) // COOLSTAT IMPLEMENTATION: ENDURANCE
+		if(0, 1)
+			timeout *= 1.5
+		if(2)
+			timeout *= 1.45
+		if(3)
+			timeout *= 1.35
+		if(4)
+			timeout *= 1.2
+		if(5)
+			timeout *= 1
+		if(6)
+			timeout *= 0.9
+		if(7)
+			timeout *= 0.85
+		if(8)
+			timeout *= 0.80
+		if(9)
+			timeout *= 0.75
+	return timeout
+
