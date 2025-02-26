@@ -417,8 +417,11 @@
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_ONLY
 	factionbound = list("murrine")
+	ramp_up_max = 0.33 // damage multi
+	ramp_up_start = 8 // tiles
+	ramp_up_end = 16 // also tiles
 	selfcharge = TRUE
-	self_recharge_duration = 5 SECONDS
+	self_recharge_duration = 0.8 SECONDS
 
 /obj/item/gun/energy/laser/cranklasergun/tg/spamlaser
 	name = "repeating blaster"

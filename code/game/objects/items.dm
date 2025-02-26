@@ -1256,7 +1256,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 		return ..()
 	// if(!wielded)
 	// 	return NONE
-	if(owner.get_active_held_item() != src && !owner.get_inactive_held_item() != src )
+	if(!owner.is_holding(src))
 		return ..()
 	if(!prob(reflectshot_chance))
 		return ..()

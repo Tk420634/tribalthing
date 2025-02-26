@@ -133,10 +133,11 @@
 	name = "disabler beam"
 	icon_state = "omnilaser"
 	damage = 36 // Citadel change for balance from 36
-	damage_list = list("31" = 30, "36" = 50, "41" = 20)
+	damage_list = list( "30" = 20, "33" = 64, "40" = 15, "50" = 1)
 	damage_type = STAMINA
 	flag = "energy"
 	hitsound = 'sound/weapons/tap.ogg'
+	stamina = 40
 	eyeblur = 0
 	pixels_per_second = TILES_TO_PIXELS(16.667)
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/blue_laser
