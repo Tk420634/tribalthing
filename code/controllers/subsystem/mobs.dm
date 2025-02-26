@@ -126,19 +126,19 @@ SUBSYSTEM_DEF(mobs)
 		if(5)
 			endmod = 1
 		if(6)
-			endmod = 0.90
+			endmod = 0.95
 		if(7)
-			endmod = 0.80
+			endmod = 0.90
 		if(8)
-			endmod = 0.65
+			endmod = 0.85
 		if(9)
-			endmod = 0.45
+			endmod = 0.80
 	return endmod
 
 /datum/controller/subsystem/mobs/proc/stat_roll_stamina_recovery_per_tick(mob/living/mob)
+	var/stamheal = 3
 	if(!isliving(mob))
-		return 5
-	var/stamheal = 5
+		return stamheal
 	switch(mob.get_stat(STAT_ENDURANCE)) // COOLSTAT IMPLEMENTATION: ENDURANCE
 		if(0, 1)
 			stamheal *= 0.1
@@ -153,11 +153,11 @@ SUBSYSTEM_DEF(mobs)
 		if(6)
 			stamheal *= 1.2
 		if(7)
-			stamheal *= 1.35
+			stamheal *= 1.25
 		if(8)
-			stamheal *= 1.5
+			stamheal *= 1.35
 		if(9)
-			stamheal *= 1.7
+			stamheal *= 1.5
 	return stamheal
 
 /datum/controller/subsystem/mobs/proc/stat_roll_stamcrit_timeout(mob/living/mob)
