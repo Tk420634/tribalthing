@@ -548,6 +548,7 @@
 	bare_wound_bonus = -20
 	factionbound = list("murrine")
 	backstab_multiplier = 1.7
+	attack_speed = CLICK_CD_MELEE * 0.7
 
 /obj/item/melee/classic_baton/telescopic/attack_self(mob/user)
 	on = !on
