@@ -107,54 +107,35 @@ SUBSYSTEM_DEF(mobs)
 		candidates |= mpath
 	return candidates
 
-////////////////////mob tally////////////////////
-/datum/mob_tally
-	var/mob/living/mymob
-	var/num_in_play = 0
 
-/datum/mob_tally/New(mob/living/mymob)
-	src.mymob = mymob
-
-/datum/mob_tally/proc/mob_spawned(mob/living/mob)
-	if(!mob || !istype(mob, mymob))
-		return
-	num_in_play++
-
-/datum/mob_tally/proc/mob_despawned(mob/living/mob)
-	if(!mob || !istype(mob, mymob))
-		return
-	num_in_play--
-	if(num_in_play < 0)
-		// message_admins("ERROR: mob_tally for [mymob] num_in_play < 0")
-		num_in_play = 0
 
 ///////////////////// STATS
-/datum/mob_tally/proc/stat_roll_incoming_stamina_damage(mob/living/mob)
+/datum/controller/subsystem/mobs/proc/stat_roll_incoming_stamina_damage(mob/living/mob)
 	if(!isliving(mob))
 		return 1
 	var/endmod = 1
 	switch(mob.get_stat(STAT_ENDURANCE)) // COOLSTAT IMPLEMENTATION: ENDURANCE
 		if(0, 1)
-			end_mod = 4
+			endmod = 4
 		if(2)
-			end_mod = 3
+			endmod = 3
 		if(3)
-			end_mod = 2
+			endmod = 2
 		if(4)
-			end_mod = 1.5
+			endmod = 1.5
 		if(5)
-			end_mod = 1
+			endmod = 1
 		if(6)
-			end_mod = 0.90
+			endmod = 0.90
 		if(7)
-			end_mod = 0.80
+			endmod = 0.80
 		if(8)
-			end_mod = 0.65
+			endmod = 0.65
 		if(9)
-			end_mod = 0.45
-	return end_mod
+			endmod = 0.45
+	return endmod
 
-/datum/mob_tally/proc/stat_roll_stamina_recovery_per_tick(mob/living/mob)
+/datum/controller/subsystem/mobs/proc/stat_roll_stamina_recovery_per_tick(mob/living/mob)
 	if(!isliving(mob))
 		return 5
 	var/stamheal = 5
@@ -179,7 +160,7 @@ SUBSYSTEM_DEF(mobs)
 			stamheal *= 1.7
 	return stamheal
 
-/datum/mob_tally/proc/stat_roll_stamcrit_timeout(mob/living/mob)
+/datum/controller/subsystem/mobs/proc/stat_roll_stamcrit_timeout(mob/living/mob)
 	if(!isliving(mob))
 		return 7 SECONDS
 	var/timeout = 7 SECONDS
@@ -203,4 +184,28 @@ SUBSYSTEM_DEF(mobs)
 		if(9)
 			timeout *= 0.75
 	return timeout
+
+
+
+
+////////////////////mob tally////////////////////
+/datum/mob_tally
+	var/mob/living/mymob
+	var/num_in_play = 0
+
+/datum/mob_tally/New(mob/living/mymob)
+	src.mymob = mymob
+
+/datum/mob_tally/proc/mob_spawned(mob/living/mob)
+	if(!mob || !istype(mob, mymob))
+		return
+	num_in_play++
+
+/datum/mob_tally/proc/mob_despawned(mob/living/mob)
+	if(!mob || !istype(mob, mymob))
+		return
+	num_in_play--
+	if(num_in_play < 0)
+		// message_admins("ERROR: mob_tally for [mymob] num_in_play < 0")
+		num_in_play = 0
 
