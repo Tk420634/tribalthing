@@ -539,6 +539,7 @@
 	on_icon_state = "telebaton_1"
 	off_icon_state = "telebaton_0"
 	on_item_state = "nullrod"
+	block_chance = 15
 	force_on = 24
 	stam_dmg = 18
 	force_off = 0
@@ -546,6 +547,7 @@
 	total_mass = TOTAL_MASS_NORMAL_ITEM
 	bare_wound_bonus = -20
 	factionbound = list("murrine")
+	backstab_multiplier = 1.7
 
 /obj/item/melee/classic_baton/telescopic/attack_self(mob/user)
 	on = !on
