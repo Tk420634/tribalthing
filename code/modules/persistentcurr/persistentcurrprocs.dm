@@ -1,4 +1,4 @@
-/obj/machinery/mineral/wasteland_vendor/bank/proc/adjustMoney(ckey, amount)
+/obj/structure/wasteland_vendor/bank/proc/adjustMoney(ckey, amount)
 	if(!usr.client)
 		return
 	if(!ckey)
@@ -15,7 +15,7 @@
 		return
 	qdel(query_set_money)
 
-/obj/machinery/mineral/wasteland_vendor/bank/proc/getMoney(ckey)
+/obj/structure/wasteland_vendor/bank/proc/getMoney(ckey)
 	if(!usr.client)
 		return 0
 	if(!ckey)

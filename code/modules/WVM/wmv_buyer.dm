@@ -609,7 +609,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 
 /// takes in an amount of raw cash, and distributes it through only copper stacks in the machine
 /// each stack can only take 500 coins, so it will create new stacks as needed
-/obj/machinery/proc/copper_only(caps, obj/item/I, loud)
+/obj/proc/copper_only(caps, obj/item/I, loud)
 	for(var/obj/item/stack/f13Cash/caps/copper_stack in contents)
 		if(copper_stack.amount < 500)
 			var/amount_to_add = min(500 - copper_stack.amount, caps)
@@ -637,7 +637,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 	if(loud && I)
 		announce_sale(caps, total_cash, I)
 
-/obj/machinery/proc/payout(caps, obj/item/I, loud, denominate, inside, adj)
+/obj/proc/payout(caps, obj/item/I, loud, denominate, inside, adj)
 	if(!denominate)
 		return copper_only(caps, I, loud, adj)
 	/// get the total cash we have in the machine, plus the amount we're paying out, in copper
@@ -701,7 +701,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 	if(loud && I)
 		announce_sale(caps, total_cash, I, adj)
 
-/obj/machinery/proc/announce_sale(soldfor, totalcash, obj/item/I, amt)
+/obj/proc/announce_sale(soldfor, totalcash, obj/item/I, amt)
 	var/thing = I ? "\the [I]" : "something"
 	var/currencie = "[SSeconomy.format_currency(soldfor, FALSE, TRUE)]" //Second argument false because we are already receiving coppers for the proc arguments
 	var/currencei = "[SSeconomy.format_currency(totalcash, FALSE, TRUE)]"

@@ -218,7 +218,7 @@
 /area/f13/wasteland)
 "agJ" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/mineral/wasteland_vendor/special,
+/obj/structure/wasteland_vendor/special,
 /turf/open/floor/wood_fancy/wood_fancy_light,
 /area/f13/building/bank)
 "agT" = (
@@ -440,7 +440,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
 /area/f13/building/abandoned)
 "ape" = (
-/obj/machinery/mineral/wasteland_vendor/weapons,
+/obj/structure/wasteland_vendor/weapons,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -7093,7 +7093,7 @@
 /turf/open/floor/carpet/blue,
 /area/f13/building)
 "ekx" = (
-/obj/machinery/mineral/wasteland_vendor/attachments{
+/obj/structure/wasteland_vendor/attachments{
 	icon_state = "weapon_idle"
 	},
 /turf/open/floor/wood_common{
@@ -9539,7 +9539,7 @@
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
 "fPE" = (
-/obj/machinery/mineral/wasteland_vendor/crafting{
+/obj/structure/wasteland_vendor/crafting{
 	icon_state = "parts_idle"
 	},
 /turf/open/floor/wood_common{
@@ -11815,7 +11815,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/city/nash/suburbs)
 "hfo" = (
-/obj/machinery/mineral/wasteland_vendor/special{
+/obj/structure/wasteland_vendor/special{
 	pixel_y = 18;
 	layer = 4;
 	density = 0
@@ -14219,7 +14219,7 @@
 /area/f13/bar)
 "iBh" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/mineral/wasteland_vendor/pipboy,
+/obj/structure/wasteland_vendor/pipboy,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -21202,7 +21202,7 @@
 	},
 /area/f13/building)
 "mVJ" = (
-/obj/machinery/mineral/wasteland_vendor/mining,
+/obj/structure/wasteland_vendor/mining,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -27576,7 +27576,7 @@
 	},
 /area/f13/building/abandoned)
 "rgi" = (
-/obj/machinery/mineral/wasteland_vendor/medical,
+/obj/structure/wasteland_vendor/medical,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -31881,7 +31881,7 @@
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
 "tJd" = (
-/obj/machinery/mineral/wasteland_vendor/ammo,
+/obj/structure/wasteland_vendor/ammo,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -37240,7 +37240,7 @@
 /area/f13/wasteland)
 "xff" = (
 /obj/structure/spacevine,
-/obj/machinery/mineral/wasteland_vendor/medical,
+/obj/structure/wasteland_vendor/medical,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},

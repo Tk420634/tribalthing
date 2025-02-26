@@ -230,7 +230,7 @@
 /area/f13/bar/nash)
 "cO" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/mineral/wasteland_vendor/pipboy,
+/obj/structure/wasteland_vendor/pipboy,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -339,7 +339,7 @@
 	},
 /area/f13/building/trader)
 "eq" = (
-/obj/machinery/mineral/wasteland_vendor/ammo,
+/obj/structure/wasteland_vendor/ammo,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -487,7 +487,7 @@
 	},
 /area/f13/wasteland)
 "fP" = (
-/obj/machinery/mineral/wasteland_vendor/attachments{
+/obj/structure/wasteland_vendor/attachments{
 	icon_state = "weapon_idle"
 	},
 /turf/open/floor/wood_common{
@@ -721,7 +721,7 @@
 	},
 /area/f13/building/trader)
 "hR" = (
-/obj/machinery/mineral/wasteland_vendor/mining,
+/obj/structure/wasteland_vendor/mining,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -1435,7 +1435,7 @@
 /turf/closed/wall/mineral/brick,
 /area/f13/building/workshop/nash)
 "pH" = (
-/obj/machinery/mineral/wasteland_vendor/crafting{
+/obj/structure/wasteland_vendor/crafting{
 	icon_state = "parts_idle"
 	},
 /turf/open/floor/wood_common{
@@ -3797,7 +3797,7 @@
 	},
 /area/f13/building)
 "Lc" = (
-/obj/machinery/mineral/wasteland_vendor/traderspecial,
+/obj/structure/wasteland_vendor/traderspecial,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -3818,7 +3818,7 @@
 /turf/open/floor/carpet/red,
 /area/f13/wasteland)
 "Lo" = (
-/obj/machinery/mineral/wasteland_vendor/weapons,
+/obj/structure/wasteland_vendor/weapons,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -4994,7 +4994,7 @@
 	},
 /area/f13/building/workshop/nash)
 "Yo" = (
-/obj/machinery/mineral/wasteland_vendor/special,
+/obj/structure/wasteland_vendor/special,
 /turf/open/floor/wood_fancy/wood_fancy_light,
 /area/f13/building)
 "Yr" = (

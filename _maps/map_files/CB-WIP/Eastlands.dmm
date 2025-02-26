@@ -10241,7 +10241,7 @@
 /turf/open/indestructible/ground/outside/roaddirt,
 /area/f13/underground/cave)
 "oad" = (
-/obj/machinery/mineral/wasteland_vendor/mining,
+/obj/structure/wasteland_vendor/mining,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating{
 	icon_state = "asteroidfloor"

@@ -7539,7 +7539,7 @@
 /turf/open/floor/plating/tunnel,
 /area/f13/caves)
 "dZq" = (
-/obj/machinery/mineral/wasteland_vendor/advcomponents,
+/obj/structure/wasteland_vendor/advcomponents,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -23488,7 +23488,7 @@
 /turf/open/floor/circuit/telecomms/mainframe,
 /area/tcommsat/server)
 "qpR" = (
-/obj/machinery/mineral/wasteland_vendor/weapons,
+/obj/structure/wasteland_vendor/weapons,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "qqi" = (

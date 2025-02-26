@@ -1746,7 +1746,7 @@
 	},
 /area/f13/building/hospital/clinic/ashdown)
 "ny" = (
-/obj/machinery/mineral/wasteland_vendor/medical,
+/obj/structure/wasteland_vendor/medical,
 /turf/open/indestructible/cobble/corner{
 	color = "#777777";
 	light_color = null;
@@ -3007,7 +3007,7 @@
 	dir = 1;
 	light_color = "red"
 	},
-/obj/machinery/mineral/wasteland_vendor/mining,
+/obj/structure/wasteland_vendor/mining,
 /turf/open/floor/f13/wood,
 /area/f13/building/workshop/ashdown)
 "wN" = (
@@ -3687,7 +3687,7 @@
 	},
 /area/f13/building)
 "Br" = (
-/obj/machinery/mineral/wasteland_vendor/general{
+/obj/structure/wasteland_vendor/general{
 	icon_state = "nugeneric_idle"
 	},
 /turf/open/floor/f13/wood{
@@ -3843,7 +3843,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "CT" = (
-/obj/machinery/mineral/wasteland_vendor/mining,
+/obj/structure/wasteland_vendor/mining,
 /turf/closed/wall/f13/wood,
 /area/f13/caves)
 "CY" = (
@@ -4088,7 +4088,7 @@
 	},
 /area/f13/building/abandoned)
 "Eo" = (
-/obj/machinery/mineral/wasteland_vendor/weapons,
+/obj/structure/wasteland_vendor/weapons,
 /turf/open/floor/f13/wood,
 /area/f13/building/workshop/ashdown)
 "Er" = (
@@ -4427,7 +4427,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/caves)
 "Gr" = (
-/obj/machinery/mineral/wasteland_vendor/traderspecial{
+/obj/structure/wasteland_vendor/traderspecial{
 	icon_state = "trade_,mining"
 	},
 /obj/structure/reagent_dispensers/peppertank{
@@ -4937,7 +4937,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/ashdown)
 "JZ" = (
-/obj/machinery/mineral/wasteland_vendor/attachments,
+/obj/structure/wasteland_vendor/attachments,
 /turf/open/floor/f13/wood,
 /area/f13/building/workshop/ashdown)
 "Ka" = (
@@ -6463,7 +6463,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "Vl" = (
-/obj/machinery/mineral/wasteland_vendor/pipboy,
+/obj/structure/wasteland_vendor/pipboy,
 /turf/open/floor/f13/wood,
 /area/f13/building/workshop/ashdown)
 "Vp" = (
@@ -6584,7 +6584,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/ashdown)
 "VX" = (
-/obj/machinery/mineral/wasteland_vendor/ammo,
+/obj/structure/wasteland_vendor/ammo,
 /turf/open/floor/f13/wood,
 /area/f13/building/workshop/ashdown)
 "Wb" = (

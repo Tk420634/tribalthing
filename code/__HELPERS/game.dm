@@ -386,6 +386,7 @@ GLOBAL_LIST_EMPTY(chat_chuds)
 	var/private = A.private
 	var/datum/chatchud/CC = get_chatchud(source)
 	var/turf/source_turf = get_turf(source)
+	var/in_something = !isturf(source.loc)
 	var/debug_i = 0
 	dingus:
 		for(var/client/C in GLOB.clients)
@@ -444,7 +445,10 @@ GLOBAL_LIST_EMPTY(chat_chuds)
 			// basically if they're on screen, and either of the ranges are met, they're visible and we can skip the pathing
 			if(in_rect && in_close_view)
 				if(get_dist(source_turf, viewer_turf) <= close_range)
-					CC.visible_close[M] = TRUE
+					if(in_something)
+						CC.hidden_pathable[M] = source_turf
+					else
+						CC.visible_close[M] = TRUE
 					continue dingus
 				// else if(get_dist(source_turf, viewer_turf) <= long_range)
 				// 	CC.visible_far[M] = TRUE

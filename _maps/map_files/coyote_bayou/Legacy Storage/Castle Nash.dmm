@@ -6207,7 +6207,7 @@
 /turf/open/floor/carpet/purple,
 /area/f13/building)
 "tS" = (
-/obj/machinery/mineral/wasteland_vendor/crafting{
+/obj/structure/wasteland_vendor/crafting{
 	icon_state = "parts_idle"
 	},
 /turf/open/floor/wood_common{
@@ -7158,7 +7158,7 @@
 	},
 /area/f13/building/trader)
 "xb" = (
-/obj/machinery/mineral/wasteland_vendor/ammo,
+/obj/structure/wasteland_vendor/ammo,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -10189,7 +10189,7 @@
 /turf/closed/indestructible/rock,
 /area/f13/wasteland)
 "GG" = (
-/obj/machinery/mineral/wasteland_vendor/attachments{
+/obj/structure/wasteland_vendor/attachments{
 	icon_state = "weapon_idle"
 	},
 /turf/open/floor/wood_common{
@@ -10427,7 +10427,7 @@
 /area/f13/building)
 "Hi" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/mineral/wasteland_vendor/pipboy,
+/obj/structure/wasteland_vendor/pipboy,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -11425,7 +11425,7 @@
 	},
 /area/f13/wasteland)
 "KB" = (
-/obj/machinery/mineral/wasteland_vendor/weapons,
+/obj/structure/wasteland_vendor/weapons,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -14318,7 +14318,7 @@
 /turf/open/floor/carpet/royalblue,
 /area/f13/building)
 "TL" = (
-/obj/machinery/mineral/wasteland_vendor/special{
+/obj/structure/wasteland_vendor/special{
 	density = 0;
 	layer = 4;
 	pixel_y = 18
@@ -14980,7 +14980,7 @@
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/building)
 "VR" = (
-/obj/machinery/mineral/wasteland_vendor/medical,
+/obj/structure/wasteland_vendor/medical,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -15099,7 +15099,7 @@
 	},
 /area/f13/building)
 "Wj" = (
-/obj/machinery/mineral/wasteland_vendor/mining,
+/obj/structure/wasteland_vendor/mining,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},

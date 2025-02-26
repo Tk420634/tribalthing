@@ -128,9 +128,9 @@
 				target.chat_color_darkened = "#[chatcolor]"
 				target.chat_color_name = target.name
 		else
-			target.chat_color = colorize_string(target.name)
-			target.chat_color_darkened = colorize_string(target.name, 0.85, 0.85)
-			target.chat_color_name = target.name
+			target.chat_color =          target.chat_color          || colorize_string(target.name)
+			target.chat_color_darkened = target.chat_color_darkened || colorize_string(target.name, 0.85, 0.85)
+			target.chat_color_name =     target.chat_color_name     || target.name
 
 	// Get rid of any URL schemes that might cause BYOND to automatically wrap something in an anchor tag
 	var/static/regex/url_scheme = new(@"[A-Za-z][A-Za-z0-9+-\.]*:\/\/", "g")
@@ -237,8 +237,9 @@
 		alphatomakeit /= 2
 	if(offscreen)
 		alphatomakeit /= 1.5
-		message.pixel_x = rand(-40, 40)
-		message.pixel_y = rand(-40, 40)
+		// message.pixel_x = rand(-40, 40)
+		// message.pixel_y = rand(-40, 40)
+		message.pixel_y += 40
 	// if((SPAN_SMALL in extra_classes) || (SPAN_SMALLER in extra_classes))
 	// 	alphatomakeit /= 2
 

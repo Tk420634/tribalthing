@@ -12588,7 +12588,7 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
 "UO" = (
-/obj/machinery/mineral/wasteland_vendor/mining,
+/obj/structure/wasteland_vendor/mining,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "UR" = (

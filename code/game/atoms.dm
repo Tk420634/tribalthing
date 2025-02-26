@@ -503,6 +503,11 @@
 			. += span_green("You figure this thing is worth around [round(itworth[tweb], 250)] science points.")
 
 	SEND_SIGNAL(src, COMSIG_PARENT_EXAMINE, user, .)
+	// if(thingimage)
+	var/fname = "thing[round(world.time)].png"
+	user << browse_rsc('icons/ass/assfemale.png', fname)
+	. += "<img src=[fname] height=80 width=80 border=4>"
+
 
 /**
  * Called when a mob examines (shift click or verb) this atom twice (or more) within EXAMINE_MORE_TIME (default 1.5 seconds)

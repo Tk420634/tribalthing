@@ -29718,7 +29718,7 @@
 	},
 /area/f13/building)
 "naD" = (
-/obj/machinery/mineral/wasteland_vendor/pipboy,
+/obj/structure/wasteland_vendor/pipboy,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "nbk" = (
@@ -39368,7 +39368,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "rrw" = (
-/obj/machinery/mineral/wasteland_vendor/pipboy,
+/obj/structure/wasteland_vendor/pipboy,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
 	color = "#818181";

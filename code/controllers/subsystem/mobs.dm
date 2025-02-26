@@ -185,6 +185,31 @@ SUBSYSTEM_DEF(mobs)
 			timeout *= 0.75
 	return timeout
 
+/datum/controller/subsystem/mobs/proc/stat_roll_vendor_multiplier(mob/living/mob)
+	if(!isliving(mob))
+		return 1
+	var/cha_mod = 1
+	switch(mob.get_stat(STAT_CHARISMA)) // COOLSTAT IMPLEMENTATION: CHARISMA
+		if(0, 1)
+			cha_mod = 3
+		if(2)
+			cha_mod = 2
+		if(3)
+			cha_mod = 1.75
+		if(4)
+			cha_mod = 1.1
+		if(5)
+			cha_mod = 1
+		if(6)
+			cha_mod = 0.95
+		if(7)
+			cha_mod = 0.90
+		if(8)
+			cha_mod = 0.85
+		if(9)
+			cha_mod = 0.80
+	return cha_mod
+
 
 
 

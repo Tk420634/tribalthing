@@ -9936,7 +9936,7 @@
 /area/f13/caves)
 "fsN" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/mineral/wasteland_vendor/pipboy,
+/obj/structure/wasteland_vendor/pipboy,
 /obj/structure/handrail/g_central{
 	dir = 1;
 	pixel_y = 23
@@ -16850,7 +16850,7 @@
 	},
 /area/f13/building)
 "jIs" = (
-/obj/machinery/mineral/wasteland_vendor/denchem,
+/obj/structure/wasteland_vendor/denchem,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
 	icon_state = "darkdirtysolid"
 	},

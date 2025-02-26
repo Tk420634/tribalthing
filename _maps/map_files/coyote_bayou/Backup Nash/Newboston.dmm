@@ -1673,7 +1673,7 @@
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland)
 "bqj" = (
-/obj/machinery/mineral/wasteland_vendor/crafting{
+/obj/structure/wasteland_vendor/crafting{
 	icon_state = "parts_idle"
 	},
 /turf/open/indestructible/ground/outside/dirt,
@@ -3328,7 +3328,7 @@
 /turf/open/indestructible/ground/outside/dirthole,
 /area/f13/tunnel)
 "cBE" = (
-/obj/machinery/mineral/wasteland_vendor/special,
+/obj/structure/wasteland_vendor/special,
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticaloutermain0"
 	},
@@ -8586,7 +8586,7 @@
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland)
 "gsS" = (
-/obj/machinery/mineral/wasteland_vendor/pipboy,
+/obj/structure/wasteland_vendor/pipboy,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "gsZ" = (
@@ -10494,7 +10494,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/caves)
 "hSc" = (
-/obj/machinery/mineral/wasteland_vendor/medical,
+/obj/structure/wasteland_vendor/medical,
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticaloutermain0"
 	},
@@ -10530,7 +10530,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/city)
 "hTd" = (
-/obj/machinery/mineral/wasteland_vendor/advcomponents,
+/obj/structure/wasteland_vendor/advcomponents,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "hTr" = (
@@ -12583,7 +12583,7 @@
 	},
 /area/f13/wasteland)
 "jkV" = (
-/obj/machinery/mineral/wasteland_vendor/weapons,
+/obj/structure/wasteland_vendor/weapons,
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticaloutermain0"
 	},
@@ -17223,7 +17223,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "mwX" = (
-/obj/machinery/mineral/wasteland_vendor/advcomponents,
+/obj/structure/wasteland_vendor/advcomponents,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -25122,7 +25122,7 @@
 	},
 /area/f13/building)
 "svy" = (
-/obj/machinery/mineral/wasteland_vendor/crafting{
+/obj/structure/wasteland_vendor/crafting{
 	icon_state = "parts_idle"
 	},
 /turf/open/floor/f13{
@@ -26939,7 +26939,7 @@
 /turf/closed/wall/f13/coyote/darkwoodwall,
 /area/f13/wasteland)
 "tFc" = (
-/obj/machinery/mineral/wasteland_vendor/pipboy,
+/obj/structure/wasteland_vendor/pipboy,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},

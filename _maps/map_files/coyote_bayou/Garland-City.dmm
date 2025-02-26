@@ -3954,7 +3954,7 @@
 	},
 /area/f13/building/coyote/safe/garland)
 "daS" = (
-/obj/machinery/mineral/wasteland_vendor/crafting{
+/obj/structure/wasteland_vendor/crafting{
 	icon_state = "parts_idle"
 	},
 /turf/open/floor/f13/wood,
@@ -7944,7 +7944,7 @@
 /turf/open/floor/f13,
 /area/f13/building/coyote/safe/garland)
 "gcA" = (
-/obj/machinery/mineral/wasteland_vendor/general,
+/obj/structure/wasteland_vendor/general,
 /turf/open/floor/plating/f13/inside,
 /area/f13/building)
 "gdf" = (
@@ -9742,7 +9742,7 @@
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/wasteland)
 "hAg" = (
-/obj/machinery/mineral/wasteland_vendor/crafting,
+/obj/structure/wasteland_vendor/crafting,
 /turf/open/indestructible/ground/outside/road,
 /area/f13/wasteland)
 "hAI" = (
@@ -13253,7 +13253,7 @@
 /area/f13/building)
 "kiS" = (
 /obj/structure/spider/stickyweb,
-/obj/machinery/mineral/wasteland_vendor/mining,
+/obj/structure/wasteland_vendor/mining,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -14666,7 +14666,7 @@
 /area/f13/wasteland)
 "llm" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/mineral/wasteland_vendor/pipboy,
+/obj/structure/wasteland_vendor/pipboy,
 /turf/open/floor/f13/wood,
 /area/f13/city)
 "llB" = (
@@ -14937,7 +14937,7 @@
 	},
 /area/f13/building)
 "lvz" = (
-/obj/machinery/mineral/wasteland_vendor/mining,
+/obj/structure/wasteland_vendor/mining,
 /turf/open/floor/f13/wood,
 /area/f13/city)
 "lvM" = (
@@ -16889,7 +16889,7 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
-/obj/machinery/mineral/wasteland_vendor/special,
+/obj/structure/wasteland_vendor/special,
 /turf/open/floor/f13/wood,
 /area/f13/city)
 "mWi" = (
@@ -20605,7 +20605,7 @@
 /turf/closed/wall/f13/wood/house,
 /area/f13/city)
 "pAR" = (
-/obj/machinery/mineral/wasteland_vendor/weapons,
+/obj/structure/wasteland_vendor/weapons,
 /turf/open/floor/plating/f13/inside,
 /area/f13/building)
 "pBL" = (
@@ -29233,7 +29233,7 @@
 	},
 /area/f13/building)
 "wib" = (
-/obj/machinery/mineral/wasteland_vendor/attachments{
+/obj/structure/wasteland_vendor/attachments{
 	icon_state = "weapon_idle"
 	},
 /turf/open/floor/f13/wood,
@@ -30793,7 +30793,7 @@
 	},
 /area/f13/building)
 "xoR" = (
-/obj/machinery/mineral/wasteland_vendor/ammo,
+/obj/structure/wasteland_vendor/ammo,
 /turf/open/floor/plating/f13/inside,
 /area/f13/building)
 "xpo" = (

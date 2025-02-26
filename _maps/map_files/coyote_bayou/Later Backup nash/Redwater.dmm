@@ -5353,7 +5353,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/glass,
 /obj/effect/decal/cleanable/blood/tracks,
-/obj/machinery/mineral/wasteland_vendor/pipboy,
+/obj/structure/wasteland_vendor/pipboy,
 /turf/open/floor/wood_common,
 /area/f13/building)
 "ckh" = (
@@ -16090,7 +16090,7 @@
 	},
 /area/f13/building)
 "gEU" = (
-/obj/machinery/mineral/wasteland_vendor/crafting{
+/obj/structure/wasteland_vendor/crafting{
 	icon_state = "parts_idle"
 	},
 /turf/open/floor/f13/wood,
@@ -16282,7 +16282,7 @@
 /turf/open/floor/grass,
 /area/f13/wasteland/city/newboston/outdoors/redwater)
 "gIF" = (
-/obj/machinery/mineral/wasteland_vendor/attachments{
+/obj/structure/wasteland_vendor/attachments{
 	icon_state = "weapon_idle"
 	},
 /turf/open/floor/f13/wood,
@@ -17364,7 +17364,7 @@
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland/redwater)
 "hij" = (
-/obj/machinery/mineral/wasteland_vendor/weapons,
+/obj/structure/wasteland_vendor/weapons,
 /turf/open/floor/f13{
 	icon_state = "bar"
 	},
@@ -17507,7 +17507,7 @@
 	dir = 8;
 	light_color = "#e8eaff"
 	},
-/obj/machinery/mineral/wasteland_vendor/attachments,
+/obj/structure/wasteland_vendor/attachments,
 /turf/open/floor/wood_common,
 /area/f13/building)
 "hkO" = (
@@ -17751,7 +17751,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/mineral/wasteland_vendor/weapons,
+/obj/structure/wasteland_vendor/weapons,
 /turf/open/floor/wood_common,
 /area/f13/building)
 "hpv" = (
@@ -23669,7 +23669,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/mineral/wasteland_vendor/traderspecial{
+/obj/structure/wasteland_vendor/traderspecial{
 	icon_state = "trade_,mining"
 	},
 /turf/open/floor/wood_common,
@@ -26436,7 +26436,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/redwater)
 "kTN" = (
-/obj/machinery/mineral/wasteland_vendor/ammo,
+/obj/structure/wasteland_vendor/ammo,
 /obj/machinery/light{
 	dir = 8;
 	light_color = "#e8eaff"
@@ -27989,7 +27989,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/mineral/wasteland_vendor/general{
+/obj/structure/wasteland_vendor/general{
 	icon_state = "nugeneric_idle"
 	},
 /turf/open/floor/wood_common,
@@ -50409,7 +50409,7 @@
 	},
 /area/f13/caves)
 "uLj" = (
-/obj/machinery/mineral/wasteland_vendor/special,
+/obj/structure/wasteland_vendor/special,
 /turf/open/floor/f13{
 	icon_state = "bar"
 	},
@@ -55773,7 +55773,7 @@
 "wUH" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/mineral/wasteland_vendor/medical,
+/obj/structure/wasteland_vendor/medical,
 /turf/open/floor/f13{
 	color = "#d9c4b9";
 	icon_state = "darkrusty";
@@ -56164,7 +56164,7 @@
 "xei" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/mineral/wasteland_vendor/ammo,
+/obj/structure/wasteland_vendor/ammo,
 /turf/open/floor/wood_common,
 /area/f13/building)
 "xet" = (
