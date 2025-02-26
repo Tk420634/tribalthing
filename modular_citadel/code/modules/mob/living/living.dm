@@ -40,26 +40,7 @@
 			ENABLE_BITFIELD(combat_flags, COMBAT_FLAG_HARD_STAMCRIT)
 			filters += CIT_FILTER_STAMINACRIT
 			update_mobility()
-			var/timeout = 7 SECONDS
-			switch(get_stat(STAT_ENDURANCE)) // COOLSTAT IMPLEMENTATION: ENDURANCE
-				if(0, 1)
-					timeout *= 1.5
-				if(2)
-					timeout *= 1.45
-				if(3)
-					timeout *= 1.35
-				if(4)
-					timeout *= 1.2
-				if(5)
-					timeout *= 1
-				if(6)
-					timeout *= 0.9
-				if(7)
-					timeout *= 0.85
-				if(8)
-					timeout *= 0.80
-				if(9)
-					timeout *= 0.75
+			var/timeout = SSmobs.stat_roll_stamcrit_timeout(src)
 			stamcrit_timeout = world.time + timeout
 			to_chat(src, span_userdanger("You're knocked down and totally helpless~"))
 			var/tmtt = round(timeout*0.1, 0.5)

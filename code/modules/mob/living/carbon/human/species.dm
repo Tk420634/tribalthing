@@ -2293,7 +2293,8 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		H.in_crit_HP_penalty -= damage
 	if(damage >= 0 && SSmobs.all_damage_is_stamina)
 		damagetype = STAMINA
-	var/stammod = SSmobs.stat_roll_incoming_stamina_damage(H)
+	if(damagetype == STAMINA)
+		damage *= SSmobs.stat_roll_incoming_stamina_damage(H)
 
 	var/sharp_mod = 1 //this line of code here is meant for species to have various damage modifiers to their brute intake based on the flag of the weapon.
 	switch(sharpness)

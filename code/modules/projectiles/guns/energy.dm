@@ -120,8 +120,9 @@
 	. = ..()
 	if(!right_click_overridden)
 		. += span_notice("Right click in combat mode to switch modes.")
-	if(selfcharge && !selfcharge_initiated && !can_remove)
-		. += span_notice("Alt-Click to force-initiate a self-charge cycle. This will drain the cell beforehand!")
+	if(selfcharge && !selfcharge_initiated)
+		. += span_notice("<b><u>CLICK THE GUN TO RECHARGE IT</u></b>")
+		. += span_notice("You can do this any time you want! It recharges the gun!")
 	if(charge_duration_remaining)
 		. += span_notice("Currently recharging! Should be ready in about [DisplayTimeText(charge_duration_remaining)].")
 
