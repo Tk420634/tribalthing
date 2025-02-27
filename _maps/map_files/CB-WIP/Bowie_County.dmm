@@ -14630,7 +14630,7 @@
 /turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/building)
 "ZA" = (
-/obj/machinery/mineral/wasteland_vendor/crafting{
+/obj/structure/wasteland_vendor/crafting{
 	icon_state = "parts_idle"
 	},
 /turf/open/indestructible/ground/outside/sidewalk{

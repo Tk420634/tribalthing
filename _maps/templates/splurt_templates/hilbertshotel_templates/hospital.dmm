@@ -179,7 +179,7 @@
 /turf/open/floor/plasteel/white,
 /area/hilbertshotel)
 "nx" = (
-/obj/machinery/mineral/wasteland_vendor/medical,
+/obj/structure/wasteland_vendor/medical,
 /obj/machinery/light{
 	dir = 1
 	},

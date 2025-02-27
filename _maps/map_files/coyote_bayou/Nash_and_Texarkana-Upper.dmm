@@ -7805,7 +7805,7 @@
 /area/f13/wasteland)
 "ejb" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/mineral/wasteland_vendor/medical,
+/obj/structure/wasteland_vendor/medical,
 /turf/open/floor/f13{
 	icon_state = "bluedirtychess2"
 	},
@@ -16247,7 +16247,7 @@
 	color = "#A47449";
 	dir = 8
 	},
-/obj/machinery/mineral/wasteland_vendor/pipboy,
+/obj/structure/wasteland_vendor/pipboy,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "iBz" = (
@@ -21709,7 +21709,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/caves)
 "loy" = (
-/obj/machinery/mineral/wasteland_vendor/ammo,
+/obj/structure/wasteland_vendor/ammo,
 /turf/open/floor/plating/f13/inside,
 /area/f13/store)
 "loB" = (
@@ -32894,7 +32894,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "rkm" = (
-/obj/machinery/mineral/wasteland_vendor/specialplus,
+/obj/structure/wasteland_vendor/specialplus,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
 "rkp" = (
@@ -34842,7 +34842,7 @@
 /obj/structure/railing{
 	color = "#A47449"
 	},
-/obj/machinery/mineral/wasteland_vendor/crafting{
+/obj/structure/wasteland_vendor/crafting{
 	icon_state = "parts_idle"
 	},
 /turf/open/floor/f13/wood,
@@ -38874,7 +38874,7 @@
 /obj/structure/railing{
 	color = "#A47449"
 	},
-/obj/machinery/mineral/wasteland_vendor/attachments{
+/obj/structure/wasteland_vendor/attachments{
 	icon_state = "weapon_idle"
 	},
 /turf/open/floor/f13/wood,
@@ -41488,7 +41488,7 @@
 /turf/open/floor/plating,
 /area/f13/building/massfusion)
 "vRL" = (
-/obj/machinery/mineral/wasteland_vendor/mining,
+/obj/structure/wasteland_vendor/mining,
 /turf/open/indestructible/ground/outside/dirt/harsh,
 /area/f13/building)
 "vSe" = (
@@ -45140,7 +45140,7 @@
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
 "xTM" = (
-/obj/machinery/mineral/wasteland_vendor/weapons,
+/obj/structure/wasteland_vendor/weapons,
 /turf/open/floor/plating/f13/inside,
 /area/f13/store)
 "xUi" = (

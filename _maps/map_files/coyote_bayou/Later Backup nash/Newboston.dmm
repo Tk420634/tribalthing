@@ -4903,7 +4903,7 @@
 	},
 /area/f13/wasteland)
 "ceY" = (
-/obj/machinery/mineral/wasteland_vendor/medical,
+/obj/structure/wasteland_vendor/medical,
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticaloutermain0"
 	},
@@ -10468,7 +10468,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "exs" = (
-/obj/machinery/mineral/wasteland_vendor/attachments{
+/obj/structure/wasteland_vendor/attachments{
 	icon_state = "weapon_idle"
 	},
 /turf/open/floor/f13/wood,
@@ -14632,7 +14632,7 @@
 	},
 /area/f13/tunnel)
 "ghk" = (
-/obj/machinery/mineral/wasteland_vendor/medical,
+/obj/structure/wasteland_vendor/medical,
 /obj/machinery/light/broken{
 	dir = 1
 	},
@@ -29470,7 +29470,7 @@
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/wasteland)
 "maB" = (
-/obj/machinery/mineral/wasteland_vendor/crafting{
+/obj/structure/wasteland_vendor/crafting{
 	icon_state = "parts_idle"
 	},
 /turf/open/floor/f13/wood,
@@ -34047,7 +34047,7 @@
 /turf/open/indestructible/ground/outside/road,
 /area/f13/wasteland)
 "nSt" = (
-/obj/machinery/mineral/wasteland_vendor/traderspecial{
+/obj/structure/wasteland_vendor/traderspecial{
 	icon_state = "trade_,mining"
 	},
 /obj/machinery/light{
@@ -34188,7 +34188,7 @@
 	},
 /area/f13/caves)
 "nVC" = (
-/obj/machinery/mineral/wasteland_vendor/weapons,
+/obj/structure/wasteland_vendor/weapons,
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticaloutermain0"
 	},
@@ -36413,7 +36413,7 @@
 	},
 /area/f13/building)
 "oOG" = (
-/obj/machinery/mineral/wasteland_vendor/special,
+/obj/structure/wasteland_vendor/special,
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticaloutermain0"
 	},
@@ -36657,7 +36657,7 @@
 /turf/open/floor/circuit/telecomms/mainframe,
 /area/tcommsat/server)
 "oVf" = (
-/obj/machinery/mineral/wasteland_vendor/mining,
+/obj/structure/wasteland_vendor/mining,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building/workshop/nash)
 "oVG" = (
@@ -38142,7 +38142,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/machinery/mineral/wasteland_vendor/weapons,
+/obj/structure/wasteland_vendor/weapons,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building/workshop/nash)
 "pAs" = (
@@ -38768,7 +38768,7 @@
 	},
 /area/f13/wasteland)
 "pNu" = (
-/obj/machinery/mineral/wasteland_vendor/ammo,
+/obj/structure/wasteland_vendor/ammo,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building/workshop/nash)
 "pNw" = (
@@ -53689,7 +53689,7 @@
 	},
 /area/f13/building)
 "vLv" = (
-/obj/machinery/mineral/wasteland_vendor/general{
+/obj/structure/wasteland_vendor/general{
 	icon_state = "nugeneric_idle"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
@@ -55648,7 +55648,7 @@
 /turf/open/floor/f13,
 /area/f13/brotherhood)
 "wBU" = (
-/obj/machinery/mineral/wasteland_vendor/medical,
+/obj/structure/wasteland_vendor/medical,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building/workshop/nash)
 "wCe" = (
@@ -57818,7 +57818,7 @@
 	},
 /area/f13/building)
 "xtr" = (
-/obj/machinery/mineral/wasteland_vendor/pipboy,
+/obj/structure/wasteland_vendor/pipboy,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building/workshop/nash)
 "xtv" = (

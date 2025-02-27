@@ -424,7 +424,7 @@
 	},
 /area/f13/wasteland)
 "alI" = (
-/obj/machinery/mineral/wasteland_vendor/weapons,
+/obj/structure/wasteland_vendor/weapons,
 /turf/open/floor/f13/wood{
 	icon_state = "oakfloor1"
 	},
@@ -2375,7 +2375,7 @@
 /turf/open/floor/carpet/purple,
 /area/f13/building/abandoned)
 "bko" = (
-/obj/machinery/mineral/wasteland_vendor/crafting,
+/obj/structure/wasteland_vendor/crafting,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "bkE" = (
@@ -4536,7 +4536,7 @@
 	},
 /area/f13/wasteland)
 "cov" = (
-/obj/machinery/mineral/wasteland_vendor/advcomponents,
+/obj/structure/wasteland_vendor/advcomponents,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "coQ" = (
@@ -5411,7 +5411,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
 /area/f13/wasteland)
 "cNU" = (
-/obj/machinery/mineral/wasteland_vendor/denchem,
+/obj/structure/wasteland_vendor/denchem,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "cNW" = (
@@ -6105,7 +6105,7 @@
 	},
 /area/f13/building/workshop/nash)
 "dgN" = (
-/obj/machinery/mineral/wasteland_vendor,
+/obj/structure/wasteland_vendor,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "dgO" = (
@@ -12252,7 +12252,7 @@
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/building)
 "gha" = (
-/obj/machinery/mineral/wasteland_vendor/attachments,
+/obj/structure/wasteland_vendor/attachments,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "ghj" = (
@@ -12322,7 +12322,7 @@
 /turf/closed/wall/mineral/wood,
 /area/f13/wasteland)
 "gih" = (
-/obj/machinery/mineral/wasteland_vendor/crafting{
+/obj/structure/wasteland_vendor/crafting{
 	icon_state = "parts_idle"
 	},
 /turf/open/floor/wood_common{
@@ -12598,7 +12598,7 @@
 /area/f13/wasteland)
 "gqF" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/mineral/wasteland_vendor/pipboy,
+/obj/structure/wasteland_vendor/pipboy,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -16048,7 +16048,7 @@
 /turf/open/floor/carpet/blue,
 /area/f13/wasteland)
 "hZU" = (
-/obj/machinery/mineral/wasteland_vendor/ammo,
+/obj/structure/wasteland_vendor/ammo,
 /obj/machinery/light{
 	dir = 8;
 	light_color = "#e8eaff"
@@ -16793,7 +16793,7 @@
 /turf/open/floor/wood_wide/wood_wide_dark,
 /area/f13/wasteland)
 "iuu" = (
-/obj/machinery/mineral/wasteland_vendor/ammo,
+/obj/structure/wasteland_vendor/ammo,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "iuz" = (
@@ -19519,7 +19519,7 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "jQZ" = (
-/obj/machinery/mineral/wasteland_vendor/general,
+/obj/structure/wasteland_vendor/general,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "jRl" = (
@@ -20954,7 +20954,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "kCU" = (
-/obj/machinery/mineral/wasteland_vendor/medical,
+/obj/structure/wasteland_vendor/medical,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "kDA" = (
@@ -21469,7 +21469,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/machinery/mineral/wasteland_vendor/medical,
+/obj/structure/wasteland_vendor/medical,
 /turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
 /area/f13/wasteland)
 "kQR" = (
@@ -22918,7 +22918,7 @@
 	},
 /area/f13/wasteland)
 "lCw" = (
-/obj/machinery/mineral/wasteland_vendor/bank,
+/obj/structure/wasteland_vendor/bank,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "lCE" = (
@@ -24384,7 +24384,7 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "mmd" = (
-/obj/machinery/mineral/wasteland_vendor/special,
+/obj/structure/wasteland_vendor/special,
 /turf/open/floor/wood_fancy/wood_fancy_light,
 /area/f13/building/bank)
 "mmj" = (
@@ -27826,7 +27826,7 @@
 	},
 /area/f13/wasteland)
 "obJ" = (
-/obj/machinery/mineral/wasteland_vendor/ammo,
+/obj/structure/wasteland_vendor/ammo,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -28515,7 +28515,7 @@
 /turf/open/floor/wood_fancy/wood_fancy_light,
 /area/f13/wasteland)
 "otC" = (
-/obj/machinery/mineral/wasteland_vendor/special,
+/obj/structure/wasteland_vendor/special,
 /turf/open/floor/f13{
 	icon_state = "bar"
 	},
@@ -30588,7 +30588,7 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/underground/cave/coyote/antmound)
 "pti" = (
-/obj/machinery/mineral/wasteland_vendor/weapons,
+/obj/structure/wasteland_vendor/weapons,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "ptq" = (
@@ -33756,7 +33756,7 @@
 /turf/open/floor/carpet/green,
 /area/f13/building/bank)
 "qTC" = (
-/obj/machinery/mineral/wasteland_vendor/weapons,
+/obj/structure/wasteland_vendor/weapons,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -34589,7 +34589,7 @@
 /turf/closed/wall/f13/ruins,
 /area/f13/wasteland)
 "rqN" = (
-/obj/machinery/mineral/wasteland_vendor/pipboy,
+/obj/structure/wasteland_vendor/pipboy,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "rqV" = (
@@ -35837,7 +35837,7 @@
 	},
 /area/f13/building/church)
 "rYw" = (
-/obj/machinery/mineral/wasteland_vendor/clothing,
+/obj/structure/wasteland_vendor/clothing,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "rYI" = (
@@ -39691,7 +39691,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "uhL" = (
-/obj/machinery/mineral/wasteland_vendor/weapons,
+/obj/structure/wasteland_vendor/weapons,
 /turf/open/floor/f13{
 	icon_state = "bar"
 	},
@@ -40435,7 +40435,7 @@
 	},
 /area/f13/building)
 "uCR" = (
-/obj/machinery/mineral/wasteland_vendor/mining,
+/obj/structure/wasteland_vendor/mining,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "uCS" = (
@@ -43170,7 +43170,7 @@
 	},
 /area/f13/wasteland)
 "vYI" = (
-/obj/machinery/mineral/wasteland_vendor/attachments{
+/obj/structure/wasteland_vendor/attachments{
 	icon_state = "weapon_idle"
 	},
 /turf/open/floor/wood_common{
@@ -43957,7 +43957,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "wyh" = (
-/obj/machinery/mineral/wasteland_vendor/mining,
+/obj/structure/wasteland_vendor/mining,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -44056,7 +44056,7 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "wAI" = (
-/obj/machinery/mineral/wasteland_vendor/traderspecial,
+/obj/structure/wasteland_vendor/traderspecial,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -45702,7 +45702,7 @@
 	},
 /area/f13/building/library)
 "xtT" = (
-/obj/machinery/mineral/wasteland_vendor/special,
+/obj/structure/wasteland_vendor/special,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "xuk" = (

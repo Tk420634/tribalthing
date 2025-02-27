@@ -192,10 +192,6 @@
 	color = "#BBBBBB"
 	},
 /area/f13/ambientlighting/building)
-"dg" = (
-/obj/structure/rack/shelf_metal,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/ambientlighting/building)
 "dh" = (
 /obj/structure/flora/tree/jungle{
 	color = "#BEBEBE";
@@ -268,23 +264,9 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ambientlighting/building)
 "ek" = (
-/obj/item/clothing/head/helmet/swat,
 /obj/structure/rack/shelf_metal,
-/obj/item/clothing/head/helmet/swat,
-/obj/item/clothing/head/helmet/swat,
-/obj/item/clothing/head/helmet/swat,
-/obj/item/clothing/head/helmet/swat,
-/obj/item/clothing/head/helmet/swat,
-/obj/item/clothing/head/helmet/swat,
-/obj/item/clothing/head/helmet/swat,
-/obj/item/clothing/head/helmet/swat,
-/obj/item/clothing/head/helmet/swat,
-/obj/item/clothing/suit/armor/light/leather,
-/obj/item/clothing/suit/armor/light/leather,
-/obj/item/clothing/suit/armor/light/leather,
-/obj/item/clothing/suit/armor/light/leather,
-/obj/item/clothing/suit/armor/light/leather,
-/obj/item/clothing/suit/armor/light/leather,
+/obj/item/storage/crayons,
+/obj/item/storage/crayons,
 /turf/open/floor/plasteel/white,
 /area/f13/ambientlighting/building)
 "eq" = (
@@ -339,22 +321,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ambientlighting/building/catgirls_score_here)
-"fr" = (
-/obj/item/warpaint_bowl,
-/obj/structure/rack/shelf_metal,
-/obj/item/warpaint_bowl,
-/obj/item/warpaint_bowl,
-/obj/item/warpaint_bowl,
-/obj/item/warpaint_bowl,
-/obj/item/warpaint_bowl,
-/obj/item/warpaint_bowl,
-/obj/item/warpaint_bowl,
-/obj/item/warpaint_bowl,
-/obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 4
-	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/ambientlighting/building)
 "fI" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/indestructible/ground/outside/dirt{
@@ -432,10 +398,6 @@
 /area/f13/ambientlighting/building)
 "hG" = (
 /obj/structure/closet/locker,
-/obj/item/storage/box/mre/menu4,
-/obj/item/storage/box/mre/menu4,
-/obj/item/storage/box/mre/menu4,
-/obj/item/storage/box/mre/menu4,
 /obj/item/storage/box/mre/menu4,
 /obj/item/storage/box/mre/menu4,
 /obj/item/storage/box/mre/menu4,
@@ -537,17 +499,6 @@
 /obj/item/reagent_containers/food/snacks/kebab,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ambientlighting/building/catgirls_score_here)
-"iT" = (
-/obj/item/clothing/shoes/jackboots,
-/obj/structure/rack/shelf_metal,
-/obj/item/clothing/shoes/jackboots,
-/obj/item/clothing/shoes/jackboots,
-/obj/item/clothing/shoes/jackboots,
-/obj/item/clothing/shoes/jackboots,
-/obj/item/clothing/shoes/jackboots,
-/obj/item/clothing/shoes/jackboots,
-/turf/open/floor/plasteel/white,
-/area/f13/ambientlighting/building)
 "ji" = (
 /obj/machinery/light/small{
 	light_color = "#884444";
@@ -562,11 +513,8 @@
 /turf/open/floor/circuit/telecomms/mainframe,
 /area/tcommsat/server)
 "jm" = (
-/obj/structure/rack/shelf_metal,
-/obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 1;
-	pixel_y = 12
-	},
+/obj/structure/barricade/bars,
+/obj/structure/table/wood/settler,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ambientlighting/building)
 "jp" = (
@@ -675,18 +623,16 @@
 	},
 /area/tcommsat/server)
 "lk" = (
-/obj/item/clothing/under/f13/enclave/peacekeeper,
-/obj/structure/rack/shelf_metal,
-/obj/item/clothing/under/f13/enclave/peacekeeper,
-/obj/item/clothing/under/f13/enclave/peacekeeper,
-/obj/item/clothing/under/f13/enclave/peacekeeper,
-/obj/item/clothing/under/f13/enclave/peacekeeper,
-/obj/item/clothing/under/f13/enclave/peacekeeper,
-/obj/item/clothing/under/f13/enclave/peacekeeper,
-/obj/item/clothing/under/f13/enclave/peacekeeper,
-/obj/item/clothing/under/f13/enclave/peacekeeper,
-/obj/item/clothing/under/f13/enclave/peacekeeper,
-/turf/open/floor/plasteel/white,
+/obj/structure/flora/ausbushes/fullgrass,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/obj/structure/sign/gunshop{
+	pixel_y = 30
+	},
+/turf/open/indestructible/ground/outside/dirt{
+	color = "#BBBBBB"
+	},
 /area/f13/ambientlighting/building)
 "lp" = (
 /obj/structure/simple_door/tent,
@@ -958,16 +904,7 @@
 	},
 /area/tcommsat/server)
 "oy" = (
-/obj/item/clothing/gloves/f13/leather/fingerless,
 /obj/structure/rack/shelf_metal,
-/obj/item/clothing/gloves/f13/leather/fingerless,
-/obj/item/clothing/gloves/f13/leather/fingerless,
-/obj/item/clothing/gloves/f13/leather/fingerless,
-/obj/item/clothing/gloves/f13/leather/fingerless,
-/obj/item/clothing/gloves/f13/leather/fingerless,
-/obj/item/clothing/gloves/f13/leather/fingerless,
-/obj/item/clothing/gloves/f13/leather/fingerless,
-/obj/item/clothing/gloves/f13/leather/fingerless,
 /obj/machinery/light/small{
 	dir = 1
 	},
@@ -1123,19 +1060,9 @@
 	},
 /area/f13/ambientlighting/building)
 "qt" = (
-/obj/item/storage/belt/army,
-/obj/structure/rack/shelf_metal,
-/obj/item/storage/belt/army,
-/obj/item/storage/belt/army,
-/obj/item/storage/belt/army,
-/obj/item/storage/belt/army,
-/obj/item/storage/belt/army,
-/obj/item/storage/belt/army,
-/obj/machinery/light/small{
-	light_color = "#884444";
-	dir = 4
-	},
-/turf/open/floor/plasteel/white,
+/obj/structure/destructible/tribal_torch/wall/lit,
+/obj/structure/table/wood/settler,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ambientlighting/building)
 "qu" = (
 /obj/structure/flora/ausbushes/brflowers,
@@ -1226,16 +1153,15 @@
 	},
 /area/tcommsat/server)
 "rV" = (
-/obj/structure/rack/shelf_metal,
-/obj/item/clothing/shoes/sandal,
-/obj/item/clothing/shoes/sandal,
-/obj/item/clothing/shoes/sandal,
-/obj/item/clothing/shoes/sandal,
-/obj/item/clothing/shoes/sandal,
-/obj/item/clothing/shoes/sandal,
-/obj/item/clothing/shoes/sandal,
-/obj/item/clothing/shoes/sandal,
-/obj/structure/destructible/tribal_torch/wall/lit,
+/obj/structure/table/wood/settler,
+/obj/structure/barricade/barswindow,
+/obj/structure/wasteland_vendor/coolvendor/tribal/generic{
+	dir = 4;
+	pixel_x = -23
+	},
+/obj/structure/rug/carpet2{
+	pixel_x = -14
+	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ambientlighting/building)
 "sb" = (
@@ -1329,14 +1255,6 @@
 	footstep = "grass"
 	},
 /area/f13/wasteland/nash)
-"tW" = (
-/obj/structure/rack/shelf_metal,
-/obj/item/grenade/flashbang,
-/obj/item/grenade/flashbang,
-/obj/item/grenade/flashbang,
-/obj/item/grenade/flashbang,
-/turf/open/floor/plasteel/white,
-/area/f13/ambientlighting/building)
 "tZ" = (
 /obj/structure/flora/grass/wasteland{
 	color = "#33BB33";
@@ -1360,18 +1278,6 @@
 /obj/machinery/telecomms/server/presets/bos,
 /turf/open/floor/circuit/telecomms/mainframe,
 /area/tcommsat/server)
-"ud" = (
-/obj/item/laser_pointer/blue,
-/obj/structure/rack/shelf_metal,
-/obj/item/laser_pointer/blue,
-/obj/item/laser_pointer/blue,
-/obj/item/laser_pointer/blue,
-/obj/item/laser_pointer/blue,
-/obj/item/laser_pointer/blue,
-/obj/item/laser_pointer/blue,
-/obj/item/laser_pointer/blue,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/ambientlighting/building)
 "ur" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/grass/wasteland{
@@ -1398,9 +1304,6 @@
 /area/f13/wasteland/nash)
 "uD" = (
 /obj/structure/closet/locker,
-/obj/item/storage/box/mre/menu1,
-/obj/item/storage/box/mre/menu1,
-/obj/item/storage/box/mre/menu1,
 /obj/item/storage/box/mre/menu1,
 /obj/item/storage/box/mre/menu1,
 /obj/item/storage/box/mre/menu1,
@@ -1560,22 +1463,6 @@
 	color = "#BBBBBB"
 	},
 /area/f13/wasteland/nash)
-"wz" = (
-/obj/structure/rack/shelf_metal,
-/obj/item/clothing/gloves/thief,
-/obj/item/clothing/gloves/thief,
-/obj/item/clothing/gloves/thief,
-/obj/item/clothing/gloves/thief,
-/obj/item/clothing/gloves/thief,
-/obj/item/clothing/gloves/thief,
-/obj/item/clothing/gloves/thief,
-/obj/item/clothing/gloves/thief,
-/obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 8;
-	light_color = "#f4e3b0"
-	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/ambientlighting/building)
 "wM" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/ausbushes/sparsegrass,
@@ -1583,19 +1470,6 @@
 	color = "#BBBBBB"
 	},
 /area/f13/wasteland/nash)
-"wN" = (
-/obj/structure/rack/shelf_metal,
-/obj/item/clothing/head/poppycrown,
-/obj/item/clothing/head/poppycrown,
-/obj/item/clothing/head/poppycrown,
-/obj/item/clothing/head/poppycrown,
-/obj/item/clothing/head/poppycrown,
-/obj/item/clothing/head/poppycrown,
-/obj/item/clothing/head/poppycrown,
-/obj/item/clothing/head/poppycrown,
-/obj/item/clothing/head/poppycrown,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/ambientlighting/building)
 "wQ" = (
 /obj/structure/cross{
 	name = "The Scratching Post";
@@ -1723,25 +1597,17 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ambientlighting/building/catgirls_score_here)
 "yf" = (
-/obj/structure/rack/shelf_metal,
-/obj/item/gun/energy/kinetic_accelerator/crossbow/sling,
-/obj/item/gun/energy/kinetic_accelerator/crossbow/sling,
-/obj/item/gun/energy/kinetic_accelerator/crossbow/sling,
-/obj/item/gun/energy/kinetic_accelerator/crossbow/sling,
-/obj/item/gun/energy/kinetic_accelerator/crossbow/sling,
-/obj/item/gun/energy/kinetic_accelerator/crossbow/sling,
-/obj/item/gun/energy/kinetic_accelerator/crossbow/sling,
-/obj/item/gun/energy/kinetic_accelerator/crossbow/sling,
-/obj/item/gun/energy/kinetic_accelerator/crossbow/sling,
-/obj/item/gun/energy/kinetic_accelerator/crossbow/sling,
-/obj/item/gun/energy/kinetic_accelerator/crossbow/sling,
-/obj/item/gun/energy/kinetic_accelerator/crossbow/sling,
-/obj/item/gun/energy/kinetic_accelerator/crossbow/sling,
-/obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 1;
-	pixel_y = 12
+/obj/structure/window/fulltile{
+	plane = -2;
+	color = "#55FF55"
 	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/obj/structure/lattice,
+/obj/structure/grille,
+/obj/machinery/light/small{
+	dir = 8;
+	light_color = "#d8b1b1"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/green/white,
 /area/f13/ambientlighting/building)
 "yq" = (
 /obj/effect/turf_decal/siding/wood,
@@ -1770,18 +1636,18 @@
 	},
 /area/f13/wasteland/nash)
 "yz" = (
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 8;
+	light_color = "#f4e3b0"
+	},
 /obj/structure/rack/shelf_metal,
-/obj/item/restraints/legcuffs/bola,
-/obj/item/restraints/legcuffs/bola,
-/obj/item/restraints/legcuffs/bola,
-/obj/item/restraints/legcuffs/bola,
-/obj/item/restraints/legcuffs/bola,
-/obj/item/restraints/legcuffs/bola,
-/obj/item/restraints/legcuffs/bola,
-/obj/item/restraints/legcuffs/bola,
-/obj/item/restraints/legcuffs/bola,
-/obj/item/restraints/legcuffs/bola,
-/obj/item/restraints/legcuffs/bola,
+/obj/item/toy/plush/mouse,
+/obj/item/toy/plush/mouse,
+/obj/item/toy/plush/mouse,
+/obj/item/toy/plush/mouse,
+/obj/item/toy/plush/mouse,
+/obj/item/toy/plush/mouse,
+/obj/item/toy/plush/mouse,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ambientlighting/building)
 "yC" = (
@@ -2047,17 +1913,6 @@
 	color = "#BBBBBB"
 	},
 /area/f13/wasteland/nash)
-"Bz" = (
-/obj/structure/rack/shelf_metal,
-/obj/item/storage/belt/utility/mining/primitive,
-/obj/item/storage/belt/utility/mining/primitive,
-/obj/item/storage/belt/utility/mining/primitive,
-/obj/item/storage/belt/utility/mining/primitive,
-/obj/item/storage/belt/utility/mining/primitive,
-/obj/item/storage/belt/utility/mining/primitive,
-/obj/item/storage/belt/utility/mining/primitive,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/ambientlighting/building)
 "BH" = (
 /obj/item/twohanded/required/kirbyplants/random,
 /obj/machinery/light/small{
@@ -2137,10 +1992,6 @@
 /obj/item/storage/box/mre/menu2,
 /obj/item/storage/box/mre/menu2,
 /obj/item/storage/box/mre/menu2,
-/obj/item/storage/box/mre/menu2,
-/obj/item/storage/box/mre/menu2,
-/obj/item/storage/box/mre/menu2,
-/obj/item/storage/box/mre/menu2,
 /turf/open/floor/plasteel/white,
 /area/f13/ambientlighting/building)
 "CO" = (
@@ -2168,22 +2019,15 @@
 /area/f13/ambientlighting/building)
 "Dn" = (
 /obj/structure/rack/shelf_metal,
-/obj/item/melee/classic_baton/coyote/oldquarterstaff/disputestick,
-/obj/item/melee/classic_baton/coyote/oldquarterstaff/disputestick,
-/obj/item/melee/classic_baton/coyote/oldquarterstaff/disputestick,
-/obj/item/melee/classic_baton/coyote/oldquarterstaff/disputestick,
-/obj/item/melee/classic_baton/coyote/oldquarterstaff/disputestick,
-/obj/item/melee/classic_baton/coyote/oldquarterstaff/disputestick,
-/obj/item/melee/classic_baton/coyote/oldquarterstaff/disputestick,
-/obj/item/melee/classic_baton/coyote/oldquarterstaff/disputestick,
-/obj/item/melee/classic_baton/coyote/oldquarterstaff/disputestick,
-/obj/item/melee/classic_baton/coyote/oldquarterstaff/disputestick,
-/obj/item/melee/classic_baton/coyote/oldquarterstaff/disputestick,
-/obj/item/melee/classic_baton/coyote/oldquarterstaff/disputestick,
-/obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 8;
-	light_color = "#f4e3b0"
-	},
+/obj/item/reagent_containers/food/snacks/kebab/rat/double,
+/obj/item/reagent_containers/food/snacks/kebab/rat/double,
+/obj/item/reagent_containers/food/snacks/kebab/rat/double,
+/obj/item/reagent_containers/food/snacks/kebab/rat/double,
+/obj/item/reagent_containers/food/snacks/kebab/rat/double,
+/obj/item/reagent_containers/food/snacks/kebab/rat/double,
+/obj/item/reagent_containers/food/snacks/kebab/rat/double,
+/obj/item/reagent_containers/food/snacks/kebab/rat/double,
+/obj/item/reagent_containers/food/snacks/kebab/rat/double,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ambientlighting/building)
 "Dw" = (
@@ -2206,17 +2050,6 @@
 "DH" = (
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland/nash)
-"DJ" = (
-/obj/structure/rack/shelf_metal,
-/obj/item/storage/box/lights/bulbs,
-/obj/item/storage/box/lights/bulbs,
-/obj/item/storage/box/lights/bulbs,
-/obj/item/storage/box/lights/bulbs,
-/obj/item/storage/box/lights/bulbs,
-/obj/item/storage/box/lights/bulbs,
-/obj/item/storage/box/lights/bulbs,
-/turf/open/floor/plasteel/white,
-/area/f13/ambientlighting/building)
 "DO" = (
 /obj/effect/decal/cleanable/dirt/dust{
 	color = "#997950"
@@ -2230,12 +2063,11 @@
 	},
 /area/f13/wasteland/nash)
 "DP" = (
-/obj/structure/rack/shelf_metal,
-/obj/item/flashlight/seclite,
-/obj/item/flashlight/seclite,
-/obj/item/flashlight/seclite,
-/obj/item/flashlight/seclite,
-/obj/item/flashlight/seclite,
+/obj/structure/table/wood/settler,
+/obj/structure/barricade/barswindow,
+/obj/structure/wasteland_vendor/coolvendor/murrine/generic{
+	pixel_y = 32
+	},
 /turf/open/floor/plasteel/white,
 /area/f13/ambientlighting/building)
 "DT" = (
@@ -2248,30 +2080,7 @@
 	},
 /area/f13/wasteland/nash)
 "DW" = (
-/obj/structure/rack/shelf_metal,
-/obj/item/clothing/under/civ/mayan_loincloth,
-/obj/item/clothing/under/civ/mayan_loincloth,
-/obj/item/clothing/under/civ/mayan_loincloth,
-/obj/item/clothing/under/civ/mayan_loincloth,
-/obj/item/clothing/under/civ/mayan_loincloth,
-/obj/item/clothing/under/civ/mayan_loincloth,
-/obj/item/clothing/under/civ/mayan_loincloth,
-/obj/item/clothing/under/civ/mayan_loincloth,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/ambientlighting/building)
-"DY" = (
-/obj/structure/rack/shelf_metal,
-/obj/item/storage/backpack/satchel/explorer,
-/obj/item/storage/backpack/satchel/explorer,
-/obj/item/storage/backpack/satchel/explorer,
-/obj/item/storage/backpack/satchel/explorer,
-/obj/item/storage/backpack/satchel/explorer,
-/obj/item/storage/backpack/satchel/explorer,
-/obj/item/storage/backpack/satchel/explorer,
-/obj/item/storage/backpack/satchel/explorer,
-/obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 4
-	},
+/obj/structure/destructible/tribal_torch/wall/lit,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ambientlighting/building)
 "Ea" = (
@@ -2280,16 +2089,9 @@
 /turf/open/floor/plasteel/white,
 /area/f13/ambientlighting/building)
 "Eb" = (
-/obj/item/melee/classic_baton/telescopic,
 /obj/structure/rack/shelf_metal,
-/obj/item/melee/classic_baton/telescopic,
-/obj/item/melee/classic_baton/telescopic,
-/obj/item/melee/classic_baton/telescopic,
-/obj/item/melee/classic_baton/telescopic,
-/obj/item/melee/classic_baton/telescopic,
-/obj/item/melee/classic_baton/telescopic,
-/obj/item/melee/classic_baton/telescopic,
-/obj/item/melee/classic_baton/telescopic,
+/obj/item/storage/crayons,
+/obj/item/storage/crayons,
 /obj/machinery/light/small{
 	dir = 1
 	},
@@ -2455,10 +2257,6 @@
 /obj/item/storage/box/mre/menu1,
 /obj/item/storage/box/mre/menu1,
 /obj/item/storage/box/mre/menu1,
-/obj/item/storage/box/mre/menu1,
-/obj/item/storage/box/mre/menu1,
-/obj/item/storage/box/mre/menu1,
-/obj/item/storage/box/mre/menu1,
 /obj/machinery/light/small{
 	dir = 1
 	},
@@ -2475,22 +2273,6 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/white,
-/area/f13/ambientlighting/building)
-"FR" = (
-/obj/structure/rack/shelf_metal,
-/obj/item/clothing/head/helmet/f13/wayfarer/antler,
-/obj/item/clothing/head/helmet/f13/wayfarer/antler,
-/obj/item/clothing/head/helmet/f13/wayfarer/antler,
-/obj/item/clothing/head/helmet/f13/wayfarer/antler,
-/obj/item/clothing/head/helmet/f13/wayfarer/antler,
-/obj/item/clothing/head/helmet/f13/wayfarer/antler,
-/obj/item/clothing/head/helmet/f13/wayfarer/antler,
-/obj/item/clothing/head/helmet/f13/wayfarer/antler,
-/obj/item/clothing/head/helmet/f13/wayfarer/antler,
-/obj/item/clothing/head/helmet/f13/wayfarer/antler,
-/obj/item/clothing/head/helmet/f13/wayfarer/antler,
-/obj/item/clothing/head/helmet/f13/wayfarer/antler,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ambientlighting/building)
 "FZ" = (
 /obj/structure/rug/big/rug_yellow{
@@ -2824,20 +2606,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/white,
 /area/f13/ambientlighting/building)
-"Mi" = (
-/obj/structure/rack/shelf_metal,
-/obj/item/clothing/suit/armor/light/tribal/bone,
-/obj/item/clothing/suit/armor/light/tribal/bone,
-/obj/item/clothing/suit/armor/light/tribal/bone,
-/obj/item/clothing/suit/armor/light/tribal/bone,
-/obj/item/clothing/suit/armor/light/tribal/bone,
-/obj/item/clothing/suit/armor/light/tribal/bone,
-/obj/item/clothing/suit/armor/light/tribal/bone,
-/obj/item/clothing/suit/armor/light/tribal/bone,
-/obj/item/clothing/suit/armor/light/tribal/bone,
-/obj/structure/destructible/tribal_torch/wall/lit,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/ambientlighting/building)
 "Mq" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/chair/stool,
@@ -3152,16 +2920,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ambientlighting/building/catgirls_score_here)
 "QU" = (
-/obj/item/clothing/head/beret,
 /obj/structure/rack/shelf_metal,
-/obj/item/clothing/head/beret,
-/obj/item/clothing/head/beret,
-/obj/item/clothing/head/beret,
-/obj/item/clothing/head/beret,
-/obj/item/clothing/head/beret,
-/obj/item/clothing/head/beret,
-/obj/item/clothing/head/beret,
-/obj/item/clothing/head/beret,
 /turf/open/floor/plasteel/white,
 /area/f13/ambientlighting/building)
 "Re" = (
@@ -3290,10 +3049,6 @@
 /area/f13/ambientlighting/building)
 "Tv" = (
 /obj/structure/closet/locker,
-/obj/item/storage/box/mre/menu4,
-/obj/item/storage/box/mre/menu4,
-/obj/item/storage/box/mre/menu4,
-/obj/item/storage/box/mre/menu4,
 /obj/item/storage/box/mre/menu4,
 /obj/item/storage/box/mre/menu4,
 /obj/item/storage/box/mre/menu4,
@@ -3479,24 +3234,11 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ambientlighting/building)
 "WD" = (
-/obj/structure/rack/shelf_metal,
-/obj/machinery/light/small{
-	dir = 8;
-	light_color = "#d8b1b1"
+/obj/structure/rug/mat/welcome{
+	dir = 2;
+	pixel_x = 17
 	},
-/obj/item/gun/energy/disabler,
-/obj/item/gun/energy/disabler,
-/obj/item/gun/energy/disabler,
-/obj/item/gun/energy/disabler,
-/obj/item/gun/energy/disabler,
-/obj/item/gun/energy/disabler,
-/obj/item/gun/energy/disabler,
-/obj/item/gun/energy/disabler,
-/obj/item/gun/energy/disabler,
-/obj/item/gun/energy/disabler,
-/obj/item/gun/energy/disabler,
-/obj/item/gun/energy/disabler,
-/turf/open/floor/plasteel/white,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ambientlighting/building)
 "WE" = (
 /obj/structure/bed{
@@ -3567,9 +3309,17 @@
 	},
 /area/f13/wasteland/nash)
 "XP" = (
-/obj/structure/stone_tile/slab,
-/obj/structure/simple_door/tent,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/obj/structure/closet/locker,
+/obj/item/storage/box/mre/menu2,
+/obj/item/storage/box/mre/menu2,
+/obj/item/storage/box/mre/menu2,
+/obj/item/storage/box/mre/menu2,
+/obj/item/storage/box/mre/menu2,
+/obj/item/storage/box/mre/menu2,
+/obj/item/storage/box/mre/menu2,
+/obj/item/storage/box/mre/menu2,
+/obj/item/storage/box/mre/menu2,
+/turf/open/floor/plasteel/white,
 /area/f13/ambientlighting/building)
 "XU" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -3591,17 +3341,11 @@
 	},
 /area/f13/wasteland/nash)
 "Yj" = (
-/obj/item/storage/backpack/satchel/trekker,
-/obj/structure/rack/shelf_metal,
-/obj/item/storage/backpack/satchel/trekker,
-/obj/item/storage/backpack/satchel/trekker,
-/obj/item/storage/backpack/satchel/trekker,
-/obj/item/storage/backpack/satchel/trekker,
-/obj/item/storage/backpack/satchel/trekker,
-/obj/item/storage/backpack/satchel/trekker,
-/obj/item/storage/backpack/satchel/trekker,
-/obj/item/storage/backpack/satchel/trekker,
-/turf/open/floor/plasteel/white,
+/obj/structure/simple_door/interior,
+/obj/item/lock_bolt/prelocked{
+	dir = 8
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ambientlighting/building)
 "Yl" = (
 /obj/structure/flora/tree/jungle/small,
@@ -31225,10 +30969,10 @@ fP
 fP
 wl
 wl
-tW
-DJ
-WD
-lk
+hf
+oY
+hf
+ux
 wl
 wl
 XU
@@ -31483,7 +31227,7 @@ fP
 wl
 Eb
 ux
-ux
+yf
 ux
 ux
 oY
@@ -31740,7 +31484,7 @@ fP
 wl
 ek
 ux
-ux
+DP
 ux
 ux
 eq
@@ -31997,9 +31741,9 @@ fP
 wl
 QU
 ux
+oY
 ux
 ux
-uQ
 oY
 pj
 ux
@@ -32254,7 +31998,7 @@ fP
 wl
 oy
 ux
-ux
+oY
 ux
 ux
 eq
@@ -32431,11 +32175,11 @@ Ei
 qb
 qu
 zt
-zt
+TU
 Dn
 yz
-dg
-wz
+dU
+zt
 zt
 zt
 vR
@@ -32510,12 +32254,12 @@ fP
 fP
 wl
 wl
-DP
-Yj
-qt
-iT
+ji
+oY
+ji
+uQ
 wl
-pj
+lk
 ux
 ux
 ux
@@ -32688,12 +32432,12 @@ qu
 cn
 uY
 zt
-yf
 OM
 OM
-OM
-OM
-FR
+nl
+qt
+zt
+zt
 zt
 vR
 vR
@@ -32944,13 +32688,13 @@ jM
 jM
 jM
 jM
-XP
-OM
-OM
-OM
-OM
-OM
-Mi
+zt
+Yj
+rV
+jm
+jm
+zt
+zt
 zt
 vR
 vR
@@ -33201,8 +32945,8 @@ jM
 jM
 jM
 jM
-zt
-OM
+jM
+WD
 OM
 OM
 OM
@@ -33458,13 +33202,13 @@ jM
 jM
 jM
 jM
-XP
+jM
 OM
 OM
 OM
 OM
 OM
-rV
+OM
 zt
 vR
 vR
@@ -33703,7 +33447,7 @@ zt
 OM
 OM
 Wn
-nl
+OM
 OM
 OM
 jM
@@ -33716,12 +33460,12 @@ lV
 Ei
 ky
 zt
-jm
+rg
 OM
 OM
 OM
 OM
-Bz
+rg
 zt
 vR
 vR
@@ -33974,10 +33718,10 @@ GW
 FD
 zt
 zt
-fr
-ud
-wN
-DY
+zt
+zt
+zt
+zt
 zt
 zt
 vR
@@ -42273,7 +42017,7 @@ vR
 OQ
 vR
 wl
-CN
+XP
 Md
 Mq
 zL
@@ -42530,7 +42274,7 @@ OQ
 OQ
 OQ
 wl
-CN
+XP
 Md
 ux
 ux

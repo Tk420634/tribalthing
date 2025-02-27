@@ -1,10 +1,10 @@
-/obj/machinery/mineral/wasteland_vendor/bank
+/obj/structure/wasteland_vendor/bank
 	name = "Banking Machine"
 	desc = "A machine that allows you to deposit coins into your account!"
 	var/ckey = null
 	var/banked_caps = 0
 
-/obj/machinery/mineral/wasteland_vendor/bank/ui_interact(mob/user)
+/obj/structure/wasteland_vendor/bank/ui_interact(mob/user)
 	. = ..()
 	var/dat
 	ckey = user.ckey
@@ -27,7 +27,7 @@
 	popup.open()
 	return
 
-/obj/machinery/mineral/wasteland_vendor/bank/Topic(href, href_list)
+/obj/structure/wasteland_vendor/bank/Topic(href, href_list)
 	if(..())
 		return
 	if(href_list["choice"] == "eject")
@@ -35,7 +35,7 @@
 	if(href_list["choice"] == "redeem")
 		redeem_caps()
 
-/obj/machinery/mineral/wasteland_vendor/bank/proc/redeem_caps()
+/obj/structure/wasteland_vendor/bank/proc/redeem_caps()
 	adjustMoney(usr.ckey, stored_caps)
 	to_chat(usr, "You have added [stored_caps] coins to your account!")
 	stored_caps = 0

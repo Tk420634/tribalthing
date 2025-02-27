@@ -1084,7 +1084,7 @@
 	},
 /area/f13/building/abandoned)
 "aeJ" = (
-/obj/machinery/mineral/wasteland_vendor/mining,
+/obj/structure/wasteland_vendor/mining,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -1875,7 +1875,7 @@
 /area/f13/wasteland)
 "air" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/mineral/wasteland_vendor/pipboy,
+/obj/structure/wasteland_vendor/pipboy,
 /obj/structure/railing{
 	dir = 4;
 	color = "#bb3333"
@@ -2084,7 +2084,7 @@
 	},
 /area/f13/building)
 "aja" = (
-/obj/machinery/mineral/wasteland_vendor/crafting{
+/obj/structure/wasteland_vendor/crafting{
 	icon_state = "parts_idle"
 	},
 /turf/open/floor/f13{
@@ -2281,7 +2281,7 @@
 	},
 /area/f13/building/trainstation)
 "ajO" = (
-/obj/machinery/mineral/wasteland_vendor/ammo,
+/obj/structure/wasteland_vendor/ammo,
 /obj/structure/railing{
 	dir = 4;
 	color = "#bb3333"
@@ -26326,7 +26326,7 @@
 	pixel_y = 32
 	},
 /obj/item/bot_assembly/cleanbot,
-/obj/machinery/mineral/wasteland_vendor/pipboy,
+/obj/structure/wasteland_vendor/pipboy,
 /turf/open/floor/plasteel/f13{
 	icon_state = "plating"
 	},
@@ -52557,7 +52557,7 @@
 	},
 /area/f13/wasteland/city/nash/theloop)
 "kLx" = (
-/obj/machinery/mineral/wasteland_vendor/medical,
+/obj/structure/wasteland_vendor/medical,
 /obj/machinery/light/broken{
 	dir = 1
 	},
@@ -64117,7 +64117,7 @@
 /area/f13/wasteland/city/nash/theloop)
 "nMr" = (
 /obj/structure/spacevine,
-/obj/machinery/mineral/wasteland_vendor/medical,
+/obj/structure/wasteland_vendor/medical,
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaloutermain2right"
 	},
@@ -72767,7 +72767,7 @@
 /area/f13/wasteland)
 "qdX" = (
 /obj/structure/spider/stickyweb,
-/obj/machinery/mineral/wasteland_vendor/mining,
+/obj/structure/wasteland_vendor/mining,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -80823,7 +80823,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/red/white/whiteredchess/whiteredchess2,
 /area/f13/ruins)
 "sqP" = (
-/obj/machinery/mineral/wasteland_vendor/weapons,
+/obj/structure/wasteland_vendor/weapons,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -89572,7 +89572,7 @@
 	},
 /area/f13/ruins)
 "uJp" = (
-/obj/machinery/mineral/wasteland_vendor/attachments{
+/obj/structure/wasteland_vendor/attachments{
 	icon_state = "weapon_idle"
 	},
 /turf/open/floor/f13{
@@ -90034,7 +90034,7 @@
 "uPC" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/mineral/wasteland_vendor/general,
+/obj/structure/wasteland_vendor/general,
 /turf/open/floor/f13{
 	icon_state = "yellowrustyfull"
 	},

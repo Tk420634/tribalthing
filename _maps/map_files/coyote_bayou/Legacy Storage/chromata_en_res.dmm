@@ -6620,7 +6620,7 @@
 /turf/open/indestructible/ground/outside/dirt/harsh,
 /area/awaymission/wildwest)
 "RL" = (
-/obj/machinery/mineral/wasteland_vendor/mining,
+/obj/structure/wasteland_vendor/mining,
 /turf/open/floor/plating{
 	icon_state = "asteroidfloor"
 	},

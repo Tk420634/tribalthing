@@ -4768,7 +4768,7 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/wasteland)
 "bTl" = (
-/obj/machinery/mineral/wasteland_vendor/medical,
+/obj/structure/wasteland_vendor/medical,
 /turf/open/floor/plating/f13/inside,
 /area/f13/building)
 "bTp" = (
@@ -11323,7 +11323,7 @@
 "eKY" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/mineral/wasteland_vendor/mining,
+/obj/structure/wasteland_vendor/mining,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building)
 "eLe" = (
@@ -12363,7 +12363,7 @@
 	pixel_x = -28
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/mineral/wasteland_vendor/pipboy,
+/obj/structure/wasteland_vendor/pipboy,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building)
 "fgG" = (
@@ -12475,7 +12475,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "fjg" = (
-/obj/machinery/mineral/wasteland_vendor/crafting{
+/obj/structure/wasteland_vendor/crafting{
 	icon_state = "parts_idle"
 	},
 /turf/open/indestructible/ground/outside/dirt,
@@ -12900,7 +12900,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building)
 "fue" = (
-/obj/machinery/mineral/wasteland_vendor/weapons,
+/obj/structure/wasteland_vendor/weapons,
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticaloutermaintop"
 	},
@@ -13106,7 +13106,7 @@
 	},
 /area/f13/ncr)
 "fzt" = (
-/obj/machinery/mineral/wasteland_vendor/attachments{
+/obj/structure/wasteland_vendor/attachments{
 	icon_state = "weapon_idle"
 	},
 /obj/machinery/light/small{
@@ -14940,7 +14940,7 @@
 /area/f13/village)
 "gku" = (
 /obj/structure/spider/stickyweb,
-/obj/machinery/mineral/wasteland_vendor/mining,
+/obj/structure/wasteland_vendor/mining,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -18918,7 +18918,7 @@
 /turf/closed/wall/f13/supermart,
 /area/f13/building)
 "hNI" = (
-/obj/machinery/mineral/wasteland_vendor/ammo,
+/obj/structure/wasteland_vendor/ammo,
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticaloutermaintop"
 	},
@@ -26021,7 +26021,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/village)
 "kNh" = (
-/obj/machinery/mineral/wasteland_vendor/clothing,
+/obj/structure/wasteland_vendor/clothing,
 /turf/open/floor/plating/f13/inside,
 /area/f13/building)
 "kNm" = (
@@ -28231,7 +28231,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/machinery/mineral/wasteland_vendor/pipboy,
+/obj/structure/wasteland_vendor/pipboy,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building)
 "lMY" = (
@@ -28514,7 +28514,7 @@
 	},
 /area/f13/building)
 "lTb" = (
-/obj/machinery/mineral/wasteland_vendor/khanchem,
+/obj/structure/wasteland_vendor/khanchem,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "lTk" = (
@@ -31371,7 +31371,7 @@
 /area/f13/wasteland)
 "mZd" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/mineral/wasteland_vendor/pipboy,
+/obj/structure/wasteland_vendor/pipboy,
 /turf/open/floor/f13{
 	icon_state = "darkrusty"
 	},
@@ -35391,7 +35391,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/ncr)
 "oUV" = (
-/obj/machinery/mineral/wasteland_vendor/special,
+/obj/structure/wasteland_vendor/special,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/building)
 "oVe" = (
@@ -38587,7 +38587,7 @@
 /turf/closed/mineral/random/high_chance,
 /area/f13/tunnel)
 "qpM" = (
-/obj/machinery/mineral/wasteland_vendor/general,
+/obj/structure/wasteland_vendor/general,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/building)
 "qpY" = (
@@ -40448,7 +40448,7 @@
 	},
 /area/f13/wasteland)
 "reg" = (
-/obj/machinery/mineral/wasteland_vendor/crafting{
+/obj/structure/wasteland_vendor/crafting{
 	icon_state = "parts_idle"
 	},
 /turf/open/floor/f13{
@@ -43017,7 +43017,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/obj/machinery/mineral/wasteland_vendor/medical,
+/obj/structure/wasteland_vendor/medical,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/village)
 "sow" = (
@@ -51073,7 +51073,7 @@
 	},
 /area/f13/village)
 "vUa" = (
-/obj/machinery/mineral/wasteland_vendor/attachments{
+/obj/structure/wasteland_vendor/attachments{
 	icon_state = "weapon_idle"
 	},
 /turf/open/floor/f13{
@@ -53913,7 +53913,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/village)
 "xkj" = (
-/obj/machinery/mineral/wasteland_vendor/advcomponents,
+/obj/structure/wasteland_vendor/advcomponents,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -55488,7 +55488,7 @@
 	},
 /area/f13/building)
 "xVI" = (
-/obj/machinery/mineral/wasteland_vendor/pipboy,
+/obj/structure/wasteland_vendor/pipboy,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
 	color = "#818181";

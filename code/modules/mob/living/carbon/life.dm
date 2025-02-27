@@ -529,6 +529,8 @@ GLOBAL_LIST_INIT(ballmer_windows_me_msg, list("Yo man, what if, we like, uh, put
 		if(!(combat_flags & COMBAT_FLAG_HARD_STAMCRIT))
 			stamheal *= SSmobs.stat_roll_stamina_recovery_per_tick(src)
 		adjustStaminaLoss(-stamheal)
+		if(getStaminaLoss() < 20)
+			worth_critting = TRUE
 
 	// if(!(combat_flags & COMBAT_FLAG_HARD_STAMCRIT) && incomingstammult != 1)
 	// 	incomingstammult = max(0.01, incomingstammult)

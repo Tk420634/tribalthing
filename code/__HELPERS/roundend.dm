@@ -375,30 +375,51 @@
 		switch(murine_score)
 			if(1)
 				parts += span_greentext("[FOURSPACES]Colonial Murrines win, just barely!")
+				pay_everyone_alive("murrine", 250)
 			if(2)
 				parts += span_greentext("[FOURSPACES]Colonial Murrines sorta win!")
+				pay_everyone_alive("murrine", 350)
 			if(3)
 				parts += span_greentext("[FOURSPACES]Colonial Murrines really win!")
+				pay_everyone_alive("murrine", 450)
 			if(4)
 				parts += span_greentext("[FOURSPACES]Colonial Murrines REALLY REALLY WIN!")
+				pay_everyone_alive("murrine", 500)
 			else
 				parts += span_greentext("[FOURSPACES]Colonial Murrines WON SO HARD!!!!")
+				pay_everyone_alive("murrine", 600)
 	else
 		switch(kitten_score)
 			if(1)
 				parts += span_greentext("[FOURSPACES]Catgirls win, just barely!")
+				pay_everyone_alive("cat", 250)
 			if(2)
 				parts += span_greentext("[FOURSPACES]Catgirls sorta win!")
+				pay_everyone_alive("cat", 350)
 			if(3)
 				parts += span_greentext("[FOURSPACES]Catgirls really win!")
+				pay_everyone_alive("cat", 450)
 			if(4)
 				parts += span_greentext("[FOURSPACES]Catgirls REALLY REALLY WIN!")
+				pay_everyone_alive("cat", 500)
 			else
 				parts += span_greentext("[FOURSPACES]Catgirls WON SO HARD!!!!")
+				pay_everyone_alive("cat", 600)
 	if(prob(1))
 		parts += span_greentext("[FOURSPACES]oh yeah also JUSTIN WINS!")
 	parts += "</div>"
 	return parts.Join("<br>")
+
+/datum/controller/subsystem/ticker/proc/pay_everyone_alive(faction, amount)
+	for(var/client/C in GLOB.clients)
+		var/mob/living/L = C.mob
+		if(!isliving(L))
+			continue
+		if(!(faction in L.faction))
+			continue
+		L.paycash(amount)
+		to_chat(L, span_greentext("Great job with those objectives! Have [amount] bucks =3 (you rule!)"))
+
 
 /datum/controller/subsystem/ticker/proc/survivor_report(popcount)
 	var/list/parts = list()

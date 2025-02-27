@@ -1458,7 +1458,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "aWZ" = (
-/obj/machinery/mineral/wasteland_vendor/general{
+/obj/structure/wasteland_vendor/general{
 	icon_state = "nugeneric_idle"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
@@ -7377,7 +7377,7 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
 "fpX" = (
-/obj/machinery/mineral/wasteland_vendor/pipboy,
+/obj/structure/wasteland_vendor/pipboy,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	color = "#e4e4e4"
 	},
@@ -12650,7 +12650,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/building/mall)
 "iNJ" = (
-/obj/machinery/mineral/wasteland_vendor/traderspecial{
+/obj/structure/wasteland_vendor/traderspecial{
 	icon_state = "trade_,mining"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
@@ -16707,7 +16707,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/caves)
 "loy" = (
-/obj/machinery/mineral/wasteland_vendor/ammo,
+/obj/structure/wasteland_vendor/ammo,
 /turf/open/floor/plating/f13/inside,
 /area/f13/store)
 "loB" = (
@@ -16980,7 +16980,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/machinery/mineral/wasteland_vendor/traderspecial{
+/obj/structure/wasteland_vendor/traderspecial{
 	icon_state = "trade_,mining"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
@@ -17033,7 +17033,7 @@
 	},
 /area/f13/building/mall)
 "lzJ" = (
-/obj/machinery/mineral/wasteland_vendor/medical,
+/obj/structure/wasteland_vendor/medical,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/indestructible/ground/outside/civ/woodalt,
 /area/f13/building)
@@ -22687,7 +22687,7 @@
 /area/f13/building)
 "poL" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/mineral/wasteland_vendor/ammo,
+/obj/structure/wasteland_vendor/ammo,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	color = "#e4e4e4"
 	},
@@ -31516,7 +31516,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/machinery/mineral/wasteland_vendor/attachments,
+/obj/structure/wasteland_vendor/attachments,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	color = "#e4e4e4"
 	},
@@ -35073,7 +35073,7 @@
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
 "xTM" = (
-/obj/machinery/mineral/wasteland_vendor/weapons,
+/obj/structure/wasteland_vendor/weapons,
 /turf/open/floor/plating/f13/inside,
 /area/f13/store)
 "xTR" = (

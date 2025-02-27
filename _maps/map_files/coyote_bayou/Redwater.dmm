@@ -18174,7 +18174,7 @@
 	},
 /area/f13/building)
 "gEU" = (
-/obj/machinery/mineral/wasteland_vendor/crafting{
+/obj/structure/wasteland_vendor/crafting{
 	icon_state = "parts_idle"
 	},
 /turf/open/floor/f13/wood,
@@ -18400,7 +18400,7 @@
 /turf/open/indestructible/ground/outside/gravel,
 /area/f13/wasteland/redwater)
 "gIF" = (
-/obj/machinery/mineral/wasteland_vendor/attachments{
+/obj/structure/wasteland_vendor/attachments{
 	icon_state = "weapon_idle"
 	},
 /turf/open/floor/f13/wood,
@@ -19659,7 +19659,7 @@
 	},
 /area/f13/wasteland/redwater)
 "hij" = (
-/obj/machinery/mineral/wasteland_vendor/weapons,
+/obj/structure/wasteland_vendor/weapons,
 /turf/open/floor/f13{
 	icon_state = "bar"
 	},
@@ -29866,7 +29866,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/redwater)
 "kTN" = (
-/obj/machinery/mineral/wasteland_vendor/ammo,
+/obj/structure/wasteland_vendor/ammo,
 /obj/machinery/light{
 	dir = 8;
 	light_color = "#e8eaff"
@@ -35949,7 +35949,7 @@
 /turf/open/floor/wood_common,
 /area/f13/building)
 "niF" = (
-/obj/machinery/mineral/wasteland_vendor/crafting{
+/obj/structure/wasteland_vendor/crafting{
 	icon_state = "parts_idle"
 	},
 /obj/effect/turf_decal/weather/dirt{
@@ -43490,7 +43490,7 @@
 	},
 /area/f13/building/coyote/safe/redwater)
 "qbj" = (
-/obj/machinery/mineral/wasteland_vendor/crafting,
+/obj/structure/wasteland_vendor/crafting,
 /turf/open/indestructible/ground/outside/road,
 /area/f13/wasteland)
 "qbr" = (
@@ -56592,7 +56592,7 @@
 	},
 /area/f13/caves)
 "uLj" = (
-/obj/machinery/mineral/wasteland_vendor/special,
+/obj/structure/wasteland_vendor/special,
 /turf/open/floor/f13{
 	icon_state = "bar"
 	},

@@ -25,6 +25,8 @@ SUBSYSTEM_DEF(mobs)
 	var/disable_stambuffer = TRUE
 	var/heal_traumas_when_brain_is_okay = TRUE
 
+	var/cash_for_critting_someone = 100
+
 	var/distance_where_a_player_needs_to_be_in_for_npcs_to_fight_other_npcs = 12
 
 	var/debug_disable_mob_ceasefire = TRUE // this feature sucks
@@ -126,19 +128,19 @@ SUBSYSTEM_DEF(mobs)
 		if(5)
 			endmod = 1
 		if(6)
-			endmod = 0.90
+			endmod = 0.95
 		if(7)
-			endmod = 0.80
+			endmod = 0.90
 		if(8)
-			endmod = 0.65
+			endmod = 0.85
 		if(9)
-			endmod = 0.45
+			endmod = 0.80
 	return endmod
 
 /datum/controller/subsystem/mobs/proc/stat_roll_stamina_recovery_per_tick(mob/living/mob)
+	var/stamheal = 3
 	if(!isliving(mob))
-		return 5
-	var/stamheal = 5
+		return stamheal
 	switch(mob.get_stat(STAT_ENDURANCE)) // COOLSTAT IMPLEMENTATION: ENDURANCE
 		if(0, 1)
 			stamheal *= 0.1
@@ -153,11 +155,11 @@ SUBSYSTEM_DEF(mobs)
 		if(6)
 			stamheal *= 1.2
 		if(7)
-			stamheal *= 1.35
+			stamheal *= 1.25
 		if(8)
-			stamheal *= 1.5
+			stamheal *= 1.35
 		if(9)
-			stamheal *= 1.7
+			stamheal *= 1.5
 	return stamheal
 
 /datum/controller/subsystem/mobs/proc/stat_roll_stamcrit_timeout(mob/living/mob)
@@ -185,6 +187,31 @@ SUBSYSTEM_DEF(mobs)
 			timeout *= 0.75
 	return timeout
 
+/datum/controller/subsystem/mobs/proc/stat_roll_vendor_multiplier(mob/living/mob)
+	if(!isliving(mob))
+		return 1
+	var/cha_mod = 1
+	switch(mob.get_stat(STAT_CHARISMA)) // COOLSTAT IMPLEMENTATION: CHARISMA
+		if(0, 1)
+			cha_mod = 3
+		if(2)
+			cha_mod = 2
+		if(3)
+			cha_mod = 1.75
+		if(4)
+			cha_mod = 1.1
+		if(5)
+			cha_mod = 1
+		if(6)
+			cha_mod = 0.95
+		if(7)
+			cha_mod = 0.90
+		if(8)
+			cha_mod = 0.85
+		if(9)
+			cha_mod = 0.80
+	return cha_mod
+
 
 
 
@@ -208,4 +235,23 @@ SUBSYSTEM_DEF(mobs)
 	if(num_in_play < 0)
 		// message_admins("ERROR: mob_tally for [mymob] num_in_play < 0")
 		num_in_play = 0
+
+/proc/is_on_same_side(mob/living/player1, mob/living/player2)
+	var/am_cat = ("cat" in player1.faction)
+	var/am_mur = ("murrine" in player1.faction)
+	var/they_cat = ("cat" in player2.faction)
+	var/they_mur = ("murrine" in player2.faction)
+	if(am_cat && they_cat)
+		return FALSE
+	if(am_mur && they_mur)
+		return FALSE
+	// if(!am_cat && !am_mur)
+	// 	return FALSE
+	// if(!they_cat && !they_mur)
+	// 	return FALSE
+	// if(!am_cat && !am_mur && !they_cat && !they_mur)
+	// 	return FALSE
+	return TRUE
+
+
 

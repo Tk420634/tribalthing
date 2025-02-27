@@ -863,7 +863,7 @@
 	},
 /area/f13/wasteland/nash)
 "aeJ" = (
-/obj/machinery/mineral/wasteland_vendor/mining,
+/obj/structure/wasteland_vendor/mining,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -1538,7 +1538,7 @@
 	},
 /area/f13/store)
 "air" = (
-/obj/machinery/mineral/wasteland_vendor/pipboy,
+/obj/structure/wasteland_vendor/pipboy,
 /obj/structure/railing{
 	dir = 4;
 	color = "#bb3333"
@@ -1702,7 +1702,7 @@
 	},
 /area/f13/building)
 "aja" = (
-/obj/machinery/mineral/wasteland_vendor/crafting{
+/obj/structure/wasteland_vendor/crafting{
 	icon_state = "parts_idle"
 	},
 /turf/open/floor/f13{
@@ -1873,7 +1873,7 @@
 	},
 /area/f13/building/trainstation)
 "ajO" = (
-/obj/machinery/mineral/wasteland_vendor/ammo,
+/obj/structure/wasteland_vendor/ammo,
 /obj/structure/railing{
 	dir = 4;
 	color = "#bb3333"
@@ -12508,7 +12508,7 @@
 	},
 /area/f13/wasteland)
 "bek" = (
-/obj/machinery/mineral/wasteland_vendor/general{
+/obj/structure/wasteland_vendor/general{
 	icon_state = "nugeneric_idle"
 	},
 /turf/open/floor/wood_common{
@@ -22576,7 +22576,7 @@
 	pixel_y = 32
 	},
 /obj/item/bot_assembly/cleanbot,
-/obj/machinery/mineral/wasteland_vendor/pipboy,
+/obj/structure/wasteland_vendor/pipboy,
 /turf/open/floor/plasteel/f13{
 	icon_state = "plating"
 	},
@@ -26489,7 +26489,7 @@
 	},
 /area/debug_mussy)
 "eXw" = (
-/obj/machinery/mineral/wasteland_vendor/special,
+/obj/structure/wasteland_vendor/special,
 /turf/open/floor/wood_fancy/wood_fancy_light,
 /area/f13/building/bank)
 "eXx" = (
@@ -33684,7 +33684,7 @@
 	},
 /area/f13/wasteland/coyote/nash/southeastcornercamp)
 "huI" = (
-/obj/machinery/mineral/wasteland_vendor/mining,
+/obj/structure/wasteland_vendor/mining,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -36263,7 +36263,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/blue,
 /area/f13/building/abandoned)
 "inE" = (
-/obj/machinery/mineral/wasteland_vendor/weapons,
+/obj/structure/wasteland_vendor/weapons,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -42949,7 +42949,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "kLx" = (
-/obj/machinery/mineral/wasteland_vendor/medical,
+/obj/structure/wasteland_vendor/medical,
 /obj/machinery/light/broken{
 	dir = 1
 	},
@@ -44016,7 +44016,7 @@
 	dir = 4;
 	color = "#bb3333"
 	},
-/obj/machinery/mineral/wasteland_vendor/mining,
+/obj/structure/wasteland_vendor/mining,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -51853,7 +51853,7 @@
 	},
 /area/f13/wasteland)
 "nMr" = (
-/obj/machinery/mineral/wasteland_vendor/medical,
+/obj/structure/wasteland_vendor/medical,
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaloutermain2right"
 	},
@@ -52053,7 +52053,7 @@
 	},
 /area/f13/wasteland)
 "nPu" = (
-/obj/machinery/mineral/wasteland_vendor/ammo,
+/obj/structure/wasteland_vendor/ammo,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -58406,7 +58406,7 @@
 /area/f13/wasteland)
 "qdX" = (
 /obj/structure/spider/stickyweb,
-/obj/machinery/mineral/wasteland_vendor/mining,
+/obj/structure/wasteland_vendor/mining,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -64581,7 +64581,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/ruins)
 "smI" = (
-/obj/machinery/mineral/wasteland_vendor/crafting,
+/obj/structure/wasteland_vendor/crafting,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -64880,7 +64880,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/red/white/whiteredchess/whiteredchess2,
 /area/f13/ruins)
 "sqP" = (
-/obj/machinery/mineral/wasteland_vendor/weapons,
+/obj/structure/wasteland_vendor/weapons,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -66071,7 +66071,7 @@
 /turf/open/indestructible/ground/outside/dirthole,
 /area/f13/wasteland/city/nash/starterroad)
 "sMo" = (
-/obj/machinery/mineral/wasteland_vendor/traderspecial,
+/obj/structure/wasteland_vendor/traderspecial,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
@@ -71589,7 +71589,7 @@
 	},
 /area/f13/wasteland)
 "uJp" = (
-/obj/machinery/mineral/wasteland_vendor/attachments{
+/obj/structure/wasteland_vendor/attachments{
 	icon_state = "weapon_idle"
 	},
 /turf/open/floor/f13{
@@ -71996,7 +71996,7 @@
 	},
 /area/f13/tunnel)
 "uPC" = (
-/obj/machinery/mineral/wasteland_vendor/general,
+/obj/structure/wasteland_vendor/general,
 /turf/open/floor/f13{
 	icon_state = "yellowrustyfull"
 	},
@@ -80178,7 +80178,7 @@
 /obj/machinery/light{
 	light_color = "#e8eaff"
 	},
-/obj/machinery/mineral/wasteland_vendor/medical,
+/obj/structure/wasteland_vendor/medical,
 /turf/open/floor/f13/wood,
 /area/f13/building/hospital/clinic/nash)
 "xDy" = (
