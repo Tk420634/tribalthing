@@ -603,7 +603,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		if(VENDORLINE_BAD_FACTION)
 			. = safepick(messages_badfaction)
 	if(!.)
-	 return "Squeak!"
+		return "Squeak!"
 	var/replaceplayername = user ? "[user.name]" : "Cutie"
 	var/randomware = "a cute thingy"
 	var/datum/data/wasteland_equipment/rand = safepick(prize_list)
