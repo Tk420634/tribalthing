@@ -565,6 +565,9 @@
 	if(!on || (stat & (NOPOWER|BROKEN)) || manual_control)
 		return
 
+	if(dont_scan())
+		return
+
 	if(!check_should_process())
 		return
 	/// We dont have a target, look for targets. If we just got out of shooting, beep while scanning for a while
@@ -591,6 +594,9 @@
 		INVOKE_ASYNC(src,PROC_REF(open_fire_on_target))
 		if(!caution_bursts_left)
 			change_activity_state(TURRET_EVASION_MODE)
+
+/obj/machinery/porta_turret/proc/dont_scan()
+	return
 
 /// Interrupts our current mode, and sets it to alert
 /// For when something hits it and it needs to retaliate
@@ -2044,8 +2050,12 @@
 	. += "It has [span_notice("[our_mag.ammo_count() + (!!chambered)]")] / [span_notice("[our_mag.max_ammo]")] round\s remaining."
 
 /obj/machinery/porta_turret/f13/nash/proc/out_of_ammo_alert()
-	playsound(get_turf(src), 'sound/machines/triple_beep.ogg', 40, FALSE, 0, ignore_walls = TRUE)
+	// playsound(get_turf(src), 'sound/machines/triple_beep.ogg', 40, FALSE, 0, ignore_walls = TRUE)
 	say("OUT OF: AMMO! NEED: [span_notice(english_list(our_mag.caliber))]!", only_overhead = TRUE)
+
+/obj/machinery/porta_turret/f13/nash/dont_scan()
+	if((!chambered || (chambered && !chambered.BB)) && !our_mag.ammo_count())
+		return TRUE
 
 /obj/machinery/porta_turret/f13/nash/proc/eject_chambered_round(keep_it)
 	if(!istype(chambered))
