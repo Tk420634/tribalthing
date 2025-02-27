@@ -245,7 +245,7 @@
 
 
 /obj/item/gun/flintlock/musket/catgirl
-	name = "catgirl tribal dart musket"
+	name = "Arisnyaka Mk. I"
 	desc = "An ancient but well kept Nyanpire black powder dartgun."
 	icon = 'modular_coyote/icons/objects/ancient.dmi'
 	icon_state = "musket1"
@@ -467,7 +467,7 @@
 	inhand_icon_state = "imperial_kite"
 	max_integrity = -1
 	resistance_flags = null
-	reflectshot_chance = 95
+	reflectshot_chance = 60
 	slowdown = 0.1
 
 /obj/item/melee/unarmed/brass/knyackles
@@ -517,7 +517,7 @@
 /obj/item/melee/classic_baton/coyote/oldquarterstaff/nya
 	name = "Nyampire Quartersnyaff"
 	color = "#FF0000"
-	reflectshot_chance = 95
+	reflectshot_chance = 60
 	factionbound = list("cat")
 	berryable = TRUE
 	slowdown = 0.1

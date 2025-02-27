@@ -64,7 +64,7 @@
 		if(is_on_same_side(src, doer))
 			continue
 		var/howlongago = world.time - attacked_me[pkey]
-		if(howlongago > 30 SECONDS)
+		if(howlongago > 5 MINUTES)
 			continue
 		attackers |= pkey
 	for(var/dinker in attackers)
