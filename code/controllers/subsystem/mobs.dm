@@ -242,16 +242,16 @@ SUBSYSTEM_DEF(mobs)
 	var/they_cat = ("cat" in player2.faction)
 	var/they_mur = ("murrine" in player2.faction)
 	if(am_cat && they_cat)
-		return FALSE
+		return TRUE
 	if(am_mur && they_mur)
-		return FALSE
+		return TRUE
 	// if(!am_cat && !am_mur)
 	// 	return FALSE
 	// if(!they_cat && !they_mur)
 	// 	return FALSE
 	// if(!am_cat && !am_mur && !they_cat && !they_mur)
 	// 	return FALSE
-	return TRUE
+	return FALSE
 
 
 
