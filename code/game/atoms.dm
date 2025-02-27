@@ -124,6 +124,11 @@
 	var/very_important
 	var/disappear_after
 
+	/// HOW 2 USE
+	/// place a png file in icons/thingimages
+	/// put the link here like this: 'icons/thingimages/mylovelyimage.png'
+	var/thingimage
+
 /atom/New(loc, ...)
 	//atom creation method that preloads variables at creation
 	if(GLOB.use_preloader && (src.type == GLOB._preloader.target_path))//in case the instanciated atom is creating other atoms in New()
@@ -503,10 +508,10 @@
 			. += span_green("You figure this thing is worth around [round(itworth[tweb], 250)] science points.")
 
 	SEND_SIGNAL(src, COMSIG_PARENT_EXAMINE, user, .)
-	// if(thingimage)
-	var/fname = "thing[round(world.time)].png"
-	user << browse_rsc('icons/ass/assfemale.png', fname)
-	. += "<img src=[fname] height=80 width=80 border=4>"
+	if(thingimage)
+		var/fname = "thing[round(world.time)].png"
+		user << browse_rsc(thingimage, fname)
+		. += "<img src=[fname] height=200px width=80% border=4>"
 
 
 /**

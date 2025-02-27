@@ -46,9 +46,40 @@
 			var/tmtt = round(timeout*0.1, 0.5)
 			var/timez = span_green("[tmtt] seconds")
 			to_chat(src, span_notice("If left alone, you should start feeling better in about [timez]!"))
+			worth_critting = FALSE
+			payout_attackers()
 	if((combat_flags & COMBAT_FLAG_HARD_STAMCRIT) && stam_damage <= STAMINA_SOFTCRIT)
 		to_chat(src, span_notice("You don't feel nearly as exhausted anymore."))
 		DISABLE_BITFIELD(combat_flags, COMBAT_FLAG_HARD_STAMCRIT | COMBAT_FLAG_SOFT_STAMCRIT)
 		filters -= CIT_FILTER_STAMINACRIT
 		update_mobility()
 	update_health_hud()
+
+/mob/living/carbon/proc/payout_attackers()
+	var/list/attackers = list()
+	for(var/pkey in attacked_me)
+		var/mob/doer = extract_mob(pkey)
+		if(!doer)
+			continue
+		if(is_on_same_side(src, doer))
+			continue
+		var/howlongago = world.time - attacked_me[pkey]
+		if(howlongago > 30 SECONDS)
+			continue
+		attackers |= pkey
+	for(var/dinker in attackers)
+		var/mob/living/doper = extract_mob(dinker)
+		doper.paycash(SSmobs.cash_for_critting_someone)
+
+
+/mob/living/proc/paycash(amount)
+	var/amt = COINS_TO_CREDITS(amount)
+	if(!SSeconomy.adjust_funds(src, amt))
+		return
+	var/cashdisplay = ""
+	if(amt >= 0)
+		cashdisplay += "+"
+	else
+		cashdisplay += "-"
+	cashdisplay += "$[CREDITS_TO_COINS(amt)]"
+	new /obj/effect/temp_visual/floaty_thing/cash(get_turf(src), cashdisplay)

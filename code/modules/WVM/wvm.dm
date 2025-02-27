@@ -668,7 +668,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 	dat += "</table>"
 	dat += "</div>"
 
-	var/datum/browser/popup = new(user, "tradingvendor", "Wasteland Vending Machine", 400, 500)
+	var/datum/browser/popup = new(user, "tradingvendor", "NPC Vendor", 400, 500)
 	popup.set_content(dat)
 	popup.open()
 	return

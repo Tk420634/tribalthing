@@ -62,6 +62,7 @@
 	
 	
 	prize_list = list(
+		new /datum/data/wasteland_equipment("Sinew Cuffs",	       /obj/item/restraints/handcuffs/sinew, 						10),
 		new /datum/data/wasteland_equipment("Snack Stick",	       /obj/item/reagent_containers/food/snacks/kebab, 						20),
 		new /datum/data/wasteland_equipment("Dispute Stick",       /obj/item/melee/classic_baton/coyote/oldquarterstaff/disputestick, 	50),
 		new /datum/data/wasteland_equipment("Sling",               /obj/item/gun/energy/kinetic_accelerator/crossbow/sling,           	75),
@@ -104,6 +105,7 @@
 	
 	
 	prize_list = list(
+		new /datum/data/wasteland_equipment("Handcuffs",	       /obj/item/restraints/handcuffs/, 					10),
 		new /datum/data/wasteland_equipment("Batong",			/obj/item/melee/classic_baton/telescopic, 					50),
 		new /datum/data/wasteland_equipment("Disabler",			/obj/item/gun/energy/disabler,								75),
 		new /datum/data/wasteland_equipment("Flashbang",		/obj/item/grenade/flashbang,                                30),

@@ -2100,17 +2100,17 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		switch(hit_area)
 			if(BODY_ZONE_HEAD)
 				if(!I.get_sharpness() && armor_block < 50)
-					if(prob(totitemdamage))
-						H.adjustOrganLoss(ORGAN_SLOT_BRAIN, 20)
-						if(H.stat == CONSCIOUS)
-							H.visible_message(span_danger("[H] has been knocked senseless!"), \
-											span_userdanger("You have been knocked senseless!"))
-							H.confused = max(H.confused, 20)
-							H.adjust_blurriness(10)
-						if(prob(10))
-							H.gain_trauma(/datum/brain_trauma/mild/concussion)
-					else
-						H.adjustOrganLoss(ORGAN_SLOT_BRAIN, totitemdamage * 0.2)
+					// if(prob(totitemdamage))
+					// 	H.adjustOrganLoss(ORGAN_SLOT_BRAIN, 20)
+					// 	if(H.stat == CONSCIOUS)
+					// 		H.visible_message(span_danger("[H] has been knocked senseless!"), 
+					// 						span_userdanger("You have been knocked senseless!"))
+					// 		H.confused = max(H.confused, 20)
+					// 		H.adjust_blurriness(10)
+						// if(prob(10))
+						// 	H.gain_trauma(/datum/brain_trauma/mild/concussion)
+					// else
+					H.adjustOrganLoss(ORGAN_SLOT_BRAIN, totitemdamage * 0.2)
 
 					if(H.stat == CONSCIOUS && H != user && prob(totitemdamage + ((100 - H.health) * 0.5))) // rev deconversion through blunt trauma.
 						var/datum/antagonist/rev/rev = H.mind.has_antag_datum(/datum/antagonist/rev)
@@ -2129,11 +2129,11 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 						H.update_inv_glasses()
 
 			if(BODY_ZONE_CHEST)
-				if(H.stat == CONSCIOUS && !I.get_sharpness() && armor_block < 50)
-					if(prob(totitemdamage))
-						H.visible_message(span_danger("[H] has been knocked down!"), \
-									span_userdanger("[H] has been knocked down!"))
-						H.apply_effect(60, EFFECT_KNOCKDOWN, armor_block)
+				// if(H.stat == CONSCIOUS && !I.get_sharpness() && armor_block < 50)
+				// 	if(prob(totitemdamage))
+				// 		H.visible_message(span_danger("[H] has been knocked down!"), 
+				// 					span_userdanger("[H] has been knocked down!"))
+				// 		H.apply_effect(60, EFFECT_KNOCKDOWN, armor_block)
 
 				if(bloody)
 					if(H.wear_suit)
@@ -2322,6 +2322,11 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 
 	if(!forced && damage > 0 && damage_threshold && (damagetype in GLOB.damage_threshold_valid_types))
 		damage = max(damage - min(damage_threshold, ARMOR_CAP_DT), 0.1)
+
+	if(damage > 3)
+		var/mob/living/attacker = usr // who knows if this works
+		if(isliving(attacker) && attacker != H && attacker.client && !is_on_same_side(H, attacker))
+			H.attacked_me[attacker.ckey] = world.time
 
 	switch(damagetype)
 		if(BRUTE)

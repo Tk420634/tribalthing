@@ -25,6 +25,8 @@ SUBSYSTEM_DEF(mobs)
 	var/disable_stambuffer = TRUE
 	var/heal_traumas_when_brain_is_okay = TRUE
 
+	var/cash_for_critting_someone = 100
+
 	var/distance_where_a_player_needs_to_be_in_for_npcs_to_fight_other_npcs = 12
 
 	var/debug_disable_mob_ceasefire = TRUE // this feature sucks
@@ -233,4 +235,23 @@ SUBSYSTEM_DEF(mobs)
 	if(num_in_play < 0)
 		// message_admins("ERROR: mob_tally for [mymob] num_in_play < 0")
 		num_in_play = 0
+
+/proc/is_on_same_side(mob/living/player1, mob/living/player2)
+	var/am_cat = ("cat" in player1.faction)
+	var/am_mur = ("murrine" in player1.faction)
+	var/they_cat = ("cat" in player2.faction)
+	var/they_mur = ("murrine" in player2.faction)
+	if(am_cat && they_cat)
+		return FALSE
+	if(am_mur && they_mur)
+		return FALSE
+	// if(!am_cat && !am_mur)
+	// 	return FALSE
+	// if(!they_cat && !they_mur)
+	// 	return FALSE
+	// if(!am_cat && !am_mur && !they_cat && !they_mur)
+	// 	return FALSE
+	return TRUE
+
+
 

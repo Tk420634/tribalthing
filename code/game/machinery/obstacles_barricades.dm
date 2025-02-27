@@ -374,6 +374,10 @@
 	proj_pass_rate = 50
 	pass_flags_self = null
 
+/obj/structure/barricade/bars/make_debris()
+	new /obj/item/stack/rods(get_turf(src), 8)
+
+
 /obj/structure/barricade/barswindow
 	name = "metal bars"
 	desc = "Old, corroded metal bars. The bars have a window for easily passing things through!" 

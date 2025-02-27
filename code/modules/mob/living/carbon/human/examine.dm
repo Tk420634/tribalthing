@@ -751,6 +751,9 @@ GLOBAL_LIST_INIT(personalitytrait2description, list(
 
 	if(has_status_effect(STATUS_EFFECT_ADMINSLEEP))
 		. += span_danger("<B>This player has been slept by staff.</B>\n")
+		
+	if(worth_critting && !is_on_same_side(src, user))
+		. += span_green("They look like they'd be worth [SSmobs.cash_for_critting_someone] bucks to knock on their ass!")
 
 	. += "*---------*</span>"
 

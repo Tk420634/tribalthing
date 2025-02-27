@@ -48,9 +48,9 @@
 	. = ..()
 	icon_state = door_type
 	SetBounds()
-	if(mapload)
-		if(prob(50))
-			INVOKE_ASYNC(src, PROC_REF(Open), TRUE)
+	// if(mapload)
+	// 	if(prob(50))
+	// 		INVOKE_ASYNC(src, PROC_REF(Open), TRUE)
 
 /obj/structure/simple_door/Destroy()
 	if(padlock)

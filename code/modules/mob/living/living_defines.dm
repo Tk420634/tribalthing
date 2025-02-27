@@ -181,3 +181,6 @@
 	var/coolshadow = TRUE
 
 	var/stamcrit_timeout = 0
+
+	var/worth_critting = TRUE
+	var/attacked_me = list()
