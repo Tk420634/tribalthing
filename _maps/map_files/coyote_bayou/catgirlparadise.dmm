@@ -182,7 +182,7 @@
 	pixel_x = -6
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/ambientlighting/building/catgirls_score_here)
+/area/f13/ambientlighting/building)
 "cn" = (
 /obj/structure/flora/tree/cherryblossom,
 /turf/open/indestructible/ground/outside/dirt{
@@ -293,7 +293,7 @@
 /turf/open/floor/plasteel/white,
 /area/f13/ambientlighting/building)
 "eq" = (
-/obj/machinery/door/airlock/grunge,
+/obj/structure/simple_door/metal,
 /turf/open/floor/plasteel/white,
 /area/f13/ambientlighting/building)
 "eE" = (
@@ -343,7 +343,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/ambientlighting/building/catgirls_score_here)
+/area/f13/ambientlighting/building)
 "fI" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/indestructible/ground/outside/dirt{
@@ -1235,7 +1235,7 @@
 /obj/structure/table/wood/settler,
 /obj/item/reagent_containers/food/condiment/milk,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/ambientlighting/building/catgirls_score_here)
+/area/f13/ambientlighting/building)
 "sF" = (
 /obj/structure/flora/tree/jungle{
 	color = "#BEBEBE";
@@ -1577,7 +1577,7 @@
 "xs" = (
 /obj/structure/fireplace,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/ambientlighting/building/catgirls_score_here)
+/area/f13/ambientlighting/building)
 "xv" = (
 /obj/structure/statue/bone/rib{
 	dir = 1
@@ -1892,7 +1892,7 @@
 	},
 /obj/item/hairbrush,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/ambientlighting/building/catgirls_score_here)
+/area/f13/ambientlighting/building)
 "AO" = (
 /obj/structure/flora/tree/jungle{
 	color = "#BEBEBE";
@@ -2365,7 +2365,7 @@
 	},
 /obj/item/toy/plush/mouse,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/ambientlighting/building/catgirls_score_here)
+/area/f13/ambientlighting/building)
 "Go" = (
 /obj/structure/stone_tile/slab,
 /obj/structure/destructible/tribal_torch/wall/lit{
@@ -2822,7 +2822,7 @@
 /obj/item/laser_pointer/blue,
 /obj/item/reagent_containers/spray/cleaner,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/ambientlighting/building/catgirls_score_here)
+/area/f13/ambientlighting/building)
 "OM" = (
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ambientlighting/building)
@@ -2923,9 +2923,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ambientlighting/building/catgirls_score_here)
 "PK" = (
-/obj/structure/bed/dogbed,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/ambientlighting/building/catgirls_score_here)
+/turf/open/indestructible/ground/outside/water/running,
+/area/f13/wasteland/nash)
 "Qe" = (
 /obj/effect/turf_decal/stripes/asteroid/line{
 	dir = 5
@@ -3210,7 +3209,7 @@
 	pixel_y = 25
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/ambientlighting/building/catgirls_score_here)
+/area/f13/ambientlighting/building)
 "Ue" = (
 /obj/structure/chair/stool,
 /obj/effect/landmark/start/f13/murrineengineer,
@@ -22651,7 +22650,7 @@ vR
 vR
 vR
 vR
-DH
+vR
 DH
 DH
 DH
@@ -22906,11 +22905,11 @@ vR
 vR
 fI
 fI
-fI
+wr
 vR
 vR
-DH
-DH
+vR
+vR
 DH
 DH
 vR
@@ -23163,15 +23162,15 @@ vR
 vR
 vR
 Ka
-vR
+OQ
 fI
 vR
 vR
 vR
 vR
-OQ
-OQ
-OQ
+vR
+vR
+vR
 OQ
 OQ
 fP
@@ -23420,13 +23419,13 @@ vR
 vR
 vR
 vR
-vR
-vR
-vR
-vR
-vR
+OQ
 vR
 OQ
+OQ
+OQ
+vR
+vR
 vR
 OQ
 OQ
@@ -23679,9 +23678,9 @@ vR
 vR
 vR
 vR
-vR
-vR
-vR
+OQ
+OQ
+OQ
 vR
 OQ
 OQ
@@ -25570,7 +25569,7 @@ fI
 fI
 fI
 vR
-vR
+PK
 vR
 vR
 OQ
@@ -27798,10 +27797,10 @@ fI
 dq
 fI
 fI
+vR
 at
-at
-at
-OQ
+fP
+fP
 fP
 fP
 fP
@@ -28055,7 +28054,7 @@ fI
 dq
 fI
 fI
-OQ
+vR
 OQ
 fP
 fP
@@ -28313,7 +28312,7 @@ dq
 dq
 fI
 vR
-vR
+OQ
 fP
 fP
 fP
@@ -29690,7 +29689,7 @@ OQ
 fP
 fP
 fP
-zf
+fP
 fP
 fP
 fP
@@ -31615,7 +31614,7 @@ ux
 DP
 ux
 ux
-eq
+ux
 ux
 ux
 Md
@@ -31872,8 +31871,8 @@ ux
 oY
 ux
 ux
-oY
-pj
+ux
+ux
 ux
 ux
 ux
@@ -32129,8 +32128,8 @@ ux
 oY
 ux
 ux
-eq
-ux
+oY
+pj
 ux
 ux
 ux
@@ -35351,7 +35350,7 @@ CO
 zt
 vR
 vR
-vR
+OQ
 WY
 WY
 WY
@@ -37025,7 +37024,7 @@ It
 GK
 wl
 vR
-OQ
+vR
 OQ
 vR
 vR
@@ -37282,7 +37281,7 @@ ux
 Md
 wl
 vR
-OQ
+vR
 vR
 vR
 vR
@@ -38178,7 +38177,7 @@ xD
 zt
 vR
 vR
-vR
+OQ
 WY
 WY
 WY
@@ -38410,7 +38409,7 @@ vR
 zt
 sE
 cg
-mR
+TU
 AI
 zt
 Re
@@ -38667,8 +38666,8 @@ OQ
 zt
 fo
 fo
-sh
-sh
+OM
+OM
 zt
 zt
 zt
@@ -38923,9 +38922,9 @@ OQ
 OQ
 zt
 xs
-sh
+OM
 Gm
-sh
+OM
 lp
 zh
 nh
@@ -39180,9 +39179,9 @@ OQ
 OQ
 zt
 Uc
-sh
-sh
-sh
+OM
+OM
+OM
 zt
 zh
 zh
@@ -39437,9 +39436,9 @@ OQ
 OQ
 zt
 OL
-sh
-vp
-PK
+OM
+rg
+Xe
 zt
 zh
 zh
@@ -39463,7 +39462,7 @@ QH
 zt
 vR
 vR
-vR
+OQ
 WY
 WY
 WY
@@ -39952,7 +39951,7 @@ OQ
 zt
 sE
 cg
-mR
+TU
 AI
 zt
 zh
@@ -40209,8 +40208,8 @@ OQ
 zt
 fo
 fo
-sh
-sh
+OM
+OM
 zt
 zh
 zh
@@ -40465,9 +40464,9 @@ OQ
 OQ
 zt
 xs
-sh
+OM
 Gm
-sh
+OM
 lp
 zh
 Zl
@@ -40722,9 +40721,9 @@ OQ
 OQ
 zt
 Uc
-sh
-sh
-sh
+OM
+OM
+OM
 zt
 zt
 zt
@@ -40979,9 +40978,9 @@ OQ
 OQ
 zt
 OL
-sh
-vp
-PK
+OM
+rg
+Xe
 zt
 zt
 zt
@@ -44084,8 +44083,8 @@ fI
 fI
 fI
 fI
-ES
-sb
+fI
+fI
 vR
 vR
 vR
@@ -44853,13 +44852,13 @@ vR
 OQ
 at
 at
-OQ
-at
-OQ
-at
-OQ
-vR
-vR
+fP
+fP
+fP
+fP
+fP
+fP
+fP
 fP
 WY
 WY
@@ -45112,7 +45111,7 @@ fP
 fP
 fP
 fP
-zf
+fP
 fP
 fP
 fP
@@ -45367,8 +45366,8 @@ OQ
 fP
 fP
 fP
-zf
-zf
+fP
+fP
 fP
 fP
 fP
