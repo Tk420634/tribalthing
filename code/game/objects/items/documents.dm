@@ -17,7 +17,7 @@
 	icon_state = "docs_verified"
 
 /obj/item/documents/catgirlparadise
-	desc = "\"Top Secret\" Documents from the Catlonial Murrines.  It includes troop amounts, placements, tactics, plans. Don't let this fall into the wrong hands."
+	desc = "These... are just a dogs pedigree papers?  Showing who owns them? Thee with the papers controls the canines fate."
 	icon_state = "docs_verified"
 	very_important = TRUE
 
