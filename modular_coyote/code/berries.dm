@@ -88,7 +88,7 @@
 	icon = 'modular_coyote/icons/objects/berries.dmi'
 
 /obj/item/reagent_containers/food/snacks/grown/berries/marron
-	name = "marron berries"
+	name = "snack berries"
 	icon_state = "marronberry"
 	icon = 'modular_coyote/icons/objects/berries.dmi'
 

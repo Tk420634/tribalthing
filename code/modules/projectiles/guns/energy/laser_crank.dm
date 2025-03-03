@@ -342,7 +342,7 @@
 
 /obj/item/projectile/beam/cranklasergun/tg/spamlaser //ultra weak but spammy
 	name = "ultralight blaster bolt"
-	damage = 10
+	damage = 18
 	damage_list = list("8" = 20, "10" = 60, "12" = 15, "15" = 5)
 	recoil = BULLET_RECOIL_LASER
 

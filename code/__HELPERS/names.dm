@@ -21,7 +21,7 @@ GLOBAL_VAR(command_name)
 	if (GLOB.command_name)
 		return GLOB.command_name
 
-	var/name = "Biodome Alert System"
+	var/name = "Combined Murrine & Nyampire Alert SubSystem (CUMASS)"
 
 	GLOB.command_name = name
 	return name
