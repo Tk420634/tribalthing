@@ -467,7 +467,7 @@
 	inhand_icon_state = "imperial_kite"
 	max_integrity = -1
 	resistance_flags = null
-	reflectshot_chance = 60
+	reflectshot_chance = 45
 	slowdown = 0.1
 
 /obj/item/melee/unarmed/brass/knyackles
@@ -517,7 +517,7 @@
 /obj/item/melee/classic_baton/coyote/oldquarterstaff/nya
 	name = "Nyampire Quartersnyaff"
 	color = "#FF0000"
-	reflectshot_chance = 60
+	reflectshot_chance = 45
 	factionbound = list("cat")
 	berryable = TRUE
 	slowdown = 0.1
