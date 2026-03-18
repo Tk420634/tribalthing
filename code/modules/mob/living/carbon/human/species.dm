@@ -1237,12 +1237,10 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 					continue
 				if(!somone.client)
 					continue
-				SSstatpanels.discard_horny_demographic(H) // If we're comfy with someone, its likely that they are fuking each other
 				break // And the horny demographic thing is to get people who arent fuking to find people to fuk, so if theyre fuking, remove them from the list of people lookin to fuk
 	else if(H.insanelycomfy)
 		to_chat(H, span_notice("You no longer feel comfy."))
 		H.insanelycomfy = FALSE
-		SSstatpanels.collect_horny_demographic(H)
 	/// and, the even comfier thing
 	if(H.client && ((world.time - H.client?.last_meaningful_action) > 7 MINUTES) && (world.time - H.client?.last_move) > 5 MINUTES)
 		if(!H.afk)
