@@ -58,11 +58,9 @@
 		// 		output += "<center><p><a href='byond://?src=[REF(src)];quirkconversion=1'>Click here to do something about that!</a></p>"
 		// 	else
 		// 		output += "<center><p><a href='byond://?src=[REF(src)];quirks=1'>Configure Quirks!</a></p>"
-		output += "<center><p><a href='byond://?src=[REF(src)];show_hornychat=1'>Open VisualChat / Profile Pic Settings!</a></p>"
 		// output += "<center><p><a href='byond://?src=[REF(src)];show_hornychat=1'>Configure Profile Pics!</a></p>"
 
 	if(SSticker.current_state <= GAME_STATE_PREGAME)
-		output += "<p>Please be patient, the game is starting soon!</p>"
 		output += "<p><a href='byond://?src=[REF(src)];refresh=1'>(Refresh)</a></p>"
 		output += "<p><a href='byond://?src=[REF(src)];refresh_chat=1)'>(Fix Chat Window)</a></p>"
 		output += "<p><a href='byond://?src=[REF(src)];fit_viewport_lobby=1)'>(Fit Viewport)</a></p>"
@@ -80,7 +78,7 @@
 
 	output += "</center>"
 
-	var/datum/browser/popup = new(src, "playersetup", "<div align='center'>Game Preferences</div>", 400, 600)
+	var/datum/browser/popup = new(src, "playersetup", "<div align='center'>Coy-Co Cryogenics Soul Selector</div>", 200, 280)
 	popup.set_window_options("can_close=0")
 	popup.set_content(output.Join())
 	popup.open(FALSE)
