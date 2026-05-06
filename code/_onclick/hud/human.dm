@@ -414,9 +414,10 @@
 	// erp_tools_button.hud = src
 	// infodisplay += erp_tools_button
 
-	hand_items_button = new /atom/movable/screen/hand_items_button()
-	hand_items_button.hud = src
-	infodisplay += hand_items_button
+	if(SShanditems.allow_hud_buttons)
+		hand_items_button = new /atom/movable/screen/hand_items_button()
+		hand_items_button.hud = src
+		infodisplay += hand_items_button
 
 	// bite_hud_button = new /atom/movable/screen/bite_hud_button()
 	// bite_hud_button.hud = src

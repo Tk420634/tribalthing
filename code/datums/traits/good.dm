@@ -2056,6 +2056,26 @@ GLOBAL_LIST_INIT(security_expert, list(
 	conflicts = list()
 	mob_trait = TRAIT_MAGEGRAB
 
+/// BITERS
+/datum/quirk/biter
+	name = "Biter"
+	desc = "Your jaws are capable of inflicting significant damage with a powerful bite!"
+	value = 20
+	category = QUIRK_CATEGORY_BITER_QUIRKS
+	mechanics = "When using *bite your jaws do increased damage compared to normal."
+	conflicts = list(
+		/datum/quirk/bigbiter,
+		/datum/quirk/fastbiter,
+		/datum/quirk/playbiter,
+		/datum/quirk/spicybiter,
+		/datum/quirk/sabrebiter,
+	)
+	mob_trait = TRAIT_BITE
+	gain_text = span_notice("Your bite strength feels formidable!")
+	lose_text = span_danger("Your bite strength diminishes.")
+	medical_record_text = "Patient appears to possess a powerful bite."
+	human_only = FALSE
+
 /datum/quirk/bigbiter
 	name = "Biter - Big"
 	desc = "Your jaws are just absolutley massive.  You *bite harder, but a bit slower."
@@ -2146,6 +2166,26 @@ GLOBAL_LIST_INIT(security_expert, list(
 	medical_record_text = "Patient has incredibly large teeth."
 	human_only = FALSE
 
+/// CLAWS
+/datum/quirk/clawer
+	name = "Clawer"
+	desc = "Through some genetic quirk or modification, you have a set of dangerous claws! Use *claw to extend them and slash at your foes."
+	value = 20
+	category = QUIRK_CATEGORY_CLAWER_QUIRKS
+	mechanics = "You can use *claw to use your claws for melee!"
+	conflicts = list(
+		/datum/quirk/bigclawer,
+		/datum/quirk/fastclawer,
+		/datum/quirk/playclaw,
+		/datum/quirk/spicyclaw,
+		/datum/quirk/razorclaw,
+	)
+	mob_trait = TRAIT_CLAW
+	gain_text = span_notice("You've got some sharp claws!")
+	lose_text = span_danger("Your claws kinda aren't...")
+	medical_record_text = "Patient appears to possess claws."
+	human_only = FALSE
+
 /datum/quirk/bigclawer
 	name = "Clawer - Big"
 	desc = "Your claws are just absolutley massive.  Your *claw attack hits harder, but a bit slower."
@@ -2153,6 +2193,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	category = QUIRK_CATEGORY_CLAWER_QUIRKS
 	mechanics = "When using *claw your claws do more damage compared to normal but with a slower attack speed."
 	conflicts = list(
+		/datum/quirk/clawer,
 		/datum/quirk/fastclawer,
 		/datum/quirk/playclaw,
 		/datum/quirk/spicyclaw,
@@ -2171,6 +2212,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	category = QUIRK_CATEGORY_CLAWER_QUIRKS
 	mechanics = "When using *claw your claws do less damage than normal, but with a faster attack speed."
 	conflicts = list(
+		/datum/quirk/clawer,
 		/datum/quirk/bigclawer,
 		/datum/quirk/playclaw,
 		/datum/quirk/spicyclaw,
@@ -2189,6 +2231,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	category = QUIRK_CATEGORY_CLAWER_QUIRKS
 	mechanics = "Your claws, when used with the *claw verb do no damage at all unless you have big/small leagues."
 	conflicts = list(
+		/datum/quirk/clawer,
 		/datum/quirk/bigclawer,
 		/datum/quirk/fastclawer,
 		/datum/quirk/spicyclaw,
@@ -2207,6 +2250,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	category = QUIRK_CATEGORY_CLAWER_QUIRKS
 	mechanics = "When using *claw your claws do stamina damage on top of their normal damage, letting you stun players & mobs."
 	conflicts = list(
+		/datum/quirk/clawer,
 		/datum/quirk/bigclawer,
 		/datum/quirk/fastclawer,
 		/datum/quirk/playclaw,
@@ -2225,6 +2269,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	category = QUIRK_CATEGORY_CLAWER_QUIRKS
 	mechanics = "When using *claw your claws do CRAZY good damage (for claws, anyway), but a bit slower overall."
 	conflicts = list(
+		/datum/quirk/clawer,
 		/datum/quirk/bigclawer,
 		/datum/quirk/fastclawer,
 		/datum/quirk/playclaw,
@@ -2236,13 +2281,38 @@ GLOBAL_LIST_INIT(security_expert, list(
 	medical_record_text = "Patient appears to enjoy clawing everything up."
 	human_only = FALSE
 
-//tail
+/// TAILS
+/datum/quirk/tailer
+	name = "Tail"
+	desc = "You have a tail that is capable of whipping around and hitting things! Use *tail verb to use it."
+	value = 20
+	category = QUIRK_CATEGORY_TAILER_QUIRKS
+	mechanics = "You can use *tail to use your tail for melee!"
+	conflicts = list(
+		/datum/quirk/bigtail,
+		/datum/quirk/fasttail,
+		/datum/quirk/playtail,
+		/datum/quirk/spicytail,
+		/datum/quirk/thagotail,
+	)
+	mob_trait = TRAIT_TAIL
+	gain_text = span_notice("You suddenly feel a tail growing out of your back!")
+	lose_text = span_danger("Your tail suddenly falls off!")
+	medical_record_text = "Patient appears to possess a tail."
+	human_only = FALSE
 
 /datum/quirk/bigtail
 	name = "Tail - Big"
 	desc = "You got that big tail, good for big wumps. Use with *tailer"
 	value = 22
 	category = QUIRK_CATEGORY_TAILER_QUIRKS
+	mechanics = "Your tail does more damage than normal, but is a bit slower."
+	conflicts = list(
+		/datum/quirk/fasttail,
+		/datum/quirk/playtail,
+		/datum/quirk/spicytail,
+		/datum/quirk/thagotail,
+	)
 	mob_trait = TRAIT_TAILSMASH
 	gain_text = span_notice("Your tail is suddenly much larger.")
 	lose_text = span_danger("Your tail is suddenly smaller.")
@@ -2250,10 +2320,17 @@ GLOBAL_LIST_INIT(security_expert, list(
 	human_only = FALSE
 
 /datum/quirk/fasttail
-	name = "Tail - Whiplike"
+	name = "Tail - Swift"
 	desc = "You got that FAST tail, good for whipping about. Use with *tailer"
 	value = 22
 	category = QUIRK_CATEGORY_TAILER_QUIRKS
+	mechanics = "Your tail does less damage than normal, but is a bit faster."
+	conflicts = list(
+		/datum/quirk/bigtail,
+		/datum/quirk/playtail,
+		/datum/quirk/spicytail,
+		/datum/quirk/thagotail,
+	)
 	mob_trait = TRAIT_TAILWHIP
 	gain_text = span_notice("Your tail is now much lighter!")
 	lose_text = span_danger("Your tail feels heavy.")
@@ -2265,6 +2342,13 @@ GLOBAL_LIST_INIT(security_expert, list(
 	desc = "Your tail is just a soft extension of the rest of you. use with *tailer"
 	value = 0
 	category = QUIRK_CATEGORY_TAILER_QUIRKS
+	mechanics = "Your tail does no damage, perfect for being a playfull cutiepie."
+	conflicts = list(
+		/datum/quirk/bigtail,
+		/datum/quirk/fasttail,
+		/datum/quirk/spicytail,
+		/datum/quirk/thagotail,
+	)
 	mob_trait = TRAIT_TAILPLAY
 	gain_text = span_notice("Your tail feels very soft and plush.")
 	lose_text = span_danger("Your tail feels rough and raggedy.")
@@ -2276,6 +2360,13 @@ GLOBAL_LIST_INIT(security_expert, list(
 	desc = "One way or another your *tailer verb is capable of inflicting venomous attacks with your tail!"
 	value = 22
 	category = QUIRK_CATEGORY_TAILER_QUIRKS
+	mechanics = "Your tail does stamina damage on top of its normal damage, letting you stun players & mobs."
+	conflicts = list(
+		/datum/quirk/bigtail,
+		/datum/quirk/fasttail,
+		/datum/quirk/playtail,
+		/datum/quirk/thagotail,
+	)
 	mob_trait = TRAIT_TAILSPICY
 	gain_text = span_notice("Your tail secretes a viscous fluid.")
 	lose_text = span_danger("Your tail no longer produces venom.")
@@ -2287,10 +2378,58 @@ GLOBAL_LIST_INIT(security_expert, list(
 	desc = "A very dangerous *tailer, for beating the snot out of things."
 	value = 32
 	category = QUIRK_CATEGORY_TAILER_QUIRKS
+	mechanics = "Your tail does CRAZY good damage, but a bit slower overall."
+	conflicts = list(
+		/datum/quirk/bigtail,
+		/datum/quirk/fasttail,
+		/datum/quirk/playtail,
+		/datum/quirk/spicytail,
+	)
 	mob_trait = TRAIT_TAILTHAGO
 	gain_text = span_notice("Your tail feels like a bludgeon!")
 	lose_text = span_danger("Your tail suddenly feels weak.")
 	medical_record_text = "Patient tripped me over with their tail this morning. Please be aware of it."
+	human_only = FALSE
+
+/datum/quirk/beans
+	name = "Pawbeans"
+	desc = "Your paws are equipped with cute little beans, perfect for being either adorable or unbelievably annoying. Use with *beans."
+	value = 0
+	category = QUIRK_CATEGORY_CLAWER_QUIRKS
+	mechanics = "lets you annoy people with your soft little beans. Use *beans!"
+	conflicts = list()
+	mob_trait = TRAIT_BEANS
+	gain_text = span_notice("Your pawby wawbies ficky wickle widdle beans~ ^w^")
+	lose_text = span_danger("Your hands suck.")
+	medical_record_text = "Patient has adorable pawbeans."
+	human_only = FALSE
+
+/datum/quirk/war_beans
+	name = "War Beans"
+	desc = "Your pawbeans are not for show, they're for war. Use with *warbeans."
+	value = 22
+	category = QUIRK_CATEGORY_CLAWER_QUIRKS
+	mechanics = "You can bludgeon your enemies with your pawbeans, if you really want to. Use *warbeans"
+	conflicts = list()
+	mob_trait = TRAIT_WARBEANS
+	gain_text = span_notice("Your pawbeans harden into deadly claws!")
+	lose_text = span_danger("Your pawbeans soften back into cute little beans.")
+	medical_record_text = "Patient has razor sharp claws instead of pawbeans."
+	human_only = FALSE
+
+/datum/quirk/butt
+	name = "Butt Combat"
+	desc = "You use your butt as a deadly weapon! Use *butt to strike with your rear end!"
+	value = 22
+	category = QUIRK_CATEGORY_BAWDY_QUIRKS
+	mechanics = "You can bludgeon your enemies with your butt! It uses the size of your Butt genital to \
+		determine damage and attack speed, with larger butts dealing more damage but slower, and smaller \
+		butts dealing less damage but quicker! Use *butt to ready your deadly derriere!"
+	conflicts = list()
+	mob_trait = TRAIT_BUTT
+	gain_text = span_notice("You've got a butt with a body count!")
+	lose_text = span_danger("Your butt is merely cute.")
+	medical_record_text = "Patient has a deadly butt instead of a normal one."
 	human_only = FALSE
 
 //Cantrips//

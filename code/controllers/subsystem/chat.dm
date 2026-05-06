@@ -1281,20 +1281,7 @@ SUBSYSTEM_DEF(chat)
 	message_admins("Flirt debug [flirt_debug?"on":"off"]")
 
 /datum/controller/subsystem/chat/proc/give_flirt_targetter_item(mob/living/flirter)
-	if(!isliving(flirter))
-		return
-	if(flirter.get_active_held_item() && flirter.get_inactive_held_item())
-		to_chat(flirter, span_warning("My hands are too full to flirt! Yes, you need your hands to flirt."))
-		return
-
-	var/obj/item/hand_item/flirt_targetter/hiya = new(flirter)
-
-	if(flirter.put_in_hands(hiya)) // NOTE: put_in_hand is MUCH different from put_in_hands - NOTE THE S
-		to_chat(flirter, span_notice("Pick someone you want to flirt with! Just click on them while holding this, and it'll target them."))
-		return TRUE
-	else
-		to_chat(flirter, span_warning("Something went wrong! Try a different approach~"))
-		qdel(hiya)
+	SShanditems.give_hand_item(flirter, /obj/item/hand_item/flirt_targetter)
 
 /datum/controller/subsystem/chat/proc/can_usr_flirt_with_this(mob/A)
 	if(!isliving(usr)) // fight me

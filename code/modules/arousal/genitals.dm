@@ -560,11 +560,13 @@ GLOBAL_LIST_INIT(genital_layers, list(
 	//okay cool, compile a list of genitals that are visible
 	var/list/genitals_to_add[GENITAL_LAYER_INDEX_LENGTH]
 	var/has_nads = FALSE
+	var/list/hidden_nads = list() 
 	var/list/nad_order = splittext(dna?.features["genital_order"], ":") // NOT reversed cus the reversal is only for UI shit
 	for(var/obj/item/organ/genital/geni in internal_organs)
-		if(geni.is_exposed()) //Checks appropriate clothing slot and if it's through_clothes
-			genitals_to_add[clamp(nad_order.Find(geni.associated_has), 1, GENITAL_LAYER_INDEX_LENGTH)] = geni
-			has_nads = TRUE
+		if(!geni.is_exposed()) //Checks appropriate clothing slot and if it's through_clothes
+			hidden_nads += geni.pornhud_slot
+		genitals_to_add[clamp(nad_order.Find(geni.associated_has), 1, GENITAL_LAYER_INDEX_LENGTH)] = geni
+		has_nads = TRUE
 	if(!has_nads)
 		return
 
@@ -625,6 +627,10 @@ GLOBAL_LIST_INIT(genital_layers, list(
 			genital_sprites["[layer_to_put_it]"] |= genital_overlay
 			nadpics += gross_image
 		SSpornhud.catalogue_part(src, nad.pornhud_slot, nadpics)
+		if(nad.pornhud_slot in hidden_nads)
+			SSpornhud.update_visibility(src, nad.pornhud_slot, FALSE)
+		else
+			SSpornhud.update_visibility(src, nad.pornhud_slot, TRUE)
 
 	if(istype(src, /mob/living/carbon/human/dummy)) // cus our user eyes dont have PornHUDs in the character prefs window
 		for(var/index in genital_sprites)
