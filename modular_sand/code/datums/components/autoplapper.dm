@@ -218,7 +218,7 @@
 		plappeemob = GET_WEAKREF(debug_plappee)
 	else
 		plappeemob = ckey2mob(plappee)
-		var/mob/living/plappermob = ckey2mob(plapper)
+	var/mob/living/plappermob = ckey2mob(plapper)
 	return SSinteractions.check_consent(plappermob, plappeemob)
 
 /datum/autoplapper/proc/can_plap()
