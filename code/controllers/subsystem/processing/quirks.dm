@@ -34,6 +34,13 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 	var/debug_conflicts = FALSE
 
 	var/no_user_quirks = TRUE
+	var/list/disabled_categories = list(
+		QUIRK_CATEGORY_ADVENTURE_QUIRKS,
+		QUIRK_CATEGORY_IDENTIFICATION_QUIRKS,
+		QUIRK_CATEGORY_PERCEPTIVE_QUIRKS,
+		QUIRK_CATEGORY_PHOBIA_QUIRKS,
+		QUIRK_CATEGORY_ROLEPLAY_QUIRKS,
+	) // list of categories that are disabled, for whatever reason
 
 	var/dp = FALSE
 	var/dp_prob = 1
@@ -59,6 +66,8 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 				conflictables -= conflict
 				T.conflicts += conflict
 	saneitze_conflicts()
+
+	PruneDisabledQuirks()
 	
 	/// Now, lets pre-make the tgui data tree thing, for hyperspeed caching
 	FormatifyQuirks()
@@ -79,6 +88,23 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 			Q2.conflicts |= Q.type
 	/// and thats how you make a mouse pillow
 
+/// since disabled quirks are just sorta inactivated instead of actually deleted,
+/// we need to remove any player-side references to them, or itll look wierd
+/// mostly in seeing the conflicting quirks that dont actually exist
+/datum/controller/subsystem/processing/quirks/proc/PruneDisabledQuirks()
+	var/list/disabled_quirks = list()
+	for(var/q in quirks)
+		var/datum/quirk/Q = quirks[q]
+		if(Q.category in disabled_categories)
+			Q.disabled = TRUE
+		if(Q.disabled)
+			disabled_quirks += Q.type
+	// now do it again!
+	for(var/q in quirks)
+		var/datum/quirk/Q = quirks[q]
+		for(var/d in disabled_quirks)
+			Q.conflicts -= d
+
 /datum/controller/subsystem/processing/quirks/proc/UpdateNewbs()
 	for(var/mob/dead/new_player/noob in GLOB.player_list)
 		noob.new_player_panel()
@@ -97,6 +123,8 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 	var/debug_index = 1
 	for(var/qkey in quirks)
 		var/datum/quirk/Q2 = GetQuirk(qkey)
+		if (Q2.disabled || (Q2.category in disabled_categories))
+			continue
 		var/list/this_quirk = list()
 		this_quirk[QUIRK_KEY] = "[Q2.key]"
 		this_quirk[QUIRK_NAME] = "[Q2.name]"
@@ -119,10 +147,16 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 
 /// Opens the quirk tgui for the user
 /datum/controller/subsystem/processing/quirks/proc/OpenWindow(mob/user)
+	if(no_user_quirks)
+		to_chat(user, span_warning("Aw snap, sorry! Quirks are currently disabled!"))
+		return
 	return ui_interact(user)
 
 /// Opens the quirk tgui for the user
 /datum/controller/subsystem/processing/quirks/ui_interact(mob/user, datum/tgui/ui)
+	if(no_user_quirks)
+		to_chat(user, span_warning("Aw snap, sorry! Quirks are currently disabled!"))
+		return
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
 		ui = new(user, src, "QuirkMenu")
@@ -191,6 +225,8 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 			var/q_key = params["QuirkKey"]
 			var/datum/quirk/Q = GetQuirk(q_key)
 			if(!Q)
+				return
+			if (Q.disabled || (Q.category in disabled_categories))
 				return
 			var/c_key = params["UserCkey"]
 			var/datum/preferences/P = extract_prefs(c_key)
@@ -467,7 +503,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 	var/list/quirklist = P.char_quirks
 	for(var/qstring in quirklist)
 		var/datum/quirk/Q = GetQuirk(qstring)
-		if(!Q)
+		if(!Q || Q.disabled || (Q.category in disabled_categories))
 			RemoveQuirkFromPrefs(P, qstring)
 			had_some = TRUE
 	if(had_some)

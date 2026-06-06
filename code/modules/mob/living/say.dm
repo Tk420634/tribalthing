@@ -643,13 +643,24 @@
 	// 	return TRUE
 	if(mommy.is_actually_radio)
 		return FALSE // to do: make this work good
-	if(!mommy.prefs_override) // only reason nonhumans can't horny is cus they lack prefs, if prefs then horny
-		if(!ishuman(mommy.source))
-			return FALSE
-		var/mob/living/carbon/human/H = mommy.source
-		if(!H.client)
-			return FALSE
-	if(z != mommy.source.z)
+	if(!ishuman(mommy.source))
+		return FALSE
+	var/mob/living/carbon/human/H = mommy.source
+	if(!H.client)
+		return FALSE
+	var/mood = mommy.message_mode
+	if(!H.client.prefs)
+		return FALSE
+	var/haspfp = FALSE
+	for(var/list/pfplist in H.client.prefs.ProfilePics)
+		if(pfplist["Mode"] != mood)
+			continue
+		if(pfplist["URL"] != "1i1zom.png" && pfplist["URL"] != "jgxtpe.png") // i hate this code that I created long ago
+			haspfp = TRUE
+			break
+	if(!haspfp)
+		return FALSE
+	if(z != H.z)
 		return FALSE
 	if(get_dist(mommy.source, src) > SSchat.max_horny_distance) //If they're not right next to you, don't hornify them
 		return FALSE
