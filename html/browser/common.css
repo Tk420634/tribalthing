@@ -433,9 +433,9 @@ ul.sparse {
 	width: 1px;
 }
 
-.overlay:before {
-	/* background: linear-gradient(#101010 50%, rgba(16, 16, 16, 0.02) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.03));
-	background-size: 10% 3px, 6px 10%; */
+/* .overlay:before {
+	background: linear-gradient(#101010 50%, rgba(16, 16, 16, 0.02) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.03));
+	background-size: 10% 3px, 6px 10%;
 	content: "";
 	display: block;
 	pointer-events: none;
@@ -445,7 +445,7 @@ ul.sparse {
 		bottom: 0;
 		left: 0;
 	z-index:-1;
-}
+} */
 	
 .overlay:after {
 	background: rgba(16, 16, 16, 0.01);

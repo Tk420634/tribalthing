@@ -292,7 +292,7 @@
 // This stuff needs to be changed because it was directly lifted from clothing
 	var/static/list/choices = list(
 			"Brawn" = image(icon = 'icons/mob/screen_gen.dmi', icon_state = "brawn"),
-			"Awareness" = image(icon = 'icons/mob/screen_gen.dmi', icon_state = "awareness"),
+			"Alertness" = image(icon = 'icons/mob/screen_gen.dmi', icon_state = "alertness"),
 			"Toughness" = image(icon = 'icons/mob/screen_gen.dmi', icon_state = "toughness"),
 			"Moxie" = image(icon = 'icons/mob/screen_gen.dmi', icon_state = "moxie"),
 			"Smarts" = image(icon = 'icons/mob/screen_gen.dmi', icon_state = "smarts"),
@@ -304,7 +304,7 @@
 	switch(choice)
 		if("Brawn")
 			user.emote("special_strength")
-		if("Awareness")
+		if("Alertness")
 			user.emote("special_perception")
 		if("Toughness")
 			user.emote("special_endurance")
@@ -402,6 +402,8 @@
 	P.save_character()
 	to_chat(L, span_notice("Vore Core online! Be sure to set up your vore preferences!"))
 */
+
+// NOTE: UNUSED
 /atom/movable/screen/erp_tools_button
 	name = "ERP Tools"
 	icon_state = "erp_tools"
