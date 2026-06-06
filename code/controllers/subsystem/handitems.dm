@@ -460,7 +460,7 @@ SUBSYSTEM_DEF(handitems)
 /obj/item/hand_item/tactile/examine(mob/user)
 	. = ..()
 	if(grope)
-		. += "Middle-click to toggle horny mode for this item! It is currently [horny_mode?"on":"off"]."
+		. += "Ctrl-Shift-click to toggle horny mode for this item! It is currently [horny_mode?"on":"off"]."
 	if(healthing)
 		. += "Alt-click to toggle medical mode for this item! It is currently [medical_mode?"on":"off"]."
 		if(needed_trait_to_heal)
@@ -482,7 +482,7 @@ SUBSYSTEM_DEF(handitems)
 	else
 		transform = tf
 
-/obj/item/hand_item/tactile/MiddleClick(user)
+/obj/item/hand_item/tactile/CtrlShiftClick(mob/user)
 	if(!grope)
 		to_chat(user, span_alert("Your [src] can't exactly be used for horny purposes! (at least not *this* way!)"))
 		horny_mode = FALSE
