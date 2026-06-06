@@ -37,6 +37,13 @@
 	simple_sounds = list('sound/weapons/thudswoosh.ogg') // frumf, frumf
 	user_lust_mult = 1
 	lust_go_to = LUST_USER | LUST_TARGET
+	user_required_parts = list(
+		MERPNEED_ARM,
+	)
+	target_required_parts = list(
+		MERPNEED_BUTT,
+	)
+
 
 /datum/interaction/lewd/finger_self
 	description = "Self/Crotch - Finger your own pussy."
@@ -83,6 +90,12 @@
 			"color" = "transparent"
 			)
 	)
+	user_required_parts = list(
+		MERPNEED_ARM,
+	)
+	target_required_parts = list(
+		MERPNEED_VAGINA,
+	)
 
 // /datum/interaction/lewd/finger_self/interaction_message(mob/living/user, mob/living/target, show_message)
 // 	var/obj/item/reagent_containers/liquid_container
@@ -94,5 +107,3 @@
 // 		cached_item = user.pulling
 // 		if(istype(cached_item, /obj/item/reagent_containers))
 // 			liquid_container = cached_item
-
-
