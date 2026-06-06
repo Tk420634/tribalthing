@@ -34,6 +34,13 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 	var/debug_conflicts = FALSE
 
 	var/no_user_quirks = TRUE
+	var/list/disabled_categories = list(
+		QUIRK_CATEGORY_ADVENTURE_QUIRKS,
+		QUIRK_CATEGORY_IDENTIFICATION_QUIRKS,
+		QUIRK_CATEGORY_PERCEPTIVE_QUIRKS,
+		QUIRK_CATEGORY_PHOBIA_QUIRKS,
+		QUIRK_CATEGORY_ROLEPLAY_QUIRKS,
+	) // list of categories that are disabled, for whatever reason
 
 	var/dp = FALSE
 	var/dp_prob = 1
@@ -140,10 +147,16 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 
 /// Opens the quirk tgui for the user
 /datum/controller/subsystem/processing/quirks/proc/OpenWindow(mob/user)
+	if(no_user_quirks)
+		to_chat(user, span_warning("Aw snap, sorry! Quirks are currently disabled!"))
+		return
 	return ui_interact(user)
 
 /// Opens the quirk tgui for the user
 /datum/controller/subsystem/processing/quirks/ui_interact(mob/user, datum/tgui/ui)
+	if(no_user_quirks)
+		to_chat(user, span_warning("Aw snap, sorry! Quirks are currently disabled!"))
+		return
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
 		ui = new(user, src, "QuirkMenu")
