@@ -9,13 +9,11 @@
 	throw_speed = 3
 	throw_range = 5
 	w_class = WEIGHT_CLASS_SMALL
-	var/obj/item/stock_parts/cell/cell = /obj/item/stock_parts/cell/high/slime
-	var/use_per_tick = 1000 // normal cell has 10000 charge, 200 charge/second = 50 seconds of stealth //if the previous comment is correct this is 25 seconds of stealth	
 	actions_types = list(/datum/action/item_action/stealthboy_cloak)
 	var/mybar
-	var/mob/applying_to
-	var/do_boop = FALSE
-	var/do_warn = TRUE
+	var/datum/weakref/applying_to
+	var/can_play_charged_enough_boop = FALSE
+	var/can_play_low_power_warning_boop = TRUE
 	var/on = FALSE
 	var/warn_time = 1 SECONDS
 	var/max_time_left = 20 SECONDS
@@ -75,6 +73,8 @@
 			. += span_alert("The low battery thingy is flashing red! If deactivated, it won't have enough charge to activate!")
 		else
 			. += span_alert("The low battery thingy is flashing red! It doesn't have enough charge to activate!")
+	if(!check_faction(user))
+		. += span_warning("You lack the feline wiles to use this device to its full potential! It still works though, barely!")
 
 /obj/item/stealthboy/AltClick(mob/user)
 	. = ..()
@@ -82,19 +82,19 @@
 
 /obj/item/stealthboy/proc/Toggle(mob/living/carbon/human/user)
 	if(on)
-		Deactivate(user)
+		Deactivate()
 		return
 	if(HAS_TRAIT(user, "stealthinvis"))
-		Deactivate(user)
+		Deactivate()
 		return
 	if(CanActivate(user, TRUE))
 		StartActivating(user)
-	else
-		user.playsound_local(get_turf(src), 'sound/effects/stealthcock_cant.ogg', 15, FALSE)
+		return
+	user.playsound_local(get_turf(src), 'sound/effects/stealthcock_cant.ogg', 60, FALSE)
 
 /obj/item/stealthboy/proc/CanActivate(mob/living/carbon/human/user, msg)
 	if(!user)
-		user = applying_to
+		user = GET_WEAKREF(applying_to)
 	if(!user)
 		return FALSE
 	if(time_left < min_time_left)
@@ -112,64 +112,81 @@
 	return TRUE
 
 /obj/item/stealthboy/proc/CanRemainActive()
-	if(!applying_to)
+	if(!GET_WEAKREF(applying_to))
 		return FALSE
 	if(!on)
 		return FALSE
 	if(time_left <= 0)
 		return FALSE
-	if(applying_to.stat != CONSCIOUS)
+	var/mob/my_applying_to = GET_WEAKREF(applying_to)
+	if(!my_applying_to)
 		return FALSE
-	if(applying_to.get_item_by_slot(SLOT_BELT) != src)
+	if(my_applying_to.stat != CONSCIOUS)
+		return FALSE
+	if(my_applying_to.get_item_by_slot(SLOT_BELT) != src)
 		return FALSE
 	return TRUE
 
 /obj/item/stealthboy/proc/StartActivating(mob/living/carbon/human/user)
 	if(on)
 		return
-	user.playsound_local(get_turf(src), 'sound/effects/stealthcock_precum.ogg', 15, FALSE)
+	user.playsound_local(get_turf(src), 'sound/effects/stealthcock_precum.ogg', 60, FALSE)
 	var/fadetime = 1 SECONDS
 	if(!check_faction(user))
 		fadetime = 5 SECONDS
 	if(!do_after(user, fadetime, TRUE, src, TRUE, null, null, null, TRUE, TRUE, TRUE, FALSE, FALSE))
-		user.playsound_local(get_turf(src), 'sound/effects/stealthcock_cant.ogg', 15, FALSE)
+		user.playsound_local(get_turf(src), 'sound/effects/stealthcock_cant.ogg', 60, FALSE)
 		to_chat(user, span_alert("[src] failed to activate!"))
 		return
 	if(CanActivate(user, TRUE))
 		Activate(user)
 
 /obj/item/stealthboy/proc/Activate(mob/living/carbon/human/user)
-	if(on)
-		Deactivate(user)
+	if(on) // toggle, maybe
+		Deactivate()
 		return
 	if(HAS_TRAIT(user, "stealthinvis"))
-		Deactivate(user)
+		Deactivate()
 		return
-	if(applying_to)
-		if(applying_to != user)
+	var/mob/my_applying_to = GET_WEAKREF(applying_to)
+	if(my_applying_to) // invis has been applied to someone
+		if(my_applying_to != user) // if its not the user, just shut it down
 			Deactivate()
 		else
-			return
+			return // otherwise, dont do anything
+	ApplyInvis(user)
+
+/obj/item/stealthboy/proc/ApplyInvis(mob/living/carbon/human/user)
 	var/fadetime = 0.5 SECONDS
 	if(!check_faction(user))
 		fadetime = 5 SECONDS
-	animate(user, alpha = 0, time = fadetime SECONDS)
+	animate(user, alpha = 0, time = fadetime)
 	ADD_TRAIT(user, "stealthinvis", src)
-	applying_to = user
+	applying_to = WEAKREF(user)
 	to_chat(user, span_notice("You activate \The [src]."))
 	last_tick = world.time
 	user.faction += factionlist
 	START_PROCESSING(SSfastprocess, src)
 	on = TRUE
 	do_sparks(1, TRUE, get_turf(src), /datum/effect_system/spark_spread/quantum)
-	user.playsound_local(get_turf(src), 'sound/effects/stealthcock_cum.ogg', 15, FALSE)
-	RegisterSignal(user, COMSIG_MOB_ITEM_ATTACK, PROC_REF(Deactivate), TRUE)
+	user.playsound_local(get_turf(src), 'sound/effects/stealthcock_cum.ogg', 60, FALSE)
+	RegisterSignal(user, COMSIG_MOB_ITEM_ATTACK, PROC_REF(HardDeactivate), TRUE)
+	RegisterSignal(user, COMSIG_LIVING_GUN_PROCESS_FIRE, PROC_REF(HardDeactivate), TRUE)
 
-/obj/item/stealthboy/proc/Deactivate(mob/living/carbon/human/user, msg)
+/obj/item/stealthboy/proc/HardDeactivate()
+	Deactivate()
+	if(time_left > min_time_left)
+		time_left = (min_time_left * 0.9)
+	do_sparks(2, TRUE, get_turf(src)) // more sparks!
+
+/obj/item/stealthboy/proc/Deactivate()
+	var/mob/user = GET_WEAKREF(applying_to)
 	if(!user)
-		user = applying_to
+		user = recursive_loc_path_search(src, /mob/living/carbon/human)
 	if(!user)
-		CRASH("Deactivate called without a user or applying_to!")
+		return
+	if(!HAS_TRAIT(user, "stealthinvis"))
+		return
 	animate(user, alpha = initial(user.alpha), time = 0.5 SECONDS)
 	to_chat(user, span_notice("\The [src] deactivates!"))
 	user.faction -= factionlist
@@ -178,8 +195,9 @@
 	on = FALSE
 	applying_to = null
 	do_sparks(4, TRUE, get_turf(src), /datum/effect_system/spark_spread/quantum)
-	user.playsound_local(get_turf(src), 'sound/effects/stealthcock_muc.ogg', 15, FALSE)
+	user.playsound_local(get_turf(src), 'sound/effects/stealthcock_muc.ogg', 60, FALSE)
 	UnregisterSignal(user, COMSIG_MOB_ITEM_ATTACK)
+	UnregisterSignal(user, COMSIG_LIVING_GUN_PROCESS_FIRE)
 
 /obj/item/stealthboy/process()
 	if(!on)
@@ -195,7 +213,8 @@
 	if(!CanRemainActive())
 		Deactivate()
 		return
-	if(!check_faction(loc))
+	var/mob/user = GET_WEAKREF(applying_to)
+	if(!check_faction(user)) // others can use it... but it kinda sucks
 		if(prob(2))
 			Deactivate()
 		if(prob(10))
@@ -206,12 +225,10 @@
 	last_tick = world.time
 	time_left -= delta
 	if(time_left <= min_time_left)
-		do_boop = TRUE
-	if(time_left <= warn_time && do_warn)
-		var/mob/user = loc
-		if(ismob(user))
-			user.playsound_local(get_turf(src), 'sound/effects/stealthcock_nearly_muc.ogg', 15, FALSE)
-			do_warn = FALSE
+		can_play_charged_enough_boop = TRUE
+	if(time_left <= warn_time && can_play_low_power_warning_boop)
+		user.playsound_local(get_turf(src), 'sound/effects/stealthcock_nearly_muc.ogg', 60, FALSE)
+		can_play_low_power_warning_boop = FALSE
 	if(time_left <= 0)
 		Deactivate()
 
@@ -225,13 +242,13 @@
 		if(prob(80))
 			return // lol
 	time_left += (delta * 0.75)
-	if(do_boop && time_left > min_time_left)
+	if(can_play_charged_enough_boop && time_left > min_time_left)
 		var/mob/user = loc
 		if(ismob(user))
-			user.playsound_local(get_turf(src), 'sound/effects/stealthcock_can_work_now.ogg', 15, FALSE)
-			do_boop = FALSE
-	if(time_left > warn_time && !do_warn)
-		do_warn = TRUE
+			user.playsound_local(get_turf(src), 'sound/effects/stealthcock_can_work_now.ogg', 60, FALSE)
+			can_play_charged_enough_boop = FALSE
+	if(time_left > warn_time && !can_play_low_power_warning_boop)
+		can_play_low_power_warning_boop = TRUE
 	if(time_left > max_time_left)
 		time_left = max_time_left
 

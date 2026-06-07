@@ -322,22 +322,89 @@
 /obj/item/ammo_box/magazine/internal/turret/foam
 	ammo_type = /obj/item/ammo_casing/caseless/foam_dart/riot
 	caliber = list(CALIBER_FOAM)
+	var/pickup_time = 10 SECONDS
+	var/pickup_time_dumb_cat = 20 SECONDS
+	var/timeleft_until_pickup
+	var/last_tick
+
+/obj/item/ammo_box/magazine/internal/turret/foam/Initialize(mapload, ...)
+	. = ..()
+	last_tick = world.time
+	timeleft_until_pickup = pickup_time
+	START_PROCESSING(SSprocessing, src)
+
+/obj/item/ammo_box/magazine/internal/turret/foam/Destroy()
+	STOP_PROCESSING(SSprocessing, src)
+	. = ..()
+
+/obj/item/ammo_box/magazine/internal/turret/foam/process()
+	if(!istype(loc, /obj/machinery/porta_turret/f13/nash))
+		last_tick = world.time
+		return
+	var/obj/machinery/porta_turret/f13/nash/inside = loc
+	if(LAZYLEN(stored_ammo) >= max_ammo)
+		last_tick = world.time
+		return
+	// tick dart!
+	var/delta = world.time - last_tick
+	last_tick = world.time
+	timeleft_until_pickup -= delta
+	if(timeleft_until_pickup > 0)
+		return
+	var/time2use = pickup_time
+	if("cat" in inside.faction)
+		time2use = pickup_time_dumb_cat
+	// find a nearby dart, and try to stuff it in our thing
+	var/list/nearby = list()
+	for(var/obj/item/ammo_casing/dart in range(1, get_turf(src)))
+		nearby |= dart
+	if(LAZYLEN(nearby))
+		var/obj/item/ammo_casing/luckydart = safepick(nearby)
+		if(insert_round(luckydart))
+			playsound(src, 'sound/weapons/bulletinsert.ogg', 50, 1, SOUND_DISTANCE(10), ignore_walls = TRUE)
+		timeleft_until_pickup = time2use
+		return
+	// extend range by 1, and scoot it closer to the turret, for next time
+	var/list/furtherby = list()
+	for(var/obj/item/ammo_casing/dart in range(2, get_turf(src)))
+		furtherby |= dart
+	if(!LAZYLEN(furtherby))
+	// one last extension
+		for(var/obj/item/ammo_casing/dart in range(3, get_turf(src)))
+			furtherby |= dart
+	if(LAZYLEN(furtherby))
+		var/obj/item/ammo_casing/luckydart = safepick(furtherby)
+		step_towards(luckydart, get_turf(src), 1)
+		timeleft_until_pickup = time2use / 2 // less of a cooldown if we couldnt find one to stuff in ourself
+	else
+		timeleft_until_pickup = time2use
+
+	// if(timeleft_until_pickup <= 0)
+	// 	timeleft_until_pickup = pickup_time
+	// 	var/obj/item/ammo_casing/dart = new ammo_type(loc)
+	// 	if(!insert_round(dart))
+	// 		qdel(dart)
+	// 	else
+	// 		playsound(src, 'sound/weapons/bulletinsert.ogg', 50, 1, SOUND_DISTANCE(10), ignore_walls = TRUE)
+
 
 /// Nash's Friendliest Autogun
 /// needs ammo~
 /obj/machinery/porta_turret/f13/nash/foam
-	name = "portable YiffSoft Point Defense Playset"
+	name = "portable YiffSoft Point Defense Playset ULTRA EDITION"
 	icon = 'icons/obj/turrets.dmi'
 	icon_state = "syndie_off"
 	base_icon_state = "syndie"
 	desc = "<i>Calling all Yiffers!</i> Are YOU tired of <i><u>girrrrls</u></i> breaking into YOUR BattleFort{tm}?? YiffSoft's \
 		got your back, soldier! It can hold UP TO 300 YiffSoft TurboFoxy UltraDarts in its MEGA EXTENDED HOPPER, to unleash \
-		HOT FOAM on ANYONE brave enough to stand within 11 meters of YOUR YiffSoft Point Defense Playset!! Made of \
-		SPACE AGE YIFFER-TUFF plastic that can take a BEATING and be DEPLOYABLE again!! Ages 30 and up. \
+		HOT FOAM on ANYONE brave enough to stand within 11 meters of YOUR YiffSoft Point Defense Playset!! \
+		The ULTRA EDITION of the YiffSoft Point Defense Playset comes with its own YiffSoft Foam Dart Recovery Arm, which \
+		automatically picks up loose darts and feeds them back into the hopper, giving you more time to focus on what really matters: YIFFING UP THE ENEMY!! \
+		Made of SPACE AGE YIFFER-TUFF plastic that can take a BEATING and be DEPLOYABLE again!! Ages 30 and up. \
 		Keep out of reach of catgirls, it'll serve them if they deploy it!! \
 		<br><br>\
-		This turret comes pre-loaded with 50-100 <b>Foam Darts</b>, which will need to be manually reloaded into this thing \
-		if you want it to keep shooting. \
+		This turret comes pre-loaded with 50-100 <b>Foam Darts</b> preloaded into this thing! \
+		When it runs out, just load it up with more <b>Foam Darts</b>! Any foam dart will do! \
 		This is a 'portable' turret, in that it can be packaged back up into a handy carrying case if hit with a <b>multitool</b>.\
 		It can be repaired by stuffing <b>Foam Darts<b> into it. Unload all the darts loaded inside by <b>alt-clicking</b> it.\
 		Yes it accepts casing bags, just smack this with that to load whatever's in there."
@@ -350,6 +417,7 @@
 	faction = list("murrine")
 	our_mag = /obj/item/ammo_box/magazine/internal/turret/foam
 	integrity_failure = 0.01
+	shot_speed_mod = 0.50
 
 /obj/machinery/porta_turret/f13/nash/foam/obj_break(damage_flag)
 	if(!(flags_1 & NODECONSTRUCT_1))
@@ -357,7 +425,7 @@
 	playsound(get_turf(src), 'sound/machines/machinery_break_1.ogg', 80, 1, SOUND_DISTANCE(10), ignore_walls = TRUE)
 	unload_all_ammo()
 	var/obj/item/turret_box/foam/D = new(get_turf(src))
-	D.noammo = TRUE
+	D.import_turret_magazine(src)
 	qdel(src)
 
 /obj/item/melee/classic_baton/coyote/oldquarterstaff/disputestick

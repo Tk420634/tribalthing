@@ -20,6 +20,7 @@
 			return
 		if(min_reach && GET_DIST_EUCLIDEAN(user, target) < min_reach)
 			return
+	SEND_SIGNAL(user, COMSIG_MOB_ITEM_ATTACK, target, user)
 	. = attackchain_flags
 	if(tool_behaviour && ((. = target.tool_act(user, src, tool_behaviour)) & STOP_ATTACK_PROC_CHAIN))
 		return
@@ -44,6 +45,7 @@
 			return
 		if(max_reach >= 2 && has_range_for_melee_attack(target, user))
 			return ranged_melee_attack(target, user, params)
+	SEND_SIGNAL(user, COMSIG_MOB_ITEM_ATTACK, target, user)
 	return afterattack(target, user, FALSE, params)
 
 // Called when the item is in the active hand, and clicked; alternately, there is an 'activate held object' verb or you can hit pagedown.
