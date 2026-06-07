@@ -128,6 +128,7 @@
 	/// place a png file in icons/thingimages
 	/// put the link here like this: 'icons/thingimages/mylovelyimage.png'
 	var/thingimage
+	var/atom_uid
 
 /atom/New(loc, ...)
 	//atom creation method that preloads variables at creation
@@ -1414,3 +1415,23 @@
 /atom/proc/importantize()
 	SSticker.important_things += src
 	SSticker.onmap_z = z
+
+/atom/proc/get_uid()
+	if(atom_uid)
+		return atom_uid
+	generate_uid()
+	return get_uid()
+
+/atom/proc/generate_uid()
+	var/nuid = "[type]-[name]-"
+	nuid += ckey(safepick(GLOB.ing_verbs) || "cranberry")
+	nuid += "-"
+	nuid += ckey(safepick(GLOB.adverbs) || "cranberry")
+	nuid += "-"
+	nuid += ckey("[rand(1000,9999)]")
+	nuid += "-"
+	nuid += ckey("[rand(1000,9999)]")
+	atom_uid = nuid
+	return atom_uid
+
+
