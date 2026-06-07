@@ -919,39 +919,7 @@ SUBSYSTEM_DEF(economy)
 	QB.open_console(user)
 
 /datum/controller/subsystem/economy/proc/give_claimer(mob/user, atom/base)
-	if(!user)
-		return
-	var/obj/item/in_active_hand = user.get_active_held_item()
-	var/obj/item/inactive_hand = user.get_inactive_held_item()
-	if(istype(in_active_hand, /obj/item/hand_item/quest_scanner))
-		to_chat(user, span_warning("You're already standing there with your claimer in your hand!"))
-		return
-	if(istype(inactive_hand, /obj/item/hand_item/quest_scanner))
-		if(in_active_hand == null)
-			if(user.put_in_hands(inactive_hand))
-				to_chat(user, span_notice("You get out the Claimer!"))
-			return
-		to_chat(user, span_warning("You already have a quest scanner, right there in your other hand! You'd get it out, but your [prob(1) ? "beans" : "hands"] are full!"))
-		return
-	var/list/all_their_stuff = get_all_in_turf(user)
-	for(var/atom/thing in all_their_stuff)
-		if(istype(thing, /obj/item/hand_item/quest_scanner))
-			if(user.put_in_hands(thing))
-				to_chat(user, span_notice("You get out the Claimer!"))
-				return
-			to_chat(user, span_warning("You already have a quest scanner, right there in your [thing.loc]! You'd get it out, but your hands are full!"))
-			return
-	if(in_active_hand && inactive_hand)
-		if(prob(1))
-			to_chat(user, span_warning("Your beans are too full to bean the beans, what the hell are you doing???!?"))
-		else
-			to_chat(user, span_warning("Your hands are too full for the Claimer!"))
-		return
-	var/obj/item/hand_item/quest_scanner/warbean = new(user)
-	if(user.put_in_hands(warbean))
-		to_chat(user, span_notice("You get out the Claimer!"))
-	else
-		qdel(warbean) // war beanz
+	SShanditems.give_hand_item(user, /obj/item/hand_item/quest_scanner)
 
 /// attempts to find something that we can pretend we got the Claimer from
 /datum/controller/subsystem/economy/proc/find_claimerable_source(mob/user)
@@ -2212,12 +2180,46 @@ SUBSYSTEM_DEF(economy)
 	max_reach = 7
 	force = 0
 	force_harmclick = TRUE
+	inventoryable = TRUE
+	just_one = TRUE
 	var/ping_cooldown = 0
 	var/being_used = FALSE
 
 /obj/item/hand_item/quest_scanner/Initialize(mapload)
 	. = ..()
 	REMOVE_TRAIT(src, TRAIT_NO_STORAGE_INSERT, TRAIT_GENERIC)
+
+/obj/item/hand_item/quest_scanner/on_failed_give(mob/user, reason)
+	if(!user)
+		return
+	. = TRUE
+	switch(reason)
+		if(HI_ALREADY_HAVE_ONE)
+			var/obj/item/in_active_hand = user.get_active_held_item()
+			var/obj/item/inactive_hand = user.get_inactive_held_item()
+			if(istype(in_active_hand, /obj/item/hand_item/quest_scanner))
+				to_chat(user, span_warning("You're already standing there with your claimer in your hand!"))
+			else if(istype(inactive_hand, /obj/item/hand_item/quest_scanner))
+				to_chat(user, span_warning("You already have a quest scanner, right there in your other hand! You'd get it out, but your [prob(1) ? "beans" : "hands"] are full!"))
+			else
+				to_chat(user, span_warning("You can't get ye scanner! Somehow!"))
+		if(HI_HANDS_FULL)
+			if(prob(1))
+				to_chat(user, span_warning("Your beans are too full to bean the beans, what the hell are you doing???!?"))
+			else
+				to_chat(user, span_warning("Your hands are too full for the Claimer!"))
+			qdel(src) // bye bye!
+
+/obj/item/hand_item/quest_scanner/on_successful_give(mob/user, reason)
+	if(!user)
+		return
+	switch(reason)
+		if("HAD_ONE_ALREADY")
+			to_chat(user, span_notice("You pull out your reclaimer from wherever you had it stashed!"))
+			return
+		if("GIVE_SUCCESS")
+			to_chat(user, span_notice("You get out the Claimer!"))
+			return
 
 /obj/item/hand_item/quest_scanner/examine(mob/user)
 	. = ..()

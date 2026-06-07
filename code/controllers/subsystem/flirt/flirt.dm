@@ -207,60 +207,7 @@
 	return data
 
 
-///////////////////////////////////////////////////
-//// FLIRT ITEM ///////////////////////////////////
-/obj/item/hand_item/flirter
-	name = "Flirtation Device" // in the event of a crash, your hand can be used as a flirtation device
-	desc = "This thing is used to flirt with people! Or it would if it initialized properly. Oops."
-	icon = 'icons/mob/actions.dmi'
-	icon_state = "velvet_chords"
-	max_reach = 30 // love knows no bounds
-	var/flirtkey = "hi"
 
-/obj/item/hand_item/flirter/proc/flirtify(datum/flirt/F) // Fs in chat
-	if(!istype(F))
-		qdel(src) // dies of illiteracy
-		return
-	flirtkey = F.key
-	name = F.flirtname
-	desc = F.flirtdesc
-	icon = F.flirticon
-	icon_state = F.flirticon_state
-	return TRUE
-
-/obj/item/hand_item/flirter/pre_attack(atom/A, mob/living/user, params, attackchain_flags, damage_multiplier)
-	. = STOP_ATTACK_PROC_CHAIN // never let this thing hit anyone ever for any ever anytime
-	if(!isliving(A))
-		return
-	if(!SSchat.run_directed_flirt(user, A, flirtkey))
-		return
-	qdel(src)
-
-/obj/item/hand_item/flirter/attack_self(mob/user)
-	. = STOP_ATTACK_PROC_CHAIN // never let this thing hit anyone ever for any ever anytime
-	if(!isliving(user))
-		return
-	if(!SSchat.run_aoe_flirt(user, flirtkey))
-		return
-	qdel(src)
-
-////////////////////////////////////////////////////////
-//// FLIRT TARGETTER ///////////////////////////////////
-/obj/item/hand_item/flirt_targetter
-	name = "Flirtation Targetter" // in the event of a crash, your hand can be used as a flirtation device
-	desc = "Click someone with this, and the next Flirt button you press will be directed at them! There's no range restriction, so, yeah!"
-	icon = 'icons/mob/actions.dmi'
-	icon_state = "velvet_chords"
-	max_reach = 30 // love knows no bounds
-
-/obj/item/hand_item/flirt_targetter/pre_attack(atom/A, mob/living/user, params, attackchain_flags, damage_multiplier)
-	. = STOP_ATTACK_PROC_CHAIN // never let this thing hit anyone ever for any ever anytime
-	if(!isliving(A))
-		return
-	if(!SSchat.add_flirt_target(user, A))
-		return
-	to_chat(user, span_notice("You'll now send a flirt to [A] when you press the next Flirt button. Happy flirting!"))
-	qdel(src)
 
 
 

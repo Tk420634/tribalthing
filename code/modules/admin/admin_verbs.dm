@@ -1546,8 +1546,8 @@ GLOBAL_DATUM_INIT(vap, /datum/visualchat_admin_panel, new)
 				. &= modify_entry(P, entry["Mode"], flagge, TRUE)
 	if(.)
 		SSchat.CoordinateSettingsAndPics(null, ckey, 2) // eslint-disable-line no-magic-numbers
-		SSchat.SanitizeUserImages(null, ckey)
-		SSchat.SanitizeUserPreferences(null, ckey)
+		SSchat.SanitizeUserImages(ckey)
+		SSchat.SanitizeUserPreferences(ckey)
 		P.save_character()
 		update_static_data(user, ui)
 	else

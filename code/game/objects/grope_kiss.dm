@@ -890,8 +890,8 @@ GLOBAL_LIST_EMPTY(shotglass_gropers)
 /datum/grope_kiss_MERP/proc/make_visible_message(mob/doer, mob/target, list/last_action = list())
 	if(!doer || !target)
 		return
-	if(!isliving(target) && !(doer.ckey in GLOB.shotglass_gropers))
-		return // you grope the shotglass's butt
+	// if(!isliving(target) && !(doer.ckey in GLOB.shotglass_gropers))
+	// 	return // you grope the shotglass's butt // screw it you can grope the shotglass's butt
 	/// first get the direction of doer compared to target
 	var/direc = calc_dir(doer, target)
 	/// then, get the right location

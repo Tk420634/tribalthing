@@ -325,10 +325,11 @@ SUBSYSTEM_DEF(chat)
 			return
 		LAZYADD(payload_by_client[client], list(message))
 
-/datum/controller/subsystem/chat/proc/SanitizeUserImages(datum/rental_mommy/chat/momchat, someone)
+/datum/controller/subsystem/chat/proc/SanitizeUserImages(someone)
 	var/datum/preferences/P
-	if(momchat)
-		P = momchat.prefs_override || extract_prefs(momchat.source) // and, hm, maybe not today, probably tomorrow
+	if(istype(someone, /datum/rental_mommy/chat))
+		var/datum/rental_mommy/chat/mommy = someone
+		P = mommy.prefs_override || extract_prefs(mommy.source) // and, hm, maybe not today, probably tomorrow
 	else
 		P = extract_prefs(someone)
 	if(!P)
@@ -473,9 +474,10 @@ SUBSYSTEM_DEF(chat)
 	P.save_character()
 
 /// makes sure that the user has a properly filled out set of preferences lists for their hornychat
-/datum/controller/subsystem/chat/proc/SanitizeUserPreferences(datum/rental_mommy/chat/mommy, someone)
+/datum/controller/subsystem/chat/proc/SanitizeUserPreferences(someone)
 	var/datum/preferences/P
-	if(mommy)
+	if(istype(someone, /datum/rental_mommy/chat))
+		var/datum/rental_mommy/chat/mommy = someone
 		P = mommy.prefs_override || extract_prefs(mommy.source) // and, hm, maybe not today, probably tomorrow
 	else
 		P = extract_prefs(someone)
@@ -577,7 +579,7 @@ SUBSYSTEM_DEF(chat)
 	var/datum/preferences/P = extract_prefs(whosit)
 	if(!P)
 		return
-	SanitizeUserImages(null, P)
+	SanitizeUserImages(P)
 	var/list/PP = P.ProfilePics
 	for(var/PPentry in PP)
 		if(PPentry["Mode"] == mode)
@@ -1281,20 +1283,7 @@ SUBSYSTEM_DEF(chat)
 	message_admins("Flirt debug [flirt_debug?"on":"off"]")
 
 /datum/controller/subsystem/chat/proc/give_flirt_targetter_item(mob/living/flirter)
-	if(!isliving(flirter))
-		return
-	if(flirter.get_active_held_item() && flirter.get_inactive_held_item())
-		to_chat(flirter, span_warning("My hands are too full to flirt! Yes, you need your hands to flirt."))
-		return
-
-	var/obj/item/hand_item/flirt_targetter/hiya = new(flirter)
-
-	if(flirter.put_in_hands(hiya)) // NOTE: put_in_hand is MUCH different from put_in_hands - NOTE THE S
-		to_chat(flirter, span_notice("Pick someone you want to flirt with! Just click on them while holding this, and it'll target them."))
-		return TRUE
-	else
-		to_chat(flirter, span_warning("Something went wrong! Try a different approach~"))
-		qdel(hiya)
+	SShanditems.give_hand_item(flirter, /obj/item/hand_item/flirt_targetter)
 
 /datum/controller/subsystem/chat/proc/can_usr_flirt_with_this(mob/A)
 	if(!isliving(usr)) // fight me
@@ -1738,8 +1727,8 @@ SUBSYSTEM_DEF(chat)
 	/// first, the stock images
 	/// not using em lol
 	/// then, the user's images
-	SSchat.SanitizeUserImages(null, P)
-	SSchat.SanitizeUserPreferences(null, P)
+	SSchat.SanitizeUserImages(P)
+	SSchat.SanitizeUserPreferences(P)
 	data["AutoContrast"] = CHECK_PREFS(P, USE_AUTO_CONTRAST)
 	data["SeeOthers"] = CHECK_PREFS(P, SHOW_ME_HORNY_FURRIES)
 	data["UserImages"] = P.ProfilePics

@@ -24,6 +24,7 @@ SUBSYSTEM_DEF(mobs)
 	var/autoheal_to_stamina = TRUE
 	var/disable_stambuffer = TRUE
 	var/heal_traumas_when_brain_is_okay = TRUE
+	var/no_bleeding_pls = FALSE
 
 	var/cash_for_critting_someone = 100
 

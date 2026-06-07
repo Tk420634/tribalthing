@@ -167,16 +167,7 @@
 	screen_loc = ui_merp
 
 /atom/movable/screen/merp_button/Click(location,control,params)
-	var/mob/living/carbon/human/H = usr
-	if(!ishuman(H))
-		to_chat(H, span_alert("Sorry! You've gotta be a fully spawned in character with hopes and dreams to use this!"))
-		return
-	var/obj/item/hand_item/merp_doer/brick = new(H)
-
-	if(H.put_in_hands(brick))
-		to_chat(H, span_notice("Now click someone with this thing (or yourself)! Range is infinite, so you can totally interact with people across the bar!"))
-	else
-		qdel(brick)
+	SShanditems.give_hand_item(usr, /obj/item/hand_item/merp_doer)
 
 /// special cool button that turns into more buttons!
 /atom/movable/screen/foldout
@@ -442,11 +433,7 @@
 		if("Subtlest - Long & Short Range")
 			H.emote("erp")
 		if("Mechanical Erotic Roleplay")
-			var/obj/item/hand_item/merp_doer/brick = new(H)
-			if(H.put_in_hands(brick))
-				to_chat(H, span_notice("Now click someone with this thing (or yourself)! Range is infinite, so you can totally interact with people across the bar!"))
-			else
-				qdel(brick)
+			SShanditems.give_hand_item(usr, /obj/item/hand_item/merp_doer)
 		if("Private Panel")
 			H.toggle_genitals()
 		if("Vore Menu")
@@ -491,38 +478,40 @@
 	screen_loc = "RIGHT-0:-4,South+2:0"
 
 /atom/movable/screen/hand_items_button/Click(location,control,params)
-	var/mob/living/carbon/human/H = usr
-	if(!ishuman(usr))
-		to_chat(usr, span_alert("Sorry! You've gotta be a fully spawned in character with hopes and dreams to use this!"))
-		return
-	var/static/list/choices = list(
-			"Tail"        = image(icon = 'icons/mob/screen_gen.dmi', icon_state = "tail"    ),
-			"Butt"        = image(icon = 'icons/mob/screen_gen.dmi', icon_state = "butt"    ),
-			"Claw"        = image(icon = 'icons/mob/screen_gen.dmi', icon_state = "claw"    ),
-			"Bite"        = image(icon = 'icons/mob/screen_gen.dmi', icon_state = "bite"    ),
-			"Beans"       = image(icon = 'icons/mob/screen_gen.dmi', icon_state = "beans"   ),
-			"Tend"        = image(icon = 'icons/mob/screen_gen.dmi', icon_state = "tend"    ),
-			"Cuphand"     = image(icon = 'icons/mob/screen_gen.dmi', icon_state = "cuphand" ),
-		)
-	var/mob/user = usr
-	var/choice = show_radial_menu(user, src, choices, radius = 28, ultradense = TRUE, linedir = NORTH)
-	if(!ishuman(usr))//Check after they select something just in case they've somehow switched to a non-human in the mean time
-		return
-	switch(choice)
-		if("Tail")
-			H.emote("tailer")
-		if("Butt")
-			H.emote("butt")
-		if("Claw")
-			H.emote("claw")
-		if("Bite")
-			H.emote("bite")
-		if("Beans")
-			H.emote("beans")
-		if("Tend")
-			H.emote("tend")
-		if("Cuphand")
-			H.emote("cuphand")
+	SShanditems.get_hand_item_popup(usr, src) // ligma bingue, corey
+
+
+
+
+	// var/static/list/choices = list(
+	// 		"Tail"        = image(icon = 'icons/mob/screen_gen.dmi', icon_state = "tail"    ),
+	// 		"Butt"        = image(icon = 'icons/mob/screen_gen.dmi', icon_state = "butt"    ),
+	// 		"Claw"        = image(icon = 'icons/mob/screen_gen.dmi', icon_state = "claw"    ),
+	// 		"Bite"        = image(icon = 'icons/mob/screen_gen.dmi', icon_state = "bite"    ),
+	// 		"Beans"       = image(icon = 'icons/mob/screen_gen.dmi', icon_state = "beans"   ),
+	// 		"Tend"        = image(icon = 'icons/mob/screen_gen.dmi', icon_state = "tend"    ),
+	// 		"Cuphand"     = image(icon = 'icons/mob/screen_gen.dmi', icon_state = "cuphand" ),
+	// 	)
+	// var/mob/user = usr
+	// if(!ishuman(usr))//Check after they select something just in case they've somehow switched to a non-human in the mean time
+	// 	return
+	// switch(choice)
+	// 	if("Tail")
+	// 		H.emote("tailer")
+	// 	if("Butt")
+	// 		H.emote("butt")
+	// 	if("Claw")
+	// 		H.emote("claw")
+	// 	if("Bite")
+	// 		H.emote("bite")
+	// 	if("Beans")
+	// 		H.emote("beans")
+	// 	if("Tend")
+	// 		H.emote("tend")
+	// 	if("Cuphand")
+	// 		H.emote("cuphand")
+
+
 
 ////////////////////////////////////////////////////////////
 /*

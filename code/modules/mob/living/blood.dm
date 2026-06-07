@@ -292,6 +292,8 @@ GLOBAL_LIST_INIT(blood_loss_messages, list(
 
 //Makes a blood drop, leaking amt units of blood from the mob
 /mob/living/carbon/proc/bleed(amt)
+	if(SSmobs.no_bleeding_pls)
+		return
 	if(blood_volume)
 		if(get_blood(FALSE) < BLOOD_VOLUME_LOSS_FLOOR)
 			amt *= 0.05
@@ -463,6 +465,8 @@ GLOBAL_LIST_INIT(blood_loss_messages, list(
 
 //to add a splatter of blood or other mob liquid.
 /mob/living/proc/add_splatter_floor(turf/T, small_drip)
+	if(SSmobs.no_bleeding_pls)
+		return
 	if(get_blood_id() == null)
 		return
 	if(!T)

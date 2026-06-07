@@ -270,7 +270,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	else if (!istype(mob_armor, /datum/armor))
 		stack_trace("Invalid type [mob_armor.type] found in .armor during /mob/living/simple_animal Initialize()")
 	/// End duplicated code
-	setup_mob_armor_description()
+	// setup_mob_armor_description()
 	if(can_ghost_into)
 		make_ghostable()
 	setup_variations()
