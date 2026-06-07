@@ -577,15 +577,15 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			llogin_msg += "</center>"
 			dat += llogin_msg.Join()
 			dat += "<center><a href='?_src_=prefs;preference=special;task=menu'><b>Character Attributes</b></a></center><br>"
-			// if(CONFIG_GET(flag/roundstart_traits))
-			// 	dat += "<center>"
-			// 	if(SSquirks.initialized && !(PMC_QUIRK_OVERHAUL_2K23 in current_version))
-			// 		dat += "<a href='?_src_=prefs;preference=quirk_migrate'>CLICK HERE to migrate your old quirks to the new system!</a>"
-			// 	dat += "<a href='?_src_=prefs;preference=quirkmenu'>"
-			// 	dat += "<h2>Configure Quirks</a></h2><br></center>"
-			// 	dat += "</a>"
-			// 	dat += "<center><b>Current Quirks:</b> [get_my_quirks()]</center>"
-			//Left Column
+			if(CONFIG_GET(flag/roundstart_traits))
+				dat += "<center>"
+				if(SSquirks.initialized && !(PMC_QUIRK_OVERHAUL_2K23 in current_version))
+					dat += "<a href='?_src_=prefs;preference=quirk_migrate'>CLICK HERE to migrate your old quirks to the new system!</a>"
+				dat += "<a href='?_src_=prefs;preference=quirkmenu'>"
+				dat += "<h2>Configure Quirks</a></h2><br></center>"
+				dat += "</a>"
+				dat += "<center><b>Current Quirks:</b> [get_my_quirks()]</center>"
+			Left Column
 			dat += "<table width='100%'><tr>"
 			dat += "<td valign='top'>"
 			dat += "<h2>Identity</h2>"
