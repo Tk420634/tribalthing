@@ -584,8 +584,7 @@ SUBSYSTEM_DEF(handitems)
 
 // non-horny, non-medical tactile action message 
 /obj/item/hand_item/tactile/proc/do_message(mob/living/user, atom/target)
-	visible_message(
-		user,
+	user.visible_message(
 		"[user] [action_verb_s] [target].",
 		"You [action_verb] [target].",
 		"You hear [action_verb_ing].",
@@ -622,8 +621,7 @@ SUBSYSTEM_DEF(handitems)
 	line_others = "[user] [lick_words[LICK_INTENT]] [action_verb_s] [subj_third] [lick_words[LICK_LOCATION]]."
 	line_self = "You [lick_words[LICK_INTENT]] [action_verb] [subj_second] [lick_words[LICK_LOCATION]]."
 	line_heard = "You hear [action_verb_ing]."
-	visible_message(
-		user,
+	user.visible_message(
 		line_others,
 		line_self,
 		line_heard,
@@ -1418,7 +1416,7 @@ SUBSYSTEM_DEF(handitems)
 	del_on_ground = TRUE // its your hand, if you drop it, it goes back to being your hand!
 	hud_icon = 'icons/mob/screen_gen.dmi'
 	hud_icon_state = "cuphand"
-	hud_use = TRUE
+	// hud_use = TRUE
 
 /obj/item/hand_item/spawner/cuphand/on_spawner_put_in_hands(mob/living/user, atom/movable/spawned)
 	to_chat(user, span_notice("You cup your hands, ready to hold some liquids!"))
@@ -1435,7 +1433,7 @@ SUBSYSTEM_DEF(handitems)
 	cooldown_override_trait = TRAIT_MONKEYLIKE
 	hud_icon = 'icons/mob/screen_gen.dmi'
 	hud_icon_state = "rock"
-	hud_use = TRUE
+	// hud_use = TRUE
 
 /obj/item/hand_item/spawner/rock/on_spawner_put_in_hands(mob/living/user, atom/movable/spawned)
 	to_chat(user, span_notice("You scoop up a hefty rock!"))

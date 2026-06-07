@@ -423,26 +423,26 @@
 	. = ..()
 	SShanditems.give_hand_item(user, /obj/item/hand_item/weapon/butt)
 
-//Rock throw//
-/datum/emote/living/carbon/rocker
-	key = "rocks"
-	key_third_person = "rocks"
-	restraint_check = TRUE
+// //Rock throw//
+// /datum/emote/living/carbon/rocker
+// 	key = "rocks"
+// 	key_third_person = "rocks"
+// 	restraint_check = TRUE
 
-/datum/emote/living/carbon/rocker/run_emote(mob/user)
-	. = ..()
-	SShanditems.give_hand_item(user, /obj/item/hand_item/spawner/rock)
+// /datum/emote/living/carbon/rocker/run_emote(mob/user)
+// 	. = ..()
+// 	SShanditems.give_hand_item(user, /obj/item/hand_item/spawner/rock)
 
-//brick//
-/datum/emote/living/carbon/bricker
-	key = "brick"
-	key_third_person = "bricks"
-	restraint_check = TRUE
+// //brick//
+// /datum/emote/living/carbon/bricker
+// 	key = "brick"
+// 	key_third_person = "bricks"
+// 	restraint_check = TRUE
 
 
-/datum/emote/living/carbon/bricker/run_emote(mob/user)
-	. = ..()
-	SShanditems.give_hand_item(user, /obj/item/hand_item/spawner/brick)
+// /datum/emote/living/carbon/bricker/run_emote(mob/user)
+// 	. = ..()
+// 	SShanditems.give_hand_item(user, /obj/item/hand_item/spawner/brick)
 
 //snowball//
 /datum/emote/living/carbon/snowballer
