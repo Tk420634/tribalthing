@@ -34,7 +34,7 @@ SUBSYSTEM_DEF(handitems)
 	/// list(/path/to/hand/item = /instantiated/hand/item)
 	var/list/hand_items = list()
 	var/list/gropekissers = list()
-	var/allow_hud_buttons = TRUE
+	var/allow_hud_buttons = FALSE
 
 /datum/controller/subsystem/handitems/Initialize(start_timeofday)
 	generate_hand_items()

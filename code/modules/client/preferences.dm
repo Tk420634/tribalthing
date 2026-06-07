@@ -4884,10 +4884,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 /mob/verb/toggle_wide_screen()
 	set name = "Toggle Wide Screen"
 	set category = "Preferences"
-	var/preferences/P = extract_prefs(src)
+	var/datum/preferences/P = extract_prefs(src)
 	if(!P)
 		return
-	P.widescreenpref = !widescreenpref
+	P.widescreenpref = !P.widescreenpref
 	client.change_view(CONFIG_GET(string/default_view))
 
 #undef MAX_FREE_PER_CAT
