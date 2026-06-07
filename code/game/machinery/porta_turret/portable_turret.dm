@@ -2150,6 +2150,7 @@
 		span_notice("You starts packing up [src]!"))
 	if(!m_tool.use_tool(src, user, 3 SECONDS, 0, 100))
 		user.show_message(span_alert("You were interrupted"))
+		return
 	visible_message(span_notice("[user] packed up [src]!"),
 		span_green("You packed up [src]!"))
 	var/obj/item/turret_box/the_box = new(get_turf(src))
@@ -2251,8 +2252,8 @@
 	max_ammo = 300
 	start_empty = FALSE
 	w_class = WEIGHT_CLASS_GIGANTIC
-	start_ammo_count = 100
-	randomize_ammo_count = TRUE
+	start_ammo_count = 150
+	randomize_ammo_count = FALSE
 
 /obj/item/ammo_box/magazine/internal/turret/get_random_bullet_amount(num_bullets = max_ammo)
 	var/amount = FLOOR(rand(num_bullets * 0.5, num_bullets), 1)
@@ -2263,7 +2264,7 @@
 /// A packed up turrent
 /obj/item/turret_box
 	name = "packaged port-a-turret"
-	desc = "A turret, packed up and ready to deploy. Ammo not included, unless repackaged."
+	desc = "A turret, packed up and ready to deploy."
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "hivebot_fab_on"
 	w_class = WEIGHT_CLASS_GIGANTIC
@@ -2273,7 +2274,10 @@
 	var/obj/item/ammo_box/magazine/stored_mag
 	var/noammo
 
-/obj/item/turret_box/Initialize()
+/obj/item/turret_box/Initialize(obj/machinery/porta_turret/f13/nash/spawning_turret)
+	if(spawning_turret) // a turret was repackaged into this, so import its magazine
+		if(istype(spawning_turret, /obj/machinery/porta_turret/f13/nash))
+			import_turret_magazine(spawning_turret)
 	. = ..()
 	
 /obj/item/turret_box/Destroy()
@@ -2294,21 +2298,31 @@
 		user.show_message(span_alert("You were interrupted!"))
 		return
 	var/obj/machinery/porta_turret/f13/nash/turret_new = new turret_type(get_turf(src))
-	if(istype(stored_mag) && !noammo)
+	if(istype(stored_mag))
 		QDEL_NULL(turret_new.our_mag)
 		turret_new.our_mag = stored_mag
 		stored_mag.forceMove(turret_new)
 		turret_new.eject_chambered_round(TRUE)
 		turret_new.chamber_new_round()
+		stored_mag = null
 	if(noammo)
 		if(turret_new.our_mag && LAZYLEN(turret_new.our_mag.stored_ammo))
 			QDEL_LIST(turret_new.our_mag.stored_ammo)
+		QDEL_NULL(turret_new.chambered)
 	if("cat" in user.faction)
 		turret_new.faction = list("cat") // cat
 	else if("murrine" in user.faction)
 		turret_new.faction = list("murrine") // cat
 	user.visible_message(span_notice("[user] unpacks [src], deploying [turret_new]."))
-	stored_mag = null
 	qdel(src)
 
+/obj/item/turret_box/proc/import_turret_magazine(obj/machinery/porta_turret/f13/nash/turret)
+	if(!istype(turret))
+		return
+	if(!istype(turret.our_mag))
+		return
+	stored_mag = turret.our_mag
+	stored_mag.forceMove(src)
+	turret.our_mag = null
+	return stored_mag
 
