@@ -7,6 +7,7 @@
 	default_color = "00FF00"
 	blacklisted = 0
 	sexes = 0
+	roundstart = TRUE
 	species_traits = list(
 		MUTCOLORS,
 		NOTRANSSTING,
