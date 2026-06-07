@@ -1681,6 +1681,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	medical_record_text = "Patient repeatedly scores baskets in the trashcan."
 	locked =  FALSE
 	human_only = FALSE
+	disabled = TRUE
 
 /datum/quirk/bowtrained
 	name = "Bow Trained"
@@ -1698,6 +1699,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	medical_record_text = "Patient shows aptitude for utilizing strings on sticks."
 	locked =  FALSE
 	human_only = FALSE
+	disabled = TRUE
 
 /datum/quirk/masterrifleman
 	name = "Bolt Worker"
@@ -1715,6 +1717,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	medical_record_text = "Patient appears to really enjoy cranking bolts."
 	locked =  FALSE
 	human_only = FALSE
+	disabled = TRUE
 
 /datum/quirk/wandproficient
 	name = "Magically Attuned"
@@ -2012,6 +2015,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	lose_text = span_danger("Your arm feels lighter...")
 	medical_record_text = "Patient appears to possess a knife, somehow."
 	human_only = FALSE
+	disabled = TRUE
 
 
 /datum/quirk/mantisblade
@@ -2027,6 +2031,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	lose_text = span_danger("Your arm feels lighter...")
 	medical_record_text = "Patient appears to possess a cybernetic armblade."
 	human_only = FALSE
+	disabled = TRUE
 
 /datum/quirk/tentaclearm
 	name = "Arm Tentacle"
@@ -2039,6 +2044,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	gain_text = span_notice("You feel as your arm is wriggling...")
 	lose_text = span_danger("Your arm feels lighter...")
 	medical_record_text = "Patient appears to possess a club, somehow."
+	disabled = TRUE
 
 /datum/quirk/magegrab
 	name = "Mage Grab" // Better name pending
