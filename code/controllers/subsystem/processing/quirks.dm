@@ -33,7 +33,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 	var/debug_migration = FALSE // fucs with our savefile
 	var/debug_conflicts = FALSE
 
-	var/no_user_quirks = TRUE
+	var/no_user_quirks = FALSE
 	var/list/disabled_categories = list(
 		QUIRK_CATEGORY_ADVENTURE_QUIRKS,
 		QUIRK_CATEGORY_IDENTIFICATION_QUIRKS,
