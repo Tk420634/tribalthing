@@ -394,6 +394,10 @@ GLOBAL_LIST_INIT(heavensnight_positions, list(
 	"Club Worker",
 ))
 
+GLOBAL_LIST_INIT(horny_ooc_positions, list(
+	"Character Testing Area",
+))
+
 /// TODO: Take all these horrible string-based roflcopters and have them 
 // job categories for rendering the late join menu
 GLOBAL_LIST_INIT(position_categories, list(
@@ -412,6 +416,7 @@ GLOBAL_LIST_INIT(position_categories, list(
 	//"Garland" = list("jobs" = gar_positions, "color" = "#d7b088"),
 	//EXP_TYPE_SILICON = list("jobs" = silicon_positions, "color" = "#4a4a4a"),
 	"Kittentide" = list("jobs" = tribal_positions, "color" = "#006666"),
+	"Backstage" = list("jobs" = horny_ooc_positions, "color" = "#c94b8a"),
 	//EXP_TYPE_BIKER = list("jobs" = biker_positions, "color" = "#eb872f"),
 	//EXP_TYPE_CLUB = list("jobs" = heavensnight_positions, "color" = "#c94b8a"),
 	//"debug" = list("jobs" = debug_positions, "color" = "#ff00ee"),

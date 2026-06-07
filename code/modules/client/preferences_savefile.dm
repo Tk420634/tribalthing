@@ -319,7 +319,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	genital_whitelist       = sanitize_text(genital_whitelist, initial(genital_whitelist))
 	input_mode_hotkey       = "Tab" // *puts cup under disk drive* Tab, please! //sanitize_text(input_mode_hotkey, initial(input_mode_hotkey))
 	UI_style                = sanitize_inlist(UI_style, GLOB.available_ui_styles, GLOB.available_ui_styles[1])
-	hotkeys                 = sanitize_integer(hotkeys, 0, 1, initial(hotkeys))
+	hotkeys                 = TRUE
+	// hotkeys                 = sanitize_integer(hotkeys, 0, 1, initial(hotkeys))
 	chat_on_map             = sanitize_integer(chat_on_map, 0, 1, initial(chat_on_map))
 	max_chat_length         = sanitize_integer(max_chat_length, 1, CHAT_MESSAGE_MAX_LENGTH, initial(max_chat_length))
 	chat_width              = sanitize_integer(chat_width, 1, CHAT_MESSAGE_MAX_WIDTH, initial(max_chat_length))
