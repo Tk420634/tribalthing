@@ -2012,6 +2012,7 @@
 	var/obj/item/ammo_box/magazine/internal/our_mag = /obj/item/ammo_box/magazine/internal/turret
 	/// Ammunition loaded in the chamber
 	var/obj/item/ammo_casing/chambered
+	var/shot_speed_mod = 1
 	lethal_sound_properties = list(
 		SP_VARY(FALSE),
 		SP_VOLUME(PISTOL_LIGHT_VOLUME),
@@ -2209,6 +2210,7 @@
 		return FALSE
 	//use_power(reqpower * 2)
 	var/the_spread = rand(-shot_spread, shot_spread)
+	chambered.BB.pixels_per_second *= shot_speed_mod
 	chambered.fire_casing(
 		target = target,
 		user = src,

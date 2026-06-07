@@ -417,6 +417,7 @@
 	faction = list("murrine")
 	our_mag = /obj/item/ammo_box/magazine/internal/turret/foam
 	integrity_failure = 0.01
+	shot_speed_mod = 0.50
 
 /obj/machinery/porta_turret/f13/nash/foam/obj_break(damage_flag)
 	if(!(flags_1 & NODECONSTRUCT_1))
