@@ -19,6 +19,7 @@
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/mammal
 	liked_food = MEAT | FRIED
 	disliked_food = TOXIC
+	roundstart = FALSE
 
 	tail_type = "mam_tail"
 	wagging_type = "mam_waggingtail"
