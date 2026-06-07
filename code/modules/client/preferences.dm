@@ -585,7 +585,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				dat += "<h2>Configure Quirks</a></h2><br></center>"
 				dat += "</a>"
 				dat += "<center><b>Current Quirks:</b> [get_my_quirks()]</center>"
-			Left Column
 			dat += "<table width='100%'><tr>"
 			dat += "<td valign='top'>"
 			dat += "<h2>Identity</h2>"
