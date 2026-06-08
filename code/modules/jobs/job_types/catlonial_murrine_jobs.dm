@@ -245,7 +245,7 @@
 
 
 /obj/item/gun/flintlock/musket/catgirl
-	name = "Arisnyaka Mk. I"
+	name = "Arisnyaka Mk. 2"
 	desc = "An ancient but well kept Nyanpire black powder dartgun."
 	icon = 'modular_coyote/icons/objects/ancient.dmi'
 	icon_state = "musket1"
