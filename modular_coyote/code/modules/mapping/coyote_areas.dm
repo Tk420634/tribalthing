@@ -3,7 +3,7 @@
 	var/see_in_dark_override
 
 /area/f13/ambientlighting/building
-	name = "Abandoned Building"
+	name = "Abandonedt Building"
 	icon_state = "building"
 	lighting_alpha_override = 240
 	see_in_dark_override = 8

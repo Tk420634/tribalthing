@@ -701,6 +701,7 @@
 /obj/structure/chair/bench{
 	dir = 1
 	},
+/obj/effect/landmark/start/f13/meowlitia,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ambientlighting/building/catgirls_score_here)
 "ij" = (
@@ -2422,6 +2423,7 @@
 /obj/structure/chair/bench{
 	dir = 1
 	},
+/obj/effect/landmark/start/f13/meowlitia,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ambientlighting/building/catgirls_score_here)
 "Ak" = (
@@ -3210,7 +3212,7 @@
 /obj/structure/chair/bench{
 	dir = 8
 	},
-/obj/effect/landmark/start/f13/influencer,
+/obj/effect/landmark/start/f13/meowlitia,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ambientlighting/building/catgirls_score_here)
 "JU" = (

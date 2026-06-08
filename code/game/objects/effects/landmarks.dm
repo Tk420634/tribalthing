@@ -1181,8 +1181,8 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	icon_state = "Tribal"
 	color = "#9FFF9F"
 
-/obj/effect/landmark/start/f13/influencer
-	name = "Influencer"
+/obj/effect/landmark/start/f13/meowlitia
+	name = "Meowlitia"
 	icon_state = "Tribal"
 	color = "#FF00FF"
 
