@@ -346,7 +346,7 @@ GLOBAL_LIST_INIT(tribal_positions, list(
 	"Jagnyar Warrior",
 	"Stick-Spinner",
 	"Catnapper",
-	"Influencer",
+	"Meowlitia",
 	"Captured Murrine",
 ))
 //bikrs

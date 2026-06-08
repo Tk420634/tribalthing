@@ -213,16 +213,16 @@
 	paycheck = COINS_TO_CREDITS(75) // 75 copper per hour
 	faction = "cat"
 
-/datum/job/tribal/influencer
-	title = "Influencer"
+/datum/job/tribal/meowlitia
+	title = "Meowlitia"
 	flag = F13HUNTER
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 3
+	spawn_positions = 3
 	supervisors = "The Nyan-Nyan Neko Gods, the Head Hunter and your instincts."
-	enforces = "Teaching the ways of the Nyan-Nyan Neko Nyampire to the captured Murrines."
+	enforces = "The Nyamperial way of life through high tech violence!"
 	forbids = "Nothing in particular, your victory is utmost over the foe."
-	description = "A priest, or some sort of well trained individual taught to indoctrinate Murrine captives to the Nyampires ways."
-	outfit = /datum/outfit/job/cb/catgirl/warrior/influencer
+	description = "A brand new military position produced by the Nyamperial forces upon contact with the Murrines.  The best of the best!"
+	outfit = /datum/outfit/job/cb/catgirl/warrior/meowlitia
 	paycheck = COINS_TO_CREDITS(75) // 75 copper per hour
 	faction = "cat"
 

@@ -294,8 +294,12 @@
 	scope_y_offset = 12
 	auto_eject_sound = 'sound/weapons/magout.ogg'
 	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
-
 	damage_multiplier = TIER2
+
+/obj/item/gun/ballistic/automatic/m1garand/sks/psps
+	name = "Nyarinco PSPS"
+	mag_type = /obj/item/ammo_box/magazine/sks/psps
+	init_mag_type = /obj/item/ammo_box/magazine/sks/psps
 
 /obj/item/gun/ballistic/automatic/aksmol
 	name = "Draco"

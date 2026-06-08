@@ -114,7 +114,7 @@
 	randomize_ammo_count = FALSE
 	ammo_type = /obj/item/ammo_casing/s762by39
 	caliber = list(CALIBER_762)
-	max_ammo = 8
+	max_ammo = 10
 	custom_materials = list(/datum/material/iron = MATS_STRIPPER)
 	w_class = WEIGHT_CLASS_SMALL
 

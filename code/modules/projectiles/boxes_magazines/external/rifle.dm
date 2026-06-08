@@ -115,19 +115,24 @@
 	randomize_ammo_count = FALSE
 	ammo_type = /obj/item/ammo_casing/a308
 	caliber = list(CALIBER_308)
-	max_ammo = 8
+	max_ammo = 10
 	custom_materials = list(/datum/material/iron = MATS_STRIPPER)
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/ammo_box/magazine/sks/update_icon()
 	..()
-	if (ammo_count() >= 10)
+	if (ammo_count() >= 8)
 		icon_state = "enbloc-8"
 	else
 		icon_state = "enbloc-[ammo_count()]"
 
 /obj/item/ammo_box/magazine/sks/empty
 	start_empty = 1
+
+/obj/item/ammo_box/magazine/sks/psps
+	name = "Nyarinco Dart clip"
+	ammo_type = /obj/item/ammo_casing/caseless/foam_dart/riot 
+	caliber = list(CALIBER_FOAM)
 
 /obj/item/ammo_box/magazine/m308
 	name = "rifle magazine (.308)"

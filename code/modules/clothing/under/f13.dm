@@ -1495,8 +1495,8 @@
 //People's Liberation Army
 
 /obj/item/clothing/under/f13/chinese
-	name = "PLA uniform"
-	desc = "An Pre-Fall People's Liberation Army uniform, worn by enlisted and NCOs."
+	name = "NEA uniform"
+	desc = "A brand new uniform produced by Nyarinco for the Nyamperial's rapidly mobilizing modern military!  A great leap forward!"
 	icon = 'icons/fallout/clothing/uniforms.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/uniform.dmi'
 	mutantrace_variation = STYLE_DIGITIGRADE

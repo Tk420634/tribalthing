@@ -145,17 +145,23 @@
 	tribal = TRUE
 	cat = TRUE
 
-/datum/outfit/job/cb/catgirl/warrior/influencer
-	name = "Influencer"
-	head = null
-	suit = null
-	backpack = null
-	uniform = /obj/item/clothing/under/civ/mayan_loincloth
-	shoes = /obj/item/clothing/shoes/sandal
+/datum/outfit/job/cb/catgirl/warrior/meowlitia
+	name = "Meowlitia"
+	head = /obj/item/clothing/head/f13/chinese
+	suit_store = /obj/item/gun/ballistic/automatic/m1garand/sks/psps
+	backpack = /obj/item/storage/backpack/satchel/bone
+	uniform = /obj/item/clothing/under/f13/chinese
+	shoes = /obj/item/clothing/shoes/jackboots
 	belt = null
-	gloves = /obj/item/clothing/gloves/thief
+	gloves = null
 	tribal = TRUE
 	cat = TRUE
+	backpack_contents   = list(
+		/obj/item/ammo_box/magazine/sks/psps = 4,
+		/obj/item/melee/classic_baton/coyote/oldquarterstaff/disputestick,
+		/obj/item/warpaint_bowl,
+		/datum/component/storage/concrete/bag/casing,
+	)
 
 /datum/outfit/job/cb/catgirl/warrior/sniper
 	name = "cat sniper"
