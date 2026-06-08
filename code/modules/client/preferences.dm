@@ -479,6 +479,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/list/temperaments_and_builds = list() // list of paths. this one gets saved
 	var/list/current_t_n_b = list() // the mutable list of paths. this one doesnt, and can be changed inround!
 
+	var/was_told_to_fill_out_prefs = FALSE
+
 /datum/preferences/New(client/C)
 	parent = C
 
