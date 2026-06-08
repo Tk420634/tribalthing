@@ -2392,6 +2392,18 @@
 /obj/structure/simple_door/room,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"zW" = (
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/structure/nest/gecko,
+/turf/open/indestructible/ground/outside/civ/grass3{
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	color = "#777777";
+	footstep = "grass"
+	},
+/area/f13/wasteland/nash)
 "zX" = (
 /obj/structure/flora/wasteplant/fever_blossom,
 /turf/open/indestructible/ground/outside/civ/grass3{
@@ -3108,6 +3120,19 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/f13/ambientlighting/building)
+"IB" = (
+/obj/structure/flora/grass/wasteland{
+	color = "#33BB33";
+	icon_state = "tall_grass_3"
+	},
+/obj/structure/nest/gecko,
+/turf/open/indestructible/ground/outside/civ/grass3{
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	color = "#888888";
+	footstep = "grass"
+	},
+/area/f13/wasteland/nash)
 "IP" = (
 /obj/machinery/light{
 	dir = 1;
@@ -22098,7 +22123,7 @@ vR
 vR
 vR
 vR
-vR
+Bp
 vR
 vR
 vR
@@ -23818,7 +23843,7 @@ vR
 vR
 vR
 vR
-vR
+Bp
 vR
 vR
 vR
@@ -32607,7 +32632,7 @@ UF
 UF
 UF
 UF
-UF
+zW
 vH
 kf
 kf
@@ -32864,7 +32889,7 @@ QP
 UF
 UF
 UF
-UF
+zW
 vH
 kf
 kf
@@ -33362,7 +33387,7 @@ Dw
 kf
 kf
 kf
-kf
+DT
 Pc
 Pc
 kf
@@ -35707,7 +35732,7 @@ OQ
 vR
 kf
 vR
-vR
+Bp
 vR
 vR
 vR
@@ -36433,7 +36458,7 @@ vR
 OQ
 vR
 vR
-vR
+Bp
 kf
 kf
 kf
@@ -41072,7 +41097,7 @@ EB
 vH
 Pc
 kf
-Pc
+IB
 uB
 uB
 uB
@@ -41560,7 +41585,7 @@ vR
 vR
 vR
 vR
-vR
+Bp
 vR
 vR
 vR
@@ -41603,7 +41628,7 @@ kf
 kf
 Pc
 kf
-kf
+DT
 kf
 Pc
 kf
@@ -49346,7 +49371,7 @@ vR
 vR
 vR
 vR
-vR
+Bp
 vR
 vR
 vR
