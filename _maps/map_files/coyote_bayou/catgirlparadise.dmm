@@ -4190,13 +4190,6 @@
 	dir = 1
 	},
 /area/f13/building)
-"Wf" = (
-/obj/structure/stone_tile/slab,
-/obj/structure/destructible/tribal_torch/wall/lit,
-/turf/closed/indestructible/riveted/boss{
-	name = "temple wall"
-	},
-/area/f13/ambientlighting/building)
 "Wn" = (
 /obj/structure/rug/big/rug_red{
 	pixel_x = 3;
@@ -30616,7 +30609,7 @@ zt
 qK
 jM
 jM
-Wf
+CO
 zt
 zt
 vR
