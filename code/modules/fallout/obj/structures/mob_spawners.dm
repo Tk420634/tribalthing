@@ -17,7 +17,7 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	layer = BELOW_OBJ_LAYER
 	var/list/mob_types = list(/mob/living/simple_animal/hostile/carp)
 	/// Time between spawns
-	var/spawn_time = 20 MINUTES
+	var/spawn_time = 5 MINUTES
 	/// Can be boarded up
 	var/coverable = TRUE
 	/// spawner can be covered by dense things
@@ -407,12 +407,12 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	icon = 'icons/fallout/mobs/nests.dmi'
 	icon_state = "nest_gecko"
 	desc = "A pile of gecko eggs on top of a clay mound."
-	max_mobs = 2
+	max_mobs = 3
 	spawnsound = 'sound/misc/crack.ogg'
 	mob_types = list(
-		/mob/living/simple_animal/hostile/gecko              = 4,
-		/mob/living/simple_animal/hostile/gecko/legacy       = 3,
-		/mob/living/simple_animal/hostile/gecko/legacy/alpha = 3,
+		/mob/living/simple_animal/hostile/gecko              = 300,
+		/mob/living/simple_animal/hostile/gecko/legacy       = 300,
+		/mob/living/simple_animal/hostile/gecko/legacy/alpha = 200,
 		)
 	
 

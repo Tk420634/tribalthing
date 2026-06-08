@@ -3,7 +3,7 @@
 ///////////
 
 /mob/living/simple_animal/hostile/gecko
-	bounty = 5
+	bounty = 25
 	name = "gecko"
 	desc = "A large mutated reptile with sharp teeth."
 	icon = 'icons/fallout/mobs/animals/wasteanimals.dmi'
@@ -425,7 +425,7 @@
 //Faster and more aggressive than normal geckos, but also easier even squishier.
 
 /mob/living/simple_animal/hostile/gecko/legacy
-	bounty = 6
+	bounty = 30
 	name = "newt"
 	desc = "A large dog sized amphibious biped with an oddly large mouth for its size. Probably related to geckos in some way."
 	icon = 'icons/fallout/mobs/legacymobs.dmi'
@@ -517,7 +517,7 @@
 
 
 /mob/living/simple_animal/hostile/gecko/legacy/alpha
-	bounty = 10
+	bounty = 35
 	name = "alpha newt"
 	desc = "A large dog sized amphibious biped with an oddly large mouth for its size. Probably related to geckos in some way. This one's drooling a lot and looks sort of tired."
 	icon = 'icons/fallout/mobs/legacymobs.dmi'
