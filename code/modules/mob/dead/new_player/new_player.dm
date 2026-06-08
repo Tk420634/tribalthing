@@ -50,18 +50,18 @@
 		\n\nYour examine text must be between [MIN_FLAVOR_LEN] and [MAX_FLAVOR_LEN] characters, as a brief description of your character! \
 		\n\nYour OOC notes must be between [MIN_OOC_LEN] and [MAX_OOC_LEN] characters, and should include information about your OOC preferences and anything else you want other players to know about you! \
 		\n\nIf you have any questions about filling these out, feel free to send an ahelp or ask on the Discord!"
-	var/ack = alert(src, msg, "Welcome to Coyote Presents: Catgirl Paradise, Chapter Two: Rumblenya in the Junglenya!", "Sounds good, I'll do that right now!", "Sure, I'll get to it later!")
+	var/ack = alert(src, msg, "Coyote Presents: Catgirl Paradise, Vol Two: Rumblenya in the Junglenya", "Sounds good, I'll do that right now!", "Sure, I'll get to it later!")
 	if(!isnull(ack))
 		P = extract_prefs(src) // just to be sure its still there
-		P.was_told_to_fill_out_prefs = TRUE
+		P?.was_told_to_fill_out_prefs = TRUE
 
 /mob/dead/new_player/proc/can_i_ghost()
 	if(!client)
 		return FALSE
-	if(SSchat.forbid_ghosting)
-		return FALSE
 	if(check_rights(R_ADMIN, FALSE))
 		return TRUE
+	if(SSchat.forbid_ghosting)
+		return FALSE
 	return TRUE
 
 /mob/dead/new_player/Destroy()
@@ -980,8 +980,8 @@
 
 	if(suppress_alerts)
 		if(check_rights(R_ADMIN, FALSE))
-			return FALSE
-			// return TRUE
+			// return FALSE
+			return TRUE
 		else
 			if(ft_too_long || ft_too_short || ooc_too_long || ooc_too_short)
 				return FALSE
