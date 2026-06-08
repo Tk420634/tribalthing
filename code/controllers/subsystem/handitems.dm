@@ -1433,13 +1433,13 @@ SUBSYSTEM_DEF(handitems)
 	cooldown_override_trait = TRAIT_MONKEYLIKE
 	hud_icon = 'icons/mob/screen_gen.dmi'
 	hud_icon_state = "rock"
-	// hud_use = TRUE
+	hud_use = TRUE
 
 /obj/item/hand_item/spawner/rock/on_spawner_put_in_hands(mob/living/user, atom/movable/spawned)
-	to_chat(user, span_notice("You scoop up a hefty rock!"))
+	to_chat(user, span_notice("You scoop up a hefty yet largely harmless rock!"))
 
 /obj/item/hand_item/spawner/rock/on_spawner_put_on_ground(mob/living/user, atom/movable/spawned)
-	to_chat(user, span_notice("You find a hefty rock on the ground! Your hands are too full to pick it up, but it's there!"))
+	to_chat(user, span_notice("You find a hefty yet largely harmless rock on the ground! Your hands are too full to pick it up, but it's there!"))
 
 /obj/item/hand_item/spawner/rock/on_failed_give_message(mob/living/user, reason)
 	if(reason == HI_ON_COOLDOWN)
@@ -1458,12 +1458,15 @@ SUBSYSTEM_DEF(handitems)
 	thing_to_spawn = /obj/item/ammo_casing/caseless/brick
 	cooldown_time = 2.5 SECONDS
 	cooldown_override_trait = TRAIT_QUICK_BUILD
+	hud_icon = 'icons/mob/screen_gen.dmi'
+	hud_icon_state = "brick"
+	hud_use = TRUE
 
 /obj/item/hand_item/spawner/brick/on_spawner_put_in_hands(mob/living/user, atom/movable/spawned)
-	to_chat(user, span_notice("You pick up a sturdy brick!"))
+	to_chat(user, span_notice("You pick up a sturdy yet largely harmless brick!"))
 
 /obj/item/hand_item/spawner/brick/on_spawner_put_on_ground(mob/living/user, atom/movable/spawned)
-	to_chat(user, span_notice("You find a sturdy brick on the ground! Your hands are too full to pick it up, but it's there!"))
+	to_chat(user, span_notice("You find a sturdy yet largely harmless brick on the ground! Your hands are too full to pick it up, but it's there!"))
 
 /obj/item/hand_item/spawner/brick/on_failed_give_message(mob/living/user, reason)
 	if(reason == HI_ON_COOLDOWN)

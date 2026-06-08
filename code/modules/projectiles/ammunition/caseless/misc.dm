@@ -38,7 +38,7 @@
 //throwin' rock, for throwin'. obtained via *rocks
 /obj/item/ammo_casing/caseless/rock
 	name = "rock"
-	desc = "a nice hefty rock, for bashing over someone's head or throwing at someone's head. You can get your own with *rocks!"
+	desc = "a nice hefty yet largely harmless rock, heavy enough to be annoying, but not enough to be actually dangerous. You can get your own with *rocks!"
 	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
 	icon_state = "rock"
 	inhand_icon_state = "rock"
@@ -63,7 +63,7 @@
 
 /obj/item/ammo_casing/caseless/brick
 	name = "brick"
-	desc = "a weighty brick for bashing heads. You too might find some laying around with *brick"
+	desc = "a weighty yet largely harmless brick for throwing and being a general nuisance. You too might find some laying around with *brick"
 	icon = 'modular_coyote/icons/objects/brick.dmi'
 	icon_state = "brick"
 	inhand_icon_state = "brick"
