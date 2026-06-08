@@ -245,7 +245,7 @@
 
 
 /obj/item/gun/flintlock/musket/catgirl
-	name = "Arisnyaka Mk. I"
+	name = "Arisnyaka Mk. 2"
 	desc = "An ancient but well kept Nyanpire black powder dartgun."
 	icon = 'modular_coyote/icons/objects/ancient.dmi'
 	icon_state = "musket1"
@@ -254,7 +254,7 @@
 	weapon_class = WEAPON_CLASS_RIFLE
 	weapon_weight = GUN_TWO_HAND_ONLY //need both hands to fire
 	added_spread = 0
-	damage_multiplier = 9 //nyan times
+	damage_multiplier = 13 //for all the space stations
 	dryfire_text = "*not loaded*"
 	init_firemodes = list(
 		/datum/firemode/semi_auto/slow //slow for the sake of macros, but not toooo slow

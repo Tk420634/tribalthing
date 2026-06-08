@@ -34,7 +34,7 @@
 	throw_speed = 3
 	throw_range = 5
 	custom_materials = list(/datum/material/iron=500)
-	breakouttime = 600 //Deciseconds = 60s = 1 minute
+	breakouttime = 200 //Deciseconds = 60s = 1 minute
 	armor = ARMOR_VALUE_GENERIC_ITEM
 	var/cuffsound = 'sound/weapons/handcuffs.ogg'
 	var/trashtype = null //for disposable cuffs

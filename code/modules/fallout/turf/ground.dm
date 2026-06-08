@@ -99,14 +99,14 @@ GLOBAL_LIST_INIT(medicinal_plant_list, list(
 	/obj/structure/flora/wasteplant/pumpkin = 2,
 	/obj/structure/flora/wasteplant/corn = 2,
 	/obj/structure/flora/wasteplant/carrot = 2,
-	/obj/structure/flora/wasteplant/berrybush/tinto = 2,
-	/obj/structure/flora/wasteplant/berrybush/amar = 2,
-	/obj/structure/flora/wasteplant/berrybush/azul = 2,
-	/obj/structure/flora/wasteplant/berrybush/majo = 2,
-	/obj/structure/flora/wasteplant/berrybush/narco = 2,
-	/obj/structure/flora/wasteplant/berrybush/zelenyy = 2,
-	/obj/structure/flora/wasteplant/berrybush/marron = 2,
-	/obj/structure/flora/wasteplant/berrybush/corcairghorm = 2,
+	/obj/structure/flora/wasteplant/berrybush/tinto = 3,
+	/obj/structure/flora/wasteplant/berrybush/amar = 3,
+	/obj/structure/flora/wasteplant/berrybush/azul = 3,
+	/obj/structure/flora/wasteplant/berrybush/majo = 3,
+	/obj/structure/flora/wasteplant/berrybush/narco = 3,
+	/obj/structure/flora/wasteplant/berrybush/zelenyy = 3,
+	/obj/structure/flora/wasteplant/berrybush/marron = 3,
+	/obj/structure/flora/wasteplant/berrybush/corcairghorm = 3,
 	))
 
 // tomatoes and below were added retroactively and were actually in the grass list so their weights are off
@@ -174,10 +174,10 @@ GLOBAL_LIST_INIT(grass_plant_list, list(
 	/obj/structure/flora/ausbushes/leafybush = 35,
 	/obj/structure/flora/ausbushes/ywflowers = 10,
 	/obj/structure/flora/wild_plant/flower/yellowhite = 5,
-	/obj/structure/flora/wasteplant/berrybush/amar = 3,
-	/obj/structure/flora/wasteplant/berrybush/azul = 3, 
-	/obj/structure/flora/wasteplant/berrybush/majo = 3,
-	/obj/structure/flora/wasteplant/berrybush/marron = 3,
+	/obj/structure/flora/wasteplant/berrybush/amar = 4,
+	/obj/structure/flora/wasteplant/berrybush/azul = 4, 
+	/obj/structure/flora/wasteplant/berrybush/majo = 4,
+	/obj/structure/flora/wasteplant/berrybush/marron = 4,
 	))
 
 GLOBAL_LIST_INIT(tree_plant_list, list(
