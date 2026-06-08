@@ -34,6 +34,36 @@
 
 	GLOB.new_player_list += src
 
+/mob/dead/new_player/Login()
+	. = ..()
+	spawn(3 SECONDS) // give em a second to settle in before hitting them with the popup
+		tell_them_to_fill_that_stuff_out()
+
+/mob/dead/new_player/proc/tell_them_to_fill_that_stuff_out()
+	var/datum/preferences/P = extract_prefs(src)
+	if(P.was_told_to_fill_out_prefs)
+		return
+	if(check_examine_and_ooc(TRUE))
+		return
+	var/msg = "Hi! Before you can join the game, you'll need to fill out both your examine text and your OOC notes! \
+		This is done in the character setup menu, which you can access by clicking the \"Setup Character\" link in the menu. \
+		\n\nYour examine text must be between [MIN_FLAVOR_LEN] and [MAX_FLAVOR_LEN] characters, as a brief description of your character! \
+		\n\nYour OOC notes must be between [MIN_OOC_LEN] and [MAX_OOC_LEN] characters, and should include information about your OOC preferences and anything else you want other players to know about you! \
+		\n\nIf you have any questions about filling these out, feel free to send an ahelp or ask on the Discord!"
+	var/ack = alert(src, msg, "Coyote Presents: Catgirl Paradise, Vol Two: Rumblenya in the Junglenya", "Sounds good, I'll do that right now!", "Sure, I'll get to it later!")
+	if(!isnull(ack))
+		P = extract_prefs(src) // just to be sure its still there
+		P?.was_told_to_fill_out_prefs = TRUE
+
+/mob/dead/new_player/proc/can_i_ghost()
+	if(!client)
+		return FALSE
+	if(check_rights(R_ADMIN, FALSE))
+		return TRUE
+	if(SSchat.forbid_ghosting)
+		return FALSE
+	return TRUE
+
 /mob/dead/new_player/Destroy()
 	GLOB.new_player_list -= src
 
@@ -68,7 +98,8 @@
 		// output += "<p><a href='byond://?src=[REF(src)];manifestmanifest=1'>View the Crew Manifest</a></p>"
 		//output += "<p><a href='byond://?src=[REF(src)];directory=1'>View Character Directory</a></p>"
 		output += "<p><a href='byond://?src=[REF(src)];late_join=1'>Join Game!</a></p>"
-		output += "<p>[LINKIFY_READY("Observe", PLAYER_READY_TO_OBSERVE)]</p>"
+		if(can_i_ghost())
+			output += "<p>[LINKIFY_READY("Observe", PLAYER_READY_TO_OBSERVE)]</p>"
 		// output += "<p><a href='byond://?src=[REF(src)];join_as_creature=1'>Join as Simple Creature!</a></p>"
 		output += "<p><a href='byond://?src=[REF(src)];refresh_chat=1)'>(Fix Chat Window)</a></p>"
 		output += "<p><a href='byond://?src=[REF(src)];fit_viewport_lobby=1)'>(Fit Viewport)</a></p>"
@@ -202,12 +233,14 @@
 		//This is likely not an actual issue but I don't have time to prove that this
 		//no longer is required
 		if(SSticker.current_state <= GAME_STATE_PREGAME)
-			if((length_char(client.prefs.features["flavor_text"])) < MIN_FLAVOR_LEN)
-				to_chat(client.mob, span_danger("Your flavortext does not meet the minimum of [MIN_FLAVOR_LEN] characters."))
+			if(!check_examine_and_ooc())
 				return
-			if((length_char(client.prefs.features["ooc_notes"])) < MIN_OOC_LEN || client.prefs.features["ooc_notes"] == OOC_NOTE_TEMPLATE)
-				to_chat(client.mob, span_danger("Your ooc notes is empty, please enter information about your roleplaying preferences."))
-				return
+			// if((length_char(client.prefs.features["flavor_text"])) < MIN_FLAVOR_LEN)
+			// 	to_chat(client.mob, span_danger("Your flavortext does not meet the minimum of [MIN_FLAVOR_LEN] characters."))
+			// 	return
+			// if((length_char(client.prefs.features["ooc_notes"])) < MIN_OOC_LEN || client.prefs.features["ooc_notes"] == OOC_NOTE_TEMPLATE)
+			// 	to_chat(client.mob, span_danger("Your ooc notes is empty, please enter information about your roleplaying preferences."))
+			// 	return
 			ready = tready
 		//if it's post initialisation and they're trying to observe we do the needful
 		if(SSticker.current_state >= GAME_STATE_PREGAME && tready == PLAYER_READY_TO_OBSERVE)
@@ -394,6 +427,9 @@
 
 //When you cop out of the round (NB: this HAS A SLEEP FOR PLAYER INPUT IN IT)
 /mob/dead/new_player/proc/make_me_an_observer()
+	if(!can_i_ghost())
+		to_chat(src, span_danger("Sorry! Being a ghost is reserved for staff only! Go join the game, its far more fun than puttering around as a ghost!"))
+		return FALSE
 	if(QDELETED(src) || !src.client)
 		ready = PLAYER_NOT_READY
 		return FALSE
@@ -505,14 +541,17 @@
 	if(SSticker.late_join_disabled)
 		alert(src, "An administrator has disabled late join spawning.")
 		return FALSE
-
-	if((length_char(client.prefs.features["flavor_text"])) < MIN_FLAVOR_LEN)
-		to_chat(client.mob, span_danger("Your flavortext does not meet the minimum of [MIN_FLAVOR_LEN] characters."))
+	
+	if(!check_examine_and_ooc())
 		return FALSE
 
-	if((length_char(client.prefs.features["ooc_notes"])) < MIN_OOC_LEN || client.prefs.features["ooc_notes"] == OOC_NOTE_TEMPLATE)
-		to_chat(client.mob, span_danger("Your ooc notes is empty, please enter information about your roleplaying preferences."))
-		return
+	// if((length_char(client.prefs.features["flavor_text"])) < MIN_FLAVOR_LEN)
+	// 	to_chat(client.mob, span_danger("Your flavortext does not meet the minimum of [MIN_FLAVOR_LEN] characters."))
+	// 	return FALSE
+
+	// if((length_char(client.prefs.features["ooc_notes"])) < MIN_OOC_LEN || client.prefs.features["ooc_notes"] == OOC_NOTE_TEMPLATE)
+	// 	to_chat(client.mob, span_danger("Your ooc notes is empty, please enter information about your roleplaying preferences."))
+	// 	return
 
 	var/arrivals_docked = TRUE
 	if(SSshuttle.arrivals)
@@ -922,7 +961,7 @@
 	// Add verb for re-opening the interview panel, and re-init the verbs for the stat panel
 	add_verb(src, /mob/dead/new_player/proc/open_interview)
 
-/mob/dead/new_player/proc/check_examine_and_ooc()
+/mob/dead/new_player/proc/check_examine_and_ooc(suppress_alerts)
 	var/datum/preferences/P = extract_prefs(src)
 	if(!P)
 		to_chat(src, span_phobia("You somehow lack a prefs datum! Call an admin!"))
@@ -938,6 +977,15 @@
 	var/ft_too_short = !ft_long_enough
 	var/ooc_too_long = ooc_long_enough && !ooc_short_enough
 	var/ooc_too_short = !ooc_long_enough
+
+	if(suppress_alerts)
+		if(check_rights(R_ADMIN, FALSE))
+			// return FALSE
+			return TRUE
+		else
+			if(ft_too_long || ft_too_short || ooc_too_long || ooc_too_short)
+				return FALSE
+			return TRUE
 
 	if(ft_too_short && ooc_too_short)
 		if(check_rights(R_ADMIN, FALSE))

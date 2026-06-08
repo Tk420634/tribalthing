@@ -295,6 +295,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["see_furry_dating_sim"]		>> see_furry_dating_sim
 	S["see_pfp_max_hight"]		>> see_pfp_max_hight
 	S["see_pfp_max_widht"]		>> see_pfp_max_widht
+	S["was_told_to_fill_out_prefs"]	>> was_told_to_fill_out_prefs
 
 	S["lockouts"]	>> lockouts // my bans!
 	S["admin_wire_tap"]	>> admin_wire_tap // my bans!
@@ -366,6 +367,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	see_furry_dating_sim    = sanitize_integer(see_furry_dating_sim, TRUE)
 	see_pfp_max_hight           = sanitize_integer(see_pfp_max_hight, 0, 5000, 300)
 	see_pfp_max_widht            = sanitize_integer(see_pfp_max_widht, 0, 5000, 300)
+	was_told_to_fill_out_prefs = sanitize_integer(was_told_to_fill_out_prefs, 0, 1, initial(was_told_to_fill_out_prefs))
 
 	verify_keybindings_valid()		// one of these days this will runtime and you'll be glad that i put it in a different proc so no one gets their saves wiped
 
@@ -473,6 +475,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["see_furry_dating_sim"], see_furry_dating_sim)
 	WRITE_FILE(S["see_pfp_max_hight"], see_pfp_max_hight)
 	WRITE_FILE(S["see_pfp_max_widht"], see_pfp_max_widht)
+	WRITE_FILE(S["was_told_to_fill_out_prefs"], was_told_to_fill_out_prefs)
 
 	//citadel code
 	WRITE_FILE(S["screenshake"], screenshake)

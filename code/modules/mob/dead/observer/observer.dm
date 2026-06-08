@@ -138,20 +138,23 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 	grant_all_languages()
 	show_data_huds()
 	data_huds_on = 1
-	INVOKE_ASYNC(src, PROC_REF(slam_dunk_to_main_menu))
+	START_PROCESSING(SSprocessing, src)
 
-/mob/dead/observer/proc/slam_dunk_to_main_menu()
+/mob/dead/observer/process()
+	banish_evil_ghosts()
+
+/mob/dead/observer/proc/banish_evil_ghosts()
+	if(!client)
+		return FALSE
 	if(!SSchat.forbid_ghosting)
-		return
+		return FALSE
 	if(IsAdminGhost(src, TRUE))
-		return TRUE
-	if(client)
-		if(check_rights_for(client, R_ADMIN))
-			return TRUE
-		abandon_mob()
-		return TRUE
-	sleep(0.5 SECONDS)
-	INVOKE_ASYNC(src, PROC_REF(slam_dunk_to_main_menu))
+		return FALSE
+	if(check_rights(R_ADMIN, FALSE))
+		return FALSE
+	STOP_PROCESSING(SSprocessing, src)
+	abandon_mob() // back 2 the main menu 4 u
+	return TRUE
 
 /mob/dead/observer/get_photo_description(obj/item/camera/camera)
 	if(!invisibility || camera.see_ghosts)
@@ -170,6 +173,7 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 	addtimer(CALLBACK(src, /atom/proc/update_atom_colour), 10)
 
 /mob/dead/observer/Destroy()
+	STOP_PROCESSING(SSprocessing, src)
 	GLOB.ghost_images_default -= ghostimage_default
 	QDEL_NULL(ghostimage_default)
 	if(data_huds_on)
@@ -432,7 +436,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 			destination = get_step(destination, WEST)
 
 		abstract_move(destination)//Get out of closets and such as a ghost
-	slam_dunk_to_main_menu()
+	banish_evil_ghosts()
 
 /mob/dead/observer/verb/reenter_corpse()
 	set category = "Ghost"
