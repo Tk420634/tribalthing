@@ -1469,9 +1469,9 @@ GLOBAL_LIST_INIT(security_expert, list(
 
 
 /datum/quirk/radimmuneish
-	name = "Radiation - Mostly Immune"
+	name = "Radiation - Sorta Immune"
 	desc = "Gieger Counters are for suckers, mostly."
-	value = 15
+	value = 33
 	category = QUIRK_CATEGORY_RADIATION_QUIRKS
 	mechanics = "Who needs a geiger counter? Gives 75% innate rad resist."
 	conflicts = list(
@@ -1486,9 +1486,9 @@ GLOBAL_LIST_INIT(security_expert, list(
 	locked =  FALSE
 
 /datum/quirk/radimmunesorta
-	name = "Radiation - Sorta Immune"
+	name = "Radiation - Mostly Immune"
 	desc = "Gieger Counters are for suckers, sorta. Gives 50% innate rad resist."
-	value = 33
+	value = 15
 	category = QUIRK_CATEGORY_RADIATION_QUIRKS
 	mechanics = "You only absorb half of all radiation."
 	conflicts = list(
