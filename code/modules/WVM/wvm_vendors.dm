@@ -62,20 +62,21 @@
 	
 	
 	prize_list = list(
-		new /datum/data/wasteland_equipment("Sand Bag",			/obj/structure/barricade/sandbags, 					25),
-		new /datum/data/wasteland_equipment("Metal sheets (5)",			/obj/item/stack/sheet/metal/five, 					50),
-		new /datum/data/wasteland_equipment("Torch",			/obj/item/flashlight/flare/torch, 					10),
-		new /datum/data/wasteland_equipment("Sinew Cuffs",	       /obj/item/restraints/handcuffs/sinew, 						10),
-		new /datum/data/wasteland_equipment("Snack Stick",	       /obj/item/reagent_containers/food/snacks/kebab, 						20),
-		new /datum/data/wasteland_equipment("Dispute Stick",       /obj/item/melee/classic_baton/coyote/oldquarterstaff/disputestick, 	50),
-		new /datum/data/wasteland_equipment("Sling",               /obj/item/gun/energy/kinetic_accelerator/crossbow/sling,           	75),
-		new /datum/data/wasteland_equipment("Bola",                /obj/item/restraints/legcuffs/bola,                                	30),
-		new /datum/data/wasteland_equipment("Nyacuahuitl",         /obj/item/melee/coyote/macuahuitl/nya,                             	100),
-		new /datum/data/wasteland_equipment("Quartersnyaff",       /obj/item/melee/classic_baton/coyote/oldquarterstaff/nya,          	100),
-		new /datum/data/wasteland_equipment("Brass Knyackles",     /obj/item/melee/unarmed/brass/knyackles,                           	100),
-		new /datum/data/wasteland_equipment("Kittycat Gripwire",   /obj/item/restraints/legcuffs/beartrap,                            	50),
-		new /datum/data/wasteland_equipment("Dart Musket",         /obj/item/gun/flintlock/musket/catgirl,                            	50),
-		new /datum/data/wasteland_equipment("Dart Box",               /obj/item/ammo_box/foambox/catbox,                                 	20),
+		new /datum/data/wasteland_equipment("Sand Bag",				/obj/structure/barricade/sandbags, 					25),
+		new /datum/data/wasteland_equipment("Metal sheets (5)",		/obj/item/stack/sheet/metal/five, 					50),
+		new /datum/data/wasteland_equipment("Torch",			    /obj/item/flashlight/flare/torch, 					10),
+		new /datum/data/wasteland_equipment("Sinew Cuffs",	        /obj/item/restraints/handcuffs/sinew, 						10),
+		new /datum/data/wasteland_equipment("Snack Stick",	        /obj/item/reagent_containers/food/snacks/kebab, 						20),
+		new /datum/data/wasteland_equipment("Dispute Stick",        /obj/item/melee/classic_baton/coyote/oldquarterstaff/disputestick, 	50),
+		new /datum/data/wasteland_equipment("Sling",                /obj/item/gun/energy/kinetic_accelerator/crossbow/sling,           	75),
+		new /datum/data/wasteland_equipment("Bola",                 /obj/item/restraints/legcuffs/bola,                                	30),
+		new /datum/data/wasteland_equipment("Nyacuahuitl",          /obj/item/melee/coyote/macuahuitl/nya,                             	100),
+		new /datum/data/wasteland_equipment("Quartersnyaff",        /obj/item/melee/classic_baton/coyote/oldquarterstaff/nya,          	100),
+		new /datum/data/wasteland_equipment("Brass Knyackles",      /obj/item/melee/unarmed/brass/knyackles,                           	100),
+		new /datum/data/wasteland_equipment("Kittycat Gripwire",    /obj/item/restraints/legcuffs/beartrap,                            	50),
+		new /datum/data/wasteland_equipment("Dart Musket",          /obj/item/gun/flintlock/musket/catgirl,                            	50),
+		new /datum/data/wasteland_equipment("Dart Box",             /obj/item/ammo_box/foambox/catbox,                               	20),
+		new /datum/data/wasteland_equipment("Pet Collar",           /obj/item/clothing/neck/petcollar/choker							30),
 		
 		)
  
@@ -108,7 +109,7 @@
 	
 	
 	prize_list = list(
-		new /datum/data/wasteland_equipment("Sand Bag",			/obj/structure/barricade/sandbags, 					25),
+		new /datum/data/wasteland_equipment("Sand Bag",			/obj/item/stack/sheet/mineral/sandbags, 					25),
 		new /datum/data/wasteland_equipment("Metal sheets (5)",			/obj/item/stack/sheet/metal/five, 					50),
 		new /datum/data/wasteland_equipment("Flare",			/obj/item/flashlight/flare, 					10),
 		new /datum/data/wasteland_equipment("Handcuffs",	       /obj/item/restraints/handcuffs/, 					10),
@@ -121,6 +122,7 @@
 		new /datum/data/wasteland_equipment("Crank Laser",		/obj/item/gun/energy/laser/cranklasergun/tg/spamlaser,		150),
 		new /datum/data/wasteland_equipment("Shield",			/obj/item/shield/coyote/kiteshield,							50),
 		new /datum/data/wasteland_equipment("Darts",			/obj/item/ammo_box/foambox/catbox,							20),
+		new /datum/data/wasteland_equipment("Pet Collar",           /obj/item/clothing/neck/petcollar/choker							30),
 		)
 
 
