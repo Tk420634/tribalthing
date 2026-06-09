@@ -76,7 +76,7 @@
 		new /datum/data/wasteland_equipment("Kittycat Gripwire",    /obj/item/restraints/legcuffs/beartrap,                            	50),
 		new /datum/data/wasteland_equipment("Dart Musket",          /obj/item/gun/flintlock/musket/catgirl,                            	50),
 		new /datum/data/wasteland_equipment("Dart Box",             /obj/item/ammo_box/foambox/catbox,                               	20),
-		new /datum/data/wasteland_equipment("Pet Collar",           /obj/item/clothing/neck/petcollar/choker							30),
+		new /datum/data/wasteland_equipment("Pet Collar",           /obj/item/clothing/neck/petcollar/choker,							30),
 		
 		)
  
@@ -122,7 +122,7 @@
 		new /datum/data/wasteland_equipment("Crank Laser",		/obj/item/gun/energy/laser/cranklasergun/tg/spamlaser,		150),
 		new /datum/data/wasteland_equipment("Shield",			/obj/item/shield/coyote/kiteshield,							50),
 		new /datum/data/wasteland_equipment("Darts",			/obj/item/ammo_box/foambox/catbox,							20),
-		new /datum/data/wasteland_equipment("Pet Collar",           /obj/item/clothing/neck/petcollar/choker							30),
+		new /datum/data/wasteland_equipment("Pet Collar",           /obj/item/clothing/neck/petcollar/choker,				30),
 		)
 
 
