@@ -1090,10 +1090,6 @@
 /obj/item/lock_bolt,
 /turf/open/floor/plasteel/white,
 /area/f13/ambientlighting/building)
-"mD" = (
-/obj/structure/bed,
-/turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building)
 "mE" = (
 /turf/open/floor/plasteel/f13/vault_floor/blue/bluechess,
 /area/f13/building)
@@ -1253,11 +1249,17 @@
 /area/tcommsat/server)
 "ou" = (
 /obj/structure/window/reinforced{
-	dir = 8
+	dir = 8;
+	layer = 3.3
 	},
 /obj/structure/chair/stool/f13stool{
 	pixel_x = -2;
-	pixel_y = 14
+	pixel_y = 18
+	},
+/obj/structure/bed{
+	layer = 3.2;
+	pixel_x = 8;
+	pixel_y = 0
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building)
@@ -4076,7 +4078,6 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/obj/structure/bed,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building)
 "Ux" = (
@@ -4429,13 +4430,6 @@
 /obj/structure/stone_tile/slab,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ambientlighting/building)
-"Zm" = (
-/obj/machinery/door/window/brigdoor{
-	dir = 1;
-	req_one_access_txt = "134"
-	},
-/turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building)
 "Zs" = (
 /mob/living/simple_animal/cow/brahmin/cow/lulubelle,
 /turf/open/indestructible/ground/outside/dirt{
@@ -60217,8 +60211,8 @@ Ox
 tv
 Bg
 Tr
-mD
-Zm
+ga
+ga
 ga
 ga
 ga
@@ -60731,8 +60725,8 @@ Ox
 tv
 Bg
 Tr
-mD
-Zm
+ga
+ga
 ga
 ga
 ga
@@ -61246,7 +61240,7 @@ Bg
 Bg
 Tr
 Uw
-Zm
+ga
 sS
 Tr
 ia
