@@ -476,6 +476,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/see_hidden_runechat = TRUE
 	var/spawn_with_loadout = FALSE
 
+	var/tnb_loaded = FALSE
+	var/tnb_count = 0
 	var/list/temperaments_and_builds = list() // list of paths. this one gets saved
 	var/list/current_t_n_b = list() // the mutable list of paths. this one doesnt, and can be changed inround!
 
@@ -4790,6 +4792,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	lockdown = FALSE
 
 /datum/preferences/proc/get_my_quirks()
+	if(!SSquirks.initialized)
+		return "Quirk data is still loading, please reload the window in a moment!"
 	if(!LAZYLEN(char_quirks))
 		return "None!"
 	var/list/quirk_dats = list()
@@ -4856,8 +4860,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 /datum/preferences/proc/display_temperaments_and_builds_preferences()
 	var/list/dat = list()
+	if(!SStemperament.initialized)
+		return "Temperament and Build data is still loading, please check back in a moment!"
 	var/list/temps = SStemperament.get_temperaments(src)
 	var/list/builds = SStemperament.get_builds(src)
+	if(!LAZYLEN(temps) && !LAZYLEN(builds) && tnb_count > 0)
+		return "Temperament and Build data is still loading, please check back in a lil bit!"
 	var/canaddnew_temp = LAZYLEN(temps) < MAX_TEMPERAMENTS
 	var/canaddnew_build = LAZYLEN(builds) < MAX_BUILDS
 	dat += "<h3>Temperaments & Builds</h3>"
