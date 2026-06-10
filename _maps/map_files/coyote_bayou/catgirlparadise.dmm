@@ -12,7 +12,7 @@
 	name = "the watering hole";
 	color = "#CCCCFF"
 	},
-/area/f13/wasteland/nash)
+/area/f13/ambientlighting/building/murrines_score_here)
 "ab" = (
 /turf/closed/indestructible/f13/matrix,
 /area/f13/building)
@@ -80,7 +80,7 @@
 /turf/open/indestructible/ground/outside/dirt{
 	color = "#BBBBBB"
 	},
-/area/f13/ambientlighting/building)
+/area/f13/ambientlighting/building/murrines_score_here)
 "aA" = (
 /turf/open/floor/plasteel/white/corner{
 	dir = 1
@@ -362,6 +362,13 @@
 /obj/item/toy/plush/mouse,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ambientlighting/building)
+"dB" = (
+/obj/machinery/light/small{
+	dir = 8;
+	light_color = "#d8b1b1"
+	},
+/turf/open/floor/plasteel/white,
+/area/f13/ambientlighting/building/murrines_score_here)
 "dG" = (
 /obj/machinery/recycler,
 /turf/open/floor/plasteel/f13/vault_floor/green,
@@ -465,7 +472,7 @@
 /turf/open/indestructible/ground/outside/dirt{
 	color = "#BBBBBB"
 	},
-/area/f13/ambientlighting/building)
+/area/f13/ambientlighting/building/murrines_score_here)
 "eN" = (
 /obj/machinery/light{
 	dir = 8
@@ -558,7 +565,7 @@
 /turf/open/indestructible/ground/outside/dirt{
 	color = "#BBBBBB"
 	},
-/area/f13/ambientlighting/building)
+/area/f13/ambientlighting/building/murrines_score_here)
 "fS" = (
 /obj/structure/table/glass,
 /obj/item/flashlight/lamp,
@@ -673,6 +680,9 @@
 	dir = 1
 	},
 /area/f13/building)
+"hS" = (
+/turf/closed/wall/mineral/titanium/interior,
+/area/f13/ambientlighting/building/murrines_score_here)
 "hV" = (
 /obj/structure/flora/tree/jungle/small,
 /turf/open/indestructible/ground/outside/civ/grass3{
@@ -766,6 +776,10 @@
 /obj/item/reagent_containers/food/snacks/kebab,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ambientlighting/building/catgirls_score_here)
+"iY" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/white,
+/area/f13/ambientlighting/building/murrines_score_here)
 "je" = (
 /obj/machinery/smartfridge/food,
 /turf/closed/wall/r_wall/f13/vault,
@@ -819,7 +833,7 @@
 /turf/open/indestructible/ground/outside/dirt{
 	color = "#BBBBBB"
 	},
-/area/f13/ambientlighting/building)
+/area/f13/ambientlighting/building/murrines_score_here)
 "jK" = (
 /obj/structure/simple_door/interior,
 /obj/item/lock_bolt{
@@ -842,7 +856,7 @@
 	},
 /obj/effect/decal/cleanable/oil/slippery,
 /turf/open/floor/plating/wooden2,
-/area/f13/ambientlighting/building)
+/area/f13/ambientlighting/building/murrines_score_here)
 "jR" = (
 /obj/machinery/light,
 /turf/open/floor/f13/wood,
@@ -1070,7 +1084,7 @@
 /turf/open/indestructible/ground/outside/dirt{
 	color = "#BBBBBB"
 	},
-/area/f13/ambientlighting/building)
+/area/f13/ambientlighting/building/murrines_score_here)
 "mu" = (
 /obj/structure/stone_tile/slab,
 /obj/structure/chair/bench{
@@ -1115,7 +1129,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/white,
-/area/f13/ambientlighting/building)
+/area/f13/ambientlighting/building/murrines_score_here)
 "mR" = (
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 8;
@@ -1129,7 +1143,7 @@
 "ne" = (
 /obj/structure/barricade/bars,
 /turf/open/floor/plasteel/white,
-/area/f13/ambientlighting/building)
+/area/f13/ambientlighting/building/murrines_score_here)
 "nf" = (
 /obj/machinery/light{
 	dir = 4
@@ -1236,7 +1250,7 @@
 	},
 /obj/effect/decal/cleanable/oil/slippery,
 /turf/open/floor/carpet,
-/area/f13/ambientlighting/building)
+/area/f13/ambientlighting/building/murrines_score_here)
 "oj" = (
 /obj/structure/table/wood/fancy/blue,
 /turf/open/floor/carpet/stellar,
@@ -1328,7 +1342,7 @@
 "pa" = (
 /obj/structure/chair/bench,
 /turf/open/floor/plasteel/white,
-/area/f13/ambientlighting/building)
+/area/f13/ambientlighting/building/murrines_score_here)
 "pb" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/flora/ausbushes/fullgrass,
@@ -1464,7 +1478,7 @@
 /turf/open/indestructible/ground/outside/dirt{
 	color = "#BBBBBB"
 	},
-/area/f13/ambientlighting/building)
+/area/f13/ambientlighting/building/murrines_score_here)
 "qt" = (
 /obj/structure/destructible/tribal_torch/wall/lit,
 /obj/structure/table/wood/settler,
@@ -1619,6 +1633,10 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ambientlighting/building)
+"sc" = (
+/obj/item/twohanded/required/kirbyplants/random,
+/turf/open/floor/plasteel/white,
+/area/f13/ambientlighting/building/murrines_score_here)
 "sg" = (
 /obj/structure/closet/crate/large,
 /turf/open/floor/plasteel/f13/vault_floor/misc,
@@ -2071,7 +2089,7 @@
 "xr" = (
 /obj/effect/decal/cleanable/oil/slippery,
 /turf/open/floor/plating/wooden2,
-/area/f13/ambientlighting/building)
+/area/f13/ambientlighting/building/murrines_score_here)
 "xs" = (
 /obj/structure/fireplace,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
@@ -2211,7 +2229,14 @@
 /obj/effect/turf_decal/siding/wood,
 /obj/effect/decal/cleanable/oil/slippery,
 /turf/open/floor/material,
-/area/f13/ambientlighting/building)
+/area/f13/ambientlighting/building/murrines_score_here)
+"yr" = (
+/obj/machinery/light/small{
+	light_color = "#884444";
+	dir = 4
+	},
+/turf/open/floor/plasteel/white,
+/area/f13/ambientlighting/building/murrines_score_here)
 "yv" = (
 /obj/machinery/light/small{
 	light_color = "#884444";
@@ -2268,7 +2293,7 @@
 	},
 /obj/item/documents/catgirlparadise,
 /turf/open/floor/plasteel/white,
-/area/f13/ambientlighting/building)
+/area/f13/ambientlighting/building/murrines_score_here)
 "yN" = (
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/building)
@@ -2349,7 +2374,7 @@
 /turf/open/indestructible/ground/outside/dirt{
 	color = "#BBBBBB"
 	},
-/area/f13/wasteland/nash)
+/area/f13/ambientlighting/building/murrines_score_here)
 "zt" = (
 /turf/closed/indestructible/riveted/boss{
 	name = "temple wall"
@@ -2528,7 +2553,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/white,
-/area/f13/ambientlighting/building)
+/area/f13/ambientlighting/building/murrines_score_here)
 "Bg" = (
 /turf/closed/wall/r_wall/f13vault{
 	icon_state = "2-i"
@@ -2615,7 +2640,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/white,
-/area/f13/ambientlighting/building)
+/area/f13/ambientlighting/building/murrines_score_here)
 "Co" = (
 /obj/structure/table/reinforced,
 /turf/open/floor/plasteel/white,
@@ -2832,7 +2857,7 @@
 /turf/open/indestructible/ground/outside/dirt{
 	color = "#BBBBBB"
 	},
-/area/f13/ambientlighting/building)
+/area/f13/ambientlighting/building/murrines_score_here)
 "EA" = (
 /obj/structure/sink/kitchen{
 	pixel_y = 25
@@ -2846,7 +2871,7 @@
 /obj/item/reagent_containers/glass/bucket/plastic,
 /obj/item/reagent_containers/glass/bucket/plastic,
 /turf/open/floor/plasteel/white,
-/area/f13/ambientlighting/building)
+/area/f13/ambientlighting/building/murrines_score_here)
 "EB" = (
 /turf/open/indestructible/ground/outside/civ/grass3{
 	barefootstep = "grass";
@@ -2903,7 +2928,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/white,
-/area/f13/ambientlighting/building)
+/area/f13/ambientlighting/building/murrines_score_here)
 "Fa" = (
 /obj/machinery/light{
 	dir = 8;
@@ -2911,6 +2936,9 @@
 	},
 /turf/open/floor/plasteel/white/corner,
 /area/f13/building)
+"Fd" = (
+/turf/open/floor/plasteel/white,
+/area/f13/ambientlighting/building/murrines_score_here)
 "Fe" = (
 /obj/structure/chair/sofa/right{
 	dir = 4
@@ -2947,7 +2975,7 @@
 /obj/item/clothing/under/rank/civilian/janitor,
 /obj/item/clothing/under/rank/civilian/janitor,
 /turf/open/floor/plasteel/white,
-/area/f13/ambientlighting/building)
+/area/f13/ambientlighting/building/murrines_score_here)
 "Fh" = (
 /obj/structure/sink/kitchen{
 	pixel_y = 22
@@ -2965,6 +2993,15 @@
 "Fp" = (
 /turf/open/floor/carpet/purple,
 /area/f13/building)
+"Fr" = (
+/obj/structure/flora/tree/jungle{
+	color = "#BEBEBE";
+	mouse_opacity = 0
+	},
+/turf/open/indestructible/ground/outside/dirt{
+	color = "#BBBBBB"
+	},
+/area/f13/ambientlighting/building/murrines_score_here)
 "Fw" = (
 /obj/structure/chair/wood{
 	dir = 4
@@ -3110,7 +3147,7 @@
 /obj/item/broom,
 /obj/item/mop,
 /turf/open/floor/plasteel/white,
-/area/f13/ambientlighting/building)
+/area/f13/ambientlighting/building/murrines_score_here)
 "Ip" = (
 /turf/open/floor/plasteel/white/side{
 	dir = 10
@@ -3166,7 +3203,7 @@
 /turf/open/indestructible/ground/outside/dirt{
 	color = "#BBBBBB"
 	},
-/area/f13/ambientlighting/building)
+/area/f13/ambientlighting/building/murrines_score_here)
 "Je" = (
 /obj/machinery/smartfridge/food,
 /turf/open/floor/plasteel/whiteblue/side{
@@ -3179,7 +3216,7 @@
 	},
 /obj/effect/decal/cleanable/oil/slippery,
 /turf/open/floor/carpet,
-/area/f13/ambientlighting/building)
+/area/f13/ambientlighting/building/murrines_score_here)
 "Ju" = (
 /obj/machinery/telecomms/server/presets/service,
 /turf/open/floor/circuit/telecomms/mainframe,
@@ -3203,7 +3240,7 @@
 /obj/structure/simple_door/interior,
 /obj/item/lock_bolt,
 /turf/open/floor/plasteel/white,
-/area/f13/ambientlighting/building)
+/area/f13/ambientlighting/building/murrines_score_here)
 "JJ" = (
 /obj/structure/chair/stool,
 /obj/effect/landmark/start/f13/murrinebruiser,
@@ -3269,7 +3306,7 @@
 	light_color = "#d8b1b1"
 	},
 /turf/open/floor/plasteel/white,
-/area/f13/ambientlighting/building)
+/area/f13/ambientlighting/building/murrines_score_here)
 "Kl" = (
 /obj/structure/flora/tree/jungle{
 	color = "#BEBEBE";
@@ -3391,6 +3428,11 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/f13/ambientlighting/building)
+"LR" = (
+/turf/open/indestructible/ground/outside/dirt{
+	color = "#BBBBBB"
+	},
+/area/f13/ambientlighting/building/murrines_score_here)
 "LV" = (
 /obj/structure/curtain{
 	color = "red"
@@ -3432,7 +3474,7 @@
 /obj/effect/turf_decal/siding/wood,
 /obj/effect/decal/cleanable/oil/slippery,
 /turf/open/floor/material,
-/area/f13/ambientlighting/building)
+/area/f13/ambientlighting/building/murrines_score_here)
 "Mw" = (
 /obj/structure/bed/double,
 /obj/item/bedsheet/doublesheetpurple,
@@ -3556,6 +3598,12 @@
 	footstep = "grass"
 	},
 /area/f13/wasteland/nash)
+"Ov" = (
+/obj/machinery/light/small{
+	light_color = "#884444"
+	},
+/turf/open/floor/plasteel/white,
+/area/f13/ambientlighting/building/murrines_score_here)
 "Ox" = (
 /turf/closed/mineral/random/high_chance,
 /area/f13/building)
@@ -3746,7 +3794,7 @@
 /turf/open/indestructible/ground/outside/dirt{
 	color = "#BBBBBB"
 	},
-/area/f13/wasteland/nash)
+/area/f13/ambientlighting/building/murrines_score_here)
 "Qq" = (
 /obj/machinery/light/small{
 	dir = 4
@@ -3836,6 +3884,15 @@
 /obj/machinery/chem_master/advanced,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building)
+"Rv" = (
+/obj/structure/window/fulltile{
+	plane = -2;
+	color = "#55FF55"
+	},
+/obj/structure/lattice,
+/obj/structure/grille,
+/turf/open/floor/plasteel/f13/vault_floor/green/white,
+/area/f13/ambientlighting/building/murrines_score_here)
 "Rw" = (
 /obj/effect/turf_decal/stripes/asteroid/line{
 	dir = 8
@@ -3851,7 +3908,7 @@
 "RM" = (
 /obj/structure/mopbucket,
 /turf/open/floor/plasteel/white,
-/area/f13/ambientlighting/building)
+/area/f13/ambientlighting/building/murrines_score_here)
 "RO" = (
 /turf/open/floor/plasteel/whiteblue/side,
 /area/f13/building)
@@ -3897,7 +3954,7 @@
 /turf/open/indestructible/ground/outside/dirt{
 	color = "#BBBBBB"
 	},
-/area/f13/ambientlighting/building)
+/area/f13/ambientlighting/building/murrines_score_here)
 "SC" = (
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 4
@@ -4045,7 +4102,7 @@
 /obj/item/reagent_containers/spray/cleaner,
 /obj/item/reagent_containers/spray/cleaner,
 /turf/open/floor/plasteel/white,
-/area/f13/ambientlighting/building)
+/area/f13/ambientlighting/building/murrines_score_here)
 "TZ" = (
 /obj/structure/chair/sofa/left{
 	dir = 4
@@ -4059,7 +4116,7 @@
 	light_color = "#d8b1b1"
 	},
 /turf/open/floor/plasteel/white,
-/area/f13/ambientlighting/building)
+/area/f13/ambientlighting/building/murrines_score_here)
 "Uc" = (
 /obj/structure/mirror{
 	pixel_y = 25
@@ -4119,7 +4176,7 @@
 /turf/open/indestructible/ground/outside/dirt{
 	color = "#BBBBBB"
 	},
-/area/f13/ambientlighting/building)
+/area/f13/ambientlighting/building/murrines_score_here)
 "Va" = (
 /obj/machinery/light/small{
 	dir = 8;
@@ -4144,7 +4201,7 @@
 /obj/structure/table/wood/settler,
 /obj/structure/barricade/bars,
 /turf/open/floor/plasteel/white,
-/area/f13/ambientlighting/building)
+/area/f13/ambientlighting/building/murrines_score_here)
 "Vj" = (
 /obj/structure/fence/door,
 /turf/open/indestructible/ground/outside/dirt{
@@ -4387,9 +4444,21 @@
 	footstep = "grass"
 	},
 /area/f13/wasteland/nash)
+"Yp" = (
+/turf/closed/indestructible/riveted/boss{
+	name = "temple wall"
+	},
+/area/f13/ambientlighting/building/catgirls_score_here)
 "Yv" = (
 /turf/open/floor/plasteel/white,
 /area/f13/building)
+"Yw" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/light/small{
+	light_color = "#884444"
+	},
+/turf/open/floor/plasteel/white,
+/area/f13/ambientlighting/building/murrines_score_here)
 "YF" = (
 /obj/machinery/light,
 /turf/open/floor/plasteel/f13/darkmarble,
@@ -4412,7 +4481,7 @@
 /turf/open/indestructible/ground/outside/dirt{
 	color = "#BBBBBB"
 	},
-/area/f13/ambientlighting/building)
+/area/f13/ambientlighting/building/murrines_score_here)
 "YU" = (
 /obj/structure/closet/locker,
 /turf/open/floor/plasteel/white,
@@ -4435,7 +4504,7 @@
 /turf/open/indestructible/ground/outside/dirt{
 	color = "#BBBBBB"
 	},
-/area/f13/wasteland/nash)
+/area/f13/ambientlighting/building/murrines_score_here)
 "Zx" = (
 /obj/structure/curtain{
 	color = "#90EE90"
@@ -4469,7 +4538,7 @@
 /turf/open/indestructible/ground/outside/dirt{
 	color = "#BBBBBB"
 	},
-/area/f13/ambientlighting/building)
+/area/f13/ambientlighting/building/murrines_score_here)
 "ZU" = (
 /obj/structure/chair/stool,
 /obj/effect/landmark/start/f13/murrinegrenadier,
@@ -32299,13 +32368,13 @@ Zy
 wl
 wl
 EA
-hf
+dB
 Jt
 xr
 yq
-hf
-CL
-oY
+dB
+sc
+Rv
 ze
 Md
 ux
@@ -32556,13 +32625,13 @@ ux
 wl
 wl
 RM
-ux
+Fd
 of
 jN
 Mu
-ux
-ux
-oY
+Fd
+Fd
+Rv
 ze
 Md
 ux
@@ -32813,13 +32882,13 @@ Zy
 wl
 wl
 RM
-ux
-ux
-ux
-ux
-ux
-ux
-oY
+Fd
+Fd
+Fd
+Fd
+Fd
+Fd
+Rv
 ze
 ux
 ux
@@ -33070,13 +33139,13 @@ ux
 wl
 wl
 Cn
-ux
-ux
-ux
-ux
-ux
-ux
-oY
+Fd
+Fd
+Fd
+Fd
+Fd
+Fd
+Rv
 ze
 ux
 ux
@@ -33327,13 +33396,13 @@ Zy
 wl
 wl
 RM
-ux
+Fd
 In
 pa
 In
 pa
-Zy
-wl
+Ov
+hS
 pj
 ux
 Md
@@ -33584,13 +33653,13 @@ ux
 wl
 wl
 EV
-ux
+Fd
 In
 pa
 In
 pa
-ux
-ux
+Fd
+Fd
 ux
 ux
 ux
@@ -33840,14 +33909,14 @@ ux
 Zy
 wl
 wl
-ux
-ux
-ux
-ux
-ux
-ux
-ux
-ux
+Fd
+Fd
+Fd
+Fd
+Fd
+Fd
+Fd
+Fd
 ux
 ux
 ux
@@ -34098,13 +34167,13 @@ ux
 wl
 wl
 yJ
-ux
+Fd
 In
 pa
 In
 pa
-Zy
-wl
+Ov
+hS
 pj
 Md
 ux
@@ -34355,13 +34424,13 @@ LP
 nH
 wl
 TY
-ji
+yr
 In
 pa
 In
 mK
-CL
-oY
+sc
+Rv
 ze
 Md
 Md
@@ -34611,14 +34680,14 @@ Md
 Md
 wl
 wl
-wl
-wl
-wl
-wl
-wl
-wl
-wl
-wl
+hS
+hS
+hS
+hS
+hS
+hS
+hS
+hS
 wj
 ux
 ux
@@ -34872,10 +34941,10 @@ mm
 Ex
 mm
 Jb
-Ei
+LR
 Ua
 Kk
-oY
+Rv
 ze
 ux
 ux
@@ -35128,11 +35197,11 @@ wl
 UR
 Sx
 fR
-Ei
-Ei
+LR
+LR
 ne
-LP
-oY
+Yw
+Rv
 pj
 ux
 Md
@@ -35382,14 +35451,14 @@ ux
 Zy
 wl
 gG
-Ei
+LR
 eK
-Ei
+LR
 UR
-Ei
+LR
 ne
-ux
-ux
+Fd
+Fd
 ux
 ux
 Md
@@ -35640,13 +35709,13 @@ ux
 wl
 gG
 ZR
-Ei
+LR
 aw
-Ei
-Ei
+LR
+LR
 JB
-Md
-ux
+iY
+Fd
 Md
 ux
 Md
@@ -35896,14 +35965,14 @@ ux
 Zy
 wl
 gG
-Ei
-Ei
+LR
+LR
 UR
-Ei
-Ei
+LR
+LR
 Vh
-ux
-ux
+Fd
+Fd
 ux
 ux
 ux
@@ -36153,14 +36222,14 @@ ux
 ux
 wl
 wl
-Ei
-Ei
-Ei
-Ei
-Ei
+LR
+LR
+LR
+LR
+LR
 ne
-LP
-oY
+Yw
+Rv
 pj
 Md
 ux
@@ -36414,10 +36483,10 @@ js
 qq
 mm
 YM
-Ei
+LR
 Bf
 Fg
-oY
+Rv
 ze
 Md
 ux
@@ -37316,13 +37385,13 @@ jM
 cn
 wT
 zt
-zt
-zt
-zt
-zt
-zt
-zt
-zt
+Yp
+Yp
+Yp
+Yp
+Yp
+Yp
+Yp
 zt
 vR
 vR
@@ -38600,7 +38669,7 @@ jM
 jM
 jM
 jM
-jM
+la
 MD
 MD
 WP
@@ -38857,7 +38926,7 @@ Ei
 jM
 jM
 jM
-jM
+la
 MD
 MD
 bC
@@ -39114,7 +39183,7 @@ Ke
 Ei
 jM
 jM
-jM
+la
 MD
 MD
 yY
@@ -39235,7 +39304,7 @@ aa
 aa
 aa
 aa
-vR
+LR
 wl
 CN
 Md
@@ -39371,7 +39440,7 @@ SZ
 jM
 jM
 jM
-jM
+la
 MD
 MD
 bC
@@ -39491,8 +39560,8 @@ zf
 aa
 aa
 aa
-vR
-vR
+LR
+LR
 wl
 hG
 ux
@@ -39628,7 +39697,7 @@ jM
 jM
 jM
 jM
-jM
+la
 MD
 MD
 KN
@@ -39747,9 +39816,9 @@ fP
 zf
 aa
 aa
-vR
-vR
-vR
+LR
+LR
+LR
 KX
 ux
 ux
@@ -40002,11 +40071,11 @@ fP
 fP
 fP
 fP
-OQ
-vR
-vR
-vR
-vR
+Fr
+LR
+LR
+LR
+LR
 KX
 ux
 ux
@@ -40259,10 +40328,10 @@ fP
 fP
 fP
 fP
-OQ
-vR
+Fr
+LR
 Zs
-vR
+LR
 Qo
 Vj
 Md
@@ -40516,11 +40585,11 @@ fP
 fP
 fP
 fP
-OQ
-vR
-vR
-vR
-vR
+Fr
+LR
+LR
+LR
+LR
 KX
 Md
 ux
@@ -40773,11 +40842,11 @@ fP
 fP
 fP
 fP
-OQ
-vR
-vR
-vR
-vR
+Fr
+LR
+LR
+LR
+LR
 KX
 Md
 ux
@@ -41030,11 +41099,11 @@ fP
 fP
 fP
 fP
-OQ
-vR
+Fr
+LR
 zq
-vR
-vR
+LR
+LR
 wl
 ux
 ux
@@ -41287,11 +41356,11 @@ fP
 fP
 fP
 fP
-OQ
-vR
-vR
-vR
-vR
+Fr
+LR
+LR
+LR
+LR
 wl
 FB
 Md
@@ -41544,11 +41613,11 @@ fP
 fP
 fP
 fP
-OQ
-vR
-vR
-OQ
-vR
+Fr
+LR
+LR
+Fr
+LR
 wl
 XP
 Md
@@ -41801,11 +41870,11 @@ fP
 fP
 fP
 fP
-vR
-OQ
-OQ
-OQ
-OQ
+LR
+Fr
+Fr
+Fr
+Fr
 wl
 XP
 Md
