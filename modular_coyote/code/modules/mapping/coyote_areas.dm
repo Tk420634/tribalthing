@@ -11,6 +11,9 @@
 /area/f13/ambientlighting/building/catgirls_score_here
 	name = "Catgirl capture point where if you put things here, they'll count as being stolen by the catgirls on round end, which give them points"
 
+/area/f13/ambientlighting/building/murrines_score_here
+	name = "Murrine capture point where if you put things here, they'll count as being stolen by the murrines on round end, which give them points, which is something that we somehow lacked all this time but never noticed cus ecveryone was off having sex with the catgirls instead"
+
 /area/f13/ambientlighting/building/a
 /area/f13/ambientlighting/building/b
 /area/f13/ambientlighting/building/c
