@@ -332,6 +332,23 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 /datum/controller/subsystem/processing/quirks/proc/GetQuirk(a_quirk)
 	if(!a_quirk)
 		return
+	if(!LAZYLEN(quirks)) // oh dear
+		var/datum/quirk/Q2P
+		if(istext(a_quirk))
+			Q2P = text2path(a_quirk)
+		else if(ispath(a_quirk, /datum/quirk))
+			Q2P = a_quirk
+		else if(istype(a_quirk, /datum/quirk))
+			var/datum/quirk/QUA = a_quirk
+			Q2P = QUA.type
+		else
+			stack_trace("GetQuirk: Quirk [a_quirk] is not a valid quirk! cool")
+			return
+		if(!ispath(Q2P, /datum/quirk))
+			stack_trace("GetQuirk: Quirk [a_quirk] is not a valid quirk! cool")
+			return
+		var/datum/quirk/QGP = new Q2P(src)
+		return QGP // dunno what havoc this'll cause, but it'll be pretty
 	if(istext(a_quirk)) // okay okay this could be either a key, or a *name*
 		var/datum/quirk/Q = LAZYACCESS(quirks, a_quirk)
 		if(Q) // please please
@@ -353,6 +370,11 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 
 /// Reads all the quirks from the player's prefs, and verifies that they should have them all
 /datum/controller/subsystem/processing/quirks/proc/CheckAndVerifyPrefQuirks(datum/preferences/P, save) // from_prefs is to prevent infinite loops, cus it can be called from the prefs save proc
+	// bad things happen if this is called while the subsystem isnt initialized
+	// usually when people connect with the round restart
+	// dont run it then, but dont worry, it'll be called when they spawn, or save or load or anything
+	if(!initialized)
+		return TRUE
 	if(!P)
 		return // mind your P's
 	var/list/quirklist = P.char_quirks
@@ -564,6 +586,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 	LAZYINITLIST(P.char_quirks)
 	if(Q.key in quirks) // if it's a valid quirk
 		P.char_quirks |= Q.key
+	CheckAndVerifyPrefQuirks(P, FALSE)
 	if(save)
 		P.save_character()
 	return TRUE
@@ -584,6 +607,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 	else
 		key2remove = "[Qany]" // hopefully something valid, though it doesnt matter
 	P.char_quirks -= key2remove
+	CheckAndVerifyPrefQuirks(P, FALSE)
 	if(save)
 		P.save_character()
 

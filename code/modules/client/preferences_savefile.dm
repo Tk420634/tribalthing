@@ -1308,9 +1308,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	creature_profilepic = sanitize_text(creature_profilepic)
 	creature_pfphost 	= sanitize_inlist(creature_pfphost, GLOB.pfp_filehosts, "")
 
-	SSchat.SanitizeUserImages(src)
-	SSchat.SanitizeUserPreferences(src)
-
 	features_override["grad_color"]		= sanitize_hexcolor(features_override["grad_color"], 6, FALSE, default = COLOR_ALMOST_BLACK)
 	features_override["grad_style"]		= sanitize_inlist(features_override["grad_style"], GLOB.hair_gradients, "none")
 
@@ -1347,6 +1344,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 				continue
 			temperaments_and_builds |= pth
 		current_t_n_b = temperaments_and_builds.Copy()
+	tnb_loaded = TRUE
+	tnb_count = LAZYLEN(temperaments_and_builds)
 
 	char_quirks = SANITIZE_LIST(char_quirks)
 	if(SSquirks.debug_migration)
@@ -1623,6 +1622,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		S["loadout"] << safe_json_encode(list())
 
 	WRITE_FILE(S["matchmaking_prefs"], matchmaking_prefs)
+
+	SSchat.SanitizeUserImages(src)
+	SSchat.SanitizeUserPreferences(src)
 
 	// !! COYOTE SAVEFILE STUFF !!
 	WRITE_FILE(S["profilePicture"],				profilePicture)
