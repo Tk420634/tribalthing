@@ -2096,7 +2096,7 @@
 			dump_bag_in_turret(I, user)
 	if(I.tool_behaviour == TOOL_MULTITOOL)
 		undeploy_turret(I, user)
-		heal_turret(I, user)
+		// heal_turret(I, user)
 		return
 	if(I.tool_behaviour == TOOL_WELDER)
 		heal_turret(I, user)
@@ -2178,7 +2178,7 @@
 	maptext = ""
 	if(!our_mag)
 		return
-	maptext = "[LAZYLEN(our_mag.stored_ammo)]/[our_mag.max_ammo]"
+	maptext = "<span color='#ff00ff'>[LAZYLEN(our_mag.stored_ammo)]/[our_mag.max_ammo]</span>"
 	maptext_width = 128
 	maptext_y = -6
 

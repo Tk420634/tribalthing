@@ -417,7 +417,8 @@
 	faction = list(CGP_FACTION_MURRINE)
 	our_mag = /obj/item/ammo_box/magazine/internal/turret/foam
 	integrity_failure = 0.01
-	shot_speed_mod = 0.50
+	shot_speed_mod = 0.35
+	burst_count = 1
 	var/cat = FALSE
 
 /obj/machinery/porta_turret/f13/nash/foam/apply_faction_stuff()
@@ -425,8 +426,7 @@
 	if(CGP_FACTION_CATGIRL in faction)
 		cat = TRUE
 		scan_range = 5
-		shot_speed_mod = 0.20
-		burst_count = 1
+		shot_speed_mod = 0.15
 
 /obj/machinery/porta_turret/f13/nash/foam/process()
 	if(cat)
