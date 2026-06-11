@@ -647,6 +647,7 @@
 #define PHUD_PANTS "GENITAL_HUD_PANTS"
 #define PHUD_SOCKS "GENITAL_HUD_SOCKS"
 #define PHUD_PVP_FLAG "GENITAL_HUD_pvp_flag"
+#define PHUD_CATGIRL_INDICATOR "PHUD_CATGIRL_INDICATOR"
 #define GENITAL_LAYER_OFFSET 0.1  // keep genitals close to the body
 #define SOCKS_LAYER_OFFSET 0.2   // undies go over genitals (sometimes)
 #define PANTS_LAYER_OFFSET 0.21   // undies go over genitals (sometimes)

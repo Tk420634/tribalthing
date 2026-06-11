@@ -59,6 +59,7 @@
 		"Guards help, a murrine!!"
 	)
 	chatcolor = "#BEEDAD" // ferros
+	factionlock = list(CGP_FACTION_CATGIRL) // cat
 	
 	
 	prize_list = list(
@@ -105,7 +106,7 @@
 		"You'd look real good in a maid outfit, %PLAYERNAME! Want me to call the guards and hook you up?"
 	)
 	chatcolor = "#BEEDAD" // ferros
-	
+	factionlock = list(CGP_FACTION_MURRINE)
 	
 	prize_list = list(
 		new /datum/data/wasteland_equipment("Sand Bag",			/obj/structure/barricade/sandbags, 					25),
@@ -117,7 +118,7 @@
 		new /datum/data/wasteland_equipment("Flashbang",		/obj/item/grenade/flashbang,                                30),
 		new /datum/data/wasteland_equipment("Smoke Grenade",		/obj/item/grenade/smokebomb,                                30),
 		new /datum/data/wasteland_equipment("Donksoft LMG",		/obj/item/gun/ballistic/automatic/lewis/murr,				150),
-		new /datum/data/wasteland_equipment("Donksoft Turret",	/obj/item/turret_box/foam,                           		100),
+		new /datum/data/wasteland_equipment("YiffSoft Point Defense Playset",	/obj/item/turret_box/foam,                           		100),
 		new /datum/data/wasteland_equipment("Crank Laser",		/obj/item/gun/energy/laser/cranklasergun/tg/spamlaser,		150),
 		new /datum/data/wasteland_equipment("Shield",			/obj/item/shield/coyote/kiteshield,							50),
 		new /datum/data/wasteland_equipment("Darts",			/obj/item/ammo_box/foambox/catbox,							20),

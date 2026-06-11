@@ -2172,6 +2172,8 @@
 	update_maptext()
 	. = ..()
 
+/obj/machinery/porta_turret/f13/nash/proc/apply_faction_stuff()
+
 /obj/machinery/porta_turret/f13/nash/proc/update_maptext()
 	maptext = ""
 	if(!our_mag)
@@ -2311,10 +2313,11 @@
 		if(turret_new.our_mag && LAZYLEN(turret_new.our_mag.stored_ammo))
 			QDEL_LIST(turret_new.our_mag.stored_ammo)
 		QDEL_NULL(turret_new.chambered)
-	if("cat" in user.faction)
-		turret_new.faction = list("cat") // cat
-	else if("murrine" in user.faction)
-		turret_new.faction = list("murrine") // cat
+	if(CGP_FACTION_CATGIRL in user.faction)
+		turret_new.faction = list(CGP_FACTION_CATGIRL) // cat
+	else if(CGP_FACTION_MURRINE in user.faction)
+		turret_new.faction = list(CGP_FACTION_MURRINE) // cat
+	turret_new.apply_faction_stuff()
 	user.visible_message(span_notice("[user] unpacks [src], deploying [turret_new]."))
 	qdel(src)
 

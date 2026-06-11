@@ -52,7 +52,7 @@
 		"faithless",
 		"vines",
 	)
-	factionbound = list("cat")
+	factionbound = list(CGP_FACTION_CATGIRL)
 
 /obj/item/stealthboy/Destroy()
 	Deactivate()

@@ -139,7 +139,7 @@ SUBSYSTEM_DEF(mobs)
 	return endmod
 
 /datum/controller/subsystem/mobs/proc/stat_roll_stamina_recovery_per_tick(mob/living/mob)
-	var/stamheal = 3
+	var/stamheal = 1
 	if(!isliving(mob))
 		return stamheal
 	switch(mob.get_stat(STAT_ENDURANCE)) // COOLSTAT IMPLEMENTATION: ENDURANCE
@@ -165,8 +165,8 @@ SUBSYSTEM_DEF(mobs)
 
 /datum/controller/subsystem/mobs/proc/stat_roll_stamcrit_timeout(mob/living/mob)
 	if(!isliving(mob))
-		return 7 SECONDS
-	var/timeout = 7 SECONDS
+		return 30 SECONDS
+	var/timeout = 30 SECONDS
 	switch(mob.get_stat(STAT_ENDURANCE)) // COOLSTAT IMPLEMENTATION: ENDURANCE
 		if(0, 1)
 			timeout *= 1.5
@@ -238,10 +238,10 @@ SUBSYSTEM_DEF(mobs)
 		num_in_play = 0
 
 /proc/is_on_same_side(mob/living/player1, mob/living/player2)
-	var/am_cat = ("cat" in player1.faction)
-	var/am_mur = ("murrine" in player1.faction)
-	var/they_cat = ("cat" in player2.faction)
-	var/they_mur = ("murrine" in player2.faction)
+	var/am_cat = (CGP_FACTION_CATGIRL in player1.faction)
+	var/am_mur = (CGP_FACTION_MURRINE in player1.faction)
+	var/they_cat = (CGP_FACTION_CATGIRL in player2.faction)
+	var/they_mur = (CGP_FACTION_MURRINE in player2.faction)
 	if(am_cat && they_cat)
 		return TRUE
 	if(am_mur && they_mur)

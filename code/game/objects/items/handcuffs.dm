@@ -262,12 +262,12 @@
 	AddElement(/datum/element/connect_loc, loc_connections)
 
 /obj/item/restraints/legcuffs/beartrap/proc/factionize(mob/user)
-	if("cat" in user.faction)
-		faction = "cat"
+	if(CGP_FACTION_CATGIRL in user.faction)
+		faction = CGP_FACTION_CATGIRL
 		color = "#007711"
 		ownerkey = extract_quid(user)
-	else if("murrine" in user.faction)
-		faction = "murrine"
+	else if(CGP_FACTION_MURRINE in user.faction)
+		faction = CGP_FACTION_MURRINE
 		color = "#775577"
 		ownerkey = null
 	else

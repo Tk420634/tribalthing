@@ -11,7 +11,7 @@
 	outfit = /datum/outfit/job/cb/guild/deputy/sheriff
 	access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
 	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
-	faction = "murrine"
+	faction = CGP_FACTION_MURRINE
 //////////////////////////////
 /// Deputy
 /// A Deputy, here to serve drinks and listen to people's problems
@@ -23,7 +23,7 @@
 	outfit = /datum/outfit/job/cb/guild/deputy
 	access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
 	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
-	faction = "murrine"
+	faction = CGP_FACTION_MURRINE
 //////////////////////////////
 /// Deputy
 /// A Deputy, here to serve drinks and listen to people's problems
@@ -37,7 +37,7 @@
 	outfit = /datum/outfit/job/cb/guild/deputy/gunner
 	access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
 	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
-	faction = "murrine"
+	faction = CGP_FACTION_MURRINE
 
 /datum/job/townfolk/murrineengineer
 	title = "Murrine Engineer"
@@ -49,7 +49,7 @@
 	outfit = /datum/outfit/job/cb/guild/deputy/engineer
 	access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
 	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
-	faction = "murrine"
+	faction = CGP_FACTION_MURRINE
 
 /datum/job/townfolk/murrineranger
 	title = "Murrine Ranger"
@@ -61,7 +61,7 @@
 	outfit = /datum/outfit/job/cb/guild/deputy/ranger
 	access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
 	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
-	faction = "murrine"
+	faction = CGP_FACTION_MURRINE
 
 /datum/job/townfolk/murrinebruiser
 	title = "Murrine Bruiser"
@@ -73,7 +73,7 @@
 	outfit = /datum/outfit/job/cb/guild/deputy/bruiser
 	access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
 	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
-	faction = "murrine"
+	faction = CGP_FACTION_MURRINE
 
 
 /datum/job/townfolk/murrinegrenadier
@@ -86,7 +86,7 @@
 	outfit = /datum/outfit/job/cb/guild/deputy/grenadier
 	access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
 	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
-	faction = "murrine"
+	faction = CGP_FACTION_MURRINE
 //////////////////////////////
 /// Deputy
 /// A Deputy, here to serve drinks and listen to people's problems
@@ -97,7 +97,7 @@
 	enforces = "Not much in particular, but like.  If you wanna try to escape go ahead."
 	forbids = "Not a whole lot of much. Live your life, crechor."
 	outfit = /datum/outfit/job/cb/capturedcatgirl
-	faction = list("murrine", "cat")
+	faction = list(CGP_FACTION_MURRINE, CGP_FACTION_CATGIRL)
 
 
 /datum/job/townfolk/f13deputy/teacher
@@ -110,7 +110,7 @@
 	outfit = /datum/outfit/job/cb/guild/deputy/housekeeping
 	access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
 	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
-	faction = "murrine"
+	faction = CGP_FACTION_MURRINE
 
 
 
@@ -128,7 +128,7 @@
 	description = "The Gods have chosen you to be a Warleader for our warriors, only you can prove if you're fit for this position.  Capture the invaders and integrate them into the Nyampire."
 	outfit = /datum/outfit/job/cb/catgirl/warrior/head
 	paycheck = COINS_TO_CREDITS(100) // 100 copper per hour
-	faction = "cat"
+	faction = CGP_FACTION_CATGIRL
 
 //////////////////////////////
 /// Tribal Forager
@@ -144,7 +144,7 @@
 	description = "You are a warrior of the Nyan-Nyan Neko Nyampire, one of the greatest warriors this planet has to offer.  Clad in bones of monsters these invaders would cower before and gifted with skills untold."
 	outfit = /datum/outfit/job/cb/catgirl/warrior
 	paycheck = COINS_TO_CREDITS(75) // 75 copper per hour
-	faction = "cat"
+	faction = CGP_FACTION_CATGIRL
 //////////////////////////////
 /// Tribal Forager
 /// A forager of the tribe, who helps the head forager find cute tribal furries
@@ -159,7 +159,7 @@
 	description = "You are a sniper, trained with a blow dart gun and taught in the ways of being a bush."
 	outfit = /datum/outfit/job/cb/catgirl/warrior/sniper
 	paycheck = COINS_TO_CREDITS(75) // 75 copper per hour
-	faction = "cat"
+	faction = CGP_FACTION_CATGIRL
 
 /datum/job/tribal/nyanfiltrator
 	title = "Nyanfiltrator"
@@ -172,7 +172,7 @@
 	description = "A high class warrior, gifted with magical tech rendered from the ancients to hide yourself on the move and trained to use brass knyackles to down foes rapidly from behind."
 	outfit = /datum/outfit/job/cb/catgirl/warrior/nyanfiltrator
 	paycheck = COINS_TO_CREDITS(75) // 75 copper per hour
-	faction = "cat"
+	faction = CGP_FACTION_CATGIRL
 
 /datum/job/tribal/jagnyarwarrior
 	title = "Jagnyar Warrior"
@@ -185,7 +185,7 @@
 	description = "The Nyampires most decorated warriors, raised from birth to be the fastest and bestest, better than all the restest."
 	outfit = /datum/outfit/job/cb/catgirl/jagnyarwarrior
 	paycheck = COINS_TO_CREDITS(75) // 75 copper per hour
-	faction = "cat"
+	faction = CGP_FACTION_CATGIRL
 
 /datum/job/tribal/stickspinner
 	title = "Stick-Spinner"
@@ -198,7 +198,7 @@
 	description = "A warrior dedicated to the defense of the Nyampire, your skills with the Quartersnyaff are legendary."
 	outfit = /datum/outfit/job/cb/catgirl/stickspinner
 	paycheck = COINS_TO_CREDITS(75) // 75 copper per hour
-	faction = "cat"
+	faction = CGP_FACTION_CATGIRL
 
 /datum/job/tribal/catnapper
 	title = "Catnapper"
@@ -211,7 +211,7 @@
 	description = "Trained in the arts of the gripwire and its finer uses your purpose is area de-nyial."
 	outfit = /datum/outfit/job/cb/catgirl/warrior/catnapper
 	paycheck = COINS_TO_CREDITS(75) // 75 copper per hour
-	faction = "cat"
+	faction = CGP_FACTION_CATGIRL
 
 /datum/job/tribal/influencer
 	title = "Influencer"
@@ -224,7 +224,7 @@
 	description = "A priest, or some sort of well trained individual taught to indoctrinate Murrine captives to the Nyampires ways."
 	outfit = /datum/outfit/job/cb/catgirl/warrior/influencer
 	paycheck = COINS_TO_CREDITS(75) // 75 copper per hour
-	faction = "cat"
+	faction = CGP_FACTION_CATGIRL
 
 /datum/job/tribal/head_forager/captured
 	title = "Captured Murrine"
@@ -235,7 +235,7 @@
 	forbids = "Nothing in particular."
 	description = "You've been captured by the enemy. You probably want to escape, but maybe you don't."
 	outfit = /datum/outfit/job/cb/catgirl/warrior/captured
-	faction = list("murrine", "cat")
+	faction = list(CGP_FACTION_MURRINE, CGP_FACTION_CATGIRL)
 
 
 
@@ -270,7 +270,7 @@
 	// ramp_up_max = 20 // 4x
 	// ramp_up_start = 7 // tiles
 	// ramp_up_end = 15 // also tiles
-	factionbound = list("cat")
+	factionbound = list(CGP_FACTION_CATGIRL)
 
 /obj/item/gun/ballistic/automatic/lewis/murr
 	name = "Leeroy automatic dartling gun"
@@ -305,15 +305,15 @@
 	w_class = WEIGHT_CLASS_NORMAL // suffer
 	multiple_sprites = 2
 	custom_materials = list(/datum/material/iron = MATS_LIGHT_MEGA_CAN_MAGAZINE)
-	factionbound = list("murrine")
+	factionbound = list(CGP_FACTION_MURRINE)
 
 /obj/item/ammo_box/magazine/lewis/foam/empty
 	start_empty = 1
 
 /// A packed up turrent
 /obj/item/turret_box/foam
-	name = "packaged auto-dartling gun"
-	desc = "A turret, packed up and ready to deploy. Ammo not included, unless repackaged."
+	name = "packaged YiffSoft Point Defense Playset"
+	desc = "A packed up YiffSoft Point Defense Playset, ready to be deployed!"
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "hivebot_fab_on"
 	w_class = WEIGHT_CLASS_NORMAL
@@ -338,10 +338,12 @@
 	. = ..()
 
 /obj/item/ammo_box/magazine/internal/turret/foam/process()
+	var/obj/machinery/porta_turret/f13/nash/inside = loc
 	if(!istype(loc, /obj/machinery/porta_turret/f13/nash))
 		last_tick = world.time
 		return
-	var/obj/machinery/porta_turret/f13/nash/inside = loc
+	if(CGP_FACTION_CATGIRL in inside.faction)
+		return
 	if(LAZYLEN(stored_ammo) >= max_ammo)
 		last_tick = world.time
 		return
@@ -352,8 +354,6 @@
 	if(timeleft_until_pickup > 0)
 		return
 	var/time2use = pickup_time
-	if("cat" in inside.faction)
-		time2use = pickup_time_dumb_cat
 	// find a nearby dart, and try to stuff it in our thing
 	var/list/nearby = list()
 	for(var/obj/item/ammo_casing/dart in range(1, get_turf(src)))
@@ -370,7 +370,7 @@
 		furtherby |= dart
 	if(!LAZYLEN(furtherby))
 	// one last extension
-		for(var/obj/item/ammo_casing/dart in range(3, get_turf(src)))
+		for(var/obj/item/ammo_casing/dart in range(4, get_turf(src)))
 			furtherby |= dart
 	if(LAZYLEN(furtherby))
 		var/obj/item/ammo_casing/luckydart = safepick(furtherby)
@@ -414,10 +414,25 @@
 	lethal_projectile = /obj/item/ammo_casing/caseless/foam_dart/riot
 	lethal_projectile_sound = 'sound/items/syringeproj.ogg'
 	stun_projectile_sound = 'sound/items/syringeproj.ogg'
-	faction = list("murrine")
+	faction = list(CGP_FACTION_MURRINE)
 	our_mag = /obj/item/ammo_box/magazine/internal/turret/foam
 	integrity_failure = 0.01
 	shot_speed_mod = 0.50
+	var/cat = FALSE
+
+/obj/machinery/porta_turret/f13/nash/foam/apply_faction_stuff()
+	. = ..()
+	if(CGP_FACTION_CATGIRL in faction)
+		cat = TRUE
+		scan_range = 5
+		shot_speed_mod = 0.20
+		burst_count = 1
+
+/obj/machinery/porta_turret/f13/nash/foam/process()
+	if(cat)
+		if(prob(10))
+			do_sparks(rand(1, 2), TRUE, get_turf(src))
+	. = ..()
 
 /obj/machinery/porta_turret/f13/nash/foam/obj_break(damage_flag)
 	if(!(flags_1 & NODECONSTRUCT_1))
@@ -454,7 +469,7 @@
 	block_chance = 15 // Skill based gameplay
 	berryable = TRUE
 	block_parry_data = /datum/block_parry_data/bokken
-	factionbound = list("cat")
+	factionbound = list(CGP_FACTION_CATGIRL)
 
 /obj/item/restraints/legcuffs/bola
 	name = "bola"
@@ -484,7 +499,7 @@
 	ammo_x_offset = 3
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_ONLY
-	factionbound = list("murrine")
+	factionbound = list(CGP_FACTION_MURRINE)
 	ramp_up_max = 0.33 // damage multi
 	ramp_up_start = 8 // tiles
 	ramp_up_end = 16 // also tiles
@@ -507,7 +522,7 @@
 	/datum/firemode/automatic/rpm200,
 	/datum/firemode/semi_auto,
 	)
-	factionbound = list("murrine")
+	factionbound = list(CGP_FACTION_MURRINE)
 
 /obj/item/stock_parts/cell/ammo/mfc/cranklasergun/tg/spamlaser
 	name = "integrated single charge cell"
@@ -515,7 +530,7 @@
 	icon = 'icons/fallout/objects/powercells.dmi'
 	icon_state = "mfc-full"
 	maxcharge = 5000
-	factionbound = list("murrine")
+	factionbound = list(CGP_FACTION_MURRINE)
 
 //Flashbangs are in flashbang.dm /obj/item/grenade/flashbang, rangers also get smokebombs /obj/item/grenade/smokebomb
 
@@ -546,7 +561,7 @@
 	attack_verb = list("thumped", "bapd", "hornswaggled")
 	force = 50 //needs to multiply to 150
 	backstab_multiplier = 5
-	factionbound = list("cat")
+	factionbound = list(CGP_FACTION_CATGIRL)
 	berryable = TRUE
 
 /obj/item/melee/coyote/macuahuitl/nya
@@ -554,7 +569,7 @@
 	desc = "A squishy sort of not quite sword. Made for booping fools in the noggin."
 	reflectshot_chance = 35
 	block_chance = 15
-	factionbound = list("cat")
+	factionbound = list(CGP_FACTION_CATGIRL)
 	berryable = TRUE
 
 /obj/item/gun/energy/kinetic_accelerator/crossbow/sling
@@ -586,7 +601,7 @@
 	name = "Nyampire Quartersnyaff"
 	color = "#FF0000"
 	reflectshot_chance = 45
-	factionbound = list("cat")
+	factionbound = list(CGP_FACTION_CATGIRL)
 	berryable = TRUE
 	slowdown = 0.1
 
@@ -617,7 +632,7 @@
 	weight_class_on = WEIGHT_CLASS_BULKY
 	total_mass = TOTAL_MASS_NORMAL_ITEM
 	bare_wound_bonus = -20
-	factionbound = list("murrine")
+	factionbound = list(CGP_FACTION_MURRINE)
 	backstab_multiplier = 1.7
 	attack_speed = CLICK_CD_MELEE * 0.7
 

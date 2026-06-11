@@ -330,9 +330,9 @@ const LowerRowBar = (props, context) => {
           onClick={() => act('ToggleRadioHorny', {
             UserCkey: UserCKEY,
           })} />
-      </Stack.Item> */}
+      </Stack.Item>
       <Stack.Item shrink>
-        {/* A toggle for using the thing where it makes a contrasting color for your gaudy background */}
+        A toggle for using the thing where it makes a contrasting color for your gaudy background
         <Button
           fluid
           icon={AutoContrast ? "cat" : "lightbulb"}
@@ -345,7 +345,7 @@ const LowerRowBar = (props, context) => {
           onClick={() => act('ToggleAutoContrast', {
             UserCkey: UserCKEY,
           })} />
-      </Stack.Item>
+      </Stack.Item> */}
       <Stack.Item shrink>
         {/* A button to change the color of the text */}
         <Button
@@ -1303,9 +1303,9 @@ const MessageAppearanceTab = (props, context) => {
     // Horizontal stack, with two columns
     <Stack fill>
       {/* Left column */}
-      <Stack.Item>
+      <Stack.Item shrink grow>
         {/* Set the stack below's ID to Bingus */}
-        <Stack fill vertical id="Bingus">
+        <Stack fill vertical>
           {MessageModes.map((Mode, index) => (
             <Stack.Item key={index}>
               {/* Copy Paste, cus I love croppy piss */}
@@ -1343,7 +1343,7 @@ const MessageAppearanceTab = (props, context) => {
         </Stack>
       </Stack.Item>
       {/* Right column, the main meaty potatoe */}
-      <Stack.Item grow basis={RightColumnWidth}>
+      <Stack.Item shrink grow>
         <Stack fill vertical>
           <Stack.Item>
             <Stack fill>
@@ -1402,7 +1402,7 @@ const MessageAppearanceTab = (props, context) => {
         </Stack>
       </Stack.Item>
       {/* And the bookend so that the stack reaches the edges */}
-      <Stack.Item /> {/* Does nothing but the format cant live without it, my spirit animal */}
+      <Stack.Item shrink grow/> {/* Does nothing but the format cant live without it, my spirit animal */}
     </Stack>
   );
 };
@@ -1655,7 +1655,7 @@ const GetPreview = (props, context) => {
   const ParentElement = document.querySelector("div");
   const ParentRect = ParentElement.getBoundingClientRect();
   const ParWid = ParentRect.width;
-  const ParentWidth = `${ParWid}px`;
+  const ParentWidth = "100%" //`${ParWid}px`;
 
   return (
     <Box

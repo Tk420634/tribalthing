@@ -883,9 +883,9 @@ SUBSYSTEM_DEF(chat)
 		cum += "</div>"
 	cum += "</div>"
 	var/egg_surrounded_by_sperm = cum.Join() // the full message
-	if(P.visualchat_use_contrasting_color)
-		var/ccolr = get_contrasting_color(bbc_1, bbc_2)
-		egg_surrounded_by_sperm = "<span style='color: [ccolr];'>" + egg_surrounded_by_sperm + "</span>"
+	// if(P.visualchat_use_contrasting_color)
+	// 	var/ccolr = get_contrasting_color(bbc_1, bbc_2)
+	// 	egg_surrounded_by_sperm = "<span style='color: [ccolr];'>" + egg_surrounded_by_sperm + "</span>"
 	// now we need to send it to the target
 	return egg_surrounded_by_sperm // ya know, how *is* babby formed?
 
