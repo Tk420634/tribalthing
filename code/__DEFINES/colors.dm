@@ -55,7 +55,7 @@
 #define COLOR_ASSEMBLY_PINK    "#ff4adc"
 
 
-/proc/get_contrasting_color(colorhex1, colorhex2)
+/proc/get_contrasting_color(colorhex1, colorhex2) // what a surprise it doesnt work
 	// This proc will return the color that contrasts the most with
 	// the average of the two colors.
 	var/c_num_1 = hex2num(colorhex1) // returns a number between 0 and 16777215
@@ -78,7 +78,10 @@
 			c_num_contrast += 65535
 		else
 			c_num_contrast -= 65535
-		con_ratio = c_num_avg / c_num_contrast
+		if(c_num_avg > c_num_contrast)
+			con_ratio = c_num_avg / c_num_contrast
+		else
+			con_ratio = c_num_contrast / c_num_avg
 	var/hexcode = num2hex(c_num_contrast, 6)
 	return "#[hexcode]"
 
