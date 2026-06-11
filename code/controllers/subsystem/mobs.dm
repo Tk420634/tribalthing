@@ -165,8 +165,8 @@ SUBSYSTEM_DEF(mobs)
 
 /datum/controller/subsystem/mobs/proc/stat_roll_stamcrit_timeout(mob/living/mob)
 	if(!isliving(mob))
-		return 30 SECONDS
-	var/timeout = 30 SECONDS
+		return 20 SECONDS
+	var/timeout = 20 SECONDS
 	switch(mob.get_stat(STAT_ENDURANCE)) // COOLSTAT IMPLEMENTATION: ENDURANCE
 		if(0, 1)
 			timeout *= 1.5
@@ -179,13 +179,13 @@ SUBSYSTEM_DEF(mobs)
 		if(5)
 			timeout *= 1
 		if(6)
-			timeout *= 0.9
+			timeout *= 0.95
 		if(7)
-			timeout *= 0.85
+			timeout *= 0.90
 		if(8)
-			timeout *= 0.80
+			timeout *= 0.85
 		if(9)
-			timeout *= 0.75
+			timeout *= 0.80
 	return timeout
 
 /datum/controller/subsystem/mobs/proc/stat_roll_vendor_multiplier(mob/living/mob)
