@@ -79,8 +79,6 @@
 		new /datum/data/wasteland_equipment("Dart Box",               /obj/item/ammo_box/foambox/catbox,                                 	20),
 		
 		)
- 
-	
 
 //Murrine NPC
 /obj/structure/wasteland_vendor/coolvendor/murrine/generic
