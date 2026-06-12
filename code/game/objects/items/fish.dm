@@ -4,6 +4,13 @@
 	desc = "debug, report to Jake"
 	icon = 'icons/obj/fish/fish_items.dmi'
 	w_class = WEIGHT_CLASS_SMALL
+	attack_verb = list("slapped", "plopped", "squortched", "smarped", "splooshed", "blorped")
+	force = 5 //needs to multiply to 150
+	backstab_multiplier = 2
+	factionbound = list(CGP_FACTION_CATGIRL)
+	berryable = TRUE
+	hitsound = 'sound/effects/hit_punch.ogg'
+	weapon_special_component = /datum/component/weapon_special/single_turf
 	//the type of meat it drops
 	var/meat_type
 	//the max primary meat it drops
@@ -16,6 +23,7 @@
 	var/max_secondary = 3
 	//sex that is contributing to allowing breeding
 	var/spawn_sex = FEMALE
+	var/catgirl_stealth_fish = FALSE
 
 //made a proc so that it can be influenced by other stuff
 /obj/item/fishy/proc/randomize_sex()
@@ -44,6 +52,26 @@
 	else
 		return ..()
 
+/obj/item/fishy/pickup(mob/user)
+	if(catgirl_stealth_fish)
+		if(check_faction(user))
+			force = 50
+			backstab_multiplier = 5
+		else
+			force = initial(force)
+			backstab_multiplier = initial(backstab_multiplier)
+	return ..()
+
+/obj/item/fishy/examine(mob/user)
+	. = ..()
+	if(catgirl_stealth_fish && check_faction(user))
+		. += span_notice("Nya! You are a master(ess) of fishfighting, you sly cat!")
+		. += span_notice("You can hit people really hard with this fish, and from behind, you'll surely knock them out!")
+		. += span_notice("Its also a tasty snack if you have the means to butcher it! Course then you wont have the fish anymore...")
+	else
+		. += span_notice("While demoralizing to your opponents, this fish makes for a poor weapon. If only you had the feline wiles to use it to its full potential...")
+		. += span_notice("It is, however, a tasty snack if you have the means to butcher it! Course then you wont have the fish anymore...")
+
 //ive taken it into my hands to have all the fish have puns, send help - jake
 //also, please make more actual fish meat and food with the new fish meat, please
 //and secondary_drops will not be fishyeggs once actual fish tanks are implemented
@@ -53,6 +81,15 @@
 	icon_state = "carp"
 	meat_type = /obj/item/reagent_containers/food/snacks/fishmeat/carp
 	secondary_drop = /obj/item/fishyegg/carp
+
+/obj/item/fishy/carp/catgirl_backstabber
+	name = "nekarp"
+	desc = "A big thiccass fish, commonly found in the Whiskermitten Rivers. \
+	Locals speak hushed whispers of its use in the horny art of felicopiscis, \
+	'catfishing', which somehow involves using this unwieldy chonker of a fish \
+	to beat the everliving heck out of people they find attractive. To everyone \
+	else, it's a slipperyass fish that hits like a flyswatter."
+	catgirl_stealth_fish = TRUE
 
 /obj/item/fishy/salmon
 	name = "salmon"

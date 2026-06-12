@@ -16,10 +16,11 @@
 	var/can_play_low_power_warning_boop = TRUE
 	var/on = FALSE
 	var/warn_time = 1 SECONDS
-	var/max_time_left = 20 SECONDS
-	var/time_left = 20 SECONDS
+	var/max_time_left = 30 SECONDS
+	var/time_left = 30 SECONDS
 	var/min_time_left = 15 SECONDS
 	var/last_tick = 0
+	var/charge_time_multiplier = 1.0
 	var/list/factionlist = list(
 		"supermutant",
 		"raider",
@@ -241,7 +242,7 @@
 	if(!check_faction(loc))
 		if(prob(80))
 			return // lol
-	time_left += (delta * 0.75)
+	time_left += (delta * charge_time_multiplier)
 	if(can_play_charged_enough_boop && time_left > min_time_left)
 		var/mob/user = loc
 		if(ismob(user))

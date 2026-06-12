@@ -204,6 +204,8 @@ GLOBAL_LIST_INIT(turfs_without_ground, typecacheof(list(
 
 #define isstructure(A) (istype(A, /obj/structure))
 
+#define istree(A) (istype(A, /obj/structure/flora/tree))
+
 #define ismachinery(A) (istype(A, /obj/machinery))
 
 #define ismecha(A) (istype(A, /obj/mecha))

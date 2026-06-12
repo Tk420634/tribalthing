@@ -434,7 +434,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 /obj/item/attackby(obj/item/W, mob/user, params)
 	. = ..()
-	if(berryable)
+	if(berryable && check_faction(user))
 		tryberry(W, user)
 
 /obj/item/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)

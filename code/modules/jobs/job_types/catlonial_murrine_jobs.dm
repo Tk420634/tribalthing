@@ -420,6 +420,13 @@
 	shot_speed_mod = 0.35
 	burst_count = 1
 	var/cat = FALSE
+	var/being_multitooled = FALSE
+	var/cat_next_spark = 0
+	var/cat_spark_interval_min = 3 SECONDS
+	var/cat_spark_interval_max = 7 SECONDS
+	var/sap_next_spark = 0
+	var/sap_spark_interval_min = 0.5 SECONDS
+	var/sap_spark_interval_max = 1.5 SECONDS
 
 /obj/machinery/porta_turret/f13/nash/foam/apply_faction_stuff()
 	. = ..()
@@ -430,9 +437,28 @@
 
 /obj/machinery/porta_turret/f13/nash/foam/process()
 	if(cat)
-		if(prob(10))
+		if(world.time >= cat_next_spark)
+			cat_next_spark = world.time + rand(cat_spark_interval_min, cat_spark_interval_max)
 			do_sparks(rand(1, 2), TRUE, get_turf(src))
+	if(being_multitooled)
+		if(world.time >= sap_next_spark)
+			sap_next_spark = world.time + rand(sap_spark_interval_min, sap_spark_interval_max)
+			do_sparks(rand(1, 3), TRUE, get_turf(src))
 	. = ..()
+
+/obj/machinery/porta_turret/f13/nash/foam/dont_scan()
+	. = ..()
+	if(.)
+		return .
+	if(being_multitooled) // catgirl sappin my sentry!
+		return TRUE
+
+/obj/machinery/porta_turret/f13/nash/foam/start_being_multitooled(mob/user)
+	change_activity_state(TURRET_SLEEP_MODE)
+	being_multitooled = TRUE
+
+/obj/machinery/porta_turret/f13/nash/foam/stop_being_multitooled(mob/user)
+	being_multitooled = FALSE
 
 /obj/machinery/porta_turret/f13/nash/foam/obj_break(damage_flag)
 	if(!(flags_1 & NODECONSTRUCT_1))

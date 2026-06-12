@@ -117,7 +117,7 @@
 	name = "Nyanfiltrator"
 	head = null
 	suit = null
-	backpack = null
+	backpack = /obj/item/storage/backpack/trekker
 	uniform = /obj/item/clothing/under/civ/mayan_loincloth
 	shoes = /obj/item/clothing/shoes/sandal
 	belt = /obj/item/stealthboy
@@ -126,6 +126,10 @@
 	r_pocket = /obj/item/melee/unarmed/brass/knyackles
 	tribal = TRUE
 	cat = TRUE
+	backpack_contents   = list(
+	/obj/item/multitool = 1,
+	/obj/item/fishy/carp/catgirl_backstabber = 1,
+	)
 
 /datum/outfit/job/cb/catgirl/warrior/catnapper
 	name = "Catnapper"
