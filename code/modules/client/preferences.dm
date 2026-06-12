@@ -896,7 +896,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 
 			dat += APPEARANCE_CATEGORY_COLUMN
-			// dat += "<b>Advanced Coloring:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=color_scheme;task=input'>[(features["color_scheme"] == ADVANCED_CHARACTER_COLORING) ? "Enabled" : "Disabled"]</a>"
+			dat += "<b>Advanced Coloring:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=color_scheme;task=input'>[(features["color_scheme"] == ADVANCED_CHARACTER_COLORING) ? "Enabled" : "Disabled"]</a>"
 			// dat += "<b>Mismatched Markings:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=mismatched_markings;task=input'>[show_mismatched_markings ? "Yes" : "No"]</a>"
 			for(var/mutant_part in GLOB.all_mutant_parts)
 				if(mutant_part == "mam_body_markings")
