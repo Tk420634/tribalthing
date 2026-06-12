@@ -312,6 +312,9 @@ GLOBAL_DATUM(necropolis_gate, /obj/structure/necropolis_gate/legion_gate)
 /obj/structure/stone_tile/singularity_pull()
 	return
 
+/obj/structure/stone_tile/attackby(obj/item/I, mob/living/user, params, damage_override)
+	return STOP_ATTACK_PROC_CHAIN
+
 /obj/structure/stone_tile/proc/on_entered(atom/movable/AM)
 	SIGNAL_HANDLER
 	if(falling || fallen)

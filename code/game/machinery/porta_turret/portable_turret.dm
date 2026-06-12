@@ -252,21 +252,25 @@
 	if (!on || !anchored || (stat & BROKEN) || !powered())
 		//end_processing()
 		STOP_PROCESSING(SSfastprocess, src)
-		STOP_PROCESSING(SSmachines, src)
+		// STOP_PROCESSING(SSmachines, src)
 		processing_state = TURRET_PROCESS_OFF
 		return FALSE
-	//START_PROCESSING(SSmachines, src)
-	//begin_processing()
-	if(activity_state == TURRET_SLEEP_MODE)
-		STOP_PROCESSING(SSfastprocess, src)
-		START_PROCESSING(SSmachines, src)
-		processing_state = TURRET_PROCESS_MACHINE
-		return TRUE
 	else
-		STOP_PROCESSING(SSmachines, src)
 		START_PROCESSING(SSfastprocess, src)
 		processing_state = TURRET_PROCESS_FAST
 		return TRUE
+	//START_PROCESSING(SSmachines, src)
+	//begin_processing()
+	// if(activity_state == TURRET_SLEEP_MODE)
+	// 	STOP_PROCESSING(SSfastprocess, src)
+	// 	START_PROCESSING(SSmachines, src)
+	// 	processing_state = TURRET_PROCESS_MACHINE
+	// 	return TRUE
+	// else
+	// 	STOP_PROCESSING(SSmachines, src)
+	// 	START_PROCESSING(SSfastprocess, src)
+	// 	processing_state = TURRET_PROCESS_FAST
+	// 	return TRUE
 
 /obj/machinery/porta_turret/update_icon_state()
 	if(!anchored)
@@ -570,6 +574,10 @@
 
 	if(!check_should_process())
 		return
+	if(last_target)
+		var/atom/target = GET_WEAKREF(last_target)
+		if(HAS_TRAIT(target, "stealthinvis"))
+			interrupt_and_set_to_evasion()
 	/// We dont have a target, look for targets. If we just got out of shooting, beep while scanning for a while
 	if(activity_state == TURRET_SLEEP_MODE || activity_state == TURRET_EVASION_MODE)
 		if(scan_for_targets())
@@ -2149,7 +2157,10 @@
 /obj/machinery/porta_turret/f13/nash/proc/undeploy_turret(obj/item/m_tool, mob/user)
 	visible_message(span_notice("[user] starts packing up [src]!"),
 		span_notice("You starts packing up [src]!"))
-	if(!m_tool.use_tool(src, user, 3 SECONDS, 0, 100))
+	start_being_multitooled(m_tool, user)
+	var/succ = m_tool.use_tool(src, user, 3 SECONDS, 0, 100)
+	stop_being_multitooled(m_tool, user)
+	if(!succ)
 		user.show_message(span_alert("You were interrupted"))
 		return
 	visible_message(span_notice("[user] packed up [src]!"),
@@ -2161,6 +2172,10 @@
 	our_mag.forceMove(the_box)
 	our_mag = null
 	qdel(src)
+
+/obj/machinery/porta_turret/f13/nash/proc/start_being_multitooled(obj/item/m_tool, mob/user)
+
+/obj/machinery/porta_turret/f13/nash/proc/stop_being_multitooled(obj/item/m_tool, mob/user)
 
 /obj/machinery/porta_turret/f13/nash/proc/sorta_heal_turret(mob/user)
 	if(obj_integrity >= initial(obj_integrity))

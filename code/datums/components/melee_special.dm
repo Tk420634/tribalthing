@@ -5,8 +5,9 @@
 #define WS_TARGET_IGNORE_SELF (1<<2) // target self
 #define WS_TARGET_MOBS (1<<3) // hit all mobs on the turf
 #define WS_TARGET_STRUCTURES (1<<4) // hit objects on the turf
-#define WS_TARGET_MACHINES (1<<5) // hit machines on the turf
-#define WS_TARGET_WALLS (1<<6) // hit opaque walls on the turf
+#define WS_TARGET_TREES (1<<5) // hit trees on the turf
+#define WS_TARGET_MACHINES (1<<6) // hit machines on the turf
+#define WS_TARGET_WALLS (1<<7) // hit opaque walls on the turf
 //#define WS_TARGET_PREFERED_FIRST (1<<6) // If we hit multiple objects, hit the prefered one first
 #define WS_TARGET_ALL (1<<8) // Hit all objects on the turf -- probably dont use this
 
@@ -36,7 +37,7 @@
 	/// List of which intents trigger this thing
 	var/list/intent_flags = list(INTENT_HELP, INTENT_DISARM, INTENT_GRAB, INTENT_HARM)
 	/// targetting flags
-	var/target_flags = WS_TARGET_WALLS | WS_TARGET_IGNORE_DEAD | WS_TARGET_IGNORE_SELF | WS_TARGET_MOBS | WS_TARGET_STRUCTURES | WS_TARGET_MACHINES
+	var/target_flags = WS_TARGET_WALLS | WS_TARGET_IGNORE_DEAD | WS_TARGET_IGNORE_SELF | WS_TARGET_MOBS | WS_TARGET_MACHINES | WS_TARGET_TREES
 	/// target mode
 	var/target_mode = WS_FURTHEST_POPULATED_TILE
 	/// damage flags
@@ -74,7 +75,7 @@
 	line_effect = TRUE
 	effect_kind = null
 	target_mode = WS_ALL_POPULATED_TILES
-	target_flags = WS_TARGET_WALLS | WS_TARGET_IGNORE_DEAD | WS_TARGET_IGNORE_SELF | WS_TARGET_MOBS | WS_TARGET_STRUCTURES | WS_TARGET_MACHINES | WS_TARGET_WALLS
+	target_flags = WS_TARGET_WALLS | WS_TARGET_IGNORE_DEAD | WS_TARGET_IGNORE_SELF | WS_TARGET_MOBS | WS_TARGET_MACHINES | WS_TARGET_TREES
 	damage_flags = WS_DAMAGE_FALLOFF_FAR_HIGH
 
 /datum/component/weapon_special/ranged_spear/longer/pike
@@ -92,7 +93,7 @@
 	line_effect = ATTACK_EFFECT_PUNCH
 	effect_kind = null
 	target_mode = WS_ALL_POPULATED_TILES
-	target_flags = WS_TARGET_WALLS | WS_TARGET_IGNORE_DEAD | WS_TARGET_IGNORE_SELF | WS_TARGET_MOBS | WS_TARGET_STRUCTURES | WS_TARGET_MACHINES | WS_TARGET_WALLS
+	target_flags = WS_TARGET_WALLS | WS_TARGET_IGNORE_DEAD | WS_TARGET_IGNORE_SELF | WS_TARGET_MOBS | WS_TARGET_MACHINES | WS_TARGET_TREES
 	damage_flags = NONE
 
 /datum/component/weapon_special/Initialize()
@@ -325,6 +326,9 @@
 			. |= atomhere
 			continue
 		//var/isprefd = is_type_in_list(atomhere, prefered_types)
+		if(CHECK_BITFIELD(target_flags, WS_TARGET_TREES) && istree(atomhere))
+			. |= atomhere
+			continue
 		if((CHECK_BITFIELD(target_flags, WS_TARGET_STRUCTURES) && isstructure(atomhere)))
 			. |= atomhere
 			continue
