@@ -2096,7 +2096,7 @@
 			dump_bag_in_turret(I, user)
 	if(I.tool_behaviour == TOOL_MULTITOOL)
 		undeploy_turret(I, user)
-		heal_turret(I, user)
+		// heal_turret(I, user)
 		return
 	if(I.tool_behaviour == TOOL_WELDER)
 		heal_turret(I, user)
@@ -2172,11 +2172,13 @@
 	update_maptext()
 	. = ..()
 
+/obj/machinery/porta_turret/f13/nash/proc/apply_faction_stuff()
+
 /obj/machinery/porta_turret/f13/nash/proc/update_maptext()
 	maptext = ""
 	if(!our_mag)
 		return
-	maptext = "[LAZYLEN(our_mag.stored_ammo)]/[our_mag.max_ammo]"
+	maptext = "<span color='#ff00ff'>[LAZYLEN(our_mag.stored_ammo)]/[our_mag.max_ammo]</span>"
 	maptext_width = 128
 	maptext_y = -6
 
@@ -2311,10 +2313,11 @@
 		if(turret_new.our_mag && LAZYLEN(turret_new.our_mag.stored_ammo))
 			QDEL_LIST(turret_new.our_mag.stored_ammo)
 		QDEL_NULL(turret_new.chambered)
-	if("cat" in user.faction)
-		turret_new.faction = list("cat") // cat
-	else if("murrine" in user.faction)
-		turret_new.faction = list("murrine") // cat
+	if(CGP_FACTION_CATGIRL in user.faction)
+		turret_new.faction = list(CGP_FACTION_CATGIRL) // cat
+	else if(CGP_FACTION_MURRINE in user.faction)
+		turret_new.faction = list(CGP_FACTION_MURRINE) // cat
+	turret_new.apply_faction_stuff()
 	user.visible_message(span_notice("[user] unpacks [src], deploying [turret_new]."))
 	qdel(src)
 

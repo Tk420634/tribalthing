@@ -587,7 +587,6 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 
 /obj/structure/wasteland_vendor/attack_hand(mob/user, act_intent, attackchain_flags)
 	. = ..()
-	speak(VENDORLINE_WELCOME, user)
 	ui_interact(user)
 
 /obj/structure/wasteland_vendor/proc/speak(kind, mob/user, datum/data/wasteland_equipment/thing)
@@ -622,15 +621,17 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		return TRUE
 	if(!isliving(user))
 		return TRUE
-	if(LAZYLEN(user.faction & factionlock))
-		return FALSE
-	return TRUE
+	for(var/fact in factionlock)
+		if(fact in user.faction)
+			return TRUE
+	return FALSE
 
 /obj/structure/wasteland_vendor/ui_interact(mob/user)
 	. = ..()
 	if(!can_faction(user))
 		speak(VENDORLINE_BAD_FACTION, user)
 		return
+	speak(VENDORLINE_WELCOME, user)
 	var/datum/quest_book/QB = SSeconomy.get_quest_book(user)
 	if(!QB)
 		return

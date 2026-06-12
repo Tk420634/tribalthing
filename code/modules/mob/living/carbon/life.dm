@@ -525,11 +525,11 @@ GLOBAL_LIST_INIT(ballmer_windows_me_msg, list("Yo man, what if, we like, uh, put
 			stamcrit_timeout = 0
 			var/deficit = getStaminaLoss() - STAMINA_SOFTCRIT
 			adjustStaminaLoss(-deficit + 5)
-		var/stamheal = 5
+		var/stamheal = rand(2, 5)
 		if(!(combat_flags & COMBAT_FLAG_HARD_STAMCRIT))
 			stamheal *= SSmobs.stat_roll_stamina_recovery_per_tick(src)
 		adjustStaminaLoss(-stamheal)
-		if(getStaminaLoss() < 20)
+		if(getStaminaLoss() < 50)
 			worth_critting = TRUE
 
 	// if(!(combat_flags & COMBAT_FLAG_HARD_STAMCRIT) && incomingstammult != 1)

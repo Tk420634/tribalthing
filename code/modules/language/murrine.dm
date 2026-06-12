@@ -1,5 +1,5 @@
 /datum/language/murrine
-	name = "Murrine"
+	name = CGP_FACTION_MURRINE
 	desc = "The a."
 	speech_verb = "overs"
 	ask_verb = "tangos"

@@ -361,3 +361,10 @@ GLOBAL_LIST_INIT(prey_release_sounds, list(
 #define HI_ALREADY_HAVE_ONE        "ALREADY_HAVE_ONE"
 #define HI_HANDS_FULL              "HANDS_FULL"
 #define HI_GAVE                    "GAVE"
+
+// dunno why i keep putting random stuff in here, probably just the names easy to remember (cus im a freak)
+#define CGP_FACTION_MURRINE "murrine"
+#define CGP_FACTION_CATGIRL "catgirl"
+#define CGP_FACTION_BOTH    "both"
+#define CGP_FACTION_NEITHER "neither"
+
